@@ -1,0 +1,24 @@
+
+state={
+	id=971
+	name="STATE_971"
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 1
+
+		}
+		victory_points = {
+			12998 1 
+		}
+
+	}
+
+	provinces={
+		2149 7550 10935 12494 12998 13583 13584 13585 13586 13587 13588 13589 13590 13592 13593 13594 13596 13597 13599 13600 13605 13607 
+	}
+	manpower=65220
+	buildings_max_level_factor=1.000
+	state_category=city
+}

@@ -1,0 +1,22 @@
+
+state={
+	id=1002
+	name="STATE_1002"
+
+	history={
+		owner = BRA
+		victory_points = {
+			8129 1 
+		}
+		add_core_of = BRA
+
+	}
+
+	provinces={
+		5174 5218 8129 13281 14015 14054 14057 14071 14074 14084 14103 14107 14123 14129 14161 
+	}
+	manpower=201200
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

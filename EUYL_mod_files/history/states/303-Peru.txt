@@ -1,0 +1,50 @@
+
+state={
+	id=303
+	name="STATE_303"
+	resources={
+		oil=9.000
+		steel=14.000
+		tungsten=8.000
+		chromium=4.000
+	}
+
+	history={
+		owner = PRU
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 3
+			12997 = {
+				naval_base = 5
+
+			}
+
+		}
+		add_core_of = PRU
+		victory_points = {
+			12997 20 
+		}
+		
+		victory_points = {
+			14079 3 ## Huancayo
+		}
+		
+		victory_points = {
+			14051 10 ## Ayacucho
+		}
+
+		victory_points = {
+			14048 5 ## Ica
+		}
+
+	}
+
+	provinces={
+		2162 12983 12997 14048 14051 14078 14079 14082 14092 14104 14112 14120 14130 14140 14147 14165 
+	}
+	manpower=1875003
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

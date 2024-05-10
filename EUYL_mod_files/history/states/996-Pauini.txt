@@ -1,0 +1,16 @@
+state={
+	id=996
+	name="Pauini"
+	history={
+		owner = BRA
+		add_core_of = BRA
+		add_core_of = BOL
+		add_core_of = ROA
+	}
+	provinces={
+		5216 10960 13317 13324 13325 13326 14151 14160 14172 14179 14211 
+	}
+	manpower=132100
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

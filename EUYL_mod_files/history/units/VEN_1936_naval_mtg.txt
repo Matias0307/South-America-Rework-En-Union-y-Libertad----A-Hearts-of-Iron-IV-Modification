@@ -1,0 +1,19 @@
+﻿units= {
+
+	##### Naval OOB #####
+	fleet = {
+		name = "Armada Bolivariana"			
+		naval_base = 8113 # Caracas
+		task_force = {
+			name = "Armada Bolivariana"
+			location = 8113 # Caracas
+			ship = { name = "FNV General Salom" definition = light_cruiser equipment = { ship_hull_cruiser_coastal_defense_ship = { amount = 1 owner = VEN } } }
+			ship = { name = "FNV Maracay" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = VEN version_name = "Bolivar Class" } } }
+			ship = { name = "FNV Miranda " definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = VEN version_name = "Bolivar Class" } } }
+			ship = { name = "FNV Aragua" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = VEN version_name = "Bolivar Class" } } }
+			ship = { name = "FNV Antonio Díaz" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = VEN version_name = "Bolivar Class" } } }
+			ship = { name = "FNV Federación" definition = submarine equipment = { ship_hull_submarine_1 = { amount = 1 owner = VEN version_name = "Bolivar Class" } } }
+		}				
+	}
+} 
+

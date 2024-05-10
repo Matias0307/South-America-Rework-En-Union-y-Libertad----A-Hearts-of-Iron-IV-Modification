@@ -1,0 +1,32 @@
+
+state={
+	id=1006
+	name="Potosi"
+	resources={
+		tungsten=8.000
+	}
+
+	history={
+		owner = BOL
+		buildings = {
+			infrastructure = 2
+			air_base = 1
+
+		}
+		victory_points = {
+			2174 3 
+		}
+		victory_points = {
+			13932 2
+		}
+		add_core_of = BOL
+
+	}
+
+	provinces={
+		2174 10952 13134 13803 13813 13825 13833 13837 13847 13862 13874 13875 13888 13903 13917 13932 13933 
+	}
+	manpower=47823
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

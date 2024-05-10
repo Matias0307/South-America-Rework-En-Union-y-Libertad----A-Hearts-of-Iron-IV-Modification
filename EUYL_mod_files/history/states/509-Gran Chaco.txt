@@ -1,0 +1,26 @@
+
+state={
+	id=509
+	name="STATE_509"
+	resources={
+		tungsten=35.000
+		steel=6.000
+	}
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		2106 5213 10986 13466 13469 13474 13475 13483 13489 13490 13503 13504 13512 13514 
+	}
+	manpower=217241
+	buildings_max_level_factor=1.000
+	state_category=town
+}

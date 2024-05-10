@@ -1,0 +1,30 @@
+
+state={
+	id=989
+	name="STATE_989"
+	resources={
+		steel=8.000
+		chromium=2.000
+	}
+
+	history={
+		owner = PRU
+		add_core_of = PRU
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			5166 10 
+		}
+
+	}
+
+	provinces={
+		5166 14033 14036 14052 14062 14064 14068 14088 
+	}
+	manpower=486987
+	buildings_max_level_factor=1.000
+	state_category=city
+}

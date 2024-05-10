@@ -1,0 +1,23 @@
+state = {
+	id = 959
+	name = "STATE_959"
+	manpower = 432
+	
+	impassable = yes
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category=wasteland
+
+	history = {
+
+		owner = ARG
+		add_core_of = ARG
+		add_claim_by = BOL
+	}
+
+	provinces = {
+		13796 13791 13310
+	}
+
+	local_supplies = 0.0 
+}

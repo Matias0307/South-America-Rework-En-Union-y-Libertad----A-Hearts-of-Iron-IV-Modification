@@ -1,0 +1,29 @@
+
+state={
+	id=1018
+	name="STATE_1018"
+	resources={
+		rubber=6.000
+	}
+
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = COL
+		victory_points = {
+			14377 2 
+		}
+
+	}
+
+	provinces={
+		2007 12729 12770 14336 14340 14342 14345 14346 14349 14351 14352 14355 14357 14359 14362 14363 14364 14370 14371 14376 14377 
+	}
+	manpower=289832
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,32 @@
+
+state={
+	id=506
+	name="STATE_506"
+	resources={
+		steel=8.000
+	}
+
+	history={
+		owner = CHL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 3
+			arms_factory = 1
+			air_base = 1
+
+		}
+		add_core_of = CHL
+		victory_points = {
+			11000 2 
+		}
+
+	}
+
+	provinces={
+		5171 5192 11000 13301 13302 13770 13773 13783 
+	}
+	manpower=232354
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

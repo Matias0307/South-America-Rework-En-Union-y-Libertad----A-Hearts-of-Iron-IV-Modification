@@ -1,0 +1,37 @@
+
+state={
+	id=499
+	name="STATE_499"
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			air_base = 1
+			10946 = {
+				naval_base = 1
+
+			}
+
+		}
+		add_core_of = BRA
+		add_core_of = DRJ
+		victory_points = {
+			10946 5
+		}
+		victory_points = {
+			8143 3
+		}
+		victory_points = {
+			14136 3 
+		}
+	}
+
+	provinces={
+		4617 5194 8143 8177 8184 8197 8242 10392 10419 10926 10946 11002 12422 13943 13967 13993 14006 14017 14020 14023 14026 14028 14038 14039 14050 14060 14066 14067 14075 14076 14083 14094 14097 14100 14101 14110 14115 14118 14124 14136 14139 14141 14145 14149 14152 14157 14175 
+	}
+	manpower=4233900
+	buildings_max_level_factor=1.000
+	state_category=large_town
+}

@@ -1,0 +1,29 @@
+
+state={
+	id=979
+	name="STATE_979"
+	resources={
+		steel=12.000
+		tungsten=4.000
+	}
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = ARG
+		victory_points = {
+			11001 1 
+		}
+
+	}
+
+	provinces={
+		2224 11001 13788 13806
+	}
+	manpower=123753
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

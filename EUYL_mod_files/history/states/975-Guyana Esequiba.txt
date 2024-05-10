@@ -1,0 +1,19 @@
+state={
+	id=975
+	name="Guyana Esequiba"
+	resources={
+		aluminium=24.000
+	}
+
+	history={
+		owner = ENG
+		add_core_of = VEN
+		add_core_of = GYA
+	}
+	provinces={
+		12716 14379 14397 14422 14437 14467 
+	}
+	manpower=136100
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

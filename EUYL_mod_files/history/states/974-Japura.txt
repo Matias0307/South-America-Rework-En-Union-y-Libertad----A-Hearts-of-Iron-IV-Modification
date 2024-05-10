@@ -1,0 +1,20 @@
+
+state={
+	id=974
+	name="Japura"
+
+	history={
+		owner = BRA
+		add_core_of = BRA
+		add_core_of = ROA
+
+	}
+
+	provinces={
+		13352 14328 14334 14353 
+	}
+	manpower=201305
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

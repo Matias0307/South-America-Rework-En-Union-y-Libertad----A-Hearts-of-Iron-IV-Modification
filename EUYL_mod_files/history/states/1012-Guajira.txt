@@ -1,0 +1,31 @@
+state={
+	id=1012
+	name="STATE_1012"
+	resources={
+		oil=9.000
+	}
+
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 4
+		}
+		add_core_of = COL
+		buildings = {
+			8056 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			2085 5 
+		}
+	}
+	provinces={
+		2085 8056 14527 14533 
+	}
+	manpower=826781
+	buildings_max_level_factor=1.000
+	state_category=town
+}

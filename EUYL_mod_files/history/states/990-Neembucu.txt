@@ -1,0 +1,23 @@
+state={
+	id=990
+	name="Villarica"
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 1
+		}
+		add_core_of = PAR
+		victory_points = {
+			13392 2 
+		}
+	}
+	provinces={
+		2173 13387 13388 13391 13392 13393 13394 
+	}
+	manpower=124512
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=1.000
+}

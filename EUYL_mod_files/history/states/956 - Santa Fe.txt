@@ -1,0 +1,27 @@
+
+state={
+	id=956
+	name="STATE_956"
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+
+		}
+		add_core_of = ARG
+		victory_points = {
+			7500 10 
+		}
+
+	}
+
+	provinces={
+		8208 2172 5163 7500 13000 14608 14609 14614 14617 14625 14629 14635 14636 14643 14649 14655 14658 14664 14669 14672 14674 14675 14682 14683 13363 13370 
+	}
+	manpower=1127475
+	buildings_max_level_factor=1.000
+	state_category=large_city
+}

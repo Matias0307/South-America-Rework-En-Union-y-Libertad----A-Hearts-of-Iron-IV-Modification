@@ -1,0 +1,134 @@
+#####-----> VEN: Alternate AI Behavior <><> <><> <><> <><> <><>
+
+VEN_authoritarian_fascism = {
+	name = "Authoritarian Fascism"
+	desc = "Authoritarian Fascism"
+	
+	enable = {
+		original_tag = VEN
+		OR = {
+			has_country_flag = VEN_AUTHORITARIAN_FASCISM_AI
+			has_game_rule = {
+				rule = VEN_ai_behavior 
+				option = VEN_AUTHORITARIAN_FASCISM
+			}
+		}
+	}
+	
+	focus_factors = {
+		VEN_temporarily_imprison_galavis = 0
+		VEN_allied_allignment = 0
+	}
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+VEN_workers_revolution = {
+	name = "Workers Revolution"
+	desc = "Workers Revolution"
+	
+	enable = {
+		original_tag = VEN
+		OR = {
+			has_country_flag = VEN_WORKERS_REVOLUTION_AI
+			has_game_rule = {
+				rule = VEN_ai_behavior 
+				option = VEN_WORKERS_REVOLUTION
+			}
+		}
+	}
+	
+	focus_factors = {
+		VEN_support_galavis_actions = 0
+		VEN_ley_lara = 0
+		VEN_promise_worker_condition_improvements = 0
+		VEN_establish_the_GetYear_constitution = 0
+	}
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+VEN_escalante_democratic_venezuela = {
+	name = "Escalante's Democratic Venezuela"
+	desc = "Escalante's Democratic Venezuela"
+	
+	enable = {
+		original_tag = VEN
+		OR = {
+			has_country_flag = VEN_ESCALANTES_DEMOCRATIC_VENEZUELA_AI
+			has_game_rule = {
+				rule = VEN_ai_behavior 
+				option = VEN_ESCALANTES_DEMOCRATIC_VENEZUELA
+			}
+		}
+	}
+	
+	focus_factors = {
+		VEN_support_galavis_actions = 0
+		VEN_support_the_workers_cause = 0
+		VEN_support_the_accion_democratica = 0
+		VEN_venezuela_stands_with_no_one = 0
+		VEN_axis_allignment = 0
+		VEN_nationalize_the_oil_fields = 0
+	}
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+VEN_bentancourts_democratic_venezuela = {
+	name = "Bentancourt's Democratic Venezuela"
+	desc = "Bentancourt's Democratic Venezuela"
+	
+	enable = {
+		original_tag = VEN
+		OR = {
+			has_country_flag = VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA_AI
+			has_game_rule = {
+				rule = VEN_ai_behavior 
+				option = VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA
+			}
+		}
+	}
+	
+	focus_factors = {
+		VEN_support_galavis_actions = 0
+		VEN_support_the_workers_cause = 0
+		VEN_allow_free_and_public_elections = 0
+		VEN_venezuela_stands_with_no_one = 0
+		VEN_axis_allignment = 0
+		VEN_nationalize_the_oil_fields = 0
+		VEN_appoint_romulo_gallegos = 0
+	}
+	
+	#Keep small, as it is used as a factor for some things, such as research needs.
+	#Recommended around 1.0. Useful for relation between plans.
+	weight = {
+		factor = 1.0
+		modifier = {
+			factor = 1.0
+		}
+	}
+}
+
+#####-----> End of File <><> <><> <><> <><> <><>

@@ -1,0 +1,286 @@
+﻿capital = 991
+
+oob = "PAR_1936"
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "PAR_1936_air_bba"
+	else = {
+		set_air_oob = "PAR_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+		}
+	}
+}
+for_each_scope_loop = {
+	array = core_states
+
+	set_state_flag = paraguayan_starting_state
+}
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+
+add_ideas = {
+	PAR_worn_out_army_1
+	PAR_stagnated_economy_1
+	PAR_victor_of_the_chaco_war
+	PAR_political_instability
+	PAR_guarani_communications
+	extensive_conscription
+}
+
+688 = { add_dynamic_modifier = { modifier = EUYL_native_population } }
+992 = { add_dynamic_modifier = { modifier = EUYL_native_population } }
+993 = { add_dynamic_modifier = { modifier = EUYL_native_population } }
+
+### EUYL ###
+recruit_character = EUYL_PAR_eusebio_ayala
+recruit_character = EUYL_PAR_rafael_franco
+recruit_character = EUYL_PAR_emilio_melgarejo
+recruit_character = EUYL_PAR_francisco_daza
+recruit_character = EUYL_PAR_manuel_de_la_cruz
+recruit_character = EUYL_PAR_manuel_t_aponte
+recruit_character = EUYL_PAR_hector_velasquez
+recruit_character = EUYL_PAR_jesus_g_arraza
+recruit_character = EUYL_PAR_juan_manuel_frutos
+recruit_character = EUYL_PAR_isaias_baez_allende
+recruit_character = EUYL_PAR_vicente_almonacid
+recruit_character = EUYL_PAR_alfred_stroessner_matiauda
+recruit_character = EUYL_PAR_amancio_pampliega
+recruit_character = EUYL_PAR_hernan_rojas_baltassare
+#recruit_character = EUYL_PAR_higenio_morinigo_martinez
+recruit_character = EUYL_PAR_juan_natalicio_gonzalez
+recruit_character = EUYL_PAR_remigio_bastia_martin
+recruit_character = EUYL_PAR_francisco_esculies
+recruit_character = EUYL_PAR_riccardo_odriosola
+recruit_character = PAR_junta
+recruit_character = PAR_armed_civilians
+recruit_character = PAR_felix_paiva
+recruit_character = PAR_luis_alberto_riart
+recruit_character = PAR_jose_patricio_guggiari
+recruit_character = EUYL_PAR_higinio_morinigo
+recruit_character = PAR_obdulio_barthe
+recruit_character = PAR_juan_belaieff
+recruit_character = PAR_eugenio_a_garay
+recruit_character = PAR_luis_irrazabal
+recruit_character = PAR_oscar_creydt
+recruit_character = EUYL_PAR_emilio_gardel
+recruit_character = EUYL_PAR_juan_stefanich
+recruit_character = PAR_pedro_duarte_ortellando
+recruit_character = EUYL_PAR_felipe_molas_lopez
+recruit_character = PAR_german_soler
+recruit_character = EUYL_PAR_jose_felix_estigarribia
+recruit_character = PAR_ramon_l_parades
+recruit_character = PAR_carlos_pastore
+recruit_character = PAR_juan_sinforiano_bogarin
+recruit_character = PAR_revolutionary_army
+recruit_character = PAR_jose_bozzano
+### EUYL ###
+
+### DLC ###
+IF = {
+	limit = {
+		has_dlc = "Trial of Allegiance"
+	}
+	#recruit_character = PAR_war_industrialist
+	#recruit_character = PAR_captain_of_industry
+	recruit_character = PAR_ivan_belyaev
+	recruit_character = PAR_rafael_franco
+	recruit_character = PAR_higinio_morinigo
+	recruit_character = PAR_manuel_t_aponte
+	recruit_character = PAR_juan_stefanich
+	recruit_character = PAR_juan_manuel_frutos
+	recruit_character = PAR_isaias_baez_allende
+	recruit_character = PAR_alfred_stroessner_matiauda
+	recruit_character = PAR_amancio_pampliega
+	recruit_character = PAR_juan_natalicio_gonzalez
+	recruit_character = PAR_remigio_bastia_martin
+	recruit_character = PAR_francisco_esculies
+	recruit_character = PAR_riccardo_odriosola
+	recruit_character = PAR_Jose_Felix_Estigarribia
+	recruit_character = PAR_Eusebio_Ayala
+	recruit_character = PAR_eduardo_schaerer
+	recruit_character = PAR_arturo_javier_gonzalez
+	recruit_character = PAR_finance_graduate
+	recruit_character = PAR_fortification_armchair_general
+	#recruit_character = PAR_backroom_windbag
+	#recruit_character = PAR_war_profiteer
+	#recruit_character = PAR_quartermaster_general
+	#recruit_character = PAR_financial_expert
+	#recruit_character = PAR_armaments_organizer
+	#recruit_character = PAR_lieutenant_of_industry
+	recruit_character = PAR_aristides_rivas_ortellado
+	recruit_character = PAR_freire_gomez_esteves
+	recruit_character = PAR_ramon_paredes 
+	recruit_character = PAR_mutshuito_villasboa_barboza
+	recruit_character = PAR_emilio_gardel
+	recruit_character = PAR_anselmo_jover_peralta
+	recruit_character = PAR_bernardino_caballero
+	recruit_character = PAR_pedro_duarte_ortellado
+	#recruit_character = PAR_felipe_molas_lopez  TODO: Removed advisor waiting for loc
+	recruit_character = PAR_tomas_salomoni
+	recruit_character = PAR_justo_pastor_benitez
+	recruit_character = PAR_damian_bruyn
+	recruit_character = PAR_higenio_morinigo_martinez
+	ELSE = {
+		recruit_character = PAR_rafael_franco
+		recruit_character = PAR_emilio_melgarejo
+		recruit_character = PAR_francisco_daza
+		recruit_character = PAR_manuel_de_la_cruz
+		recruit_character = PAR_manuel_t_aponte
+		recruit_character = PAR_hector_velasquez
+		recruit_character = PAR_jesus_g_arraza
+		recruit_character = PAR_juan_stefanich
+		recruit_character = PAR_juan_manuel_frutos
+		recruit_character = PAR_isaias_baez_allende
+		recruit_character = PAR_vicente_almonacid
+		recruit_character = PAR_alfred_stroessner_matiauda
+		recruit_character = PAR_amancio_pampliega
+		recruit_character = PAR_hernan_rojas_baltassare
+		recruit_character = PAR_higenio_morinigo_martinez
+		recruit_character = PAR_juan_natalicio_gonzalez
+		recruit_character = PAR_remigio_bastia_martin
+		recruit_character = PAR_francisco_esculies
+		recruit_character = PAR_riccardo_odriosola
+	}
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	infantry_weapons1 = 1
+	gw_artillery = 1
+	early_fighter = 1
+	tech_support = 1
+	tech_trucks = 1
+	basic_train = 1
+}
+set_country_flag = monroe_doctrine
+
+1939.1.1 = {
+
+	add_political_power = 75
+	
+	#generic focuses
+	complete_national_focus = PAR_support_the_revolution
+	complete_national_focus = PAR_establish_labor_reforms
+	complete_national_focus = PAR_solidify_control
+	complete_national_focus = PAR_go_against_franco
+	complete_national_focus = PAR_support_right_wing
+	complete_national_focus = PAR_restore_the_consitution_of_1870
+	complete_national_focus = PAR_dissolve_the_legislature
+	complete_national_focus = PAR_kickstart_economy
+	complete_national_focus = PAR_maintain_agrarian_dominance
+	complete_national_focus = PAR_push_agrarian_reforms
+	complete_national_focus = PAR_subsidize_the_industry
+	complete_national_focus = PAR_open_new_schools
+	complete_national_focus = PAR_purchase_italian_aircraft
+
+	add_ideas = PAR_liberal_remnants_idea
+	PAR_move_70_military = yes 
+	promote_character = EUYL_PAR_jose_felix_estigarribia
+	country_event = {
+		id = paraguay.11
+		days = 35
+		random_days = 20
+	}
+
+	set_variable = { PAR_percent_subsidize = 65 }
+	remove_mission = PAR_the_february_revolution
+	
+	oob = "PAR_1939"
+	set_technology = {
+		CAS1 = 1
+		interwar_artillery = 1
+		interwar_antiair = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		fuel_silos = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_politics = {
+    ruling_party = democratic
+    last_election = "1932.1.1"
+    election_frequency = 48
+    elections_allowed = no
+}
+set_popularities = {
+    democratic = 45
+    communism = 38
+    fascism = 2
+    neutrality = 15
+}
+
+#create_country_leader = {
+#	name = "Eusebio Ayala"
+#	desc = "POLITICS_EUSEBIO_AYALA_DESC"
+#	picture = "gfx/leaders/South America/Portrait_South_America_Generic_2.dds"
+#	expire = "1965.1.1"
+#	ideology = liberalism
+#	traits = {
+#		#
+#	}
+#}
+
+# Rafael Franco technically comes to and loses power slightly after/before the bookmarks, but is the go-to choice for a socialist leader
+# create_country_leader = {
+# 	name = "Rafael Franco"
+# 	desc = "POLITICS_RAFAEL_FRANCO_DESC"
+# 	picture = "GFX_Portrait_paraguay_rafael_franco"
+# 	expire = "1965.1.1"
+# 	ideology = marxism
+# 	traits = {
+# 		#
+# 	}
+# }
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = neutrality
+		last_election = "1938.1.1"
+		election_frequency = 48
+		elections_allowed = no
+	}
+	set_popularities = {
+		democratic = 20
+		communism = 30
+		neutrality = 50
+	}
+
+	create_country_leader = {
+		name = "Higinio Morinigo"
+		desc = "POLITICS_HIGINIO_MORINIGO_DESC"
+		picture = "gfx/leaders/South America/Portrait_South_America_Generic_3.dds"
+		expire = "1965.1.1"
+		ideology = despotism
+		traits = {
+			#
+		}
+	}
+
+
+}

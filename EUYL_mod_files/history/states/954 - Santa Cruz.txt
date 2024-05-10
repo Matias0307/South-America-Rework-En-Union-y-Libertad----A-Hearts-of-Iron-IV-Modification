@@ -1,0 +1,27 @@
+
+state={
+	id=954
+	name="STATE_954"
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 1
+			air_base = 2
+			5173 = {
+				naval_base = 1
+			}
+		}
+		victory_points = {
+			5173 1 
+		}
+
+	}
+
+	provinces={
+		5173 12946 12952 13643 13644 13646 13647 13648 13649 13650 13651 13653 13654 13655 13656 13657 13658 13659 13660 13662 13663 13664 13665 14556 
+	}
+	manpower=54736
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

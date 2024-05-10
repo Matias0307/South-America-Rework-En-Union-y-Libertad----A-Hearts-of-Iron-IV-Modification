@@ -1,0 +1,20 @@
+state={
+	id=1031
+	name="Monagas"
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 4
+		}
+		add_core_of = VEN
+		victory_points = {
+			10767 1 
+		}
+	}
+	provinces={
+		10767 14498 14501 14514 
+	}
+	manpower=110212
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

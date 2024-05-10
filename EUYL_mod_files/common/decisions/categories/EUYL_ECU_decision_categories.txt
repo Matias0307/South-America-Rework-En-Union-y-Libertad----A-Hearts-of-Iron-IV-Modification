@@ -1,0 +1,74 @@
+### ECUADOR ###
+
+ECU_liberal_conservative_conflict = {
+	priority = 300
+	allowed = {
+		original_tag = ECU
+	}
+
+	visible = {
+		has_idea = ECU_aftermath_of_4_day_civil_war_1
+	}
+
+	icon = GFX_ECU_liberal_conservative_war_icon
+
+	picture = GFX_ECU_liberal_conservative_war_pic
+
+	scripted_gui = ECU_liberal_conservative_conflict_ui
+
+	#visible_when_empty = yes
+}
+
+ECU_economic_reignition_cat = {
+	priority = 150
+	allowed = {
+		original_tag = ECU 
+	}
+	
+	icon = GFX_ECU_economic_reignition_icon
+
+	on_map_area = {
+		target_array = controlled_states
+		target_trigger = {
+			FROM = {
+                has_dynamic_modifier = { modifier = ECU_rural_state }
+			}
+		}
+		name = ECU_rural_provinces_tt
+		zoom = 150
+	}
+
+	visible_when_empty = yes
+}
+
+EUYL_peru_ecuador_rising_tensions = {
+	priority = 450
+	allowed = {
+		OR = {
+			original_tag = ECU 
+			original_tag = PRU 
+		}
+	}
+
+	visible = {
+		ECU = { exists = yes }
+		PRU = { 
+			exists = yes 
+			NOT = {
+				has_country_flag = is_PBC
+			}
+		}
+		NOT = {
+			has_global_flag = EUYL_peru_ecuador_war_concluded_flag
+		}
+	}
+
+	icon = GFX_EUYL_ecuador_peru_rising_tensions_icon
+
+	picture = GFX_EUYL_ecuador_peru_rising_tensions_pic
+
+	scripted_gui = EUYL_peru_ecuador_gui
+
+	visible_when_empty = yes
+}
+

@@ -1,0 +1,27 @@
+
+state={
+	id=688
+	name="STATE_688"
+	resources={
+		tungsten=3.000
+		steel=2.000
+	}
+
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 2
+
+		}
+		add_core_of = PAR
+		add_core_of = BOL
+	}
+
+	provinces={
+		2209 10973 13515 13521 13528 13529 13533 13542 13546 13554 13562 13563 13565     
+	}
+	manpower=45900
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,27 @@
+
+state={
+	id=1013
+	name="STATE_1013"
+	resources={
+		chromium=4.000
+	}
+
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		add_core_of = COL
+		victory_points = {
+			2023 10 
+		}
+	}
+	provinces={
+		2023 4969 10494 10790 12872 14403 14418 14419 14429 14441 14442 14445 14451 14456 14465 14479 
+	}
+	manpower=931821
+	buildings_max_level_factor=1.000
+	state_category=town
+}

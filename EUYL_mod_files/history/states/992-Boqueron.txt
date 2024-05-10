@@ -1,0 +1,32 @@
+state={
+	id=992
+	name="Boqueron"
+	resources={
+		tungsten=6.000
+	}
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		add_core_of = PAR
+		add_core_of = BOL
+
+		victory_points = {
+			13567 2 
+		}
+
+		victory_points = {
+			13564 1 #Mariscal Estigarribia
+		}
+	}
+
+	provinces={
+		2195 8203 13540 13545 13549 13551 13556 13558 13561 13564 13566 13567 13572 13573 
+	}
+	manpower=74516
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

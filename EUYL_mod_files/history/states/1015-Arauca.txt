@@ -1,0 +1,21 @@
+
+state={
+	id=1015
+	name="STATE_1015"
+	history={
+		owner = COL
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = COL
+		victory_points = {
+			1887 1 
+		}
+	}
+	provinces={
+		1887 14430 14440 14443 14448 14454 14458 
+	}
+	manpower=253049
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

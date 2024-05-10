@@ -1,0 +1,24 @@
+
+state={
+	id=1032
+	name="Los Llanos"
+	resources = {
+		oil = 4.000
+		steel = 7.000
+	}
+	history={
+		owner = VEN
+		add_core_of = VEN
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			arms_factory = 1
+		}
+	}
+	provinces={
+		4942 8024 14484 14488 14497 14500 14506 14508 
+	}
+	manpower=204120
+	buildings_max_level_factor=1.000
+	state_category=town
+}

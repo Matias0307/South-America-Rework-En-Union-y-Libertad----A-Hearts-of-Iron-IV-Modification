@@ -1,0 +1,32 @@
+
+state={
+	id=503
+	name="STATE_503"
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+			10405 = {
+				naval_base = 3
+
+			}
+
+		}
+		add_core_of = BRA
+		add_core_of = SUL
+		victory_points = {
+			10405 3 
+		}
+
+	}
+
+	provinces={
+		1529 4548 10405 13461 13465 13467 13468 13472 13473 13476 13478 13479 13480 13482 13485 13486 13491 
+	}
+	manpower=1922700
+	buildings_max_level_factor=1.000
+	state_category=town
+}

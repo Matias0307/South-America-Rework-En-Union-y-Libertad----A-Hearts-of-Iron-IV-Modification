@@ -1,0 +1,30 @@
+
+state={
+	id=945
+	name="STATE_945"
+	resources={
+		steel=2.000
+	}
+
+	history={
+		owner = URG
+		add_core_of = URG
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 1
+
+		}
+		victory_points = {
+			14594 2 
+		}
+	}
+
+	provinces={
+		1641 1654 10347 12481 14566 14567 14568 14577 14580 14581 14584 14585 14586 14589 14591 14594 
+	}
+	manpower=500230
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

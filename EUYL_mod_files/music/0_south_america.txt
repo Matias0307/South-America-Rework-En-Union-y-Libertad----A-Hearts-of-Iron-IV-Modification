@@ -1,0 +1,297 @@
+### South American Military Songs ###
+
+music_station = "radio_sudamerica"
+
+### Argentina
+
+music = {
+	song = "Marcha de San Lorenzo con letra"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marcha Las Malvinas (con letra)"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marcha Militar Alte Kameraden - Ejército Argentino."
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas Militares Argentinas - Avenida de las Camelias"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Chile
+
+music = {
+	song = "Himno Recuerdos Militares (Versión antigua)"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Himno Adiós al Séptimo de Línea (Clásico)"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Canto - Lili Marleen (Versión Armada)"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Canto - Libre"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Uruguay
+
+music = {
+	song = "Marcha al Ejército Nacional"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas militares uruguayas - Diana Gral. León de Palleja"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marcha 25 de Agosto"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas militares uruguayas - Mi Bandera"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Peru
+
+music = {
+	song = "El Condor Pasa - Marcha Militar"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Los Peruanos Pasan - Marcha Militar"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Tacna - Marcha Militar"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Tupac Amaru - Marcha Militar (Banda Republicana)"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Bolivia
+
+music = {
+	song = "Virgen del sol - Marcha Boliviana"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas Militares Bolivianas - Fuerzas de Paz"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas Militares Bolivianas - Marcha de Parada"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Marchas Militares Bolivianas - Marcha Talacocha"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Colombia 
+
+music = {
+	song = "Adiós al Séptimo de Línea"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Honores a Popayán"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Salud Adorada Bandera"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Canción de Boyacá"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+### Brazil 
+
+music = {
+	song = "Glórias ao Brasil"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Brasil Brasileiro"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Pra Que Mentir"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Fibra de Herói"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}

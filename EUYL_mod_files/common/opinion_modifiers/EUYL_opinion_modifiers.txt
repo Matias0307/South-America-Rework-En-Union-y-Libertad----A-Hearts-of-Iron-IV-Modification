@@ -1,0 +1,229 @@
+opinion_modifiers = {
+	NAP = {
+		value = 50
+	}
+
+	communist_menace = {
+		value = -75
+	}
+	
+	pan_american_highway = {
+		value = 50
+		trade = yes
+	}
+	
+	pan_american_highway_2 = {
+		value = 50
+	}	
+	
+	spanish_argentine_economic_allience = {
+		value = 65
+	}
+	
+	placated_west = {
+		value = 30
+	}
+	
+	sided_with_the_americans = {
+		value = 50
+	}
+	
+	ARG_against_us = {
+		value = -40
+	}
+	
+	roca_runciman_treaty = {
+		value = 75
+		trade = yes
+	}
+	continued_roca_runciman_treaty = {
+		value = 35
+	}
+	CHL_anarchist_state_in_proximity = {
+		value = -100
+	}
+	CHL_strengthened_ties = {
+		value = 75
+	}
+	CHL_strengthened_ties_economy = {
+		value = 75
+		trade = yes
+	}
+	
+	URG_contacted_us = {
+		value = 25
+	}
+	
+	URG_roosevelt_visit = {
+		value = 50 
+	}
+	
+	URG_secured_alliance = {
+		value = 75
+	}
+	#Peru/Ecuador Update
+	our_rival = {
+		value = -25
+	}		
+	
+	our_enemy = {
+		value = -75
+		min_trust = -100
+		max_trust = -100		
+	}	
+
+	strengthened_ties = {
+		value = 50
+	}	
+
+	PRU_free_trade_opi = {
+		value = 100
+		trade = yes
+	}	
+	
+	PRU_free_trade_opinion = {
+		value = 25
+	}
+
+	PRU_free_trade_opinion_deny = {
+		value = -15
+	}	
+	
+	BOL_improved_relations = {
+		value = 25
+	}
+
+	PRU_inca_powerful = {
+		value = -100
+	}
+
+	BOL_chose_path_of_diplomacy = {
+		value = 15
+	}
+
+	BOL_chose_path_of_force = {
+		value = -15
+	}
+	
+	COL_grc_rejected = {
+		value = -40
+	}
+
+	COL_same_origin = {
+		value = 20
+	}
+
+	COL_german_colombian_diplomacy = {
+		value = 25
+	}
+
+	COL_oil_concession = {
+		value = 75
+	}
+	
+	EUYL_defense_pact_call_refused = {
+		value = -75
+	}
+	
+	COL_benavides_contacted = {
+		value = -75
+	}
+
+	invested_in_country = {
+		value = 15
+	}
+
+	NOT_invested_in_country = {
+		value = -15
+	}
+
+	BRA_brazilian_civil_war_commitment = {
+		value = 35
+	}
+
+	BRA_cotton_trade = {
+		value = 25 
+	}
+
+	BRA_resource_rights = {
+		value = 30
+	}
+
+	ARG_roca_runciman_other_country = {
+		value = -40
+		trade =  yes 
+	}
+
+	ARG_roca_runciman_england = {
+		value = 100
+		trade = yes 
+	}
+
+	ARG_poses_global_threat = {
+		value = -100
+	}
+
+	PAR_amends = {
+		value = 20
+	}
+
+	PAR_dangerous_ambitions = {
+		value = -50
+	}
+
+	VEN_poses_serious_threat = {
+		value = -75
+	}
+
+	VEN_poses_threat = {
+		value = -35
+	}
+
+	VEN_stern_warning_issued = {
+		value = -25
+	}
+
+	VEN_influencing_us = {
+		value = 15
+	}
+
+	VEN_slight_allignment_with_us = {
+		value = 25
+	}
+
+	VEN_full_allignment_with_us = {
+		value = 50
+	}
+
+	VEN_imported_weaponry = {
+		value = 25
+	}
+
+	VEN_military_cooperation = {
+		value = 35
+	}
+
+	VEN_frontline_treaty_signed = {
+		value = 25
+	}
+
+	VEN_sunk_monagas_ship = {
+		value = -50
+	}
+
+	VEN_broken_ties = {
+		value = -100
+	}
+
+	VEN_broke_ties_with_axis = {
+		value = 20
+	}
+
+	VEN_toured_our_country = {
+		value = 15
+	}
+
+	VEN_opressed_germans_in_their_country = {
+		value = -25
+	}
+}

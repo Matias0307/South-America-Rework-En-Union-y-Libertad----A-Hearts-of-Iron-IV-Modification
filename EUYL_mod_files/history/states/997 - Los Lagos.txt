@@ -1,0 +1,33 @@
+
+state={
+	id=997
+	name="STATE_997"
+
+	history={
+		owner = CHL
+		add_core_of = CHL
+		buildings = {
+			infrastructure = 2
+			5118 = {
+				naval_base = 2
+
+			}
+
+		}
+		victory_points = {
+			12954 10 
+		}
+		victory_points = {
+			13736 2 
+		}
+
+	}
+
+	provinces={
+		5118 5169 12954 13297 13687 13734 13735 13736 
+	}
+	manpower=48238
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

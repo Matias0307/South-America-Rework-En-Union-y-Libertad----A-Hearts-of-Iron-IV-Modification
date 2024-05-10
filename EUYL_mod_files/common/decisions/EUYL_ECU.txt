@@ -1,0 +1,1708 @@
+ECU_liberal_conservative_conflict = {
+	debug_ECU_lower_conservative_opinion = {
+		visible = {
+			is_debug = yes 
+		}
+
+		complete_effect = {
+			ECU_worsen_conservative_opinion = yes
+		}
+	}
+	debug_ECU_lower_liberal_opinion = {
+		visible = {
+			is_debug = yes 
+		}
+
+		complete_effect = {
+			ECU_worsen_liberal_opinion = yes 
+		}
+	}
+
+	debug_ECU_improve_conservative_opinion = {
+		visible = {
+			is_debug = yes 
+		}
+
+		complete_effect = {
+			ECU_improve_conservative_opinion = yes
+		}
+	}
+	debug_ECU_improve_liberal_opinion = {
+		visible = {
+			is_debug = yes 
+		}
+
+		complete_effect = {
+			ECU_improve_liberal_opinion = yes
+		}
+	}
+
+	ECU_quell_the_conservatives = {
+		icon = {
+			key = GFX_ECU_conservative_icon_0
+			trigger = {
+                check_variable = {
+					ECU_conservative_quelled_var = 0
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_conservative_icon_1
+			trigger = {
+                check_variable = {
+					ECU_conservative_quelled_var = 1
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_conservative_icon_2
+			trigger = {
+                check_variable = {
+					ECU_conservative_quelled_var = 2
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_conservative_icon_3
+			trigger = {
+                check_variable = {
+					ECU_conservative_quelled_var = 3
+				}
+			}
+		}
+
+		cost = ECU_conservative_quell_var_cost
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1037
+			}
+		}
+
+		on_map_mode = map_only
+
+		visible = {
+			has_country_flag = ECU_liberals_and_conservatives_mad_flag
+			has_idea = ECU_aftermath_of_4_day_civil_war_1
+		}
+
+		available = {
+			has_completed_focus = ECU_quell_the_parties
+			check_variable = {
+				ECU_conservative_quelled_var < 3
+			}
+		}
+
+		days_remove = 25
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				ECU_conservative_quelled_var = 1
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						ECU_conservative_quelled_var = 3
+					}
+					check_variable = {
+						ECU_liberal_quelled_var = 3
+					}
+				}
+				remove_ideas = ECU_aftermath_of_4_day_civil_war_1
+			}
+			if = {
+				limit = {
+					has_idea = ECU_conservative_agitation_2
+				}
+				swap_ideas = {
+					remove_idea = ECU_conservative_agitation_2
+					add_idea = ECU_conservative_agitation_1
+				}
+			}
+			else_if = {
+				limit = { has_idea = ECU_conservative_agitation_1 }
+				remove_ideas = ECU_conservative_agitation_1
+			}
+			else = {
+				add_political_power = 20
+			}
+			custom_effect_tooltip = EUYL_decision_cost_increase_15_tt
+			add_to_variable = {
+				ECU_conservative_quell_var_cost = 15
+			}
+		}
+	}
+
+	ECU_quell_the_liberals = {
+		icon = {
+			key = GFX_ECU_liberal_icon_0
+			trigger = {
+                check_variable = {
+					ECU_liberal_quelled_var = 0
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_liberal_icon_1
+			trigger = {
+                check_variable = {
+					ECU_liberal_quelled_var = 1
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_liberal_icon_2
+			trigger = {
+                check_variable = {
+					ECU_liberal_quelled_var = 2
+				}
+			}
+		}
+        icon = {
+			key = GFX_ECU_liberal_icon_3
+			trigger = {
+                check_variable = {
+					ECU_liberal_quelled_var = 3
+				}
+			}
+		}
+
+		cost = ECU_liberal_quell_var_cost
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 972
+			}
+		}
+
+		on_map_mode = map_only
+
+		visible = {
+			has_country_flag = ECU_liberals_and_conservatives_mad_flag
+			has_idea = ECU_aftermath_of_4_day_civil_war_1
+		}
+
+		available = {
+			has_completed_focus = ECU_quell_the_parties
+			check_variable = {
+				ECU_liberal_quelled_var < 3
+			}
+		}
+
+		days_remove = 25
+
+		modifier = {
+			political_power_cost = 0.1
+		}
+
+		complete_effect = {
+			add_to_variable = {
+				ECU_liberal_quelled_var = 1
+			}
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					check_variable = {
+						ECU_conservative_quelled_var = 3
+					}
+					check_variable = {
+						ECU_liberal_quelled_var = 3
+					}
+				}
+				remove_ideas = ECU_aftermath_of_4_day_civil_war_1
+			}
+			if = {
+				limit = {
+					has_idea = ECU_liberal_agitation_2
+				}
+				swap_ideas = {
+					remove_idea = ECU_liberal_agitation_2
+					add_idea = ECU_liberal_agitation_1
+				}
+			}
+			else_if = {
+				limit = { has_idea = ECU_liberal_agitation_1 }
+				remove_ideas = ECU_liberal_agitation_1
+			}
+			else = {
+				add_political_power = 20
+			}
+			custom_effect_tooltip = EUYL_decision_cost_increase_15_tt
+			add_to_variable = {
+				ECU_liberal_quell_var_cost = 15
+			}
+		}
+	}
+
+	ECU_gallos_looming_coup = {
+		priority = 250
+		icon = generic_army_support
+
+		activation = {
+			always = no 
+		}
+
+		days_mission_timeout = 635
+
+		is_good = no 
+
+		available = {
+			#has_completed_focus = ECU_imprison_gallo
+			always = no
+		}
+
+		cancel_trigger = {
+			NOT = {
+				has_character = ECU_alberto_enriquez_gallo
+			}
+		}
+
+		complete_effect = {
+			add_stability = 0.02
+			ECU_worsen_liberal_opinion = yes 
+		}
+
+		timeout_effect = {
+			country_event = ecu.1
+		}
+	}
+
+	ECU_impending_conservative_insurrection = {
+		priority = 200
+		icon = GFX_ECU_conservative_insurrection_icon
+
+		activation = {
+			OR = {
+				has_idea = ECU_conservative_agitation_3
+				check_variable = {
+					ECU_conservative_opinion = -3
+				}
+				AND = {
+					check_variable = {
+						ECU_conservative_opinion < 0
+					}
+					check_variable = {
+						ECU_liberal_opinion = 3
+					}
+				}
+			}
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = ECU_conservative_agitation_3
+			}
+			custom_trigger_tooltip = {
+				tooltip = ECU_not_actively_antagonizing_conservatives_tt
+				check_variable = {
+					ECU_conservative_opinion > -3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = ECU_not_actively_cooperating_with_liberals_tt
+				check_variable = {
+					ECU_liberal_opinion < 3
+				}
+			}
+		}
+
+		is_good = no 
+
+		days_mission_timeout = 120
+
+		cancel_trigger = {
+			has_civil_war = yes 
+		}
+
+		complete_effect = {
+			add_stability = 0.01
+		}
+
+		timeout_effect = {
+			ECU_start_conservative_civil_war_against_player = yes
+		}
+	}
+
+	ECU_impending_liberal_insurrection = {
+		priority = 200
+		icon = GFX_ECU_liberal_insurrection_icon
+
+		activation = {
+			OR = {
+				has_idea = ECU_liberal_agitation_3
+				check_variable = {
+					ECU_liberal_opinion = -3
+				}
+			}
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+
+		available = {
+			NOT = {
+				has_idea = ECU_liberal_agitation_3
+			}
+			custom_trigger_tooltip = {
+				tooltip = ECU_not_actively_antagonizing_liberals_tt
+				check_variable = {
+					ECU_liberal_opinion > -3
+				}
+			}
+		}
+
+		is_good = no 
+
+		days_mission_timeout = 120
+
+		cancel_trigger = {
+			has_civil_war = yes 
+		}
+
+		complete_effect = {
+			add_stability = 0.01
+		}
+
+		timeout_effect = {
+			ECU_start_liberal_civil_war_against_player = yes
+		}
+	}
+
+	ECU_appease_the_conservatives = {
+		icon = generic_political_address
+
+		cost = 50
+
+		visible = {
+			ECU_has_active_conservative_agitation = yes 
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+
+		complete_effect = {
+			ECU_remove_conservative_agitation = yes
+			ECU_improve_conservative_opinion = yes
+		}
+	}
+
+	ECU_appease_the_liberals = {
+		icon = generic_political_address
+
+		cost = 50
+
+		visible = {
+			ECU_has_active_liberal_agitation = yes
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+
+		complete_effect = {
+			ECU_remove_liberal_agitation = yes 
+			ECU_improve_liberal_opinion = yes
+		}
+	}
+
+	ECU_cooperate_with_the_liberals = {
+		icon = hol_exchange_intelligence_data
+
+		cost = ECU_cooperate_liberal_cost
+
+		visible = { ## will eventually add more conditions here
+			has_civil_war = no 
+			NOT = {
+				OR = {
+					has_government = communism
+					has_government = fascism
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECU_NOT_has_active_liberal_agitation_tt
+				NOT = {
+					OR = {
+						has_idea = ECU_liberal_agitation_1
+						has_idea = ECU_liberal_agitation_2
+						has_idea = ECU_liberal_agitation_3
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = ECU_meddling_in_politics_flag
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = ECU_meddling_in_politics_flag
+		}
+
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		remove_effect = {
+			clr_country_flag = ECU_meddling_in_politics_flag
+			ECU_improve_liberal_opinion = yes
+		}
+	}
+
+	ECU_cooperate_with_the_conservatives = {
+		icon = hol_exchange_intelligence_data
+
+		cost = ECU_cooperate_conservative_cost
+
+		visible = { ## will eventually add more conditions here
+			has_civil_war = no 
+			NOT = {
+				OR = {
+					has_government = fascism
+					has_government = communism
+				}
+			}
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECU_NOT_has_active_conservative_agitation_tt
+				NOT = {
+					OR = {
+						has_idea = ECU_conservative_agitation_1
+						has_idea = ECU_conservative_agitation_2
+						has_idea = ECU_conservative_agitation_3
+					}
+				}
+			}
+			NOT = {
+				has_country_flag = ECU_meddling_in_politics_flag
+			}
+		}
+
+		complete_effect = {
+			set_country_flag = ECU_meddling_in_politics_flag
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = ECU_cooperated_with_conservatives_flag
+					}
+				}
+				set_country_flag = ECU_cooperated_with_conservatives_flag
+			}
+		}
+
+		days_remove = 30
+
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		remove_effect = {
+			clr_country_flag = ECU_meddling_in_politics_flag
+			ECU_improve_conservative_opinion = yes
+		}
+	}
+
+	ECU_stabilize_the_nation = {
+		priority = 50
+		visible = {
+			has_stability < 0.4
+			has_country_flag = ECU_assembly_recently_deposed_leader_flag
+		}
+
+		available = {
+			has_country_flag = ECU_assembly_recently_deposed_leader_flag
+		}
+
+		cost = 20
+
+		days_remove = 40
+
+		remove_effect = {
+			add_stability = 0.05
+		}
+	}
+
+	ECU_summon_up_liberal_support_in_FROM = {
+		icon = eng_propaganda_campaigns
+
+		visible = { ## also add the completion of the convince the liberals focus
+			has_active_mission = ECU_gallos_looming_coup
+			has_completed_focus = ECU_convince_our_liberal_supporters
+		}
+
+		state_target = yes 
+
+		target_array = controlled_states
+
+		on_map_mode = map_only
+
+		target_trigger = {
+			FROM = {
+				is_fully_controlled_by = ROOT 
+				is_island_state = no 
+			}
+		}
+
+		cost = 20
+
+		days_remove = 40
+
+		fire_only_once = yes
+
+		modifier = {
+			political_power_factor = -0.15
+		}
+
+		remove_effect = {
+			custom_effect_tooltip = ECU_depending_on_current_liberal_support_following_occur_tt
+			if = {
+				limit = {
+					check_variable = {
+						ECU_liberal_opinion > 2
+					}
+				}
+				add_days_mission_timeout = {
+					mission = ECU_gallos_looming_coup
+					days = -50
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.03
+				}
+				add_stability = 0.02
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						ECU_liberal_opinion > 1
+					}
+				}
+				add_days_mission_timeout = {
+					mission = ECU_gallos_looming_coup
+					days = -35
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.02
+				}
+				add_stability = 0.01
+			}
+			else = {
+				add_days_mission_timeout = {
+					mission = ECU_gallos_looming_coup
+					days = -20
+				}
+			}
+		}
+	}
+
+	ECU_radicalize_the_moderates = {
+		icon = generic_political_address
+
+		visible = {
+			has_completed_focus = ECU_leftist_agitation
+			NOT = {
+				has_government = communism
+			}
+		}
+
+		available = {
+			has_civil_war = no 
+		}
+
+		cost = 25
+
+		days_remove = 50
+
+		modifier = {
+			communism_drift = 0.1
+		}
+
+		remove_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.05
+			}
+		}
+	}
+}
+
+ECU_economic_reignition_cat = {
+	ECU_inflationary_crisis_takes_toll_on_economy = {
+		icon = generic_scorched_earth
+
+		activation = {
+			has_idea = ECU_active_inflationary_crisis
+		}
+
+		days_mission_timeout = 365
+
+		is_good = no 
+
+		available = {
+			NOT = {
+				has_idea = ECU_active_inflationary_crisis
+			}
+		}
+
+		timeout_effect = {
+			add_stability = -0.02
+			if = {
+				limit = {
+					num_of_civilian_factories > 2
+				}
+				random = {
+					chance = 25
+					random_owned_controlled_state = {
+						limit = {
+							industrial_complex > 0
+						}
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+			}
+		}
+	}
+
+	ECU_promote_development_in_FROM = {
+		icon = generic_construction
+
+		state_target = yes 
+
+		target_array = controlled_states
+
+		target_trigger = {
+			FROM = {
+				has_dynamic_modifier = {
+					modifier = ECU_rural_state
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		visible = {
+			has_completed_focus = ECU_nationwide_development
+			FROM = {
+				is_controlled_by = ROOT 
+			}
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = ECU_recently_promoted_development_flag
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+            base = 190
+        }
+
+		complete_effect = {
+			set_country_flag = {
+				flag = ECU_recently_promoted_development_flag
+				days = 90
+				value = 1
+			}
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = ECU_rural_state
+				}
+			}
+		}
+	}
+
+	ECU_push_forth_an_industrial_initiative_in_FROM = {
+		icon = generic_factory
+
+		state_target = yes 
+
+		target_array = controlled_states
+
+		target_trigger = {
+			FROM = {
+				is_owned_by = ROOT 
+				is_core_of = ROOT 
+				is_fully_controlled_by = ROOT 
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		visible = {
+			has_completed_focus = ECU_civilian_expansion
+		}
+
+		available = {
+			has_civil_war = no 
+		}
+
+		cost = 50
+
+		fire_only_once = yes 
+
+		complete_effect = {
+			FROM = {
+				add_dynamic_modifier = {
+					modifier = VEN_industrial_initiative
+					days = 900
+				}
+			}
+		}
+	}
+}
+
+EUYL_peru_ecuador_rising_tensions = {
+	EUYL_conflict_escalation = {
+		priority = 100
+		icon = generic_ignite_civil_war
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			OR = {
+				has_war_with = ECU 
+				has_war_with = PRU
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				ECU = { exists = no }
+				PRU = { 
+					exists = no 
+					has_country_flag = is_PBC
+				}
+			}
+		}
+
+		days_mission_timeout = 400
+
+		complete_effect = { ## adds the dynamic modifiers n stuff lol | will be event
+			add_political_power = 1 # temp placeholder
+			set_global_flag = EUYL_peru_ecuador_war_triggered_flag
+		}
+
+		timeout_effect = {
+			custom_effect_tooltip = EUYL_tension_will_increase_tt
+			add_to_variable = {
+				EUYL_peru_ecuador_threat_level = 1
+			}
+			clamp_variable = {
+				var = EUYL_peru_ecuador_threat_level
+				min = 0
+				max = 5
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						check_variable = {
+							EUYL_peru_ecuador_threat_level < 5
+						}
+					}
+					activate_mission = EUYL_conflict_escalation
+				}
+				if = {
+					limit = {
+						original_tag = PRU 
+						check_variable = {
+							EUYL_peru_ecuador_threat_level = 5
+						}
+					}
+					country_event = peruecuador.12
+				}
+			} 
+		}
+	}
+
+	EUYL_days_until_peace_talks_commence = {
+		priority = 200
+		icon = eng_puppet_usa
+
+		activation = {
+			always = no
+		}
+
+		available = {
+			always = no
+		}
+
+		cancel_trigger = {
+			OR = {
+				PRU = {
+					NOT = {
+						has_war_with = ECU
+					}
+				}
+				exists = no 
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 80
+
+		timeout_effect = {
+			country_event = {
+				id = peruecuador.4
+				hours = 2
+				random_hours = 24
+			}
+		}
+	}
+
+	PRU_instigate_a_small_skirmish_in_FROM = {
+		icon = generic_military 
+
+		fire_only_once = yes 
+
+		visible = {
+			## TODO: INCLUDE PERU'S FOCUS HERE
+			#has_completed_focus = ECU_perform_recon_flights
+			NOT = {
+				OR = {
+					has_global_flag = EUYL_peru_ecuador_war_triggered_flag
+					has_global_flag = EUYL_peru_ecuador_war_concluded_flag
+				}
+			}
+		}
+
+		available = {
+			NOT = {
+				has_war_with = ECU 
+			}
+			command_power > 14
+			custom_trigger_tooltip = {
+				tooltip = PRU_at_least_one_division_in_neighbor_state_tt
+				FROM = { ## Ecuadorian state
+					any_neighbor_state = { ## Checking a peruvian state
+						is_controlled_by = PRU
+						ROOT = {
+							divisions_in_state = {
+								size > 0
+								state = PREV
+							}
+						}
+					}
+				}
+			}
+			ECU = {
+				divisions_in_state = {
+					size > 0
+					state = FROM
+				}
+			}
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = PRU_preparing_skirmish_flag
+				}
+			}
+		}
+
+		custom_cost_text = CHL_cost_15_cp
+		custom_cost_trigger = {
+			command_power > 14
+		}
+
+		state_target = yes 
+
+		targets = { 
+			1037 1020 1036
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		cancel_trigger = {
+			has_war_with = ECU
+		}
+
+		cancel_effect = {
+			clr_country_flag = PRU_preparing_skirmish_flag
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -15
+			}
+			set_country_flag = PRU_preparing_skirmish_flag
+		}
+
+		days_remove = 25
+
+		modifier = {
+			weekly_manpower = -150
+		}
+
+		remove_effect = {
+			clr_country_flag = PRU_preparing_skirmish_flag
+			add_days_mission_timeout = {
+				mission = EUYL_conflict_escalation
+				days = -60
+			}
+			if = {
+				limit = {
+					strength_ratio = {
+						tag = ECU 
+						ratio > 1
+					}
+				}
+				random_list = {
+					70 = {
+						country_event = peruecuador.13
+						ECU = { country_event = peruecuador.14 }
+					}
+					30 = {
+						country_event = peruecuador.14
+						ECU = { country_event = peruecuador.13 }
+					}
+				}
+			}
+			else = {
+				random_list = {
+					50 = {
+						country_event = peruecuador.13
+						ECU = { country_event = peruecuador.14 }
+					}
+					50 = {
+						country_event = peruecuador.14
+						ECU = { country_event = peruecuador.13 }
+					}
+				}
+			}
+		}
+	}
+
+	ECU_launch_a_reconnaissance_mission_in_FROM = {
+		icon = generic_air 
+
+		fire_only_once = yes 
+
+		visible = {
+			has_completed_focus = ECU_perform_recon_flights
+			NOT = {
+				OR = {
+					has_global_flag = EUYL_peru_ecuador_war_triggered_flag
+					has_global_flag = EUYL_peru_ecuador_war_concluded_flag
+				}
+			}
+		}
+
+		available = {
+			NOT = {
+				has_war_with = PRU 
+			}
+			command_power > 9
+			has_deployed_air_force_size = {
+				size > 9
+			}
+			hidden_trigger = {
+				NOT = {
+					has_country_flag = ECU_performing_recon_flight_flag
+				}
+			}
+		}
+
+		custom_cost_text = CHL_cost_10_cp
+		custom_cost_trigger = {
+			command_power > 9
+		}
+
+		days_remove = 20
+
+		state_target = yes 
+
+		targets = {
+			1005 490 1022
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -10
+			}
+			set_country_flag = ECU_performing_recon_flight_flag
+		}
+
+		cancel_trigger = {
+			has_war_with = PRU
+		}
+
+		cancel_effect = {
+			clr_country_flag = ECU_performing_recon_flight_flag
+		}
+
+		remove_effect = {
+			random_list = {
+				15 = {
+					custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+					add_to_variable = {
+						EUYL_peru_ecuador_attack_bonus = 0.05
+						tooltip = army_attack_factor_tt
+					}
+					add_to_variable = {
+						EUYL_peru_ecuador_defense_bonus = 0.05
+						tooltip = army_defence_factor_tt
+					}
+				}
+				35 = {
+					custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+					add_to_variable = {
+						EUYL_peru_ecuador_attack_bonus = 0.03
+						tooltip = army_attack_factor_tt
+					}
+					add_to_variable = {
+						EUYL_peru_ecuador_defense_bonus = 0.03
+						tooltip = army_defence_factor_tt
+					}
+				}
+				50 = {
+					custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+					add_to_variable = {
+						EUYL_peru_ecuador_attack_bonus = 0.02
+						tooltip = army_attack_factor_tt
+					}
+					add_to_variable = {
+						EUYL_peru_ecuador_defense_bonus = 0.02
+						tooltip = army_defence_factor_tt
+					}
+				}
+				25 = {
+
+				}
+			}
+			clr_country_flag = ECU_performing_recon_flight_flag
+			add_days_mission_timeout = {
+				mission = EUYL_conflict_escalation
+				days = -20
+			}
+		}
+	}
+
+	ECU_prepare_defensive_fortifications_in_FROM = {
+		icon = generic_fortification
+
+		fire_only_once = yes 
+
+		visible = {
+			has_completed_focus = ECU_commence_defensive_preperations
+			NOT = {
+				OR = {
+					has_global_flag = EUYL_peru_ecuador_war_triggered_flag
+					has_global_flag = EUYL_peru_ecuador_war_concluded_flag
+				}
+			}
+		}
+
+		available = {
+			NOT = {
+				has_war_with = PRU 
+			}
+			num_of_available_civilian_factories > 0
+		}
+
+		cost = 15
+
+		state_target = yes 
+
+		targets = { 
+			1037 1020 1036
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		cancel_trigger = {
+			has_war_with = PRU
+		}
+
+		days_remove = 30
+
+		modifier = {
+			civilian_factory_use = 1
+			political_power_factor = -0.05
+		}
+
+		remove_effect = {
+			FROM = {
+				add_building_construction = {
+					type = bunker
+					level = 1
+					instant_build = yes
+					province = {
+						all_provinces = yes
+						limit_to_border = yes
+					}
+				}
+			}
+		}
+	}
+
+	ECU_hold_western_pastaza = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1036 = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 35
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1036
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = yes 
+
+		complete_effect = {
+			country_event = peruecuador.11
+			activate_mission = ECU_hold_guayaquil
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.10
+			activate_mission = ECU_capture_pastaza
+		}
+	}
+
+	ECU_hold_guayaquil = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1037 = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 65
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1037
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = yes 
+
+		complete_effect = {
+			country_event = peruecuador.11
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.10
+			if = {
+				limit = {
+					1036 = {
+						NOT = {
+							is_controlled_by = ROOT
+						}
+					}
+				}
+				activate_mission = ECU_recapture_western_pastaza
+			}
+			else = {
+				activate_mission = ECU_capture_piura
+			}
+		}
+	}
+
+	ECU_recapture_western_pastaza = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1036 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 40
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1036
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+			activate_mission = ECU_capture_pastaza
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	ECU_capture_pastaza = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			490 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 45
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 490
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+			if = {
+				limit = {
+					1005 = {
+						NOT = {
+							is_controlled_by = ROOT
+						}
+					}
+				}
+				activate_mission = ECU_capture_piura
+			}
+			else = {
+				activate_mission = ECU_capture_trujillo_and_loreto
+			}
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+			if = {
+				limit = {
+					has_country_flag = EUYL_war_triggered_early_flag
+				}
+				activate_mission = ECU_hold_western_pastaza
+			}
+		}
+	}
+
+	ECU_capture_piura = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1005 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 50
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1005
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+			activate_mission = ECU_capture_trujillo_and_loreto
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	ECU_capture_trujillo_and_loreto = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			491 = {
+				is_controlled_by = ROOT
+			}
+			1000 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = PRU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 50
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 1000
+					state = 491
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	PRU_hold_pastaza = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			490 = {
+				NOT = {
+					is_controlled_by = ROOT
+				}
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = ECU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 50
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 490
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = yes 
+
+		complete_effect = {
+			country_event = peruecuador.11
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.10
+			activate_mission = PRU_capture_western_pastaza
+		}
+	}
+
+	PRU_capture_western_pastaza = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1036 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = ECU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 40
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1036
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+			activate_mission = PRU_blockade_guayaquil
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	PRU_blockade_guayaquil = {
+		icon = generic_naval
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			ships_in_area = { area = 107 size > 7 } 
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = ECU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 25
+
+		is_good = no 
+
+		complete_effect = {
+			navy_experience = 25
+			add_command_power = 15
+			add_war_support = 0.02
+			ECU = { 
+				add_war_support = -0.03 
+				add_ideas = EUYL_blockaded
+			}
+			activate_mission = PRU_capture_guayaquil
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	PRU_capture_guayaquil = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1037 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = ECU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 45
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1037
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+			activate_mission = PRU_capture_orellana
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+
+	PRU_capture_orellana = {
+		icon = generic_operation 
+
+		activation = {
+			always = no 
+		}
+
+		available = {
+			1010 = {
+				is_controlled_by = ROOT
+			}
+		}
+
+		cancel_trigger = {
+			OR = {
+				NOT = {
+					has_war_with = ECU 
+				}
+				PRU = { exists = no }
+				ECU = { exists =  no }
+			}
+		}
+
+		days_mission_timeout = 55
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1010
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		is_good = no 
+
+		complete_effect = {
+			country_event = peruecuador.10
+		}
+
+		timeout_effect = {
+			country_event = peruecuador.11
+		}
+	}
+}

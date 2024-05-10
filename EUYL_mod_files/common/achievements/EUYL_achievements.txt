@@ -1,0 +1,1182 @@
+unique_id = EUYL_achievements_072203
+
+################################################################
+# List of new achievements
+################################################################
+
+### ARGENTINA ###
+
+EUYL_problems_in_the_family = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = ARG 
+		has_government = communism
+		has_country_leader = {
+			character = ARG_liborio_justo
+			ruling_only = yes 
+		}
+		any_enemy_country = {
+			has_country_leader = {
+				character = ARG_agustín_pedro_justo
+				ruling_only = yes 
+			}
+		}
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+		}
+	}
+}
+
+EUYL_right_back_at_ya = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = ARG 
+		has_completed_focus = ARG_follow_mussolinis_principles
+		has_country_leader = {
+			character = ARG_juan_domingo_peron_fascist
+			ruling_only = yes 
+		}
+		ITA = { is_subject_of = ARG }
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+	}
+}
+
+EUYL_god_bless_the_pope = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = ARG 
+		has_completed_focus = ARG_the_one_true_papal_state
+		has_country_leader = {
+			character = ARG_julio_meinvielle_pope
+			ruling_only = yes 
+		}
+		has_full_control_of_state = 2
+		has_full_control_of_state = 454
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+	}
+}
+
+## There can be only one Confederation 
+EUYL_one_true_confederation = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+ 
+    happened = {
+		original_tag = ARG
+		ARG_is_the_argentine_confederation = yes 
+		362 = { is_controlled_by = ARG }
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+    } 
+}
+
+## Miracles really can happen 
+EUYL_miracles_can_happen = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+ 
+    happened = {
+		original_tag = ARG
+		custom_trigger_tooltip = {
+			tooltip = ARG_not_suffering_inflation
+			NOT = {
+				OR = {
+					has_idea = ARG_high_inflation_risk
+					has_idea = ARG_medium_inflation_risk
+					has_idea = ARG_low_inflation_risk
+					has_idea = ARG_inflation_1
+					has_idea = ARG_inflation_2
+					has_idea = ARG_inflation_3
+					has_idea = ARG_inflation_4
+					has_idea = ARG_inflation_5
+					has_idea = ARG_inflation_6
+					has_idea = ARG_inflation_7
+					has_idea = ARG_inflation_8
+					has_idea = ARG_inflation_9
+					has_idea = ARG_inflation_10
+				}
+			}
+		}
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+    } 
+}
+
+## Red Feminism in South America
+EUYL_red_feminism_in_la_plata = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+ 
+    happened = {
+		original_tag = ARG
+		has_government = communism
+		has_cosmetic_tag = ARG_la_plata
+		OR = {
+			has_country_leader = {
+				character = EUYL_ARG_fanny_edelman
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = ARG_fanny_edelman_official
+				ruling_only = yes
+			}
+		}
+		CHL = {
+			OR = {
+				is_subject_of = ROOT 
+				capital_scope = { is_fully_controlled_by = ROOT }
+			}
+		}
+		BOL = {
+			OR = {
+				is_subject_of = ROOT 
+				capital_scope = { is_fully_controlled_by = ROOT }
+			}
+		}
+		BRA = {
+			OR = {
+				is_subject_of = ROOT 
+				capital_scope = { is_fully_controlled_by = ROOT }
+			}
+		}
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes  
+			has_civil_war = no 
+		}
+    } 
+}
+
+## A little more than just the Falklands 
+EUYL_more_than_just_falklands = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+ 
+    happened = {
+		original_tag = ARG
+		299 = { is_controlled_by = ARG }
+		720 = { is_controlled_by = ARG }
+		126 = { is_controlled_by = ARG }
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes  
+			has_civil_war = no 
+		}
+    } 
+}
+
+## The true bastion of Democracy in America 
+EUYL_true_bastion = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+ 
+    happened = {
+		original_tag = ARG
+		has_government = democratic
+		is_in_faction_with = USA
+		hidden_trigger = {
+			is_ai = no 
+			is_subject = no
+			exists = yes 
+			has_civil_war = no 
+		}
+		custom_trigger_tooltip = {
+			tooltip = ARG_more_factories_than_US_tt
+			ic_ratio = {
+				tag = USA
+				ratio > 1
+			}
+		}
+    }
+}
+
+### PARAGUAY ###
+
+EUYL_the_dream_of_solano = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = PAR 
+		has_completed_focus = PAR_form_greater_paraguay
+		has_army_manpower = { size > 499999 }
+		PAR = {
+			all_core_state = {
+				is_fully_controlled_by = PREV
+			}
+		}
+		has_full_control_of_state = 1021
+		has_full_control_of_state = 500
+		hidden_trigger = {
+			is_ai = no 
+			is_subject = no
+			exists = yes 
+			has_civil_war = no 
+		}
+	}
+}
+
+EUYL_just_a_bit_indecisive = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = PAR 
+		custom_trigger_tooltip = {
+			tooltip = PAR_switched_governments_4_times_tt
+			check_variable = { PAR.PAR_government_changes > 3 }
+		}
+		hidden_trigger = {
+			is_ai = no 
+			is_subject = no
+			exists = yes 
+			has_civil_war = no 
+		}
+	}
+}
+
+EUYL_back_and_stronger_than_ever = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+	happened = {
+		original_tag = PAR 
+		custom_trigger_tooltip = {
+			tooltip = PAR_is_native_paraguay_tt
+			has_cosmetic_tag = PAR_NATIVE
+		}
+		has_country_leader = {
+			character = PAR_juan_belaieff
+			ruling_only = yes 
+		}
+		num_of_factories > 49
+		hidden_trigger = {
+			is_ai = no 
+			is_subject = no
+			exists = yes 
+			has_civil_war = no 
+		}
+	}
+}
+
+### BOLIVIA ###
+
+EUYL_you_thought_i_was_a_goner = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = { 
+		original_tag = BOL
+		custom_trigger_tooltip = {
+            tooltip = BOL_formed_greater_bolivia_tt
+            has_cosmetic_tag = GBO
+        }
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+    }
+}
+
+EUYL_all_your_coast_is_belong_to_me = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		original_tag = BOL
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_SA_tt
+			any_controlled_state = {
+				is_on_continent = south_america
+				is_coastal = yes 
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_NA_tt
+			any_controlled_state = {
+				is_on_continent = north_america
+				is_coastal = yes 
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_EU_tt
+			any_controlled_state = {
+				is_on_continent = europe
+				is_coastal = yes 
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_AU_tt
+			any_controlled_state = {
+				is_on_continent = australia
+				is_coastal = yes 
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_AF_tt
+			any_controlled_state = {
+				is_on_continent = africa
+				is_coastal = yes 
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = BOL_controls_coastal_state_in_ME_tt
+			any_controlled_state = {
+				is_on_continent = middle_east
+				is_coastal = yes 
+			}
+		}
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+    }
+}
+
+EUYL_youll_never_overthrow_me = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		original_tag = BOL
+		has_civil_war = no 
+		has_completed_focus = BOL_victor_of_the_civil_war
+		has_country_leader = {
+			name = "José Luis Tejada Sorzano"
+			ruling_only = yes
+		}
+		hidden_trigger = {
+			is_subject = no 
+			is_ai = no 
+			exists = yes 
+		}
+    }
+}
+
+### URUGUAY ###
+
+EUYL_cisplatine_banda_oriental_whats_that = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		original_tag = URG
+		ARG = {
+			capital_scope = { is_fully_controlled_by = URG }
+		}
+		BRA = {
+			capital_scope = { is_fully_controlled_by = URG }
+		}
+		hidden_trigger = {
+			is_subject = no
+			is_ai = no 
+			exists = yes 
+			has_civil_war = no 
+		}
+    }
+}
+
+EUYL_artigas_would_be_proud = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes 
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = URG
+		has_cosmetic_tag = LGA_federal
+		ARG = { is_subject_of = URG }
+    }
+}
+
+### CHILE ### 
+
+EUYL_super_chile = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes 
+			is_subject = no 
+			has_civil_war = no
+			all_core_state = {
+				is_fully_controlled_by = CHL
+			}
+		}
+		original_tag = CHL
+		custom_trigger_tooltip = {
+			tooltip = CHL_controls_every_state_coastal_to_pacific_tt
+			controls_state = 953
+			controls_state = 947
+			controls_state = 492
+			controls_state = 303
+			controls_state = 1000
+			controls_state = 1005
+			controls_state = 1020
+			controls_state = 1035
+			controls_state = 972
+			controls_state = 305
+			controls_state = 1014
+			controls_state = 1013
+			controls_state = 304
+			controls_state = 685
+			controls_state = 316
+			controls_state = 317
+			controls_state = 312
+			controls_state = 314
+			controls_state = 313
+			controls_state = 475
+			controls_state = 476
+			controls_state = 485
+			controls_state = 478
+			controls_state = 481
+			controls_state = 483
+			controls_state = 484
+			controls_state = 378
+			controls_state = 385
+			controls_state = 386
+			controls_state = 473
+			controls_state = 740
+			controls_state = 739
+			controls_state = 471
+			controls_state = 463
+		}
+    }
+}
+
+EUYL_i_did_not_vote_for_you_round_2 = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes 
+			is_subject = no 
+		}
+		original_tag = CHL
+		has_civil_war = no
+		has_government = neutrality
+		has_completed_focus = CHL_our_own_fate
+    }
+}
+
+EUYL_anarchism_truly_knows_no_borders = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes 
+			is_subject = no 
+			has_civil_war = no
+			has_government = neutrality
+		}
+		original_tag = CHL
+		custom_trigger_tooltip = {
+			tooltip = CHL_anarchism_no_borders_tt
+			has_completed_focus = CHL_our_own_fate
+			has_global_flag = CHL_spain_accepted_unification
+			64 = { is_controlled_by = CHL }
+			16 = { is_controlled_by = CHL }
+			126 = { is_controlled_by = CHL }
+			500 = { is_controlled_by = CHL }
+			1021 = { is_controlled_by = CHL }
+		}
+    }
+}
+
+EUYL_i_dont_want_to_conquer_i_want_to_exploit_resources = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes 
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = CHL
+		has_government = democratic
+		has_idea = laissez_faire
+		CHL = {
+			steel > 139
+			tungsten > 139
+			oil > 64
+		}
+    }
+}
+
+### BRAZIL ### 
+
+EUYL_we_can_also_do_that = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			tag = BZE 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = BRA
+		OR = {
+			LIB = {
+				is_subject_of = ROOT
+			}
+			controls_state = 298
+		}
+		has_completed_focus = BRA_establish_liberia_as_a_dominion
+    }
+}
+
+EUYL_the_south_american_puppet_master = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = BRA
+		has_government = communism
+		num_subjects > 7
+    }
+}
+
+EUYL_brazil_comes_to_you = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = BRA
+		ENG = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		GER = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		SOV = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		FRA = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		ITA = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		JAP = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+		USA = {
+			OR = {
+				capital_scope = { is_fully_controlled_by = BRA }
+				is_in_faction_with = BRA 
+				is_subject_of = BRA 
+			}
+		}
+    }
+}
+
+EUYL_coffee_coffee_and_more_coffee = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = BRA
+		custom_trigger_tooltip = {
+			tooltip = BRA_over_90_dependent_tt
+			check_variable = { BRA_dependency_on_coffee > 90 }
+		}
+    }
+}
+
+### PERU ### 
+
+EUYL_the_one_true_sun = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+			has_government = neutrality
+		}
+		original_tag = PRU 
+		has_completed_focus = PRU_our_war_of_independence
+		ARG = {
+			is_subject_of = PRU 
+		}
+		URG = {
+			is_subject_of = PRU 
+		}
+		PHI = {
+			is_subject_of = PRU
+		}
+    }
+}
+
+EUYL_USSR_has_competition = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		OR = { 
+			original_tag = PRU 
+			original_tag = BRA
+		}
+		OR = {
+			has_completed_focus = BRA_the_union_of_south_american_socialist_republics
+			has_completed_focus = PRU_proclaim_the_union_of_south_america
+		}
+		num_of_factories > 149
+    }
+}
+
+EUYL_was_that_meant_to_be_a_challange = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+			has_government = fascism
+		}
+		original_tag = PRU 
+		has_country_flag = PRE_succesfully_conquered_SA
+		date < 1942.1.1
+    }
+}
+
+EUYL_united_we_stand_against_our_colonizers = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = {
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+			is_in_faction = yes 
+			is_faction_leader = yes 
+			any_other_country = {
+				original_tag = SPR
+				is_subject_of = PRU
+			}
+		}
+		original_tag = PRU 
+		num_faction_members > 4
+		SPR = { is_subject_of = PRU }
+    }
+}
+
+### COLOMBIA ### 
+
+EUYL_bolivars_dream = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = COL
+		has_cosmetic_tag = GRC_UNIFIED
+		MEX = {
+			capital_scope = { is_fully_controlled_by = COL }
+		}
+		BRA = {
+			capital_scope = { is_fully_controlled_by = COL }
+		}
+		ARG = {
+			capital_scope = { is_fully_controlled_by = COL }
+		}
+    }
+}
+
+EUYL_the_real_united_states = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = COL
+		has_cosmetic_tag = UCO_unified
+		USA = { is_subject_of = COL }
+    }
+}
+
+EUYL_the_army_of_bolivar = {
+    possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = COL
+		has_government = fascism
+		has_army_manpower = { size > 999999 }
+    }
+}
+
+### VENEZUELA ###
+EUYL_looks_like_we_need_some_freedom = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = VEN
+		oil > 499
+    }
+}
+
+EUYL_gran_colombia_is_back_on_the_menu = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		OR = {
+			original_tag = VEN 
+			original_tag = COL 
+			original_tag = PAN 
+			original_tag = ECU
+		}
+		custom_trigger_tooltip = {
+			tooltip = VEN_formed_gran_colombia_tt
+			has_cosmetic_tag = GRC_UNIFIED
+		}
+    }
+}
+
+EUYL_the_modern_bolivar = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = VEN
+		OR = {
+			has_government = fascism 
+			has_government = neutrality
+		}
+		num_of_controlled_states > 34
+		ARG = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		BRA = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		CHL = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		PRU = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		BOL = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		COL = {
+			capital_Scope = { 
+				controls_or_subject_of = yes 
+			}
+		}
+		date < 1944.1.1
+    }
+}
+
+EUYL_not_so_strong_anymore_mr_stalin = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = VEN
+		custom_trigger_tooltip = {
+			tooltip = VEN_formed_union_with_ussr_tt
+			has_cosmetic_tag = GUOSR_UNIFIED
+		}
+    }
+}

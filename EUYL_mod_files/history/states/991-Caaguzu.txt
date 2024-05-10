@@ -1,0 +1,29 @@
+state={
+	id=991
+	name="Distrito Capital"
+	resources={
+		steel=7.000
+	}
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 5
+			arms_factory = 1
+			industrial_complex = 3
+			air_base = 2
+
+		}
+		add_core_of = PAR
+		victory_points = {
+			2152 10 
+		}
+
+	}
+	provinces={
+		2152 2194 13396 13397 13398 13399 13400 13401 13402 
+	}
+	manpower=756127
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=3.000
+}

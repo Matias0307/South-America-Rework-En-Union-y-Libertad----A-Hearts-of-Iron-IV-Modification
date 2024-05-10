@@ -1,0 +1,35 @@
+
+state={
+	id=495
+	name="STATE_495"
+	resources={
+		aluminium=4.000
+		oil=1.000
+	}
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+		}
+		add_core_of = BRA
+		add_core_of = ROA
+		victory_points = {
+			1979 2 
+		}
+		victory_points = {
+			10934 3 
+		}
+
+	}
+
+	provinces={
+		1979 10934 13318 13319 13320 13321 13322 13323 13327 13328 13329 13331 13332 13333 13334 13335 13336 13337 13341 13342 13344 13347 13348 13349 13350 13351 13353 13355 13356 13357 13358 13359 14184 14185 14207 14216 14218 14241 14245 14258 14259 14275 14290 14350 14365 
+	}
+	manpower=979900
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

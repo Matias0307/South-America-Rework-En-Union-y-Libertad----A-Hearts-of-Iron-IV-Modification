@@ -1,0 +1,28 @@
+
+state={
+	id=487
+	name="STATE_487"
+
+	history={
+		owner = BOL
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+
+		}
+		add_core_of = BOL
+		victory_points = {
+			13928 5 
+		}
+
+	}
+
+	provinces={
+		2160 10924 10982 12902 13884 13911 13928 13929 13934 13937 13948 13950 13959 13963 13968 13983 14001 
+	}
+	manpower=234500
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

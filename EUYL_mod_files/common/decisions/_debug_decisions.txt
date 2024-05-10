@@ -1,0 +1,724 @@
+debug_decisions = {
+
+	trigger_test = {
+		visible = { always = yes }
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = PAR_switched_governments_4_times_tt
+				check_variable = { PAR.PAR_government_changes > 3 }
+			}
+		}
+
+		complete_effect = { custom_effect_tooltip = [ROOT.GetGUIType] }
+	}
+
+	VEN_test_commie_civil_war = {
+		visible = { always = yes }
+
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = VEN_looming_oil_strike
+				days = -350
+			}
+		}
+	}
+
+	load_tree = {
+		visible = { always = yes }
+
+		complete_effect = {
+			load_focus_tree = {
+				tree = argentine_focus
+				keep_completed = no 
+			}
+			unlock_national_focus = ARG_infamous_decade
+			unlock_national_focus = ARG_concordancia
+			unlock_national_focus = ARG_promises_of_new_projects
+			unlock_national_focus = ARG_the_question_of_leadership
+			unlock_national_focus = ARG_save_roberto
+			unlock_national_focus = ARG_strenghten_robertos_ideals
+			unlock_national_focus = ARG_roberto_leads_the_way
+			complete_national_focus = ARG_push_industrial_reforms
+			complete_national_focus = ARG_subsidize_key_industries
+			unlock_national_focus = ARG_roberto_leads_the_way
+			unlock_national_focus = ARG_deal_with_the_fradulent_charges
+			unlock_national_focus = ARG_looking_ahead
+			unlock_national_focus = ARG_formalize_the_GOU
+			unlock_national_focus = ARG_secure_the_high_ranks
+			unlock_national_focus = ARG_blame_the_government
+			unlock_national_focus = ARG_depose_getleader
+			unlock_national_focus = ARG_go_against_the_peronists
+			unlock_national_focus = ARG_deal_with_the_instability
+			complete_national_focus = ARG_focus_economy
+			complete_national_focus = ARG_ready_the_economy_for_war
+			complete_national_focus = ARG_focus_on_our_markets
+		}
+	}
+
+	native_insurrection_test = {
+		visible = { always = yes }
+
+		target_trigger = {
+			FROM = {
+				capital_scope = { is_on_continent = south_america }
+				has_war_with = ROOT 
+			}
+		}
+
+		fire_only_once = yes 
+
+		complete_effect = {
+			custom_effect_tooltip = PAR_natives_begin_uprising_in_controlled_states_tt
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = { has_template = "Brigada Nativa" }
+					}
+					division_template = {
+						name = "Brigada Nativa"
+						division_names_group = SPAN_INF_02
+						template_counter = 3
+						
+						regiments = {
+							infantry = { x = 0 y = 0 }
+							infantry = { x = 0 y = 1 }
+							infantry = { x = 0 y = 2 }
+							infantry = { x = 0 y = 3 }
+						}
+					}
+				}
+				FROM = {
+					set_country_flag = PAR_uprising_triggered_flag
+					every_controlled_state = {
+						limit = { has_dynamic_modifier = { modifier = EUYL_native_population } }
+						create_unit = {
+							division = "division_template = \"Brigada Nativa\" start_experience_factor = 0.1" 
+							owner = ROOT
+							count = 2
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { has_dynamic_modifier = { modifier = EUYL_native_population } }
+						create_unit = {
+							division = "division_template = \"Brigada Nativa\" start_experience_factor = 0.1" 
+							owner = ROOT
+							count = 2
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+					random_owned_controlled_state = {
+						limit = { has_dynamic_modifier = { modifier = EUYL_native_population } }
+						create_unit = {
+							division = "division_template = \"Brigada Nativa\" start_experience_factor = 0.1" 
+							owner = ROOT
+							allow_spawning_on_enemy_provs = yes
+						}
+					}
+				}
+			}
+		}
+	}
+
+	var_test = {
+		available = {
+			USA = { set_temp_variable = { USA_num_of_factories = num_of_factories } }
+			set_temp_variable = { USA_factories = USA_num_of_factories  }
+			num_of_factories > USA_factories
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			set_country_flag = BRA_imperial_brazil
+		}
+	}
+
+	ARG_speed_up_civil_war = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ARG_more_factories_than_target_tt
+				num_of_factories > ARG_target_num_factories
+			}
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = ARG_government_collapse
+				days = -200
+			}
+		}
+	}
+
+	ARG_add_urban_militias = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			add_ideas = ARG_professionalized_urban_militias
+		}
+	}
+
+	ARG_set_posadas_leader = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism
+			}
+			promote_character = ARG_juan_posadas
+		}
+	}
+
+	ARG_set_liborio_leader = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism
+			}
+			promote_character = ARG_liborio_justo
+		}
+	}
+
+	ARG_choose_queralto_leader = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_list = {
+				20 = { add_stability = 0.01 }
+				21 = { add_stability = 0.02 }
+			}
+		}
+	}
+
+	ARG_set_roberto_leader = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			promote_character = EUYL_ARG_roberto_maria_ortiz
+			hidden_effect = {
+				country_event = { ## Roberto diagnosed with diabetes 
+					id = argentina.rework.39
+					days = 14
+					random_days = 14
+				}
+			}
+		}
+	}
+
+	ARG_test = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			add_ideas = ARG_agitated_oligarchs_idea
+            custom_effect_tooltip = ARG_oligarchs_will_rebel_in_random_state_tt
+            if = {
+                limit = { has_dynamic_modifier = { modifier = ARG_infamous_decade_idea } }
+                ARG_increase_2_political_tension = yes 
+            }
+            hidden_effect = {
+                random_owned_controlled_state = {
+                    limit = { 
+                        is_core_of = ROOT 
+                        NOT = { has_dynamic_modifier = { modifier = ARG_protests } }
+                        OR = {
+                            arms_factory > 0
+                            industrial_complex > 0 
+                        }
+                        NOT = { has_dynamic_modifier = { modifier = ARG_agitated_oligarchs } }
+                    }
+                    add_dynamic_modifier = {
+                        modifier = ARG_agitated_oligarchs
+                        days = 365
+                    }
+                }
+            }
+		}
+	}
+
+	ARG_set_fanny_leader = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism
+			}
+			promote_character = EUYL_ARG_fanny_edelman
+		}
+	}
+
+	ARG_become_anarchist = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			set_party_name = {
+				ideology = neutrality
+				long_name = ARG_anarchist_party_long
+				name = ARG_anarchist_party 
+			}
+			add_stability = -1
+			add_ideas = {
+				ARG_collectivized_society_1 ## weakest starting version
+				ARG_anarchist_conscription_1 ## weakest starting version
+				ARG_decentralized_syndicates
+				closed_economy
+			}
+			set_cosmetic_tag = AARC
+			promote_character = ARG_anarchist_council
+		}
+	}
+
+	ARG_start_random_civil_war = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_list = {
+				33 = {
+					start_civil_war = {
+						ideology = communism
+					}
+				}
+				33 = {
+					start_civil_war = {
+						ideology = fascism
+					}
+				}
+				34 = {
+					start_civil_war = {
+						ideology = democratic
+					}
+				}
+			}
+		}
+	}
+
+	ARG_pol_tension = {
+		available = {
+			always = yes
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			while_loop_effect = {
+				limit = {
+					check_variable = { ARG_political_tension < 100 }
+				}
+				ARG_increase_10_political_tension = yes 
+			}
+		}
+	}
+
+	
+
+	create_operative_debug = {
+
+		icon = generic_research
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			create_operative_leader = {
+				bypass_recruitment = yes
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	
+
+	create_recruitable_operative_not_to_spy_master_debug = {
+		icon = generic_research
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			create_operative_leader = {
+				bypass_recruitment = no
+				available_to_spy_master = no
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+	create_recruitable_operative_debug = {
+		icon = generic_research
+
+		available = {
+			always = yes
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			create_operative_leader = {
+				bypass_recruitment = no
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+	}
+
+
+	FRA_capture_operative_debug = {
+		available = {
+			NOT = { TAG = FRA }
+			num_of_operatives > 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_operative = {
+				limit = {
+					is_operative_captured = no
+				}
+				capture_operative = {
+					captured_by = FRA
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+	}
+
+	FRA_turn_operative_debug = {
+		available = {
+			NOT = { TAG = FRA }
+			num_of_operatives > 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_operative = {
+				limit = {
+					is_operative_captured = no
+				}
+				set_nationality = FRA
+				operative_leader_event = {
+               		id = lar_operative_event.5
+					set_from_from = GER #tells the event which nationality to add
+            	}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+	}
+
+	harm_operative_debug = {
+		available = {
+			num_of_operatives > 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_operative = {
+				harm_operative_leader = 1
+				operative_leader_event = {
+					id = lar_operative_event.4
+					set_from_from = URG
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+	}
+
+	add_random_nationality = {
+		available = {
+			num_of_operatives > 0
+		}
+
+		visible = {
+			always = yes
+		}
+
+		fire_only_once = no
+		cost = 0
+
+		complete_effect = {
+			random_country = {
+				limit = {
+					NOT = { tag = FROM }
+				}
+				FROM = {
+					random_operative = {
+						add_nationality = PREV.PREV
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 0
+		}
+
+	}
+
+	slot_machine = { # we pegi 18 now
+		available = {
+			always = yes
+		}
+
+		visible = {
+			always = yes
+		}
+
+		days_remove = 777
+
+		modifier = {
+			operative_slot = 99
+		}
+	}
+
+	decryption_tech_1 = {
+		days_remove = 100
+		modifier = {
+			decryption = 1
+		}
+	}
+
+	decryption_tech_2 = {
+		days_remove = 100
+		modifier = {
+			decryption = 1
+		}
+	}
+
+	decryption_tech_3 = {
+		days_remove = 100
+		modifier = {
+			decryption = 1
+		}
+	}
+
+	encryption_tech_1 = {
+		days_remove = 100
+		modifier = {
+			encryption = 1
+		}
+	}
+
+	encryption_tech_2 = {
+		days_remove = 100
+		modifier = {
+			encryption = 1
+		}
+	}
+
+	encryption_tech_3 = {
+		days_remove = 100
+		modifier = {
+			encryption = 1
+		}
+	}
+
+}

@@ -1,0 +1,47 @@
+form_rioplatense_empire_category = {
+	
+	icon = generic_formable_nations
+	
+	picture = GFX_decision_category_reform_rioplatense
+}
+
+form_natural_borders = {
+	priority = 2
+	icon = generic_formable_nations
+
+	picture = GFX_BOL_natural_borders
+}
+
+form_commune_of_la_plata = {
+	priority = 19
+	icon = generic_formable_nations
+	
+	picture = GFX_ARG_unify_la_plata
+}
+
+form_andesia = {
+	priority = 20
+	icon = generic_formable_nations
+
+	picture = GFX_ARG_andenesia
+}
+
+form_united_provinces_of_rio_de_la_plata = {
+	priority = 20
+	icon = generic_formable_nations
+
+	picture = GFX_ARG_form_united_prov
+}
+
+form_german_reich = {
+	priority = 25
+	icon = generic_formable_nations
+
+	on_map_area = {
+		targets = { 64 }
+		name = ARG_our_homeland_tt
+		zoom = 150
+	}
+
+	picture = GFX_ARG_germany_pic
+}

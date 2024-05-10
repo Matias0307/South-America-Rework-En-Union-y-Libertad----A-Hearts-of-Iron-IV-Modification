@@ -1,0 +1,35 @@
+state={
+	id=1037
+	name="Guayaquil"
+	resources = {
+		steel = 2.000
+	}
+
+	history={
+		owner = ECU
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		add_core_of = ECU
+		victory_points = {
+			5120 3 
+		}
+		victory_points = {
+			8252 10
+		}
+		buildings = {
+			8252 = {
+				naval_base = 4
+			}
+		}
+	}
+
+	provinces={
+		5120 14297 8252
+	}
+	manpower=194553
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

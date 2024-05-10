@@ -1,0 +1,2118 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_CORRUPTION}
+### search_filters = {FOCUS_FILTER_POLITICAL_TENSION}
+### search_filters = {FOCUS_FILTER_CHI_INFLATION}
+### search_filters = {FOCUS_FILTER_PERU_ECUADOR_WAR}
+
+focus_tree = {
+	id = ecuador_tree
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ECU
+		}
+	}
+	
+	initial_show_position = {
+		x = 0
+	}
+	
+	default = no
+
+	#### PERU-ECUADOR CONFLICT TREE ####
+	## Address the Border Tensions ##
+	focus = {
+		id = ECU_address_the_border_tensions
+		icon = GFX_EUYL_address_conflict_pru_ecu_icon
+		x = 14
+		y = 0
+
+		cost = 2
+
+		available = {
+			has_active_mission = EUYL_conflict_escalation
+			PRU = {
+				exists = yes 
+			}
+		}
+
+		bypass = {
+			has_war_with = PRU
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_PERU_ECUADOR_WAR FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			custom_effect_tooltip = EUYL_will_gain_peru_ecuador_war_dynamic_modifier_tt
+		}
+	}
+
+	## March into Western Pastaza ##
+	focus = {
+		id = ECU_march_into_western_pastaza
+		icon = GFX_ECU_march_into_territory_icon
+		x = 0
+		y = 1
+		relative_position_id = ECU_address_the_border_tensions
+		prerequisite = {
+			focus = ECU_address_the_border_tensions
+		}
+
+		cost = 4
+
+		available = {
+			has_army_manpower = {
+				size > 9999
+			}
+		}
+
+		bypass = {
+			OR = {
+				has_war_with = PRU 
+				1036 = { ## Western Pastaza
+					is_demilitarized_zone = no 
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION FOCUS_FILTER_MANPOWER FOCUS_FILTER_HISTORICAL FOCUS_FILTER_PERU_ECUADOR_WAR
+		}
+
+		completion_reward = {
+			add_war_support = 0.01
+			add_manpower = 2000
+			add_political_power = 10
+			1036 = {
+				set_demilitarized_zone = no
+			}
+			custom_effect_tooltip = ECU_PRU_will_be_notified_and_may_retaliate_tt
+			if = {
+				limit = {
+					has_active_mission = EUYL_conflict_escalation
+				}
+				add_days_mission_timeout = {
+					mission = EUYL_conflict_escalation
+					days = -50
+				}
+				hidden_effect = {
+					PRU = {
+						add_days_mission_timeout = {
+							mission = EUYL_conflict_escalation
+							days = -50
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				PRU = {
+					country_event = {
+						id = peruecuador.1
+						hours = 6
+						random_hours = 6
+					}
+				}
+			}
+		}
+	}
+
+	## Adopt an offensive strategy plan
+	focus = {
+		id = ECU_adopt_an_offensive_strategy_plan
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		mutually_exclusive = {
+			focus = ECU_adopt_a_defensive_strategy_plan
+		}
+		x = 1
+		y = 1
+		relative_position_id = ECU_march_into_western_pastaza
+		prerequisite = {
+			focus = ECU_march_into_western_pastaza
+		}
+
+		cost = 5
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EUYL_border_tension_level_1_tt
+				check_variable = {
+					EUYL_peru_ecuador_threat_level > 0
+				}
+			}
+		}
+
+		bypass = {
+			has_war_with = PRU
+		}
+
+		search_filters = {
+			FOCUS_FILTER_PERU_ECUADOR_WAR
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+			add_to_variable = {
+				EUYL_peru_ecuador_attack_bonus = 0.05
+				tooltip = army_attack_factor_tt
+			}
+		}
+	}
+
+	## Adopt a Defensive Strategy Plan ##
+	focus = {
+		id = ECU_adopt_a_defensive_strategy_plan
+		icon = GFX_goal_generic_position_armies
+		mutually_exclusive = {
+			focus = ECU_adopt_an_offensive_strategy_plan
+		}
+		x = -1
+		y = 1
+		relative_position_id = ECU_march_into_western_pastaza
+		prerequisite = {
+			focus = ECU_march_into_western_pastaza
+		}
+
+		cost = 5
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EUYL_border_tension_level_1_tt
+				check_variable = {
+					EUYL_peru_ecuador_threat_level > 0
+				}
+			}
+		}
+
+		bypass = {
+			has_war_with = PRU
+		}
+
+		search_filters = {
+			FOCUS_FILTER_PERU_ECUADOR_WAR
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+			add_to_variable = {
+				EUYL_peru_ecuador_defense_bonus = 0.05
+				tooltip = army_defence_factor_tt
+			}
+		}
+	}
+
+	## Perform Recon Flights ##
+	focus = {
+		id = ECU_perform_recon_flights
+		icon = GFX_goal_generic_air_fighter
+		x = -1
+		y = 1
+		relative_position_id = ECU_adopt_a_defensive_strategy_plan
+		prerequisite = {
+			focus = ECU_adopt_a_defensive_strategy_plan
+			focus = ECU_adopt_an_offensive_strategy_plan
+		}
+
+		cost = 5
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = EUYL_border_tension_level_1_tt
+				check_variable = {
+					EUYL_peru_ecuador_threat_level > 0
+				}
+			}
+			NOT = {
+				has_war_with = PRU
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_PERU_ECUADOR_WAR
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_unlock_recon_decisions_and_need_planes_tt
+		}
+	}
+
+	## A Call for International Aid ##
+	focus = {
+		id = ECU_a_call_for_international_aid
+		icon = GFX_ 
+		x = 1
+		y = 1
+		relative_position_id = ECU_adopt_an_offensive_strategy_plan
+		prerequisite = {
+			focus = ECU_adopt_a_defensive_strategy_plan
+			focus = ECU_adopt_an_offensive_strategy_plan
+		}
+
+		cost = 7.2
+
+		available = {
+
+			NOT = {
+				has_war_with = PRU
+			}
+		}
+	}
+
+	## Commence Defensive Preperations ##
+	focus = {
+		id = ECU_commence_defensive_preperations
+		icon = GFX_goal_generic_fortify_city
+		x = -1
+		y = 2
+		relative_position_id = ECU_adopt_an_offensive_strategy_plan
+		prerequisite = {
+			focus = ECU_adopt_a_defensive_strategy_plan
+			focus = ECU_adopt_an_offensive_strategy_plan
+		}
+
+		cost = 5
+
+		available = {
+			OR = {
+				has_country_flag = ECU_can_begin_defensive_preperations_flag
+				custom_trigger_tooltip = {
+					tooltip = EUYL_border_tension_level_2_tt
+					check_variable = {
+						EUYL_peru_ecuador_threat_level > 1
+					}
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_PERU_ECUADOR_WAR
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = EUYL_modify_peru_ecuador_war_idea_by_tt
+			add_to_variable = {
+				EUYL_peru_ecuador_defense_bonus = 0.03
+				tooltip = army_defence_factor_tt
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			unlock_decision_tooltip = {
+				decision = ECU_prepare_defensive_fortifications_in_FROM
+				show_effect_tooltip = yes
+			}
+		}
+	}
+
+	#### ECONOMY TREE ####
+
+	## Fully Abandon the Gold Standard ## - HISTORICAL
+	focus = { 
+		id = ECU_fully_abandon_the_gold_standard
+		icon = GFX_ECU_abandon_gold_standard
+		mutually_exclusive = {
+			focus = ECU_returned_to_the_gold_standard_focus
+		}
+		x = 8
+
+		available = {
+			has_civil_war = no 
+		}
+
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speeds_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			swap_ideas = {
+				remove_idea = ECU_partial_gold_standard_abandonment
+				add_idea = ECU_full_gold_standard_abandonment_1
+			}
+		}
+	}
+
+	## Devalue the Sucre ## - HISTORICAL
+	focus = {
+		id = ECU_devalue_the_sucre
+		icon = GFX_ECU_devalue_sucre_icon
+		x = 0
+		y = 1
+		relative_position_id = ECU_fully_abandon_the_gold_standard
+		prerequisite = {
+			focus = ECU_fully_abandon_the_gold_standard
+		}
+
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			add_timed_idea = {
+				idea = ECU_devalue_the_sucre_idea
+				days = 365
+			}
+			custom_effect_tooltip = EUYL_effects_when_removed_tt
+			effect_tooltip = {
+				swap_ideas = {
+					remove_idea = ECU_full_gold_standard_abandonment_1
+					add_idea = ECU_full_gold_standard_abandonment_2
+				}
+			}
+		}
+	}
+
+	### Economic Investments ###
+	focus = {
+		id = ECU_economic_investments
+		icon = GFX_focus_generic_modernize_industry
+		x = 1
+		y = 1
+		relative_position_id = ECU_devalue_the_sucre
+		prerequisite = {
+			focus = ECU_devalue_the_sucre
+		}
+
+		cost = 7.2
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH FOCUS_FILTER_RESEARCH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speeds_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_1_civilian = yes
+		}
+	}
+
+	## Reform the Organic Law of the Bank
+	focus = {
+		id = ECU_reform_the_organic_law_of_the_bank
+		icon = GFX_ECU_reform_laws_bank_icon
+		x = -1
+		y = 1
+		relative_position_id = ECU_economic_investments
+		prerequisite = {
+			focus = ECU_economic_investments
+			focus = ECU_major_industrial_advancements
+		}
+
+		available = {
+			has_idea = ECU_active_inflationary_crisis
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			remove_ideas = ECU_active_inflationary_crisis
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ECU_manuel_gomez_morin_idea
+		}
+	}
+
+	## Major Industrial Advancements ###
+	focus = {
+		id = ECU_major_industrial_advancements
+		icon = GFX_ECU_major_industry_icon
+		x = -1
+		y = 1
+		relative_position_id = ECU_devalue_the_sucre
+		prerequisite = {
+			focus = ECU_devalue_the_sucre
+		}
+
+		cost = 10
+
+		available = {
+			NOT = {
+				has_idea = ECU_devalue_the_sucre_idea
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = industry
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speed_civilian_factory_factor = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_2_civilian = yes
+		}
+	}
+
+	## Return to the Gold Standard ## - AHISTORICAL
+	focus = {
+		id = ECU_returned_to_the_gold_standard_focus
+		icon = GFX_ECU_return_gold_standard
+		mutually_exclusive = {
+			focus = ECU_fully_abandon_the_gold_standard
+		}
+
+		available = {
+			has_civil_war = no 
+		}
+
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ECU_partial_gold_standard_abandonment
+				add_idea = ECU_returned_to_the_gold_standard
+			}
+			custom_effect_tooltip = ECU_economic_reignition_buffs_weakened_tt
+		}
+	}
+
+	## Finance local Industries ##
+	focus = {
+		id = ECU_finance_local_industries
+		icon = GFX_focus_SOV_merge_plants
+		x = 1
+		y = 1
+		relative_position_id = ECU_returned_to_the_gold_standard_focus
+		prerequisite = {
+			focus = ECU_returned_to_the_gold_standard_focus
+		}
+
+		cost = 7.2
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speeds_buildings_factor = 0.03
+				tooltip = production_speed_buildings_factor_tt
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_1_civilian = yes
+		}
+	}
+
+	## Financial Stability ##
+	focus = {
+		id = ECU_financial_stability
+		icon = GFX_focus_mex_privatisation
+		x = -1
+		y = 1
+		
+		prerequisite = {
+			focus = ECU_returned_to_the_gold_standard_focus
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			add_political_power = 75
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_consumer_goods = -0.05
+				tooltip = consumer_goods_factor_tt
+			}
+			add_to_variable = {
+				ECU_economy_production_factory_efficiency_gain_factor = 0.03
+				tooltip = production_factory_efficiency_gain_factor_tt
+			}
+		}
+	}
+
+	## Reform Monetary Laws ##
+	focus = {
+		id = ECU_reform_monetary_laws
+		icon = GFX_focus_DEN_heavy_regulations
+		x = -1
+		y = 1
+		relative_position_id = ECU_finance_local_industries
+		prerequisite = {
+			focus = ECU_finance_local_industries
+		}
+		prerequisite = {
+			focus = ECU_financial_stability
+		}
+
+		cost = 10
+
+		available = {
+			has_idea = ECU_active_inflationary_crisis
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+
+		completion_reward = {
+			remove_ideas = ECU_active_inflationary_crisis
+			EUYL_add_2_civilian = yes
+		}
+	}
+
+	## Nationwide Development ##
+	focus = {
+		id = ECU_nationwide_development
+		icon = GFX_ECU_develop_ecuador_icon
+		x = -4
+		y = 1
+		relative_position_id = ECU_fully_abandon_the_gold_standard
+		prerequisite = {
+			focus = ECU_fully_abandon_the_gold_standard
+			focus = ECU_returned_to_the_gold_standard_focus
+		}
+		cost = 5
+
+		available = {
+			any_controlled_state = {
+				has_dynamic_modifier = {
+					modifier = ECU_rural_state
+				}
+			}
+			has_civil_war = no 
+			num_of_factories > 6
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.12
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.05
+					tooltip = production_speed_buildings_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.15
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.075
+					tooltip = production_speed_buildings_factor_tt
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			unlock_decision_tooltip = {
+				decision = ECU_promote_development_in_FROM
+				show_effect_tooltip = yes
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = EUYL_available_as_industrial_concern_tt
+			show_ideas_tooltip = ECU_IESS
+		}
+	}
+
+	## Local Banana Production ## - HISTORICAL
+	focus = {
+		id = ECU_local_banana_production_focus
+		icon = GFX_EUYL_bananer
+		x = 0
+		y = 2
+		relative_position_id = ECU_nationwide_development
+		prerequisite = {
+			focus = ECU_regional_development_in_the_north
+			focus = ECU_regional_development_in_the_south
+		}
+
+		cost = 7.2
+
+		available = {
+			1010 = {
+				custom_trigger_tooltip = {
+					tooltip = ECU_has_been_urbanized_tt
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = ECU_rural_state
+						}
+					}
+				}
+			}
+			305 = {
+				custom_trigger_tooltip = {
+					tooltip = ECU_has_been_urbanized_tt
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = ECU_rural_state
+						}
+					}
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.035
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_resources_factor = 0.075
+					tooltip = local_resources_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.05
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_resources_factor = 0.1
+					tooltip = local_resources_factor_tt
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_ideas = ECU_open_banana_trading
+
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 305 
+						state = 1010
+					}
+				}
+				add_dynamic_modifier = {
+					modifier = ECU_local_banana_production
+				}
+			}
+		}
+	}
+
+	### Always on Time ###
+	focus = {
+		id = ECU_always_on_time_focus
+		icon = GFX_ECU_always_on_time
+		x = 0
+		y = 1
+		relative_position_id = ECU_local_banana_production_focus
+		prerequisite = {
+			focus = ECU_local_banana_production_focus
+		}
+
+		cost = 10
+
+		available = {
+			num_of_factories > 9
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_supply_node_factor = 0.2
+					tooltip = production_speed_supply_node_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_rail_way_factor = 0.1
+					tooltip = production_speed_rail_way_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_production_speed_supply_node_factor = 0.25
+					tooltip = production_speed_supply_node_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_rail_way_factor = 0.15
+					tooltip = production_speed_rail_way_factor_tt
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			every_controlled_state = {
+				limit = {
+					is_owned_by = ROOT 
+					is_core_of = ROOT 
+					is_capital = no 
+					is_island_state = no
+				}
+				ROOT = {
+					build_railway = {
+						level = 1
+						start_state = PREV
+						target_state = ROOT.capital
+					}
+				}
+			}
+		}
+	}
+
+	## Promote the Civilian Industry ##
+	focus = {
+		id = ECU_promote_the_civilian_industry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = -2
+		y = 3
+		relative_position_id = ECU_nationwide_development
+		prerequisite = {
+			focus = ECU_nationwide_development
+		}
+
+		cost = 10
+
+		available = {
+			any_controlled_state = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = ECU_rural_state
+					}
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.075
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_civilian_factory_factor = 0.1
+					tooltip = production_speed_industrial_complex_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.1
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_civilian_factory_factor = 0.15
+					tooltip = production_speed_industrial_complex_factor_tt
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_2_civilian = yes
+		}
+	}
+
+	## Consumer Relief ##
+	focus = {
+		id = ECU_consumer_relief
+		icon = GFX_EUYL_consumer_goods_icon
+		x = -1
+		y = 1
+		relative_position_id = ECU_promote_the_civilian_industry
+		prerequisite = {
+			focus = ECU_promote_the_civilian_industry
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.2
+					tooltip = consumer_goods_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.25
+					tooltip = consumer_goods_factor_tt
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_1_civilian = yes 
+		}
+	}
+
+	## Galapagos Development ##
+	focus = {
+		id = ECU_galapagos_development
+		icon = GFX_ECU_develop_galapagos_islands_icon
+		x = 0
+		y = 1
+		relative_position_id = ECU_consumer_relief
+		prerequisite = {
+			focus = ECU_consumer_relief
+		}
+
+		cost = 7.2
+
+		available = {
+			has_full_control_of_state = 649
+			NOT = {
+				has_idea = ECU_active_inflationary_crisis
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+
+		completion_reward = {
+			649 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes 
+				}
+				add_building_construction = {
+					type = naval_base
+					level = 1
+					instant_build = yes
+					province = 5023
+				}
+			}
+		}
+	}
+
+	## The Ecuadorian Military Industry ## - make it so that it requires world tension or conflict level higher than 1
+	focus = {
+		id = ECU_the_ecuadorian_military_industry
+		icon = GFX_ECU_ecuadorian_military_icon
+		x = 2
+		y = 3
+		relative_position_id = ECU_nationwide_development
+		prerequisite = {
+			focus = ECU_nationwide_development
+		}
+
+		available = {
+			any_controlled_state = {
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = ECU_rural_state
+					}
+				}
+			}
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.035
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.02
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_arms_factory_factor = 0.07
+					tooltip = production_speed_arms_factory_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_consumer_goods = -0.05
+					tooltip = consumer_goods_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.03
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speed_arms_factory_factor = 0.1
+					tooltip = production_speed_arms_factory_factor_tt
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_2_military = yes
+		}
+	}
+
+	### National Arms Production ###
+	focus = {
+		id = ECU_national_arms_production
+		icon = GFX_BRA_generic_military
+		x = 1
+		y = 1
+		relative_position_id = ECU_the_ecuadorian_military_industry
+		prerequisite = {
+			focus = ECU_the_ecuadorian_military_industry
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.07
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_factory_efficiency_gain_factor = 0.05
+					tooltip = production_factory_efficiency_gain_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_factory_max_efficiency_factor = 0.05
+					tooltip = production_factory_max_efficiency_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.1
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_factory_efficiency_gain_factor = 0.075
+					tooltip = production_factory_efficiency_gain_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_factory_max_efficiency_factor = 0.075
+					tooltip = production_factory_max_efficiency_factor_tt
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			EUYL_add_1_military = yes
+		}
+	}
+
+	## Oil Extraction Improvements ##
+	focus = {
+		id = ECU_oil_extraction_improvements
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1
+		relative_position_id = ECU_national_arms_production
+		prerequisite = {
+			focus = ECU_national_arms_production
+		}
+
+		cost = 7.2
+
+		available = {
+			has_full_control_of_state = 1010
+			has_tech = excavation2
+			NOT = {
+				has_idea = ECU_active_inflationary_crisis
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY 
+		}
+
+		completion_reward = {
+			EUYL_add_1_military = yes 
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			1010 = {
+				add_resource = {
+					type = oil 
+					amount = 9
+				}
+			}
+			unlock_decision_tooltip = {
+				decision = oil_extraction_in_orellana
+				show_effect_tooltip = yes
+			}
+		}
+	}
+
+	### Regional Development in the South ###
+	focus = {
+		id = ECU_regional_development_in_the_south
+		icon = GFX_ECU_south_regional_development_icon
+		x = 1
+		y = 1
+		relative_position_id = ECU_nationwide_development
+		prerequisite = {
+			focus = ECU_nationwide_development
+		}
+
+		cost = 10
+
+		available = {
+			has_full_control_of_state = 972
+			has_full_control_of_state = 1020
+			has_full_control_of_state = 1037
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.02
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.03
+					tooltip = production_speed_buildings_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_global_buildings_factor = 0.03
+					tooltip = global_building_slots_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.03
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.05
+					tooltip = production_speed_buildings_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_global_buildings_factor = 0.05
+					tooltip = global_building_slots_factor_tt
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 972 
+						state = 1020
+						state = 1037
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				custom_effect_tooltip = ECU_if_urbanized_gain_1_civilian_tt
+				if = {
+					limit = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = ECU_rural_state
+							}
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			1020 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+		}
+	}
+
+	## Regional Development in the North ##
+	focus = {
+		id = ECU_regional_development_in_the_north
+		icon = GFX_ECU_north_regional_development_icon
+		x = -1
+		y = 1
+		relative_position_id = ECU_nationwide_development
+		prerequisite = {
+			focus = ECU_nationwide_development
+		}
+
+		cost = 10
+
+		available = {
+			has_full_control_of_state = 1010
+			has_full_control_of_state = 305
+			has_full_control_of_state = 1036
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			if = {
+				limit = {
+					has_completed_focus = ECU_returned_to_the_gold_standard_focus
+				}
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.02
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.03
+					tooltip = production_speed_buildings_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_global_buildings_factor = 0.03
+					tooltip = global_building_slots_factor_tt
+				}
+			}
+			else = {
+				add_to_variable = {
+					ECU_economy_industrial_capacity = 0.03
+					tooltip = industrial_capacity_factory_tt
+				}
+				add_to_variable = {
+					ECU_economy_production_speeds_buildings_factor = 0.05
+					tooltip = production_speed_buildings_factor_tt
+				}
+				add_to_variable = {
+					ECU_economy_global_buildings_factor = 0.05
+					tooltip = global_building_slots_factor_tt
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			every_controlled_state = {
+				limit = {
+					OR = {
+						state = 305 
+						state = 1010
+						state = 1036
+					}
+				}
+				add_extra_state_shared_building_slots = 1
+				custom_effect_tooltip = ECU_if_urbanized_gain_1_civilian_tt
+				if = {
+					limit = {
+						NOT = {
+							has_dynamic_modifier = {
+								modifier = ECU_rural_state
+							}
+						}
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				if = {
+					limit = {
+						infrastructure < 5
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			305 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+				add_resource = {
+					type = chromium
+					amount = 4
+				}
+			}
+		}
+	}
+
+	### Steel for the Allies ### - HISTORICAL | improve liberal opinion
+	focus = {
+		id = ECU_steel_for_the_allies 
+		icon = GFX_ECU_american_trade_icon
+		x = 1
+		y = 1
+		relative_position_id = ECU_promote_the_civilian_industry
+		prerequisite = {
+			focus = ECU_promote_the_civilian_industry
+			focus = ECU_the_ecuadorian_military_industry
+		}
+		mutually_exclusive = {
+			focus = ECU_oil_for_the_axis
+		}
+
+		cost = 5
+
+		available = {
+			any_other_country = {
+				is_major = yes 
+				has_government = democratic 
+				has_war_with_major = yes
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			send_embargo = JAP 
+			send_embargo = GER 
+			send_embargo = ITA
+			every_other_country = {
+				limit = {
+					is_major = yes 
+					has_government = democratic
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHL_strengthened_ties_economy
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					is_core_of = ROOT 
+					is_coastal = no
+				}
+				add_resource = {
+					type = steel
+					amount = 4
+				}
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = ECU_if_completed_banana_production_tt
+			custom_effect_tooltip = EUYL_available_as_industrial_concern_tt
+			show_ideas_tooltip = ECU_united_fruit_company
+		}
+	}
+
+	### Oil for the Axis ### - AHISTORICAL | improve conservative opinion
+	focus = {
+		id = ECU_oil_for_the_axis
+		icon = GFX_focus_generic_german_trade
+		x = 3
+		y = 1
+		relative_position_id = ECU_promote_the_civilian_industry
+		prerequisite = {
+			focus = ECU_promote_the_civilian_industry
+			focus = ECU_the_ecuadorian_military_industry
+		}
+		mutually_exclusive = {
+			focus = ECU_steel_for_the_allies
+		}
+
+		cost = 5
+
+		available = {
+			any_other_country = {
+				is_major = yes 
+				has_government = fascism 
+				has_war_with_major = yes
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY
+		}
+
+		completion_reward = {
+			send_embargo = USA 
+			send_embargo = ENG 
+			send_embargo = FRA
+			every_other_country = {
+				limit = {
+					is_major = yes 
+					has_government = fascism
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = CHL_strengthened_ties_economy
+				}
+			}
+			EUYL_add_1_military = yes 
+			random_owned_controlled_state = {
+				add_resource = {
+					type = oil 
+					amount = 2
+				}
+			}
+		}
+	}
+
+	### Education Reforms ###
+	focus = {
+		id = ECU_education_reforms
+		icon = GFX_focus_research
+		x = -1
+		y = 1
+		relative_position_id = ECU_oil_for_the_axis
+		prerequisite = {
+			focus = ECU_oil_for_the_axis
+			focus = ECU_steel_for_the_allies
+		}
+
+		cost = 10
+
+		available = {
+			num_of_factories > 14
+		}
+
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	####### CONSERVATIVE ROUTE #######
+
+	## The Elections that Should Have Been ##
+	focus = {
+		id = ECU_the_elections_that_shouldve_been
+		icon = GFX_ECU_elections_shouldve_been_icon
+		mutually_exclusive = {
+			focus = ECU_the_paez_dictatorship
+			focus = ECU_support_gallo
+		}
+		x = 35
+		y = 0
+
+		cost = 2.9
+
+		available = {
+			has_country_flag = ECU_cooperated_with_conservatives_flag
+			has_character = ECU_neptali_bonifaz
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			custom_effect_tooltip = ECU_conservative_cooperation_decrease_cost_tt
+			custom_effect_tooltip = ECU_warn_player_to_complete_gallos_coup_tt
+			add_political_power = 25
+			ECU_calculate_conservative_cost = yes
+		}
+	}
+
+
+	####### PAEZ DICTATORSHIP ###### || AFNE / PAEZ FASCIST DICTATOR
+	focus = {
+		id = ECU_the_paez_dictatorship
+		icon = GFX_ECU_the_paez_dictatorship_icon
+		mutually_exclusive = {
+			focus = ECU_the_elections_that_shouldve_been
+			focus = ECU_support_gallo
+		}
+		x = 50
+		y = 0
+
+		cost = 5
+
+		available = {
+			has_active_mission = ECU_gallos_looming_coup
+		}
+
+	}
+
+	#### SUPPORT GALLO | HISTORICAL #### | ALSO DEVIATES TO COMMUNIST PATH
+	# Support Gallo #
+	focus = {
+		id = ECU_support_gallo 
+		icon = GFX_ECU_support_gallo_icon
+		mutually_exclusive = {
+			focus = ECU_the_elections_that_shouldve_been
+			focus = ECU_the_paez_dictatorship
+		}
+		x = 20
+		y = 0
+		cost = 5
+
+		available = {
+			has_character = ECU_alberto_enriquez_gallo
+			has_active_mission = ECU_gallos_looming_coup
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			add_days_mission_timeout = {
+				mission = ECU_gallos_looming_coup
+				days = -20
+			}
+		}
+	}
+
+	## Convince our Liberal Supporters ##
+	focus = {
+		id = ECU_convince_our_liberal_supporters
+		icon = GFX_ECU_convince_liberal_supporters_icon
+		x = 0
+		y = 1
+		relative_position_id = ECU_support_gallo
+		prerequisite = {
+			focus = ECU_support_gallo
+		}
+
+		cost = 5
+
+		available = {
+			has_active_mission = ECU_gallos_looming_coup
+		}
+
+		bypass = {
+			has_country_leader = {
+				character = ECU_alberto_enriquez_gallo
+				ruling_only = yes
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_BIPARTISANSHIP FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			unlock_decision_tooltip = {
+				decision = ECU_summon_up_liberal_support_in_FROM
+				show_effect_tooltip = yes 
+			}
+			custom_effect_tooltip = ECU_once_gallo_takes_power_following_will_occur_tt
+			custom_effect_tooltip = ECU_liberal_opinion_increase_tt
+		}
+	}
+
+	## Appease the Conservatives ##
+	focus = {
+		id = ECU_appease_the_conservatives_focus
+		icon = GFX_ECU_appease_conservatives_icon
+		x = -1
+		y = 1
+		relative_position_id = ECU_convince_our_liberal_supporters
+		prerequisite = {
+			focus = ECU_convince_our_liberal_supporters
+		}
+
+		cost = 5
+
+		available = {
+			has_active_mission = ECU_gallos_looming_coup
+		}
+
+		bypass = {
+			has_country_leader = {
+				character = ECU_alberto_enriquez_gallo
+				ruling_only = yes
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_BIPARTISANSHIP FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_political_power = 20
+			custom_effect_tooltip = ECU_conservative_opinion_increase_tt
+			add_to_variable = {
+				ECU_conservative_opinion = 1
+			}
+			clamp_variable = {
+				var = ECU_conservative_opinion
+				min = -3
+				max = 3
+			}
+			set_country_flag = {
+				flag = ECU_recently_improved_conservative_opinion_flag
+				days = 90
+				value = 1
+			}
+		}
+	}
+
+	## Denounce the Leftist Persecutions ##
+	focus = {
+		id = ECU_denounce_the_leftist_persecutions
+		icon = GFX_GENERIC_people_uprising
+		x = 2
+		y = 1
+		relative_position_id = ECU_convince_our_liberal_supporters
+		prerequisite = {
+			focus = ECU_convince_our_liberal_supporters
+		}
+
+		available = {
+			has_active_mission = ECU_gallos_looming_coup
+			communism > 0.1
+		}
+
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_days_mission_timeout = {
+				mission = ECU_gallos_looming_coup
+				days = -30
+			}
+			add_ideas = ECU_socialist_support_idea
+		}
+	}
+
+	## Re-establish the Constituent Assembly ##
+	focus = {
+		id = ECU_re_establish_constituent_assembly
+		icon = GFX_ECU_asamblea_constituyente
+		x = 1
+		y = 1
+		relative_position_id = ECU_appease_the_conservatives_focus
+		prerequisite = {
+			focus = ECU_appease_the_conservatives_focus
+			focus = ECU_denounce_the_leftist_persecutions
+		}
+
+		cost = 7.2
+
+		available = {
+			has_country_leader = {
+				character = ECU_alberto_enriquez_gallo
+				ruling_only = yes 
+			}
+			NOT = {
+				has_idea = ECU_the_constituent_assembly
+			}
+		}
+
+		bypass = {
+			has_country_leader = {
+				character = ECU_alberto_enriquez_gallo
+				ruling_only = yes 
+			}
+			has_idea = ECU_the_constituent_assembly
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_ideas = ECU_the_constituent_assembly
+		}
+	}
+
+	## Return Power to the Assemblists ## | Gallo Steps Down in place of Manuel María Borrero
+	focus = {
+		id = ECU_return_power_to_the_assemblists
+		icon = GFX_focus_generic_self_management
+		x = 0
+		y = 1
+		relative_position_id = ECU_re_establish_constituent_assembly
+		prerequisite = {
+			focus = ECU_re_establish_constituent_assembly
+		}
+		mutually_exclusive = {
+			focus = ECU_push_for_national_elections
+		}
+
+		cost = 10
+
+		available = {
+			has_civil_war = no
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER FOCUS_FILTER_STABILITY FOCUS_FILTER_HISTORICAL
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			add_stability = 0.05
+			custom_effect_tooltip = ECU_gallo_steps_down_and_manuel_maria_tt
+			hidden_effect = {
+				promote_character = ECU_manuel_maria_borrero
+			}
+			if = {
+				limit = {
+					has_idea = ECU_leftist_agitation_idea
+				}
+				remove_ideas = ECU_leftist_agitation_idea
+			}
+		}
+	}
+
+	## Constituent Assembly takeover ##
+	focus = {
+		id = ECU_constituent_assembly_takeover
+		icon = GFX_ECU_assembly_takeover
+		x = 1
+		y = 1
+		relative_position_id = ECU_return_power_to_the_assemblists
+		prerequisite = {
+			focus = ECU_return_power_to_the_assemblists
+		}
+		mutually_exclusive = {
+			focus = ECU_call_for_elections
+		}
+
+		cost = 5
+
+		available = {
+			has_civil_war = no 
+			has_character = ECU_asamblea_constituyente
+			has_government = democratic
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_POLITICAL_CHARACTER
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_assembly_takes_power_tt
+			add_political_power = 10
+			set_politics = {
+				ruling_party = ROOT 
+				elections_allowed = no
+			}
+			hidden_effect = {
+				add_country_leader_role = {
+					character = ECU_asamblea_constituyente
+					promote_leader = yes
+					country_leader = {
+						ideology = liberalism
+						traits = { }
+						expire = "1965.3.1.1"
+					}
+				}
+			}
+		}
+	}
+
+	## Call for Elections ##
+	focus = {
+		id = ECU_call_for_elections
+		icon = GFX_EUYL_free_elections
+		x = -2
+		y = 1
+		relative_position_id = ECU_return_power_to_the_assemblists
+		prerequisite = {
+			focus = ECU_return_power_to_the_assemblists
+		}
+		mutually_exclusive = {
+			focus = ECU_constituent_assembly_takeover
+		}
+
+		cost = 5
+
+		available = {
+			has_civil_war = no 
+			has_government = democratic
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			
+		}
+	}
+
+	## Leftist Agitation ##
+	focus = {
+		id = ECU_leftist_agitation
+		icon = GFX_focus_generic_workers_and_farmers_rise
+		x = 4
+		y = 1
+		relative_position_id = ECU_denounce_the_leftist_persecutions
+		prerequisite = {
+			focus = ECU_denounce_the_leftist_persecutions
+		}
+
+		cost = 7.2
+
+		available = {
+			NOT = {
+				has_active_mission = ECU_gallos_looming_coup
+			}
+			communism > 0.2
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ECU_socialist_support_idea
+				add_idea = ECU_leftist_agitation_idea
+			}
+			unlock_decision_tooltip = {
+				decision = ECU_radicalize_the_moderates
+				show_effect_tooltip = yes
+			}
+		}
+	}
+
+	## Push for National Elections ## | COMMUNIST PATH
+	focus = {
+		id = ECU_push_for_national_elections
+		icon = GFX_ECU_elections_commie
+		x = 0
+		y = 1
+		relative_position_id = ECU_leftist_agitation
+		prerequisite = {
+			focus = ECU_leftist_agitation
+		}
+		mutually_exclusive = {
+			focus = ECU_return_power_to_the_assemblists
+		}
+
+		cost = 5
+
+		available = {
+			communism > 0.49 
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			add_political_power = 50
+			country_event = ecu.4 ## Resounding Communist Victory at Elections
+			if = {
+				limit = {
+					has_idea = ECU_the_constituent_assembly
+				}
+				remove_ideas = ECU_the_constituent_assembly
+			}
+		}
+	}
+
+	## Quell the Parties ## | Removes Aftermath of the 4 day Civil War
+	focus = {
+		id = ECU_quell_the_parties
+		icon = GFX_ECU_quell_democrats_icon
+		x = 0
+		y = 3
+		relative_position_id = ECU_push_for_national_elections
+		prerequisite = {
+			focus = ECU_push_for_national_elections
+		}
+
+		cost = 5
+
+		available = {
+			has_country_flag = ECU_liberals_and_conservatives_mad_flag
+		}
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_BIPARTISANSHIP
+		}
+
+		completion_reward = {
+			add_political_power = 25
+			unlock_decision_tooltip = {
+				decision = ECU_quell_the_conservatives
+				show_effect_tooltip = yes 
+			}
+			unlock_decision_tooltip = {
+				decision = ECU_quell_the_liberals
+				show_effect_tooltip = yes 
+			}
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			custom_effect_tooltip = ECU_can_remove_aftermath_idea_tt
+		}
+	} 
+
+	## National Takeover ##
+	focus = {
+		id = ECU_national_takeover
+		icon = GFX_ECU_consolidate_power_icon
+		x = 0
+		y = 1
+		relative_position_id = ECU_quell_the_parties
+		prerequisite = {
+			focus = ECU_quell_the_parties
+		}
+
+		cost = 5
+
+		available = {
+			NOT = {
+				has_idea = ECU_aftermath_of_4_day_civil_war_1
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_POLITICAL
+		}
+
+		completion_reward = {
+			add_stability = 0.05
+			add_war_support = 0.05
+			add_political_power = 50
+		}
+	}
+
+	## Improved Labor Conditions ##
+	focus = {
+		id = ECU_improved_labor_conditions
+		icon = GFX_col_focus_priorizar_obrero
+		x = -3
+		y = 1
+		relative_position_id = ECU_push_for_national_elections
+		prerequisite = {
+			focus = ECU_push_for_national_elections
+			focus = ECU_return_power_to_the_assemblists
+		}
+
+		cost = 7.2
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speeds_buildings_factor = 0.05
+				tooltip = production_speed_buildings_factor_tt
+			}
+			add_to_variable = {
+				ECU_economy_industrial_capacity = 0.05
+				tooltip = industrial_capacity_factory_tt
+			}
+			add_to_variable = {
+				ECU_economy_political_power_gain = 0.075
+				tooltip = political_power_factor_tt
+			}
+		}
+	}
+
+	## National Mobilization ##
+	focus = {
+		id = ECU_national_mobilization
+		icon = GFX_ECU_national_mobilization_icon
+		x = 2
+		y = 1
+		relative_position_id = ECU_push_for_national_elections
+		prerequisite = {
+			focus = ECU_push_for_national_elections
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_MANPOWER
+		}
+
+		completion_reward = {
+			add_manpower = 25000
+			add_ideas = URG_expanded_consription
+			if = {
+				limit = {
+					has_active_mission = EUYL_conflict_escalation
+				}
+				add_days_mission_timeout = {
+					mission = EUYL_conflict_escalation
+					days = -150
+				}
+			}
+			hidden_effect = {
+				PRU = {
+					add_days_mission_timeout = {
+						mission = EUYL_conflict_escalation
+						days = -150
+					}
+				}
+			}
+		}
+	}
+
+	## Major Military Investment ##
+	focus = {
+		id = ECU_major_military_investment
+		icon = GFX_goal_generic_construct_mil_factory
+		x = -1
+		y = 1
+		relative_position_id = ECU_national_mobilization
+		prerequisite = {
+			focus = ECU_national_mobilization
+		}
+
+		available = {
+			has_civil_war = no 
+			num_of_factories > 10
+			NOT = {
+				has_idea = ECU_active_inflationary_crisis
+			}
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speed_arms_factory_factor = 0.05
+				tooltip = production_speed_arms_factory_factor_tt
+			}
+			EUYL_add_2_military = yes
+		}
+	}
+
+	## Civilian Expansion ##
+	focus = {
+		id = ECU_civilian_expansion
+		icon = GFX_focus_generic_communist_industry
+		x = 1
+		y = 1
+		relative_position_id = ECU_national_mobilization
+		prerequisite = {
+			focus = ECU_national_mobilization
+		}
+
+		cost = 10
+
+		available = {
+			has_civil_war = no 
+			num_of_factories > 10
+			NOT = {
+				has_idea = ECU_active_inflationary_crisis
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_ECONOMIC_GROWTH
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = ECU_modify_economic_reignition_intro_tt
+			add_to_variable = {
+				ECU_economy_production_speed_civilian_factory_factor = 0.05
+				tooltip = production_speed_industrial_complex_factor_tt
+			}
+			EUYL_add_1_civilian = yes
+			unlock_decision_tooltip = {
+				decision = ECU_push_forth_an_industrial_initiative_in_FROM
+				show_effect_tooltip = yes
+			}
+		}
+	}
+}

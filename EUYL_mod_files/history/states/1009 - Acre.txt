@@ -1,0 +1,28 @@
+
+state={
+	id=1009
+	name="Acre"
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = BRA
+		add_core_of = BOL
+		add_core_of = ACR
+		victory_points = {
+			14143 5 
+		}
+
+	}
+
+	provinces={
+		13316 14122 14125 14127 14142 14143 14155 14158 14168 14170 14171 14173 14187 14191 14192 
+	}
+	manpower=1900
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

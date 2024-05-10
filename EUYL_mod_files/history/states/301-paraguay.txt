@@ -1,0 +1,33 @@
+
+state={
+	id=301
+	name="Concepción"
+	resources={
+		rubber=1.000
+	}
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+		}
+		add_core_of = PAR
+		
+		victory_points = {
+			13407 5 #Concepción 
+		}
+		victory_points = {
+			13392 2 
+		}
+
+	}
+
+	provinces={
+		11023 12901 13403 13404 13405 13406 13407 13411 
+	}
+	manpower=90100
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

@@ -1,0 +1,24 @@
+state={
+	id=1030
+	name="Sucre"
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+			10912 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			10912 5 
+		}
+		add_core_of = VEN
+	}
+	provinces={
+		10912 14515 14520 14524 
+	}
+	manpower=202121
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

@@ -1,0 +1,34 @@
+
+state={
+	id=488
+	name="STATE_488"
+	resources = {
+		oil = 24.000
+	}
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = VEN
+		victory_points = {
+			10879 5
+		}
+		victory_points = {
+			14464 5 ## Ciudad Bolivar
+		}
+		victory_points = {
+			14471 1 ## Caicara del Orinoco
+		}
+		
+
+	}
+
+	provinces={
+		7915 10736 10849 10879 14414 14421 14425 14431 14434 14435 14436 14444 14446 14447 14450 14455 14459 14463 14464 14471 14472 14473 14475 14486 
+	}
+	manpower=245642
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

@@ -1,0 +1,29 @@
+
+state={
+	id=938
+	name="STATE_938"
+	resources={
+		steel=6.000
+		rubber=4.000
+		oil=2.000
+	}
+
+	history={
+		owner = BRA
+		buildings = {
+			infrastructure = 0
+
+		}
+		add_core_of = BRA
+		add_core_of = ROA
+
+	}
+
+	provinces={
+		2035 10874 10956 13274 13354 14225 14289 14307 
+	}
+	manpower=535312
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

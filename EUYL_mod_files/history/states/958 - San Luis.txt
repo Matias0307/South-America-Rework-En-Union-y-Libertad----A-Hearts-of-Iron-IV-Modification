@@ -1,0 +1,25 @@
+
+state={
+	id=958
+	name="STATE_958"
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 2
+
+		}
+		add_core_of = ARG
+		victory_points = {
+			12970 1 
+		}
+
+	}
+
+	provinces={
+		5152 5219 12970 13604 13609 13610 13614 13616 13617 13619 13622 
+	}
+	manpower=147122
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

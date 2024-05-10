@@ -1,0 +1,336 @@
+VEN_improve_oil_extraction_idea = {
+    if = {
+        limit = {
+            has_idea = VEN_dependent_on_oil_extraction_1
+        }
+        swap_ideas = {
+            remove_idea = VEN_dependent_on_oil_extraction_1
+            add_idea = VEN_dependent_on_oil_extraction_2
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_dependent_on_oil_extraction_2
+        }
+        swap_ideas = {
+            remove_idea = VEN_dependent_on_oil_extraction_2
+            add_idea = VEN_dependent_on_oil_extraction_3
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_dependent_on_oil_extraction_3
+        }
+        swap_ideas = {
+            remove_idea = VEN_dependent_on_oil_extraction_3
+            add_idea = VEN_dependent_on_oil_extraction_4
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_dependent_on_oil_extraction_4
+        }
+        swap_ideas = {
+            remove_idea = VEN_dependent_on_oil_extraction_4
+            add_idea = VEN_dependent_on_oil_extraction_5
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_dependent_on_oil_extraction_5
+        }
+        remove_ideas = VEN_dependent_on_oil_extraction_5
+    }
+    else = {
+        add_political_power = 25
+        EUYL_add_1_civilian = yes 
+    }
+}
+
+VEN_improve_oil_extraction_state_modifier = {
+    if = {
+        limit = {
+            has_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_1 }
+        }
+        remove_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_1 }
+        add_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_2 }
+    }
+    else_if = {
+        limit = {
+            has_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_2 }
+        }
+        remove_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_2 }
+        add_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_3 }
+        custom_effect_tooltip = VEN_environment_will_be_affected_tt
+        hidden_effect = { add_dynamic_modifier = { modifier = VEN_concerning_enviornmental_impact } }
+    }
+    else_if = {
+        limit = {
+            has_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_3 }
+        }
+        remove_dynamic_modifier = { modifier = VEN_inefficient_oil_extraction_3 }
+        add_dynamic_modifier = { modifier = VEN_advanced_oil_extraction }
+        custom_effect_tooltip = VEN_environment_will_be_affected_tt
+        hidden_effect = {
+            remove_dynamic_modifier = { modifier = VEN_concerning_enviornmental_impact }
+            add_dynamic_modifier = { modifier = VEN_severe_enviornmental_impact }
+        }
+    }
+}
+
+VEN_worsen_strikes = {
+    if = {
+        limit = { 
+            NOT = {
+                OR = {
+                    has_idea = strikes_1
+                    has_idea = strikes_2
+                    has_idea = strikes_3
+                }
+            }
+        }
+        add_ideas = strikes_1
+    }
+    else_if = {
+        limit = { has_idea = strikes_1 }
+        swap_ideas = {
+            remove_idea = strikes_1
+            add_idea = strikes_2
+        }
+    }
+    else_if = {
+        limit = { has_idea = strikes_2 }
+        swap_ideas = {
+            remove_idea = strikes_2
+            add_idea = strikes_3
+        }
+    }
+    else = {
+        add_stability = -0.01
+        add_political_power = -15
+    }
+}
+
+VEN_improve_strikes = {
+    if = {
+        limit = { has_idea = strikes_3 }
+        swap_ideas = {
+            remove_idea = strikes_3
+            add_idea = strikes_2
+        }
+    }
+    else_if = {
+        limit = { has_idea = strikes_2 }
+        swap_ideas = {
+            remove_idea = strikes_2
+            add_idea = strikes_1
+        }
+    }
+    else_if = {
+        limit = { has_idea = strikes_1 }
+        remove_ideas = strikes_1 
+    }
+    else = { add_stability = 0.05 }
+}
+
+VEN_improve_abrupt_government_transition_idea = {
+    if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_4
+        }
+        swap_ideas = {
+            remove_idea = VEN_abrupt_government_transition_4
+            add_idea = VEN_abrupt_government_transition_3
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_3
+        }
+        swap_ideas = {
+            remove_idea = VEN_abrupt_government_transition_3
+            add_idea = VEN_abrupt_government_transition_2
+        }
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_2
+        }
+        swap_ideas = {
+            remove_idea = VEN_abrupt_government_transition_2
+            add_idea = VEN_abrupt_government_transition_1
+        }
+    }
+    else_if = {
+        limit = { has_idea = VEN_abrupt_government_transition_1 }
+        remove_ideas = VEN_abrupt_government_transition_1
+    }
+    else = {
+        add_political_power = 40
+        add_stability = 0.03
+    }
+}
+
+VEN_remove_abrupt_government_transition = {
+    if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_4
+        }
+        remove_ideas = VEN_abrupt_government_transition_4
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_3
+        }
+        remove_ideas = VEN_abrupt_government_transition_3
+    }
+    else_if = {
+        limit = {
+            has_idea = VEN_abrupt_government_transition_2
+        }
+        remove_ideas = VEN_abrupt_government_transition_2
+    }
+    else = {
+        remove_ideas = VEN_abrupt_government_transition_1
+    }
+}
+
+VEN_initiate_balance_of_power = {
+    set_power_balance = {
+        id = VEN_foreign_influence_BoP
+        left_side = VEN_allied_side # will keep the last set side if not specified
+        right_side = VEN_axis_side # will keep the last set side if not specified
+        set_value = 0.05 # if specified will set the value of the power balance, this option will override the effect of set_default so the two options should not be used together. if neither set_default or set_value is specified the current value of the power balance will not change
+    }
+}
+
+VEN_move_5_left = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -0.05
+    }
+}
+
+VEN_move_10_left = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -0.1
+    }
+}
+
+VEN_move_15_left = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -0.15
+    }
+}
+
+VEN_move_25_left = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -0.25
+    }
+}
+
+VEN_move_50_left = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -0.50
+    }
+}
+
+VEN_move_100_left = { ##debug
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = -1
+    }
+}
+
+VEN_move_5_right = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 0.05
+    }
+}
+
+VEN_move_10_right = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 0.1
+    }
+}
+
+VEN_move_15_right = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 0.15
+    }
+}
+
+VEN_move_25_right = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 0.25
+    }
+}
+
+VEN_move_50_right = {
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 0.5
+    }
+}
+
+VEN_move_100_right = { ##debug
+    add_power_balance_value = {
+        id = VEN_foreign_influence_BoP
+        value = 1
+    }
+}
+
+VEN_BoP_remove_effect = {
+    remove_power_balance = { id = VEN_foreign_influence_BoP }
+}
+
+VEN_modernize_army = {
+    if = {
+        limit = {
+            has_idea = VEN_outdated_army
+        }
+        swap_ideas = {
+            remove_idea = VEN_outdated_army
+            add_idea = VEN_modernized_army_1
+        }
+    }
+    else_if = {
+        limit = { has_idea = VEN_modernized_army_1 }
+        swap_ideas = {
+            remove_idea = VEN_modernized_army_1
+            add_idea = VEN_modernized_army_2
+        }
+    }
+    else_if = {
+        limit = { has_idea = VEN_modernized_army_2 }
+        swap_ideas = {
+            remove_idea = VEN_modernized_army_2
+            add_idea = VEN_modernized_army_3
+        }
+    }
+    else = {
+        army_experience = 25
+        add_command_power = 50
+        random = {
+            chance = 50
+            EUYL_add_1_military = yes
+        }
+    }
+}
+
+VEN_modernize_army_effect = {
+    add_timed_idea = {
+        idea = VEN_army_in_process_of_modernization
+        days = 240
+    }
+    custom_effect_tooltip = EUYL_effects_when_removed_tt
+	effect_tooltip = { VEN_modernize_army = yes }
+}

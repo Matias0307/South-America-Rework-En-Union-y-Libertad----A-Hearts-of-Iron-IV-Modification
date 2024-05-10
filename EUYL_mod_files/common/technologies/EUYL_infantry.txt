@@ -1,0 +1,38 @@
+technologies = {	
+	### EUYL ###
+	alpacalry = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			alpacalry
+		}		
+	}
+
+	PAR_indiginous_knowledge_tech = { #Hidden tech showed as part of FIN_sami_pathfinders national spirit
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_recon = {
+			forest = {
+				movement = 0.1
+			}
+			jungle = {
+				movement = 0.1
+			}
+			river = {
+				movement = 0.05
+			}
+		}
+	}
+}

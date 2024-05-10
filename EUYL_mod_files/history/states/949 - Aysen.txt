@@ -1,0 +1,25 @@
+
+state={
+	id=949
+	name="STATE_949"
+
+	history={
+		owner = CHL
+		add_core_of = CHL
+		buildings = {
+
+		}
+		victory_points = {
+			2161 3 
+		}
+
+	}
+
+	provinces={
+		2161 5159 8198 10961 13295 13652 13661 13666 13669 13670 13674 13675 13681 
+	}
+	manpower=16324
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

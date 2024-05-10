@@ -1,0 +1,574 @@
+﻿capital = 279
+
+set_convoys = 75
+
+every_core_state = {
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+
+IF = {
+	limit = { 
+		has_dlc = "Trial of Allegiance"
+	}
+	set_oob = "CHL_TOA_1936"
+}
+IF = {
+	limit = {
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	set_oob = "CHL_1936"
+}
+
+IF = {
+	limit = {
+		AND = {
+			has_dlc = "La Resistance"
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	JUNO_create_rosita_serrano_operative = yes
+}
+
+add_ideas = {
+	CHL_highly_divided_social_classes_idea
+	CHL_land_of_mountain
+	CHL_remnants_of_the_great_depression
+}
+
+### EUYL ###
+recruit_character = EUYL_CHL_arturo_alessandri
+recruit_character = EUYL_CHL_carlos_contreras_labarca
+recruit_character = EUYL_CHL_escudero_oscar_otárola
+recruit_character = EUYL_CHL_carlos_fuentes_rabe
+recruit_character = EUYL_CHL_arturo_espinoza_mujica
+recruit_character = CHL_jorge_gonzales_von_marées
+recruit_character = CHL_carlos_ibáñez_del_campo
+recruit_character = CHL_bartolomé_guillermo_blanche_espejo
+recruit_character = EUYL_CHL_oscar_fuentes_pantoja
+recruit_character = CHL_alfredo_portales
+recruit_character = CHL_Óscar_novoa_fuentes
+recruit_character = CHL_ramon_cañas_montalva
+#recruit_character = CHL_daniel_herrera
+recruit_character = CHL_tomás_montt
+recruit_character = CHL_bartolomé_orbegoso
+recruit_character = CHL_ministerio_de_trabajadores
+recruit_character = EUYL_CHL_pedro_aguirre_cerda
+recruit_character = EUYL_CHL_jeronimo_mendez
+recruit_character = CHL_gustavo_ross
+recruit_character = CHL_juan_antonio
+recruit_character = EUYL_CHL_miguel_cruchaga_tacomal
+recruit_character = EUYL_CHL_luis_alamos_barros
+recruit_character = EUYL_CHL_pedro_dartnell
+recruit_character = CHL_augusto_pinochet
+recruit_character = EUYL_CHL_dario_mujica_gamboa
+recruit_character = EUYL_CHL_marmaduke_grove
+recruit_character = EUYL_CHL_c_j_de_la_motte
+recruit_character = EUYL_CHL_francisco_o_ryan_orrego
+recruit_character = EUYL_CHL_ernesto_m_orlando
+recruit_character = EUYL_CHL_jose_luis_sanchez_besa
+recruit_character = EUYL_CHL_carlos_puga_monsalve
+recruit_character = EUYL_CHL_gustavo_silva
+recruit_character = EUYL_CHL_dario_cellejas_rojas
+recruit_character = EUYL_CHL_ariosto_herrera
+recruit_character = CHL_defensive_military_council
+recruit_character = CHL_offensive_military_council
+recruit_character = CHL_organizational_military_council
+recruit_character = CHL_air_safety_aviation_council
+recruit_character = CHL_all_weather_aviation_council
+recruit_character = CHL_commerce_raiding_naval_council
+recruit_character = CHL_reform_naval_council
+recruit_character = CHL_infantry_military_council
+recruit_character = CHL_army_regrouping_military_council
+recruit_character = CHL_concealment_military_council
+recruit_character = CHL_naval_strike_aviation_council
+recruit_character = CHL_close_air_support_aviation_council
+recruit_character = CHL_logistics_naval_council
+recruit_character = CHL_anti_submarine_naval_council
+recruit_character = EUYL_CHL_peter_hansen
+recruit_character = CHL_francisco_javier_diaz
+recruit_character = CHL_venancio_conuepan
+recruit_character = EUYL_CHL_rene_schneider
+recruit_character = EUYL_CHL_carlos_prats
+recruit_character = EUYL_CHL_guillermo_barrios_tirado
+recruit_character = CHL_vicente_merino_bielich
+recruit_character = CHL_navo_jorge_videla_cobo
+recruit_character = EUYL_CHL_silvestre_urizar_branders
+recruit_character = EUYL_CHL_carlos_davila
+recruit_character = EUYL_CHL_arturo_puga
+recruit_character = EUYL_CHL_juan_pablo_bennett
+### EUYL ###
+
+### DLC ###
+IF = {
+	limit = { 
+		NOT = {
+			has_dlc = "Trial of Allegiance"
+		}
+	}
+	recruit_character = CHL_arturo_alessandri
+	recruit_character = CHL_jorge_gonzález_von_marées
+	recruit_character = CHL_carlos_contreras_labarca
+	recruit_character = CHL_escudero_oscar_otárola
+	recruit_character = CHL_domingo_blanco # not in the dlc
+	recruit_character = CHL_julio_allard_pinto
+	recruit_character = CHL_gustavo_silva # not in the dlc
+	recruit_character = CHL_jose_luis_sanchez_besa
+	recruit_character = CHL_marmaduke_grove
+	recruit_character = CHL_e_novoa_fuentes
+	recruit_character = CHL_dario_mujica_gamboa
+	recruit_character = CHL_c_j_de_la_motte
+	recruit_character = CHL_carlos_fuentes_rabe
+	recruit_character = CHL_arturo_espinoza_mujica
+	recruit_character = CHL_carlos_puga_monsalve
+	recruit_character = CHL_francisco_o_ryan_orrego
+	recruit_character = CHL_ernesto_m_orlando
+	recruit_character = CHL_dario_cellejas_rojas
+	recruit_character = CHL_ariosto_herrera
+	recruit_character = CHL_luis_alamos_barros
+	recruit_character = CHL_miguel_cruchaga_tacomal
+	recruit_character = CHL_gustavo_ross_santa_maria
+	ELSE_IF = {
+		limit = {
+			has_dlc = "Trial of Allegiance"
+		}
+		recruit_character = CHL_arturo_alessandri
+		recruit_character = CHL_jorge_gonzález_von_marées
+		recruit_character = CHL_carlos_contreras_labarca
+		recruit_character = CHL_pedro_aguirre_cerda
+		recruit_character = CHL_escudero_oscar_otárola
+		recruit_character = CHL_julio_allard_pinto
+		recruit_character = CHL_jose_luis_sanchez_besa
+		recruit_character = CHL_marmaduke_grove
+		recruit_character = CHL_e_novoa_fuentes
+		recruit_character = CHL_carlos_fuentes_rabe
+		recruit_character = CHL_arturo_espinoza_mujica
+		recruit_character = CHL_ariosto_herrera
+		recruit_character = CHL_luis_alamos_barros
+		recruit_character = CHL_miguel_cruchaga_tacomal
+		recruit_character = CHL_gustavo_ross_santa_maria
+		recruit_character = CHL_elias_lafertte_gavino
+		recruit_character = CHL_carlos_ibanez
+		recruit_character = CHL_carlos_keller_reuff
+		recruit_character = CHL_juan_gomez_millas
+		recruit_character = CHL_manuel_hidalgo_plaza
+		recruit_character = CHL_juan_antonio_rios
+		recruit_character = CHL_gabriel_gonzales_videla
+		recruit_character = CHL_eduardo_cruz_coke
+		recruit_character = CHL_fernando_alessandri
+		recruit_character = CHL_antoine_iii
+		recruit_character = CHL_manuel_manquilef
+		recruit_character = CHL_venancio_huenchual
+		recruit_character = CHL_esteban_romero_sandoval
+		recruit_character = CHL_bartolome_blanche
+		recruit_character = CHL_pedro_dartnell
+		recruit_character = CHL_guillermo_barrios_tirado
+		recruit_character = CHL_francisco_valderrama
+		recruit_character = CHL_augustin_de_guevara
+		recruit_character = CHL_pedro_calderon
+		recruit_character = CHL_ricardo_aguayo
+		recruit_character = CHL_humberto_valdivieso
+		recruit_character = CHL_gregorio_tascon
+		recruit_character = CHL_rafael_reyes
+		recruit_character = CHL_vincente_merino_bielich
+		recruit_character = CHL_oscar_reeves_leiva
+		recruit_character = CHL_oscar_fuentes_pantoja
+		recruit_character = CHL_alfredo_portales_mourgues
+		recruit_character = CHL_olegario_reyes
+		recruit_character = CHL_emilio_soto
+		recruit_character = CHL_jorge_cobo
+		recruit_character = CHL_peter_hansen
+		recruit_character = CHL_manuel_pedregal
+		recruit_character = CHL_augusto_pimochet
+		recruit_character = CHL_carlos_prats
+		recruit_character = CHL_rene_schneider
+		recruit_character = CHL_ulk
+		recruit_character = CHL_arnaldo_carrasco
+		recruit_character = CHL_elena_caffarena
+		recruit_character = CHL_pablo_neruda
+		recruit_character = CHL_jaime_quintana
+		recruit_character = CHL_maria_de_la_cruz
+		recruit_character = CHL_salvador_allende
+		recruit_character = CHL_rayen_quitral
+		recruit_character = CHL_jorge_alessandri
+		recruit_character = CHL_guido_beck
+		recruit_character = CHL_gabriela_mistral
+		recruit_character = CHL_juan_rosetti
+		recruit_character = CHL_emilio_codesido
+		recruit_character = CHL_ernesto_jarpa
+		recruit_character = CHL_francisco_encina
+		recruit_character = CHL_jose_morales
+		recruit_character = CHL_ramon_perez
+		recruit_character = CHL_manuel_panguilef
+		recruit_character = CHL_oskar_schnake
+		recruit_character = CHL_bernardo_leighton
+		recruit_character = CHL_tancredo_pinochet
+		recruit_character = CHL_emilio_diaz
+		recruit_character = CHL_radomiro_romero
+		recruit_character = CHL_roberto_araya
+		recruit_character = CHL_arturo_olavaria
+		recruit_character = CHL_rolando_reyes
+		recruit_character = CHL_diego_aguilar
+		recruit_character = CHL_arturo_benitez
+		recruit_character = CHL_jeronimo_mendez
+		recruit_character = CHL_miguel_serrano
+		recruit_character = CHL_manuel_neculman
+		recruit_character = CHL_benjamin_larrain
+		recruit_character = CHL_pedro_alfonso
+		recruit_character = CHL_guillermo_araya
+		recruit_character = CHL_marta_vergara
+		recruit_character = CHL_osvaldo_lira_perez
+		recruit_character = CHL_quintin_lame
+		recruit_character = CHL_carlos_huayquinir
+	}
+}
+### DLC ###
+
+if = {
+	limit = { has_dlc = "Man the Guns" }
+		set_naval_oob = "CHL_1936_naval_mtg"
+	else = {
+		set_naval_oob = "CHL_1936_naval_legacy"
+	}
+}
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gw_artillery = 1
+	interwar_antiair = 1
+	tech_mountaineers = 1
+	basic_train = 1
+	tech_trucks = 1
+	motorised_infantry = 1
+	early_fighter = 1
+	tech_support = 1
+}
+if = {
+	limit = { has_dlc = "By Blood Alone" }
+		set_air_oob = "CHL_1936_air_bba"
+		set_technology = {
+			aa_lmg = 1
+			engines_1 = 1
+			early_bombs = 1
+			iw_small_airframe = 1
+		}
+	else = {
+		set_air_oob = "CHL_1936_air_legacy"
+		set_technology = {
+			early_fighter = 1
+			cv_early_fighter = 1
+			early_bomber = 1
+		}
+	}
+}
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	set_technology = {
+		early_submarine = 1
+		early_destroyer = 1
+		early_light_cruiser = 1
+		early_heavy_cruiser = 1
+		early_battleship = 1
+		transport = 1
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	set_technology = {
+		basic_naval_mines = 1
+		early_ship_hull_light = 1
+		early_ship_hull_submarine = 1
+		basic_ship_hull_submarine = 1
+		early_ship_hull_cruiser = 1
+		early_ship_hull_heavy = 1
+		basic_battery = 1
+		basic_secondary_battery = 1
+		basic_torpedo = 1
+		basic_depth_charges = 1
+		coastal_defense_ships = 1
+		mtg_transport = 1
+	}
+}
+
+set_country_flag = monroe_doctrine
+
+1939.1.1 = {
+
+	add_political_power = 798
+	
+	remove_ideas = CHL_prepare_the_people_for_war_idea
+	add_ideas = CHL_land_of_mountain
+	set_cosmetic_tag = CHL_UNIFIED
+	#generic focuses
+	complete_national_focus = CHL_democracy_path
+	complete_national_focus = CHL_crush_the_nacistas
+	complete_national_focus = CHL_liberalism
+	complete_national_focus = CHL_central_bank
+	complete_national_focus = CHL_revenue_tax
+	complete_national_focus = CHL_aftermath_of_the_great_depression
+	complete_national_focus = CHL_maintain_the_stability_of_the_nation
+	complete_national_focus = CHL_expand_the_industry
+	complete_national_focus = CHL_make_an_effort_to_stabilize_the_nation
+	complete_national_focus = CHL_cooperate_with_el_frente
+	complete_national_focus = CHL_liberalism_focus
+	complete_national_focus = CHL_expand_the_welfare_plans
+	complete_national_focus = CHL_nationalize_key_industries
+	complete_national_focus = CHL_advocate_a_compromise_with_the_democrats
+	complete_national_focus = CHL_victory_for_the_fp
+	complete_national_focus = CHL_focus_on_internal_politics
+	complete_national_focus = CHL_reignite_ties_with_the_british
+	complete_national_focus = CHL_fuerzas_armadas
+	complete_national_focus = CHL_ejercito_de_chile
+	complete_national_focus = CHL_armada_chilena
+	
+	oob = "CHL_1939"
+	if = {
+		limit = { has_dlc = "Man the Guns" }
+			set_naval_oob = "CHL_1939_naval_mtg"
+		else = {
+			set_naval_oob = "CHL_1939_naval_legacy"
+		}
+	}
+
+	set_technology = {
+		tactical_bomber1 = 1
+		CAS1 = 1
+		interwar_artillery = 1
+		infantry_weapons1 = 1
+		infantry_weapons2 = 1
+		support_weapons = 1
+
+		#doctrines
+		air_superiority = 1
+		grand_battle_plan = 1
+		trench_warfare = 1
+		fleet_in_being = 1
+		battlefleet_concentration = 1
+		convoy_sailing = 1
+
+
+		#electronics
+		electronic_mechanical_engineering = 1
+		radio = 1
+		radio_detection = 1
+		mechanical_computing = 1
+		computing_machine = 1
+
+		#industry
+		basic_machine_tools = 1
+		improved_machine_tools = 1
+		advanced_machine_tools = 1
+		synth_oil_experiments = 1
+		fuel_silos = 1
+		oil_processing = 1
+		improved_oil_processing = 1
+		construction1 = 1
+		construction2 = 1
+		dispersed_industry = 1
+		dispersed_industry2 = 1
+	}
+}
+
+set_convoys = 65
+set_politics = {
+	ruling_party = democratic
+	last_election = "1932.10.30"
+	election_frequency = 72  #but 4 years after this one in 1938.
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 87
+	communism = 7
+	fascism = 6
+}
+
+
+1939.1.1 = {
+	set_politics = {
+		ruling_party = communism
+		last_election = "1938.10.25"
+		election_frequency = 48
+		elections_allowed = yes
+	}
+
+	set_popularities = {
+		democratic = 47
+		communism = 49
+		fascism = 4
+	}
+
+	create_country_leader = {
+		name = "Pedro Aguirre Cerda"
+		desc = "POLITICS_PEDRO_AGUIRRE_CERDA_DESC"
+		picture = "gfx/leaders/CHL/portrait_CHL_pedro_aguirre_cerda.dds"
+		expire = "1965.1.1"
+		ideology = anti_revisionism
+		traits = {
+			CHL_leader_of_the_people
+		}
+	}
+}
+
+### VARIANTS ###
+# 1936 Start #
+if = {
+	limit = { not = { has_dlc = "Man the Guns" } }
+	### Ship Variants ###
+	create_equipment_variant = {
+		name = "Capitán O'Brien Class"
+		type = submarine_1
+		upgrades = {
+			ship_reliability_upgrade = 1
+			sub_engine_upgrade = 1
+			sub_stealth_upgrade = 1
+			sub_torpedo_upgrade = 1
+		}
+	}
+	create_equipment_variant = {
+		name = "Serrano Class"
+		type = destroyer_1
+		upgrades = {
+			ship_torpedo_upgrade = 1
+			destroyer_engine_upgrade = 1
+			ship_ASW_upgrade = 1
+			ship_anti_air_upgrade = 1
+		}
+	}
+}
+if = {
+	limit = {
+		has_dlc = "By Blood Alone"
+	}
+	create_equipment_variant = {
+		name = "P-6" #
+		type = small_plane_airframe_0
+		modules = {
+			fixed_main_weapon_slot = light_mg_2x
+			engine_type_slot = engine_1_1x
+			special_type_slot_1 = empty
+		}
+		obsolete = yes
+	}
+}
+if = {
+	limit = { has_dlc = "Man the Guns" }
+	# Submarines #
+	create_equipment_variant = {
+		name = "H1 Class"				
+		type = ship_hull_submarine_1
+		name_group = CHL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Capitán O'Brien Class"				
+		type = ship_hull_submarine_1
+		name_group = CHL_SS_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_torpedo_slot = ship_torpedo_sub_1
+			fixed_ship_engine_slot = sub_ship_engine_1
+			rear_1_custom_slot = ship_torpedo_sub_1
+		}
+	}
+	# Destroyers #
+	create_equipment_variant = {
+		name = "Almirante Lynch Class"				
+		type = ship_hull_light_1
+		name_group = CHL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+		obsolete = yes
+	}
+	create_equipment_variant = {
+		name = "Serrano Class"	
+		type = ship_hull_light_1
+		name_group = CHL_DD_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_light_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = light_ship_engine_1
+			fixed_ship_torpedo_slot = ship_torpedo_1
+			mid_1_custom_slot = ship_mine_layer_1
+			rear_1_custom_slot = ship_depth_charge_1
+		}
+	}
+	# Cruisers #
+	create_equipment_variant = {
+		name = "O'Higgins Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHL_CA_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = ship_armor_cruiser_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = empty
+		}
+	}
+	create_equipment_variant = {
+		name = "Chacabuco Class"				
+		type = ship_hull_cruiser_coastal_defense_ship
+		name_group = CHL_CL_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_medium_battery_1
+			fixed_ship_anti_air_slot = empty
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = cruiser_ship_engine_1
+			fixed_ship_armor_slot = empty
+			fixed_ship_secondaries_slot = empty
+			mid_1_custom_slot = empty
+			mid_2_custom_slot = empty
+			rear_1_custom_slot = ship_torpedo_1
+		}
+	}
+	# Battleships #
+	create_equipment_variant = {
+		name = "Almirante Latorre Class"	
+		type = ship_hull_heavy_1
+		name_group = CHL_BB_HISTORICAL
+		parent_version = 0
+		modules = {
+			fixed_ship_battery_slot = ship_heavy_battery_1
+			fixed_ship_anti_air_slot = ship_anti_air_1
+			fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+			fixed_ship_radar_slot = empty
+			fixed_ship_engine_slot = heavy_ship_engine_1
+			fixed_ship_secondaries_slot = ship_secondaries_1
+			fixed_ship_armor_slot = ship_armor_bb_1
+			front_1_custom_slot = ship_heavy_battery_1
+			mid_1_custom_slot = ship_secondaries_1
+			mid_2_custom_slot = ship_airplane_launcher_1
+			rear_1_custom_slot = empty
+		}
+	}
+}

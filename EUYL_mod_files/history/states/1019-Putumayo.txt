@@ -1,0 +1,30 @@
+
+state={
+	id=1019
+	name="STATE_1019"
+	resources={
+		rubber=14.000
+	}
+
+	history={
+		owner = COL
+		add_claim_by = PRU
+		buildings = {
+			infrastructure = 1
+
+		}
+		add_core_of = COL
+		victory_points = {
+			14288 5 
+		}
+
+	}
+
+	provinces={
+		12825 14288 14313 14319 14320 14329 14333 14337 14347 
+	}
+	manpower=198900
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

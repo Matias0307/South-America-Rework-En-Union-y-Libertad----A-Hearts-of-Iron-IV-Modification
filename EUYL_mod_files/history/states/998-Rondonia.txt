@@ -1,0 +1,16 @@
+
+state={
+	id=998
+	name="Rondonia"
+	history={
+		owner = BRA
+		add_core_of = BRA
+		add_core_of = ROA
+	}
+	provinces={
+		14053 14065 14086 14096 14109 14114 14146 
+	}
+	manpower=110520
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

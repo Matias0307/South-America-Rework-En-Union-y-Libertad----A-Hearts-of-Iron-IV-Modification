@@ -1,0 +1,26 @@
+
+state={
+	id=1023
+	name="Mapari"
+	resources={
+		rubber=3.000
+	}
+
+	history={
+		owner = BRA
+		victory_points = {
+			13083 1 
+		}
+		add_core_of = BRA
+		add_core_of = ROA
+
+	}
+
+	provinces={
+		13083 13343 14282 14302 14304 14310 14316 14321 14326 14327 
+	}
+	manpower=119305
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

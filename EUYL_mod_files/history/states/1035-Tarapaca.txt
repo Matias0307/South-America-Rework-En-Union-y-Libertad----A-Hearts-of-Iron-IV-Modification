@@ -1,0 +1,30 @@
+
+state={
+	id=1035
+	name="Tarapacá"
+	resources={
+		steel=3.000
+		tungsten=2.000
+	}
+
+	history={
+		owner = CHL
+		add_core_of = CHL
+		add_core_of = BOL
+		buildings = {
+			infrastructure = 2
+			dockyard = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			8217 3 
+		}
+
+	}
+	provinces={
+		8217 13815 13821 13843 13849 
+	}
+	manpower=31554
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,119 @@
+﻿l_spanish:
+ ARG_northern:0 "Comenzarás la guerra civil con las provincias de §YLa Rioja, San Juan, Catamarca, Tucumán, Salta, Jujuy, Corrientes, Santiago del Estero, Misiones, Entre Ríos, Santa Fe y Córdoba!§ !. \n"
+ ARG_gainsupport:0 "Comenzarás la guerra civil con §G3 más regimientos de milicias§! que los Unitarios. \n"
+ ARG_workers_support:0 "Tus regimientos de milicia estarán §G30% mejor equipadas§! que los regimientos de los Unitarios. \n"
+ ARG_Military_support:0 "Desbloquea decisiones que le permitirán §G aumentar temporalmente su velocidad, organización, ataque o defensa§! durante la guerra civil. \n"
+ ARG_high_command:0 "Obtendrás §G2 generales fascistas§! al comienzo de la guerra. \n"
+ ARG_civilwar:0 "Serás lanzado a una §Rguerra civil§!, sin embargo, también desbloquearás decisiones que §GTe permitirán comprar armas extranjeras de potencias fascistas§! durante la guerra civil. \n"
+ ARG_uruguay_influence:0 "Se establecerá un §Ygobierno fascista colaboracionista§! en Uruguay. \n"
+ ARG_greaterconfederation:0 "La §YConfederación Argentina§! ahora se conocerá como la §YGran Confederación Argentina§!. \n"
+ ARG_demand_territory:0 "Cuanto §Ymás mano de obra§! tiene en el campo, §Gmayor es la probabilidad§! tiene del país de destino §Gcediendo§! ese territorio. \n"
+ ARG_invper:0 "[PRU.GetFlag] §Y[PRU.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_invven:0 "[VEN.GetFlag] §Y[VEN.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_invitedominican:0 "[DOM.GetFlag] §Y[DOM.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_invitesalvador:0 "[ELS.GetFlag] §Y[ELS.GetName]§! obtendrá una §Yinvites§! a nuestra facción".
+ ARG_invchile:0 "[CHL.GetFlag] §Y[CHL.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_invcol:0 "[COL.GetFlag] §Y[COL.GetName]§! obtendrá una §Yinvitación§! para nuestra facción".
+ ARG_invurg:0 "[URG.GetFlag] §Y[URG.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_invecu:0 "[ECU.GetFlag] §Y[ECU.GetName]§! obtendrá una §Yinvitación§! a nuestra facción".
+ ARG_removefascismfromcontinent:0 "Obtendrás §Yjustificaciones de guerra§! contra cada nación §Yfascista§! en el continente."
+ ARG_removecommunismfromcontinent:0 "Obtendrá §Yjustificaciones de guerra§! contra cada nación §Ycommunista§! en el continente."
+ ARG_asked_for_control_over_the_southern_atlantic:0 "§RI si le ha pedido a Gran Bretaña el control del Atlántico Sur y ellos aceptaron:§!\n"
+ ARG_rivadavia:0 "§Y2 Acorazados clase Rivadavia§! se colocarán en la cola de producción §G70%§! y §G55%§! completos respectivamente".
+ ARG_rapidlymobilize:0 "§RA la gente no le gustará que el gobierno se movilice rápidamente.§!"
+ ARG_infamous:0 "Si desea §Ycontinuar por este camino§!, debe §Ycompletar§! este enfoque §Yantes de las elecciones de 1937§!".
+ ARG_createmountaineers:0 "Crea §Y3§! divisiones de montañeros con §Y7§! batallones montañeros "
+ ARG_ifspainaccepts:0 "§RSpain debe aceptar para que se produzcan las siguientes bonificaciones.§!"
+ ARG_roberto_resigns:0 "§YRoberto deja el poder§!"
+ ARG_kill_roberto_off:0 "Desbloquea decisiones que §Rempeorarán§! la condición de salud de Roberto y harán que §Yrenuncie a su cargo más rápido§!".
+ ARG_improve_robertos_condition:0 "Desbloquea decisiones que §GMejorarán§! el estado de salud de Roberto y harán que §Y renuncie a su cargo en una fecha posterior§!".
+ ARG_greatly_increase_navy:0 "En gran medida §Yaumentando§! nuestro presupuesto naval §GMejorará enormemente§! nuestra producción naval a costa de producción industrial §Rreducida§! y §Rmás bienes de consumo§!."
+ ARG_commence_coup_planning:0 "Activa la misión §YEl Gran Golpe§!. Cuando ocurra el golpe, Perón se convertirá en presidente. \n §RSi Roberto no renuncia antes de que ocurra el golpe, ¡entonces sufrirás grandes PENALIDADES de ESTABILIDAD y APOYO DE GUERRA! §! "
+ ARG_greatconcession:0 "Desbloquea §YLa Gran Concesión§! decisiones, lo que le permite §Gretrasar§! el golpe para asegurarse de que Roberto dimita §Yantes§! que ocurra el golpe."
+ ARG_iftheyaccept:0 "§RSi aceptan: §!\n"
+ ARG_unlockivestment:0 "Desbloquea decisiones de §YInversiones§! únicas, lo que le permite §Ginvertir§! en economías extranjeras."
+ ARG_investmentcivilianfactories:0 "Por cada país en el que §YInvirtió§!, §Gobtendrá §Y2 Fábricas civiles§!."
+ ARG_invested_in_the_unitedk:0 "§RSi invirtió en la economía británica§!"
+ ARG_ifinvestedamerica:0 "§RSi invirtió en la economía estadounidense§!"
+ ARG_demanding_notes_from_peron:0 "Desbloquea §YDemandar Peron que informe sus hallazgos§! decisión, lo que le permite obtener §YExperiencia del ejército§! y tal vez incluso un §GBono de investigación§! en §Ytecnología de montañismo§!."
+ ARG_unlockdebtrepaymentdecisions:0 "Desbloquea §YRpeagar la Deuda§! decisiones, lo que le permite §Yrepagar§! su deuda."
+ ARG_ramon_economist:0 "Al convertirse en presidente después del §Retiro§! de Roberto, §YRamon Castillo§! §Gobtendrá§! §Ycharacteristicas§! muy similares a los de Roberto."
+ ARG_support_coup:0 "Apoyar el Golpe pondrá al §YMilitar§! a cargo, sin embargo, esto le permitirá §Evitar una guerra civil§!."
+ ARG_defy_coup:0 "Desafiar el Golpe te permitirá mantener a §Y[Root.GetLeader]§! en el poder, SIN EMBARGO, esto conducirá a una §Rguerra civil§!."
+ ARG_loyalist_militias:0 "Usted §Gobtendrá§! §Y4 regimientos de milicias§! al comienzo de la guerra civil, SIN EMBARGO, la Junta Militar §RTambién ganará§! §Y2 regimientos de milicias§!."
+ ARG_conserve_stocks:0 "Retendrá §Y75%§! del equipo almacenado en lugar de §Y50%§!."
+ ARG_disbanded_army:0 "Aunque §Rtendrás§! las siguientes desventajas:"
+ ARG_disbanded_army_junta:0 "\nLa Junta Militar §GGanará§! estos perjuicios:"
+ ARG_gain_gun_output:0 "Al comienzo de la guerra civil, §Ggain§!:"
+ ARG_patria_and_war:0 "§RCompletar este enfoque iniciará la guerra civil!§! \n\n §Ganará§! los siguientes §Gbuffs§! durante y §Ydespués§! la guerra civil:"
+ ARG_ramon_oust:0 "§RCompletar este enfoque hará que el golpe ocurra prematuramente, y al hacerlo, se le otorgará: §!"
+ ARG_fiveyearplan:0 "Desbloquea las decisiones §YEl Plan de 5 Años§!, lo que le permitirá §Yexpandir§! múltiples partes de su §Yindustria§!".
+ ARG_invitecountries:0 "§YBolivia§!, §YChile§! y §YUruguay§! recibirán invitaciones a la facción".
+ ARG_completejoinsoviet:0 "§Rsi completa el enfoque§! §YÚnete a los soviéticos§!, §R, ganarás en su lugar: §!"
+ ARG_unlock_integrate_territory:0 "Desbloquea §YIntegrar nuestros territorios§! decisiones, lo que te permite §integrar§! Tus §Yconquistados§! Territorios."
+ ARG_tungstenbolivia:0 "§R¡Cuanto mayor sea la excavación que hayas investigado, más recursos obtendrás de este enfoque! \n§!"
+ ARG_unlock_unique_prospect:0 "Desbloquea §YProspecto Por Recursos§! Decisiones"
+ ARG_add_5_days:0 "Cada §YCrisis inflacionaria§! tardará §G5§! días más".
+ ARG_5_days_faster:0 "Cada §YCrisis inflacionaria§! tardará §R5§! días menos."
+ ARG_add_15_days:0 "Cada §YCrisis inflacionaria§! tardará §G15§! días más."
+ ARG_add_25_days:0 "Cada §YCrisis inflacionaria§! tardará §G25§! días más."
+ ARG_inflation_slightly_decreased:0 "Su §YInflación§! será §Gligeramente mejorada§!".
+ ARG_capture_santa_catarina:0 "§RCapturar y controlar Santa Catarina pondrá fin a la guerra rápidamente!§!"
+ ARG_agressive_stance:0 "§RExtender nuestro territorio tan agrresivamente podría dar lugar a que nuestros vecinos vayan a por nosotros!§!"
+ EUYL_available_as_industrial_concern_tt:0 "§GDisponible§! como §YCompañía Industrial§!:\n"
+ 
+ CHL_pathcivilwar:0 "§REsta ruta llevará a una guerra civil!§!"
+ CHL_create_battleship:0 "Un Acorazado de la clase §YAlmirante Latorre§! será colocado en la cola de producción §G80%§! completa."
+ CHL_invite_nonagression:0 "Cada país vecino con el que tengas un §YPacto de No Agresión§!, recibirá una §YInvitación§! a nuestra facción."
+ CHL_gain_militias:0 "Empezarás la guerra civil con §G5 milicias extra§!"
+ CHL_civilwar:0 "§R¡Te lanzarán a una guerra civil!§!"
+ CHL_if_completed_prepare:0 "§¡Si completan el enfoque! §YPrepara a la gente para la guerra§!, también ganarás..."
+ CHL_nap_civies:0 "Por cada vecino con el que tengas un §Pacto de No Agresión§! con, tu ganarás §Ganarás§! §Y2 Fábricas Civiles§!."
+ CHL_save_equipment:0 "Retendrás §G60%§! de equipo en la guerra civil"
+ CHL_production:0 "§Los demócratas tendrán las siguientes debilidades:§!"
+ CHL_known_as_global:0 "¡La §YComunidad Anarquísta de Chile§! será ahora conocida como la §YComunidad Anarquísta Global§!".
+ CHL_unlock_integrate:0 "Desbloquea las decisiones de §YIntegración de nuestros Territorios§!, permitiéndole §Ganexar§! su propio territorio."
+ CHL_pan_highway_tooltip:0 "Construye la §YCarretera Panamericana§! (3 infraestructuras en Antofagasta, 1 en Santiago, y 1 en el resto de la carretera).\nIncrementa §Gla opinión comercial de todos los países afectados y aumenta su opinión de ustedes§! en 50.\n(Perú, Ecuador, Colombia, Panamá, EEUU, Costa Rica, Honduras, El Salvador, Guatemala, México)"
+ CHL_arg_invite_descr:0 "Invita a [ARG.GetFlag] §Y[ARG.GetName]§! a su facción. Si aceptan, se volverán más §Cdemócratas§!."
+ CHL_SA_invite_descr:0 "Invita a las democracias de América del Sur a tu facción."
+ CHL_CA_invite_desc:0 "Invita a las democracias de Centroamérica a tu facción."
+ CHL_puppet_ARG:0 "Te convertirás en la marioneta de Chile para evitar la violencia o cualquier pérdida territorial."
+ 
+ 
+ URG_politicians_being_set_free:0 "§Y2§! personas serán §Yliberadas§!"
+ URG_politicians_being_arrested:0 "§Y2§! personas serán §Yencarcelados§!"
+ URG_five_imprisoned:0 "§Y5§! personas serán §Yencarcelados§!"
+ URG_five_free:0 "§Y5§! personas serán §Yliberadas§!"
+ URG_terra_decision:0 "Actualmente tratando con prisioneros"
+ URG_terra:0 "Terra está en el poder"
+ URG_terra:0 "Terra está en el poder"
+ URG_has_more_prison:0 "Tiene al menos §Y45§! personas §Yen prisión§! (actualmente [?URG_politicians_arrested|Y0])".
+ URG_has_more_free:0 "Tiene menos de §Y42§! personas §Yen prisión§! (actualmente [?URG_politicians_arrested|Y0])."
+ URG_3_set_free:0 "§Y3§! personas serán §Yliberadas§!"
+ URG_6_set_free:0 "§Y6§! personas serán §Yliberadas§!"
+ URG_3_in_prison:0 "§Y3§! personas serán §Yencarcelados§!"
+ URG_15_debt_paid:0 "El §G15%§! de nuestra deuda será §Ypagada§!"
+ URG_25_debt_paid:0 "El §G25%§! de nuestra deuda será §Ypagada§!".
+ URG_40_debt_paid:0 "El §G40%§! de nuestra deuda será §Ypagada§!".
+ URG_unlock_debt_decisions:0 "Desbloquea las decisiones de §YPagar nuestra deuda con los británicos§!, lo que te permite §Gpagar§! la deuda que tenes con el [ENG.GetFlag] §Y[ENG.GetName]§!"
+ URG_terra_displeased:0 "§RTerra buscará venganza si le obligamos a dimitir tan bruscamente§!"
+ URG_unlock_stomp_out_capital:0 "Desbloquea la decisión §YAcabar con los leales en la capital§!, lo que te permite §Yexpulsar§! a los §Yleales de Terra en la capital§!".
+ URG_unlock_stomp_out_paysandu:0 "Desbloquea la decisión §YAcabar con los leales en Paysandú§!, lo que te permite §Yexpulsar§! a los §Yleales de Terra en Paysandú§!".
+ URG_up_to_10_free:0 "Hasta §Y10 personas§! serán §Liberadas§!". 
+ URG_up_to_10_prison:0 "Hasta §Y10 personas§! serán §Yencarcelados§!".
+ URG_ARG_agreement:0 "Se firmó un acuerdo de paz entre Argentina y Uruguay"
+ URG_blow_up_troop_transport:0 "§RPrepararemos una pequeña milicia con explosivos, cuya tarea será explotar un camión de transporte de tropas argentino en Entre Ríos. Si todo sale bien, Argentina nos declarará la guerra§!. §GY Brasil nos ayudará en nuestra guerra con Argentina.§!"
+ URG_mobilize_reserves:0 "Ganarás §Y3 divisiones mal entrenadas§!, cada una con §Y5 batallones de infantería§!".
+ URG_breaking_neutrality:0 "§RRomper nuestra neutralidad supondrá una ligera pérdida de estabilidad y apoyo a la guerra§!"
+ URG_terra_supporter_not_like:0 "§RA los partidarios de Terra no les gustará esto!§!"
+ URG_terra_supporters_rise_up:0 "§RLos partidarios de Terra se levantarán si hacemos esto!§!"
+ URG_guiding_company:0 "Actualmente está guiando una empresa"
+ URG_unlock_companies:0 "¡Desbloquea las decisiones de §YGuiar a las empresas§!, lo que le permite §GExpandir§! su §YIndustria§!, §YMilitar§!, §YAstilleros§!, o §YInfraestructura§!"
+ URG_stay_continent:0 "Si una §Ynación§! sudamericana es líder de una §Yfacción§!, §YPedirás unirte a esa facción§!. Si no, §YY creará su propia facción§!".
+ 
+
+ PRU_high_opinion_factories:0 "Por cada §Ypaís vecino§! que tiene una §Gmuy buena opinion§! de vos, obtendras §G2§! §Yfabricas civiles§!."
+ PRU_stabilized_army_navy:0 "\n   El §YEjército§! y la §YArmada§! no estan en un estado de §Rrivalidad§!"
+
+ BOL_formed_greater_bolivia_tt:0 "Se autoproclamó §YGran Bolivia§!"
+

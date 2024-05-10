@@ -1,0 +1,1584 @@
+EUYL_prospect_for_resources = {
+	develop_catamarca_iron_ore_deposits = { #977
+		
+		icon = steel
+
+		allowed = {
+			tag = ARG
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 977
+			}
+		}
+
+		available = {
+			has_tech = construction1
+			num_of_civilian_factories_available_for_projects > 2
+			has_tech = excavation1
+			owns_state = 977
+			controls_state = 977
+		}
+
+		visible = {
+			owns_state = 977
+			controls_state = 977
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			977 = {
+				NOT = {
+					has_state_flag = catamarca_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 75
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			977 = { set_state_flag = catamarca_steel_developed }
+			977 = {
+				add_resource = {
+					type = steel
+					amount = 7
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	exploit_the_rio_negro_oil_field = { #512
+		
+		icon = oil
+
+		allowed = {
+			OR = {
+				original_tag = ARG
+				original_tag = CHL
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 512
+			}
+		}
+
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 512
+			controls_state = 512
+		}
+
+		visible = {
+			has_tech = excavation1
+			owns_state = 512
+			controls_state = 512
+			if = {
+				limit = { original_tag = ARG }
+				has_completed_focus = ARG_invest_in_our_mining_industry
+			}
+			if = {
+				limit = { original_tag = CHL }
+				has_completed_focus = CHL_exploit_the_patagonian_oil
+			}
+			512 = {
+				NOT = {
+					has_state_flag = rio_negro_oil_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 50
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			512 = {
+				set_state_flag = rio_negro_oil_developed
+			}
+			512 = {
+				add_resource = {
+					type = oil
+					amount = 4
+				}
+			}
+		}
+	}
+	
+	develop_cordoba_aluminium_deposits = { #973
+		
+		icon = aluminium
+
+		allowed = {
+			tag = ARG
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 973
+			}
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 973
+			controls_state = 973
+		}
+
+		visible = {
+			owns_state = 973
+			controls_state = 973
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			973 = {
+				NOT = {
+					has_state_flag = cordoba_aluminium_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			973 = { set_state_flag = cordoba_aluminium_developed } 
+			973 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
+		}
+	}
+	
+	develop_chaco_tungsten_deposits = { #509
+		
+		icon = tungsten
+
+		allowed = {
+			tag = ARG
+		}
+
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 509
+			controls_state = 509
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 509
+			}
+		}
+
+		visible = {
+			owns_state = 509
+			controls_state = 509
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			509 = {
+				NOT = {
+					has_state_flag = chaco_tungsten_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+
+		remove_effect = {
+			509 = { set_state_flag = chaco_tungsten_developed }
+			509 = {
+				add_resource = {
+					type = tungsten #standin for phosphates
+					amount = 14
+				}
+			}
+		}
+	}
+	
+	develop_buenos_aires_chromium_deposits = { #278
+		
+		icon = chromium
+
+		allowed = {
+			tag = ARG
+		}
+
+		available = {
+			owns_state = 278
+			controls_state = 278
+			num_of_civilian_factories_available_for_projects > 2
+			has_tech = excavation2
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 278
+			}
+		}
+
+		visible = {
+			owns_state = 278
+			controls_state = 278
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			278 = {
+				NOT = {
+					has_state_flag = buenos_aires_chromium_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 5
+		}
+		remove_effect = { 
+			278 = { set_state_flag = buenos_aires_chromium_developed } 
+			278 = {
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+		}
+	}
+	
+	develop_neuquen_rubber_plantations = { #970
+		
+		icon = rubber
+
+		allowed = {
+			tag = ARG
+		}
+
+		available = {
+			owns_state = 970
+			controls_state = 970
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 970
+			}
+		}
+
+		visible = {
+			owns_state = 970
+			controls_state = 970
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			970 = {
+				NOT = {
+					has_state_flag = neuquen_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			970 = {
+				set_state_flag = neuquen_rubber_developed
+			}
+			970 = {
+				add_resource = {
+					type = rubber
+					amount = 16
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	develop_misiones_steel_deposits = { #983
+		
+		icon = steel
+
+		allowed = {
+			tag = ARG
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 983
+			}
+		}
+		
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 983
+			controls_state = 983
+		}
+
+		visible = {
+			owns_state = 983
+			controls_state = 983
+			ARG = { has_completed_focus = ARG_invest_in_our_mining_industry }
+			983 = {
+				NOT = {
+					has_state_flag = misiones_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			983 = { set_state_flag = misiones_steel_developed } 
+			983 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}	
+	}
+	
+	drill_the_chubut_oil_field = { #955
+		
+		icon = oil
+
+		allowed = {
+			OR = {
+				original_tag = ARG
+				original_tag = CHL
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 955
+			}
+		}
+
+		available = {
+			has_tech = excavation4
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 955
+			controls_state = 955
+		}
+
+		visible = {
+			owns_state = 955
+			controls_state = 955
+			if = {
+				limit = { original_tag = ARG }
+				has_completed_focus = ARG_invest_in_our_mining_industry
+			}
+			if = {
+				limit = { original_tag = CHL }
+				has_completed_focus = CHL_exploit_the_patagonian_oil
+			}
+			955 = {
+				NOT = {
+					has_state_flag = chubut_oil_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		ai_will_do = {
+			factor = 10
+		}
+
+		remove_effect = {
+			955 = {
+				set_state_flag = chubut_oil_developed
+			}
+			955 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+			}
+		}
+	}
+	
+	develop_arica_chromium_mines = { #951
+		
+		icon = chromium
+
+		allowed = {
+
+		}
+
+		available = {
+			owns_state = 951
+			controls_state = 951
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+		}
+		
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 951
+			}
+		}
+
+		visible = {
+			owns_state = 951
+			controls_state = 951
+			951 = {
+				NOT = {
+					has_state_flag = amazon_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 75
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			951 = {
+				set_state_flag = amazon_rubber_developed
+			}
+			951 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	develop_antofagasta_steel_deposits = { #506
+		
+		icon = steel
+
+		allowed = {
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 506
+			}
+		}
+		
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 506
+			controls_state = 506
+		}
+
+		visible = {
+			owns_state = 506
+			controls_state = 506
+			506 = {
+				NOT = {
+					has_state_flag = antofagasta_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			506 = { set_state_flag = antofagasta_steel_developed } 
+			506 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}	
+	}
+	
+	develop_magallanes_aluminium_deposits = { #507
+		
+		icon = aluminium
+
+		allowed = {
+			
+		}
+
+		available = {
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 507
+			controls_state = 507
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 507
+			}
+		}
+
+		visible = {
+			owns_state = 507
+			controls_state = 507
+			507 = {
+				NOT = {
+					has_state_flag = magallanes_aluminium_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			507 = { set_state_flag = magallanes_aluminium_developed } 
+			507 = {
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
+		}	
+	}
+
+	develop_minas_gerais_steel_deposits = { #496
+		
+		icon = steel
+
+		allowed = {
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 496
+			}
+		}
+		
+		available = {
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 496
+			controls_state = 496
+		}
+
+		visible = {
+			owns_state = 496
+			controls_state = 496
+			if = {
+				limit = {
+					original_tag = BRA
+				}
+				has_completed_focus = BRA_open_up_steel_mines
+			}
+			496 = {
+				NOT = {
+					has_state_flag = minas_gerais_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			496 = { set_state_flag = minas_gerais_steel_developed } 
+			496 = {
+				add_resource = {
+					type = steel
+					amount = 12
+				}
+			}
+		}	
+	}
+
+	develop_bahia_steel_deposits = { #499
+		
+		icon = steel
+
+		allowed = {
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 499
+			}
+		}
+		
+		available = {
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 499
+			controls_state = 499
+		}
+
+		visible = {
+			owns_state = 499
+			controls_state = 499
+			if = {
+				limit = {
+					original_tag = BRA
+				}
+				has_completed_focus = BRA_open_up_steel_mines
+			}
+			499 = {
+				NOT = {
+					has_state_flag = bahia_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			499 = { set_state_flag = bahia_steel_developed } 
+			499 = {
+				add_resource = {
+					type = steel
+					amount = 14
+				}
+			}
+		}	
+	}
+
+	develop_goias_steel_deposits = { #505
+		
+		icon = steel
+
+		allowed = {
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 505
+			}
+		}
+		
+		available = {
+			num_of_civilian_factories_available_for_projects > 2
+			owns_state = 505
+			controls_state = 505
+		}
+
+		visible = {
+			owns_state = 505
+			controls_state = 505
+			if = {
+				limit = {
+					original_tag = BRA
+				}
+				has_completed_focus = BRA_open_up_steel_mines
+			}
+			505 = {
+				NOT = {
+					has_state_flag = goias_steel_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		remove_effect = { 
+			505 = { set_state_flag = goias_steel_developed } 
+			505 = {
+				add_resource = {
+					type = steel
+					amount = 8
+				}
+			}
+		}	
+	}
+
+	develop_amazon_rubber_plantations = { #495
+		
+		icon = rubber
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 495
+			controls_state = 495
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 495
+			}
+		}
+
+		visible = {
+			owns_state = 495
+			controls_state = 495
+			495 = {
+				NOT = {
+					has_state_flag = amazon_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			495 = {
+				set_state_flag = amazon_rubber_developed
+			}
+			495 = {
+				add_resource = {
+					type = rubber
+					amount = 16
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	exploit_para_rubber_plantations = { #938
+		
+		icon = rubber
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 938
+			controls_state = 938
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 3
+		}
+		
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 938
+			}
+		}
+
+		visible = {
+			owns_state = 938
+			controls_state = 938
+			if = {
+				limit = {
+					original_tag = BRA 
+				}
+				has_completed_focus = BRA_establish_rubber_plantations
+			}
+			938 = {
+				NOT = {
+					has_state_flag = para_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		remove_effect = {
+			938 = {
+				set_state_flag = para_rubber_developed
+			}
+			938 = {
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	exploit_maranhao_rubber_plantations = { #497
+		
+		icon = rubber
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 497
+			controls_state = 497
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 2
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 497
+			}
+		}
+
+		visible = {
+			owns_state = 497
+			controls_state = 497
+			if = {
+				limit = {
+					original_tag = BRA 
+				}
+				has_completed_focus = BRA_establish_rubber_plantations
+			}
+			938 = {
+				NOT = {
+					has_state_flag = para_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 3
+		}
+
+		remove_effect = {
+			497 = {
+				set_state_flag = para_rubber_developed
+			}
+			497 = {
+				add_resource = {
+					type = rubber
+					amount = 20
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	extract_oil_in_para = { #938
+		
+		icon = oil
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 938
+			controls_state = 938
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 3
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 938
+			}
+		}
+
+		visible = {
+			owns_state = 938
+			controls_state = 938
+			938 = {
+				NOT = {
+					has_state_flag = para_oil_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		remove_effect = {
+			938 = {
+				set_state_flag = para_oil_developed
+			}
+			938 = {
+				add_resource = {
+					type = oil
+					amount = 14
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	extract_oil_in_the_amazons = { #495
+		
+		icon = oil
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 495
+			controls_state = 495
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 495
+			}
+		}
+
+		visible = {
+			owns_state = 495
+			controls_state = 495
+			if = {
+				limit = {
+					original_tag = BRA 
+				}
+				has_completed_focus = BRA_expand_our_petroleum_industry
+			}
+			495 = {
+				NOT = {
+					has_state_flag = amazon_oil_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 75
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			495 = {
+				set_state_flag = amazon_oil_developed
+			}
+			495 = {
+				add_resource = {
+					type = oil
+					amount = 18
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	expand_the_steel_mines_in_bolivar = { #488
+		icon = steel 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 488
+			controls_state = 488
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 3
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 488
+			}
+		}
+
+		visible = {
+			owns_state = 488
+			controls_state = 488
+			if = {
+				limit = {
+					original_tag = VEN 
+				}
+				has_completed_focus = VEN_invest_in_the_mining_industry
+			}
+			488 = {
+				NOT = {
+					has_state_flag = bolivar_steel_mined
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 135
+
+		modifier = {
+			civilian_factory_use = 4
+		}
+
+		remove_effect = {
+			488 = {
+				set_state_flag = bolivar_steel_mined
+			}
+			488 = {
+				add_resource = {
+					type = steel
+					amount = 14
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	exploit_the_rubber_in_amazonas_venezolanas = { #1024 
+		icon = rubber 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 1024
+			controls_state = 1024
+			has_tech = excavation2
+			num_of_civilian_factories_available_for_projects > 4
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1024
+			}
+		}
+
+		visible = {
+			owns_state = 1024
+			controls_state = 1024
+			if = {
+				limit = {
+					original_tag = VEN 
+				}
+				has_completed_focus = VEN_invest_in_the_mining_industry
+			}
+			1024 = {
+				NOT = {
+					has_state_flag = amazonas_venezolanas_rubber_developed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 15
+		days_remove = 70
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			1024 = {
+				set_state_flag = amazonas_venezolanas_rubber_developed
+			}
+			1024 = {
+				add_resource = {
+					type = rubber
+					amount = 12
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	invest_in_chromium_mines_in_zulia = { #489
+		icon = chromium
+
+		icon = rubber 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 489
+			controls_state = 489
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 489
+			}
+		}
+
+		visible = {
+			owns_state = 489
+			controls_state = 489
+			if = {
+				limit = {
+					original_tag = VEN 
+				}
+				has_completed_focus = VEN_invest_in_the_mining_industry
+			}
+			489 = {
+				NOT = {
+					has_state_flag = chromium_mines_zulia_completed
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 35
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			489 = {
+				set_state_flag = chromium_mines_zulia_completed
+			}
+			489 = {
+				add_resource = {
+					type = chromium
+					amount = 8
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	tungsten_mine_expansions_in_los_llanos = { ## 1032
+		icon = tungsten
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 1032
+			controls_state = 1032
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 7
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1032
+			}
+		}
+
+		visible = {
+			owns_state = 1032
+			controls_state = 1032
+			if = {
+				limit = {
+					original_tag = VEN 
+				}
+				has_completed_focus = VEN_invest_in_the_mining_industry
+			}
+			1032 = {
+				NOT = {
+					has_state_flag = los_llanos_tungsten_mined
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 25
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 7
+		}
+
+		remove_effect = {
+			1032 = {
+				set_state_flag = amazonas_venezolanas_rubber_developed
+			}
+			1032 = {
+				add_resource = {
+					type = tungsten
+					amount = 24
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	aluminum_extraction_in_delta_amacuro = { #1029
+		icon = aluminium 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 1029
+			controls_state = 1029
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1029
+			}
+		}
+
+		visible = {
+			owns_state = 1029
+			controls_state = 1029
+			1029 = {
+				NOT = {
+					has_state_flag = aluminum_extracted_in_delta
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 60
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			1029 = {
+				set_state_flag = aluminum_extracted_in_delta
+			}
+			1029 = {
+				add_resource = {
+					type = aluminium
+					amount = 7
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	oil_extraction_in_the_capital = { #1027
+		icon = oil 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 1027
+			controls_state = 1027
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1027
+			}
+		}
+
+		visible = {
+			owns_state = 1027
+			controls_state = 1027
+			1027 = {
+				NOT = {
+					has_state_flag = capital_oil_extracted
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 75
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			1027 = {
+				set_state_flag = capital_oil_extracted
+			}
+			1027 = {
+				add_resource = {
+					type = oil
+					amount = 7
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	oil_extraction_in_orellana = {
+		icon = oil 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 1010
+			controls_state = 1010
+			has_tech = excavation3
+			num_of_civilian_factories_available_for_projects > 1
+			if = {
+				limit = {
+					original_tag = ECU 
+				}
+				has_completed_focus = ECU_oil_extraction_improvements
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1010
+			}
+		}
+
+		visible = {
+			owns_state = 1010
+			controls_state = 1010
+			1010 = {
+				NOT = {
+					has_state_flag = orellana_oil_extracted
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 10
+		days_remove = 75
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			1010 = {
+				set_state_flag = orellana_oil_extracted
+			}
+			1010 = {
+				add_resource = {
+					type = oil
+					amount = 7
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	steel_mines_in_esmeraldas = {
+		icon = steel 
+
+		allowed = {
+		}
+
+		available = {
+			owns_state = 305
+			controls_state = 305
+			has_tech = excavation1
+			num_of_civilian_factories_available_for_projects > 1
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 305
+			}
+		}
+
+		visible = {
+			owns_state = 305
+			controls_state = 305
+			305 = {
+				NOT = {
+					has_state_flag = esmeraldas_steel_mined
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 20
+		days_remove = 100
+
+		modifier = {
+			civilian_factory_use = 2
+		}
+
+		remove_effect = {
+			305 = {
+				set_state_flag = esmeraldas_steel_mined
+			}
+			305 = {
+				add_resource = {
+					type = steel
+					amount = 6
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

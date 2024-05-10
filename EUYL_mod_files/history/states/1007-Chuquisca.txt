@@ -1,0 +1,27 @@
+
+state={
+	id=1007
+	name="STATE_1007"
+
+	history={
+		owner = BOL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			10938 2 
+		}
+		add_core_of = BOL
+
+	}
+
+	provinces={
+		5179 10938 10987 12979 13828 13838 13844 13845 13851 13864 13869 13880 13881 13883 13889 13907 13918 13927 
+	}
+	manpower=85462
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

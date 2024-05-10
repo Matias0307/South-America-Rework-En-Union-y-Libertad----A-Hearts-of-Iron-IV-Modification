@@ -1,0 +1,27 @@
+
+state={
+	id=978
+	name="STATE_978"
+
+	history={
+		owner = ARG
+		buildings = {
+			infrastructure = 1
+			air_base = 1
+
+		}
+		add_core_of = ARG
+		victory_points = {
+			8195 1 
+		}
+
+	}
+
+	provinces={
+		8195 10944 10965 13309 13311 13499 13502 13513 13517 13531 13547 13548 13552 13557 13780 13782 13784 13785 13786 13787 13794 
+	}
+	manpower=235067
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

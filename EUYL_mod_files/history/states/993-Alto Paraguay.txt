@@ -1,0 +1,29 @@
+state={
+	id=993
+	name="Alto Paraguay"
+
+	history={
+		owner = PAR
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = PAR
+		add_core_of = BOL
+
+		victory_points = {
+			13571 2 
+		}
+
+		victory_points = {
+			13575 1 #Bahia Negra
+		}
+	}
+
+	provinces={
+		5165 13568 13569 13570 13571 13574 13575 13576 13577 13578 13579 13580 13581 13582 
+	}
+	manpower=34521
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,42 @@
+
+state={
+	id=279
+	name="STATE_279"
+	resources={
+		steel=48.000
+	}
+
+	history={
+		owner = CHL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 7
+			air_base = 3
+			8222 = {
+				naval_base = 5
+
+			}
+			650 = {
+				bunker = 1
+
+			}
+
+		}
+		add_core_of = CHL
+		victory_points = {
+			650 20 
+		}
+		victory_points = {
+			13742 5 
+		}
+
+	}
+
+	provinces={
+		650 5191 8222 8229 13742 13743 13744 13745 13746 13747 13748 
+	}
+	manpower=4235146
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+}

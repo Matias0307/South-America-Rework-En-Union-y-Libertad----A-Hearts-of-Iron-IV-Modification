@@ -1,0 +1,37 @@
+state={
+	id=946
+	name="STATE_946"
+	resources={
+		steel=4.000
+	}
+
+	history={
+		owner = URG
+		add_core_of = URG
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			air_base = 1
+		}
+		victory_points = {
+			14604 1
+		}
+                victory_points = {
+			14564 1
+		}
+		victory_points = {
+			14600 5 
+		}
+		victory_points = {
+			14601 3
+		}
+
+	}
+
+	provinces={
+		1613 1626 10502 12440 12468 14564 14587 14588 14590 14592 14593 14595 14596 14597 14598 14599 14600 14601 14602 14603 14604 14562 14563 
+	}
+	manpower=435421
+	buildings_max_level_factor=1.000
+	state_category=city
+}

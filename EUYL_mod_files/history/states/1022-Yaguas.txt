@@ -1,0 +1,21 @@
+state={
+	id=1022
+	name="Yaguas"
+	history={
+		owner = PRU
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			14311 2 
+		}
+		add_core_of = PRU
+	}
+	provinces={
+		12869 14292 14298 14303 14311 14325 14338 
+	}
+	manpower=95100
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

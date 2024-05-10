@@ -1,0 +1,26 @@
+
+state={
+	id=1005
+	name="Piura"
+	history={
+		owner = PRU
+		add_core_of = PRU
+		buildings = {
+			infrastructure = 1
+			14263 = {
+				naval_base = 2
+			}
+		}
+		victory_points = {
+			14235 3 
+		}
+
+	}
+
+	provinces={
+		2156 14235 14239 14256 14263 
+	}
+	manpower=640178
+	buildings_max_level_factor=1.000
+	state_category=rural
+}

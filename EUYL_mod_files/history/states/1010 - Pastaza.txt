@@ -1,0 +1,26 @@
+
+state={
+	id=1010
+	name="Orellana"
+	resources = {
+		oil = 3.000
+	}
+
+	history={
+		owner = ECU
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		add_core_of = ECU
+
+	}
+
+	provinces={
+		8075 10888 14308 14314 14323 14332 14335 14341 14344 
+	}
+	manpower=231365
+	buildings_max_level_factor=1.000
+	state_category=town
+}

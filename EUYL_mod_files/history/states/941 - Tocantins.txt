@@ -1,0 +1,26 @@
+
+state={
+	id=941
+	name="Tocantins"
+
+	history={
+		owner = BRA
+		add_core_of = BRA
+		buildings = {
+			infrastructure = 0
+
+		}
+		victory_points = {
+			5151 1 
+		}
+
+	}
+
+	provinces={
+		5151 13275 14148
+	}
+	manpower=1662200
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

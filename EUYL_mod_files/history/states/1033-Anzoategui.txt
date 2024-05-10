@@ -1,0 +1,25 @@
+
+state={
+	id=1033
+	name="Anzotegui"
+	resources = {
+		oil = 94.000
+	}
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+		add_core_of = VEN
+		victory_points = {
+			14510 2 ## Maturín
+		}
+	}
+	provinces={
+		8080 10823 14485 14492 14496 14510 
+	}
+	manpower=239121
+	buildings_max_level_factor=1.000
+	state_category=town
+}

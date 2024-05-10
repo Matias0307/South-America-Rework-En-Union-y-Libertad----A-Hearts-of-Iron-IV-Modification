@@ -1,0 +1,23 @@
+
+state={
+	id=1024
+	name="STATE_1024"
+	resources = {
+		rubber = 2.000
+		oil = 3.000
+		tungsten = 1.000
+	}
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 1
+		}
+		add_core_of = VEN
+	}
+	provinces={
+		5317 8050 14369 14375 14378 14380 14391 14394 14396 14402 14410 14417 14424 14428 
+	}
+	manpower=19855
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+}

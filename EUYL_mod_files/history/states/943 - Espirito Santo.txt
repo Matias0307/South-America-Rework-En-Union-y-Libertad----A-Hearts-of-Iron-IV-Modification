@@ -1,0 +1,29 @@
+state={
+	id=943
+	name="STATE_943"
+	resources={
+		oil=1.000
+	}
+
+	history={
+		owner = BRA
+		victory_points = {
+			10999 1 
+		}
+		buildings = {
+			infrastructure = 3
+			10999 = {
+				naval_base = 1
+			}
+			arms_factory = 1
+		}
+		add_core_of = BRA
+		add_core_of = DRJ
+	}
+	provinces={
+		2153 8196 10999 13879 13914 
+	}
+	manpower=887465
+	buildings_max_level_factor=1.000
+	state_category=town
+}

@@ -1,0 +1,20 @@
+
+state={
+	id=1026
+	name="Caracaral"
+
+	history={
+		owner = BRA
+		add_core_of = BRA
+		add_core_of = ROA
+
+	}
+
+	provinces={
+		5083 13345 13346
+	}
+	manpower=115000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,572 @@
+
+VEN_foreign_influence_BoP = {
+	initial_value = 1
+	left_side = VEN_allied_side
+	right_side = VEN_axis_side
+	decision_category = VEN_bop_cat
+	range = {
+		id = VEN_balanced_both
+		min = -0.1
+		max = 0.1
+		modifier = {
+			political_power_gain = 0.1
+		}
+	}
+	side = {
+		id = VEN_allied_side
+		icon = GFX_VEN_bop_allies_side
+		range = {
+			id = VEN_total_allied_influence
+			min = -1
+			max = -0.9
+			modifier = {
+				democratic_drift = 0.1
+				stability_factor = 0.075
+				production_speed_industrial_complex_factor = 0.075
+			}
+			on_activate = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = VEN_orinoco_belt_rights_flag_triggered }
+					}
+					if = {
+						limit = {
+							ENG = { 
+								has_government = democratic
+								exists = yes 
+							}
+						}
+						ENG = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							USA = {
+								has_government = democratic
+								exists = yes 
+							}
+						}
+						USA = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+					}
+					else_if = {
+						limit = {
+							FRA = {
+								has_government = democratic
+								exists = yes 
+							}
+						}
+						FRA = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+					}
+				}
+				custom_effect_tooltip = VEN_potential_axis_intervention_tt
+				custom_effect_tooltip = VEN_be_able_to_join_any_major_allied_faction_tt
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_serious_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = conquer
+								id = ROOT
+								value = 100
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 100
+							}
+							add_ai_strategy = {
+								type = declare_war
+								id = ROOT
+								value = 100
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = democratic
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_full_allignment_with_us
+						}
+					}
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_serious_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = conquer
+								id = ROOT
+								value = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 0
+							}
+							add_ai_strategy = {
+								type = declare_war
+								id = ROOT
+								value = 0
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = democratic
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_full_allignment_with_us
+						}
+					}
+				}
+			}
+		}
+        range = {
+			id = VEN_significant_allied_influence
+			min = -0.9
+			max = -0.7
+			modifier = {
+				political_power_gain = 0.03
+				democratic_drift = 0.08
+				stability_factor = 0.05
+				production_speed_industrial_complex_factor = 0.05
+			}
+			on_activate = {
+				custom_effect_tooltip = VEN_allied_powers_may_ask_for_resource_rights_at_any_time_tt
+				## failure to give them resource rights may result in sanctions and embargoes
+				every_other_country = {
+					limit = {
+						is_major = yes 
+						has_government = fascism
+					}
+					add_opinion_modifier = {
+						target = ROOT 
+						modifier = VEN_poses_threat
+					}
+					if = {
+						limit = { is_ai = yes }
+						add_ai_strategy = {
+							type = antagonize
+							id = ROOT
+							value = 50
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_major = yes 
+						has_government = democratic
+					}
+					add_opinion_modifier = {
+						target = ROOT 
+						modifier = VEN_slight_allignment_with_us
+					}
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 0
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_slight_allignment_with_us
+						}
+					}
+				}
+			}
+		}
+		range = {
+			id = VEN_considerable_allied_influence
+			min = -0.7
+			max = -0.4
+			modifier = {
+				political_power_gain = 0.05
+				democratic_drift = 0.05
+				stability_factor = 0.03
+				production_speed_industrial_complex_factor = 0.03
+			}
+			on_activate = {
+				custom_effect_tooltip = VEN_wont_be_able_to_sell_resource_rights_to_axis_powers_tt
+				if = {
+					limit = {
+						has_idea = VEN_german_infleunce_in_venezuela
+					}
+					remove_ideas = VEN_german_infleunce_in_venezuela
+				}
+			}
+		}
+		range = {
+			id = VEN_slight_allied_influence
+			min = -0.4
+			max = -0.1
+			modifier = {
+				political_power_gain = 0.07
+				democratic_drift = 0.03
+				stability_factor = 0.02
+			}
+		}
+	}
+	side = {
+		id = VEN_axis_side
+		icon = GFX_VEN_bop_axis_side
+		range = {
+			id = VEN_total_axis_influence
+			min = 0.9
+			max = 1
+			modifier = {
+				fascism_drift = 0.1
+				war_support_factor = 0.075
+				stability_factor = -0.05
+				army_attack_factor = 0.05
+				army_defence_factor = 0.05
+				conscription = 0.005
+				production_speed_arms_factory_factor = 0.075
+				industrial_capacity_factory = 0.05
+			}
+			on_activate = {
+				if = {
+					limit = {
+						NOT = { has_global_flag = VEN_orinoco_belt_rights_flag_triggered }
+					}
+					if = {
+						limit = {
+							GER = { 
+								has_government = fascism
+								exists = yes 
+							}
+						}
+						GER = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+						## unlocks decision to join axis whenever
+					}
+					else_if = {
+						limit = {
+							ITA = {
+								has_government = fascism
+								exists = yes 
+							}
+						}
+						ITA = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+						## unlocks decision to declare war on allies 
+					}
+					else_if = {
+						limit = {
+							JAP = {
+								has_government = fascism
+								exists = yes 
+							}
+						}
+						JAP = {
+							custom_effect_tooltip = VEN_will_ask_for_resource_rights_on_orinoco_belt_tt
+							hidden_effect = {
+								country_event = {
+									id = venezuela.11 
+									days = 4
+									random_hours = 8
+								}
+							}
+						}
+						## unlocks decision to declare war on major fascist power 
+					}
+				}
+				custom_effect_tooltip = VEN_potential_allied_intervention_tt
+				custom_effect_tooltip = VEN_be_able_to_join_any_major_axis_faction_tt
+				if = {
+					limit = { has_active_mission = VEN_looming_american_intervention }
+					add_days_mission_timeout = {
+						mission = VEN_looming_american_intervention
+						days = -520
+					}
+				}
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = democratic
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_serious_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = conquer
+								id = ROOT
+								value = 100
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 100
+							}
+							add_ai_strategy = {
+								type = declare_war
+								id = ROOT
+								value = 100
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						add_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_full_allignment_with_us
+						}
+					}
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = democratic
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_serious_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = conquer
+								id = ROOT
+								value = 0
+							}
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 0
+							}
+							add_ai_strategy = {
+								type = declare_war
+								id = ROOT
+								value = 0
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_full_allignment_with_us
+						}
+					}
+				}
+			}
+		}
+
+        range = {
+			id = VEN_significant_axis_influence
+			min = 0.7
+			max = 0.9
+			modifier = {
+				political_power_gain = 0.03
+				fascism_drift = 0.07
+				war_support_factor = 0.05
+				stability_factor = -0.03
+				production_speed_arms_factory_factor = 0.05
+				industrial_capacity_factory = 0.03
+			}
+			on_activate = {
+				custom_effect_tooltip = VEN_axis_powers_may_ask_for_resource_rights_at_any_time_tt
+				## failure to give them resource rights may result in sanctions and embargoes
+				if = {
+					limit = { has_active_mission = VEN_looming_american_intervention }
+					add_days_mission_timeout = {
+						mission = VEN_looming_american_intervention
+						days = -195
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_major = yes 
+						has_government = democratic
+					}
+					add_opinion_modifier = {
+						target = ROOT 
+						modifier = VEN_poses_threat
+					}
+					if = {
+						limit = { is_ai = yes }
+						add_ai_strategy = {
+							type = antagonize
+							id = ROOT
+							value = 50
+						}
+					}
+				}
+				every_other_country = {
+					limit = {
+						is_major = yes 
+						has_government = fascism
+					}
+					add_opinion_modifier = {
+						target = ROOT 
+						modifier = VEN_slight_allignment_with_us
+					}
+				}
+			}
+			on_deactivate = {
+				hidden_effect = {
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = democratic
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_poses_threat
+						}
+						if = {
+							limit = { is_ai = yes }
+							add_ai_strategy = {
+								type = antagonize
+								id = ROOT
+								value = 0
+							}
+						}
+					}
+					every_other_country = {
+						limit = {
+							is_major = yes 
+							has_government = fascism
+						}
+						remove_opinion_modifier = {
+							target = ROOT 
+							modifier = VEN_slight_allignment_with_us
+						}
+					}
+				}
+			}
+		}
+
+		range = {
+			id = VEN_considerable_axis_influence
+			min = 0.4
+			max = 0.7
+			modifier = {
+				political_power_gain = 0.05
+				fascism_drift = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+			on_activate = {
+				custom_effect_tooltip = VEN_wont_be_able_to_sell_resource_rights_to_allied_powers_tt
+				if = {
+					limit = { has_active_mission = VEN_looming_american_intervention }
+					add_days_mission_timeout = {
+						mission = VEN_looming_american_intervention
+						days = -90
+					}
+				}
+			}
+		}
+
+		range = {
+			id = VEN_slight_axis_influence
+			min = 0.1
+			max = 0.4
+			modifier = {
+				political_power_gain = 0.07
+				fascism_drift = 0.03
+				war_support_factor = 0.03
+				production_speed_arms_factory_factor = 0.025
+			}
+		}
+	}
+}
+

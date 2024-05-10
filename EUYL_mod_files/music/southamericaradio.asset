@@ -1,0 +1,182 @@
+### Argentina
+
+music = {
+	name = "Marcha de San Lorenzo con letra"
+	file = "march_san_lorenzo.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marcha Las Malvinas (con letra)"
+	file = "marcha_malvinas.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marcha Militar Alte Kameraden - Ejército Argentino."
+	file = "marcha_militar_alte.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas Militares Argentinas - Avenida de las Camelias"
+	file = "marcha_militar_camelias.ogg"
+	volume = 0.8
+}
+
+### Chile
+
+music = {
+	name = "Himno Recuerdos Militares (Versión antigua)"
+	file = "himno_recuerdos.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Himno Adiós al Séptimo de Línea (Clásico)"
+	file = "himno_adios_septiembre.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Canto - Lili Marleen (Versión Armada)"
+	file = "canto_lili_mabreen.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Canto - Libre"
+	file = "canto_libre.ogg"
+	volume = 0.8
+}
+
+### Uruguay
+
+music = {
+	name = "Marcha al Ejército Nacional"
+	file = "marcha_ejercito_nacional.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas militares uruguayas - Diana Gral. León de Palleja"
+	file = "leon_de_palleja.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marcha 25 de Agosto"
+	file = "marcha_de_agosto.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas militares uruguayas - Mi Bandera"
+	file = "marcha_mi_bandera.ogg"
+	volume = 0.8
+}
+
+### Peru
+
+music = {
+	name = "El Condor Pasa - Marcha Militar"
+	file = "condor_pasa.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Los Peruanos Pasan - Marcha Militar"
+	file = "peruanos_pasan.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Tacna - Marcha Militar"
+	file = "tacna_militar.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Tupac Amaru - Marcha Militar (Banda Republicana)"
+	file = "tupac_militar.ogg"
+	volume = 0.8
+}
+
+
+### Bolivia
+
+music = {
+	name = "Virgen del sol - Marcha Boliviana"
+	file = "virgen_del_sol.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas Militares Bolivianas - Fuerzas de Paz"
+	file = "fuerzas_de_paz.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas Militares Bolivianas - Marcha de Parada"
+	file = "marcha_de_parada.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Marchas Militares Bolivianas - Marcha Talacocha"
+	file = "marcha_talacocha.ogg"
+	volume = 0.8
+}
+
+### Brazil
+
+music = {
+	name = "Glórias ao Brasil"
+	file = "Glórias_ao_Brasil.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Brasil Brasileiro"
+	file = "Brasil_Brasileiro_Brazilian.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Pra Que Mentir"
+	file = "Pra_Que_Mentir.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Fibra de Herói"
+	file = "Fibra_de_herói.ogg"
+	volume = 0.8
+}
+
+### Colombia
+
+music = {
+	name = "Adiós al Séptimo de Línea"
+	file = "adios_al_septimo.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Honores a Popayán"
+	file = "honores_a_popayan.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Salud Adorada Bandera"
+	file = "salud_adorada_bandera.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Canción de Boyacá"
+	file = "cancion_de_boyaca.ogg"
+	volume = 0.8
+}

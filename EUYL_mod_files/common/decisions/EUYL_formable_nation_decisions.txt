@@ -1,0 +1,721 @@
+form_rioplatense_empire_category = {
+	
+	form_rioplatense_empire = {
+		allowed = {
+			original_tag = URG 
+		}
+		visible = {
+			OR = {
+				has_government = neutrality
+				has_government = fascism 
+			}
+			has_completed_focus = URG_form_the_rioplatense_empire
+		}
+		
+		icon = generic_form_nation
+		
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 750
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 982
+					state = 956
+					state = 278
+					state = 1021
+					state = 971
+					state = 970
+					state = 512
+					state = 955
+					state = 954
+					state = 953
+					state = 946
+					state = 300
+					state = 945
+					state = 1011
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		
+		available = {
+			hidden_trigger  = {
+				controls_state = 946
+				controls_state = 300
+			}
+			controls_state = 982
+			controls_state = 956
+			controls_state = 278
+			controls_state = 1021
+			controls_state = 971
+			controls_state = 970
+			controls_state = 512
+			controls_state = 955
+			controls_state = 954
+			controls_state = 953
+		}
+		
+		complete_effect = {
+			hidden_effect = {
+				set_party_name = { ideology = fascism long_name = RPE_UNIFIED_fascism_party_long name = RPE_UNIFIED_fascism_party }
+				set_party_name = { ideology = communism long_name = RPE_UNIFIED_communism_party_long name = RPE_UNIFIED_communism_party }
+			}
+			set_cosmetic_tag = RPE_UNIFIED
+			982 = { add_core_of = ROOT }
+			956 = { add_core_of = ROOT }
+			278 = { add_core_of = ROOT }
+			1021 = { add_core_of = ROOT }
+			971 = { add_core_of = ROOT }
+			970 = { add_core_of = ROOT }
+			512 = { add_core_of = ROOT }
+			955 = { add_core_of = ROOT }
+			954 = { add_core_of = ROOT }
+			953 = { add_core_of = ROOT }
+			hidden_effect = {
+				add_ideas = {
+					URG_economic_instability
+					URG_rebelling_officers
+				}
+			}
+		}
+	}
+}
+
+form_natural_borders = {
+
+	BOL_our_natural_borders = {
+		allowed = {
+			original_tag = BOL
+		}
+
+		visible = {
+			always = yes
+		}
+
+		icon = generic_form_nation
+
+		fire_only_once = yes
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 302
+					state = 487
+					state = 985
+					state = 1006
+					state = 1003
+					state = 1004
+					state = 1007
+					state = 1008
+					state = 994
+					state = 995
+					state = 688
+					state = 992
+					state = 993
+					state = 1009
+					state = 1035
+					state = 996
+					state = 980
+					state = 940
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		available = {
+			controls_state = 995
+			controls_state = 688
+			controls_state = 992
+			controls_state = 993
+			controls_state = 1009
+			controls_state = 1035
+			controls_state = 996
+			controls_state = 980
+			controls_state = 940
+			hidden_trigger = {
+				controls_state = 302
+				controls_state = 487
+				controls_state = 985
+				controls_state = 1006
+				controls_state = 1003
+				controls_state = 1004
+				controls_state = 1007
+				controls_state = 1008
+				controls_state = 994
+			}
+		}
+
+		ai_will_do = {
+			factor = 750
+		}
+
+		complete_effect = {
+			set_cosmetic_tag = GBO
+			add_stability = 0.1
+			add_war_support = 0.15
+		}
+	}
+}
+
+form_commune_of_la_plata = {
+	ARG_form_commune_of_la_plata = {
+		allowed = {
+			original_tag = ARG 
+		}
+		
+		visible = {
+			has_government = communism
+			has_civil_war = no 
+			NOT = { has_completed_focus = ARG_a_new_type_of_communism }
+			NOT = {
+				OR = {
+					has_country_leader = {
+						character = ARG_juan_posadas
+						ruling_only = yes 
+					}
+					has_country_leader = {
+						character = ARG_liborio_justo
+						ruling_only = yes 
+					}
+				}
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 946
+					state = 300
+					state = 1011
+					state = 945
+					state = 301
+					state = 688
+					state = 990
+					state = 991
+					state = 992
+					state = 993
+					has_state_flag = argentine_starting_state
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+		
+		icon = generic_form_nation
+
+		fire_only_once = yes
+		
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_uruguayan_states_tt
+					controls_state = 946
+					controls_state = 300
+					controls_state = 1011
+					controls_state = 945
+				}
+				URG = {
+					is_subject_of = ROOT 
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_paraguayan_states_tt
+					controls_state = 301
+					controls_state = 688
+					controls_state = 990
+					controls_state = 991
+					controls_state = 992
+					controls_state = 993
+				}
+				PAR = {
+					is_subject_of = ROOT
+				}
+			}
+			hidden_trigger = {
+				controls_state = 278
+				controls_state = 1021
+				controls_state = 973
+				controls_state = 956
+				controls_state = 511
+			}
+		}
+
+		ai_will_do = {
+			factor = 750
+		}
+		
+		complete_effect = {
+			custom_effect_tooltip = ARG_gain_cores_on_urg_and_par_tt
+			set_cosmetic_tag = ARG_la_plata
+			every_subject_country = {
+				limit = {
+					OR = {
+						original_tag = PAR 
+						original_tag = URG
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV 
+						transfer_troops = yes 
+					}
+				}
+			}
+			hidden_effect = {
+				301 = { add_core_of = ROOT }
+				688 = { add_core_of = ROOT }
+				1011 = { add_core_of = ROOT }
+				300 = { add_core_of = ROOT }
+				946 = { add_core_of = ROOT }
+				990 = { add_core_of = ROOT }
+				991 = { add_core_of = ROOT }
+				992 = { add_core_of = ROOT }
+				993 = { add_core_of = ROOT }
+			}
+		}
+	}
+}
+
+form_andesia = {
+	ARG_form_andesia = {
+		allowed = {
+			original_tag = ARG 
+		}
+		
+		visible = {
+			has_government = communism
+			has_civil_war = no 
+			has_country_leader = {
+				character = ARG_liborio_justo
+				ruling_only = yes 
+			}
+		}
+		
+		icon = generic_form_nation
+
+		fire_only_once = yes
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 946
+					state = 300
+					state = 1011
+					state = 945
+					state = 301
+					state = 688
+					state = 990
+					state = 991
+					state = 992
+					state = 993
+					state = 997
+					state = 507
+					state = 949
+					state = 950
+					state = 999
+					state = 279
+					state = 952
+					state = 506
+					state = 995
+					state = 951
+					state = 302
+					state = 1006
+					state = 1007
+					state = 1003
+					state = 985
+					state = 994
+					state = 487
+					state = 1008
+					state = 1004
+					state = 1035
+					has_state_flag = argentine_starting_state
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_uruguayan_states_tt
+					controls_state = 946
+					controls_state = 300
+					controls_state = 1011
+					controls_state = 945
+				}
+				URG = {
+					is_subject_of = ROOT 
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_paraguayan_states_tt
+					controls_state = 301
+					controls_state = 688
+					controls_state = 990
+					controls_state = 991
+					controls_state = 992
+					controls_state = 993
+				}
+				PAR = {
+					is_subject_of = ROOT
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_chilean_states_tt
+					controls_state = 997
+					controls_state = 507
+					controls_state = 949
+					controls_state = 950
+					controls_state = 999
+					controls_state = 279
+					controls_state = 952
+					controls_state = 506
+					controls_state = 995
+					controls_state = 951
+					controls_state = 1035
+				}
+				CHL = { 
+					is_subject_of = ROOT 
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_bolvian_states_tt
+					controls_state = 302
+					controls_state = 1006
+					controls_state = 1007
+					controls_state = 1003
+					controls_state = 985
+					controls_state = 994
+					controls_state = 487
+					controls_state = 1008
+					controls_state = 1004
+				}
+				BOL = { 
+					is_subject_of = ROOT 
+				}
+			}
+			hidden_trigger = {
+				controls_state = 278
+				controls_state = 1021
+				controls_state = 973
+				controls_state = 956
+				controls_state = 511
+			}
+		}
+
+		ai_will_do = {
+			factor = 750
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = ARG_gain_cores_on_urg_and_par_tt
+			custom_effect_tooltip = ARG_gain_cores_on_chl_bol_tt
+			set_cosmetic_tag = ARG_ANDESIA
+			custom_effect_tooltip = ARG_gain_claim_on_every_latinamerican_state_tt
+			every_state = {
+				limit = {
+					NOT = { is_controlled_by = ROOT }
+					NOT = { is_claimed_by = ROOT }
+					OR = {
+						is_on_continent = south_america
+						is_core_of = MEX
+					}
+				}
+				add_claim_by = ROOT
+			}
+			every_subject_country = {
+				limit = {
+					OR = {
+						original_tag = PAR 
+						original_tag = URG
+						original_tag = BOL 
+						original_tag = CHL 
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV 
+						transfer_troops = yes 
+					}
+				}
+			}
+			custom_effect_tooltip = URG_economy_officers_tt
+			hidden_effect = {
+				add_timed_idea = { 
+					idea = URG_economic_instability
+					days = 365
+				}
+				add_timed_idea = { 
+					idea = URG_rebelling_officers
+					days = 365
+				}
+				301 = { add_core_of = ROOT }
+				688 = { add_core_of = ROOT }
+				1011 = { add_core_of = ROOT }
+				300 = { add_core_of = ROOT }
+				946 = { add_core_of = ROOT }
+				990 = { add_core_of = ROOT }
+				991 = { add_core_of = ROOT }
+				992 = { add_core_of = ROOT }
+				993 = { add_core_of = ROOT }
+				every_controlled_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						OR = {
+							is_core_of = BOL 
+							is_core_of = CHL
+						}
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+}
+
+form_united_provinces_of_rio_de_la_plata = {
+	ARG_form_united_provinces_of_rio_de_la_plata = {
+		allowed = { original_tag = ARG }
+
+		visible = {
+			has_government = fascism
+			NOT = { has_completed_focus = ARG_catholic_takeover }
+			NOT = { has_completed_focus = ARG_the_fourth_reich }
+			OR = {
+				has_completed_focus = ARG_prepare_the_army
+				has_completed_focus = ARG_argentine_nationalism
+			}
+		}
+
+		icon = generic_form_nation
+
+		fire_only_once = yes
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 946
+					state = 300
+					state = 1011
+					state = 945
+					state = 301
+					state = 688
+					state = 990
+					state = 991
+					state = 992
+					state = 993
+					state = 997
+					state = 507
+					state = 949
+					state = 950
+					state = 999
+					state = 279
+					state = 952
+					state = 506
+					state = 995
+					state = 951
+					state = 984
+					state = 503
+					state = 502
+					state = 994
+					state = 985
+					state = 1007
+					state = 1006
+					state = 1003
+					state = 302
+					state = 987
+					state = 947
+					state = 492
+					state = 1035
+					has_state_flag = argentine_starting_state
+				} 
+			} 
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		available = {
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_uruguayan_states_tt
+					controls_state = 946
+					controls_state = 300
+					controls_state = 1011
+				}
+				URG = {
+					is_subject_of = ROOT 
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_paraguayan_states_tt
+					controls_state = 301
+					controls_state = 688
+					controls_state = 990
+					controls_state = 991
+					controls_state = 992
+					controls_state = 993
+				}
+				PAR = {
+					is_subject_of = ROOT
+				}
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = ARG_controls_all_chilean_states_tt
+					controls_state = 997
+					controls_state = 507
+					controls_state = 949
+					controls_state = 950
+					controls_state = 999
+					controls_state = 279
+					controls_state = 952
+					controls_state = 506
+					controls_state = 995
+					controls_state = 951
+					controls_state = 1035
+				}
+				CHL = { 
+					is_subject_of = ROOT 
+				}
+			}
+			controls_state = 984
+			controls_state = 503
+			controls_state = 502
+			controls_state = 994
+			controls_state = 985
+			controls_state = 1007
+			controls_state = 1006
+			controls_state = 1003
+			controls_state = 302
+			controls_state = 987
+			controls_state = 947
+			controls_state = 492
+			hidden_trigger = {
+				controls_state = 278
+				controls_state = 1021
+				controls_state = 973
+				controls_state = 956
+				controls_state = 511
+			}
+		}
+
+		ai_will_do = {
+			factor = 750
+		}
+
+		complete_effect = {
+			custom_effect_tooltip = ARG_gain_cores_on_urg_and_par_tt
+			custom_effect_tooltip = ARG_gain_cores_on_chl_tt
+			set_cosmetic_tag = ARG_PROVINCIAS
+			every_subject_country = {
+				limit = {
+					OR = {
+						original_tag = PAR 
+						original_tag = URG
+						original_tag = CHL 
+					}
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV 
+						transfer_troops = yes 
+					}
+				}
+			}
+			984 = { add_core_of = ROOT }
+			503 = { add_core_of = ROOT }
+			502 = { add_core_of = ROOT }
+			994 = { add_core_of = ROOT }
+			985 = { add_core_of = ROOT }
+			1007 = { add_core_of = ROOT }
+			1006 = { add_core_of = ROOT }
+			1003 = { add_core_of = ROOT }
+			302 = { add_core_of = ROOT }
+			987 = { add_core_of = ROOT }
+			947 = { add_core_of = ROOT }
+			492 = { add_core_of = ROOT }
+			custom_effect_tooltip = URG_economy_officers_tt
+			hidden_effect = {
+				add_timed_idea = { 
+					idea = URG_economic_instability
+					days = 365
+				}
+				add_timed_idea = { 
+					idea = URG_rebelling_officers
+					days = 365
+				}
+				301 = { add_core_of = ROOT }
+				688 = { add_core_of = ROOT }
+				1011 = { add_core_of = ROOT }
+				300 = { add_core_of = ROOT }
+				946 = { add_core_of = ROOT }
+				990 = { add_core_of = ROOT }
+				991 = { add_core_of = ROOT }
+				992 = { add_core_of = ROOT }
+				993 = { add_core_of = ROOT }
+				every_controlled_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						is_core_of = CHL
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+}
+
+form_german_reich = {
+	ARG_reclaim_our_homeland = {
+		allowed = { original_tag = ARG }
+
+		visible = { has_completed_focus = ARG_the_fourth_reich }
+
+		icon = generic_form_nation
+
+		fire_only_once = yes
+
+		available = {
+			has_full_control_of_state = 64 ##Berlin
+			hidden_trigger = {
+				controls_state = 278
+				controls_state = 1021
+				controls_state = 973
+				controls_state = 956
+				controls_state = 511
+			}
+		}
+
+		ai_will_do = {
+			factor = 750
+		}
+
+		complete_effect = {
+			add_stability = 0.05
+			set_cosmetic_tag = ARG_GERMANY
+			custom_effect_tooltip = ARG_gain_cores_on_all_german_states_tt
+			hidden_effect = {
+				every_state = {
+					limit = {
+						NOT = { is_core_of = ROOT }
+						is_core_of = GER 
+					}
+					add_core_of = ROOT
+				}
+			}
+		}
+	}
+}
+			

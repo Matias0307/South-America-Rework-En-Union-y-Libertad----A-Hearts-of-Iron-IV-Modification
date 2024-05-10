@@ -1,0 +1,29 @@
+state={
+	id=1028
+	name="Lara"
+	resources={
+		oil=20.000
+	}
+
+	history={
+		owner = VEN
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+		add_core_of = VEN
+		victory_points = {
+			14518 3 ## Valencia
+		}
+		
+		victory_points = {
+			10855 5 ## Barquisimeto
+		}
+	}
+	provinces={
+		1997 4526 5088 10855 14504 14505 14517 14518 14521 14522 14523 14528 14529 14531 
+	}
+	manpower=301921
+	buildings_max_level_factor=1.000
+	state_category=town
+}
