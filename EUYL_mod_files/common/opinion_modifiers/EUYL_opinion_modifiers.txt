@@ -226,4 +226,8 @@ opinion_modifiers = {
 	VEN_opressed_germans_in_their_country = {
 		value = -25
 	}
+
+	ECU_invited_our_advisors = {
+		value = 15
+	}
 }

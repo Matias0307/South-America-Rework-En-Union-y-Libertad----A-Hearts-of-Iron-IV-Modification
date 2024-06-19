@@ -1044,4 +1044,58 @@ leader_traits = {
 		trade_opinion_factor = -0.2
 		fascism_acceptance = 75
 	}
+
+	ECU_the_charismatic = {
+		random = no 
+		
+		stability_factor = 0.05
+		war_support_factor = 0.05
+		political_power_factor = 0.05
+		improve_relations_maintain_cost_factor = -0.5
+		trade_laws_cost_factor = -0.1
+		trade_opinion_factor = 0.15
+		drift_defence_factor = 0.5
+	}
+
+	ECU_agroindustrialist = {
+		random = no 
+
+		industrial_capacity_factory = 0.05
+		global_building_slots_factor = 0.05
+		stability_factor = 0.03
+	}
+
+	ECU_agroindustrialist_advisor_trait = {
+		random = no 
+		sprite = 10
+
+		industrial_capacity_factory = 0.05
+		production_factory_efficiency_gain_factor = 0.1
+		production_factory_max_efficiency_factor = 0.05
+		global_building_slots_factor = 0.1
+	}
+
+	ECU_ambitious = {
+		random = no 
+
+		justify_war_goal_time = -0.2
+		offensive_war_stability_factor = 0.2
+		defensive_war_stability_factor = 0.3
+		war_support_factor = 0.05
+	}
+
+	ECU_low_public_support = {
+		random = no 
+		
+		stability_factor = -0.05
+		political_power_factor = -0.05
+	}
+
+	ECU_entrepreneur = {
+		random = no 
+		sprite = 10
+
+		consumer_goods_factor = -0.1
+		production_speed_industrial_complex_factor = 0.1
+	}
 }

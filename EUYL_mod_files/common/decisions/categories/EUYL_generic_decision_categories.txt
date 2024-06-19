@@ -11,7 +11,6 @@ south_american_armament = {
 			original_tag = BOL 
 			original_tag = URG 
 			original_tag = PRU 
-			original_tag = ECU 
 			original_tag = COL 
 			original_tag = PAR 
 			original_tag = VEN
@@ -60,12 +59,6 @@ south_american_armament = {
 				original_tag = VEN 
 			}
 			has_completed_focus = VEN_armament_program
-		}
-		if = {
-			limit = {
-				original_tag = ECU
-			}
-			num_of_factories > 24
 		}
 	}
 }

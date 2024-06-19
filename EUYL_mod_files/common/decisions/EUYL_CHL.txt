@@ -5843,10 +5843,22 @@ CHL_purchasing_foreign_planes = {
 		
 		remove_effect = {
 			clr_country_flag = CHL_purchasing_planes
-			add_equipment_to_stockpile = {
-				type = small_plane_airframe
-				amount = 65
-				producer = FROM
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_equipment_to_stockpile = {
+					type = small_plane_airframe
+					amount = 65
+					producer = FROM
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = fighter_equipment_0
+					amount = 65
+					producer = FROM
+				}
 			}
 		}
 	}
@@ -5915,10 +5927,22 @@ CHL_purchasing_foreign_planes = {
 		
 		remove_effect = {
 			clr_country_flag = CHL_purchasing_planes
-			add_equipment_to_stockpile = {
-				type = medium_plane_airframe
-				amount = 65
-				producer = FROM
+			if = {
+				limit = {
+					has_dlc = "By Blood Alone"
+				}
+				add_equipment_to_stockpile = {
+					type = medium_plane_airframe
+					amount = 50
+					producer = FROM
+				}
+			}
+			else = {
+				add_equipment_to_stockpile = {
+					type = tac_bomber_equipment_0
+					amount = 50
+					producer = FROM
+				}
 			}
 		}
 	}

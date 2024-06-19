@@ -3892,6 +3892,15 @@
  PRU_heavy_tank_equipment_2_short:0 "M6A1"
  PRU_heavy_tank_equipment_3:0 "M6A2 Heavy Tank"
  PRU_heavy_tank_equipment_3_short:0 "M6A2" 
+
+ ECU_infantry_equipment_0:0 "Mauser Modelo Argentino 1891"
+ ECU_infantry_equipment_0_short:0 "Mauser 1891"
+ ECU_infantry_equipment_1:0 "Zbrojovka Brno vz.24"
+ ECU_infantry_equipment_1_short:0 "vz.24"
+ ECU_infantry_equipment_2:0 "Puška vz. 33"
+ ECU_infantry_equipment_2_short:0 "vz. 33"
+ ECU_infantry_equipment_3:0 "M1 Carbine"
+ ECU_infantry_equipment_3_short:0 "M1 Carbine"
  
  PAR_infantry_equipment_0:0 "Lee-Metford"
  PAR_infantry_equipment_0_short:0 "Lee-Metford"

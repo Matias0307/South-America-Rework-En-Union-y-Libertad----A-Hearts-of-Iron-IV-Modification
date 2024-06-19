@@ -20,6 +20,22 @@ ECU_improve_conservative_opinion = {
 		custom_effect_tooltip = ECU_because_of_your_pro_conservative_navy_tt
 		ECU_worsen_liberal_opinion = yes
 	}
+	if = {
+		limit = {
+			has_completed_focus = ECU_stabilize_our_politics
+			check_variable = {
+				ECU_liberal_opinion = 3
+			}
+			check_variable = {
+				ECU_conservative_opinion = 3
+			}
+		}
+		remove_ideas = ECU_aftermath_of_4_day_civil_war_1
+		clear_variable = ECU_conservative_opinion
+		clear_variable = ECU_liberal_opinion
+		clear_variable = ECU_cooperate_conservative_cost
+		clear_variable = ECU_cooperate_liberal_cost
+	}
 }
 
 ECU_improve_liberal_opinion = {
@@ -36,6 +52,22 @@ ECU_improve_liberal_opinion = {
 		flag = ECU_recently_improved_liberal_opinion_flag
 		days = 90
 		value = 1
+	}
+	if = {
+		limit = {
+			has_completed_focus = ECU_stabilize_our_politics
+			check_variable = {
+				ECU_liberal_opinion = 3
+			}
+			check_variable = {
+				ECU_conservative_opinion = 3
+			}
+		}
+		remove_ideas = ECU_aftermath_of_4_day_civil_war_1
+		clear_variable = ECU_conservative_opinion
+		clear_variable = ECU_liberal_opinion
+		clear_variable = ECU_cooperate_conservative_cost
+		clear_variable = ECU_cooperate_liberal_cost
 	}
 }
 
@@ -341,7 +373,7 @@ ECU_start_liberal_civil_war_against_player = {
 			}
 			every_controlled_state = {
 				create_unit = {
-					division = "name = \"Milicias Conservadoras\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
+					division = "name = \"Milicias Liberales\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
 					owner = PREV
 					count = 2
 				}
@@ -351,7 +383,7 @@ ECU_start_liberal_civil_war_against_player = {
 }
 
 ECU_calculate_conservative_cost = {
-	set_variable = { ECU_cooperate_conservative_cost = 30 } 
+	set_variable = { ECU_cooperate_conservative_cost = 40 } 
 	if = {
 		limit = {
 			has_idea = ECU_pro_conservative_navy
@@ -368,7 +400,36 @@ ECU_calculate_conservative_cost = {
 			ECU_cooperate_conservative_cost = 0.8 
 		}
 	}
+	if = {
+		limit = {
+			has_completed_focus = ECU_stabilize_our_politics
+		}
+		multiply_variable = {
+			ECU_cooperate_conservative_cost = 0.8 
+		}
+	}
 	round_variable = ECU_cooperate_conservative_cost
+}
+
+ECU_calculate_liberal_cost = {
+	set_variable = { ECU_cooperate_liberal_cost = 40 }
+	if = {
+		limit = {
+			has_completed_focus = ECU_convince_our_liberal_supporters
+		}
+		multiply_variable = {
+			ECU_cooperate_liberal_cost = 0.8 
+		}
+	}
+	if = {
+		limit = {
+			has_completed_focus = ECU_stabilize_our_politics
+		}
+		multiply_variable = {
+			ECU_cooperate_liberal_cost = 0.8 
+		}
+	}
+	round_variable = ECU_cooperate_liberal_cost
 }
 
 ECU_dissolve_the_constituent_assembly = {
@@ -396,6 +457,134 @@ EUYL_step_up_tension = {
 			var = EUYL_peru_ecuador_threat_level
 			min = 0
 			max = 5
+		}
+	}
+}
+
+ECU_call_up_juan_de_borbon = {
+	if = {
+		limit = {
+			date < 1940.1.1
+			SPB = {
+				OR = {
+					exists = no 
+					surrender_progress > 0.4
+				}
+			}
+			SPR_scw_in_progress = yes
+			has_civil_war = no 
+		}
+		country_event = {
+			id = ecu.15 
+			days = 25
+			random_days = 15
+			hours = 4
+		}
+	}
+}
+
+ECU_gloriosa_civil_war = {
+	if = {
+		limit = {
+			NOT = {
+				has_template = "Milicias"
+			}
+		}
+		division_template = { 
+			name = "Milicias" 
+			division_names_group = SPAN_INF_02 
+			is_locked = no 
+			regiments = { 
+				infantry = { x = 0 y = 0 }  
+				infantry = { x = 0 y = 1 } 
+				infantry = { x = 0 y = 2 } 
+				infantry = { x = 0 y = 3 } 
+			}
+		}	
+	}
+	if = {
+		limit = {
+			has_idea = ECU_la_gloriosa
+		}
+		remove_ideas = ECU_la_gloriosa
+	}
+	if = {
+		limit = {
+			has_active_mission = ECU_la_gloriosa_mission
+		}
+		remove_mission = ECU_la_gloriosa_mission
+	}
+	start_civil_war = {
+		ideology = neutrality
+		keep_all_characters = yes 
+		size = 0.4
+		PREV = {
+			ECU_jose_velasco_ibarra = {
+				set_nationality = prev.PREV 
+			}
+			ECU_provisional_junta = {
+				set_nationality = prev.PREV 
+			}
+		}
+	}
+	every_controlled_state = {
+		create_unit = {
+			division = "name = \"Milicias Leales\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
+			owner = ROOT
+		}
+	}
+	random_owned_controlled_state = {
+		create_unit = {
+			division = "name = \"Milicias Leales\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
+			owner = ROOT
+		}
+	}
+	random_other_country = {
+		limit = {
+			original_tag = ECU 
+			has_civil_war = yes 
+		}
+		add_country_leader_role = {
+			character = ECU_provisional_junta
+			promote_leader = yes
+			country_leader = {
+				ideology = independent
+				traits = { BRA_disorganized_leadership }
+				expire = "1965.3.1.1"
+			}
+		}
+		ECU_provisional_junta = {
+			add_corps_commander_role = {
+				skill = 3
+				attack_skill = 4
+				defense_skill = 3
+				planning_skill = 3
+				logistics_skill = 2
+			}
+		}
+		every_controlled_state = {
+			create_unit = {
+				division = "name = \"Milicias Velasquistas\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
+				owner = PREV
+				count = 3
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = ECU_stronger_war_start_flag
+			}
+			random_owned_controlled_state = {
+				create_unit = {
+					division = "name = \"Milicias Velasquistas\" division_template = \"Milicias\" start_experience_factor = 0.02 start_equipment_factor = 0.6" 
+					owner = PREV
+					count = 2
+				}
+			}
+			clr_global_flag = ECU_stronger_war_start_flag
+		}
+		country_event = {
+			id = ecu.19 
+			days = 14
 		}
 	}
 }

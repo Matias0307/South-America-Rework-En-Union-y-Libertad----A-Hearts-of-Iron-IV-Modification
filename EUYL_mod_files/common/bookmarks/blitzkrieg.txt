@@ -719,6 +719,21 @@ bookmarks = {
 				VEN_military_takeover
 			}
 		}
+		"ECU" = {
+			minor = yes 
+			history = "ECU_BLITZKRIEG_DESC"
+			ideology = democratic
+			ideas = {
+				ECU_full_gold_standard_abandonment_2
+				ECU_aftermath_of_4_day_civil_war_1
+				ECU_devalue_the_sucre_idea
+			}
+			focuses = {
+				ECU_reestablish_the_1906_constitution
+				ECU_request_access_to_the_panama_canal
+				ECU_latin_america_reborn
+			}
+		}
 		effect = {
 			randomize_weather = 12345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

@@ -1,6 +1,10 @@
 ﻿capital = 303
 oob = "PRU_1936"
 
+
+set_war_support = 0.3
+set_stability = 0.63
+
 add_ideas = {
 	PRU_continuing_the_gold_standard_1
 	PRU_pathetic_navy_1
@@ -16,12 +20,26 @@ add_ideas = {
 set_variable = { PRU_army_ideology = 1 } ## 1 - fascist | 0 - democratic 
 set_variable = { PRU_navy_ideology = 0 } ## 1 - fascist | 0 - democratic 
 
+set_variable = { PRU_apra_loyalty = 2 }
+set_variable = { PRU_ur_loyalty = 1 }
+set_variable = { PRU_que_loyalty = -2 }
+set_variable = { PRU_oli_loyalty = 1  }
+
+set_variable = { PRU_army_loyalty_status = 0 }
+set_variable = { PRU_navy_loyalty_status = 0 }
+
+set_variable = { PRU_support_for_the_revolution = 0 }
+set_variable = { PRU_100 = 100 }
+
+PRU_partidos_update_que = yes ## only one who has anything at the start
+
 ### Communist Uprising Mechanic ###
 set_variable = { PRU_support_for_the_revolution = 0 }
 set_variable = { PRU_100 = 100 }
 
 ### Ecuador - Peru Conflict ###
 set_variable = { EUYL_peru_ecuador_threat_level = 0 }
+
 
 activate_mission = PRU_upcoming_elections
 
@@ -101,6 +119,11 @@ recruit_character = PRU_luis_antonio_eguiguren_escudero
 recruit_character = PRU_carlos_pio_habsburgo_borbon
 recruit_character = PRU_federico_more_barrionuevo
 recruit_character = PRU_carlos_miro_quesada
+recruit_character = PRU_Salustio_Fernandez_Oblitas 
+recruit_character = PRU_Praxedes_Merino_Machuca
+recruit_character = PRU_Fausto_Figueroa 
+recruit_character = PRU_Emilio_Barron_Sanchez
+
 
 promote_character = PRU_eudocio_ravines
 
@@ -152,9 +175,6 @@ PRU_haya_de_la_torre = { set_character_flag = PRU_communist }
 PRU_jorge_del_prado_chávez = { set_character_flag = PRU_communist }
 PRU_luis_antonio_eguiguren_escudero = { set_character_flag = PRU_communist }
 
-
-
-set_war_support = 0.2
 
 
 if = {
@@ -213,13 +233,17 @@ if = {
 }
 
 set_country_flag = monroe_doctrine
-
+set_country_flag = PRU_partidos_unlocked_flag
 set_convoys = 75
 set_research_slots = 3
 
 1939.1.1 = {	
 	set_variable = { PRU_army_ideology = 1 } ## 1 - fascist | 0 - democratic 
 	set_variable = { PRU_navy_ideology = 0 } ## 1 - fascist | 0 - democratic 
+
+	set_variable = {
+		EUYL_peru_ecuador_threat_level = 3
+	}
 
 	hidden_effect = {  ## BALANCE OF POWER ##
 		PRU_initiate_balance_of_power = yes 
@@ -254,6 +278,10 @@ set_research_slots = 3
 	complete_national_focus = PRU_recruit_new_generals
 	complete_national_focus = PRU_marina_de_guerra_del_peru
 	complete_national_focus = PRU_extend_naval_training
+	complete_national_focus = PRU_address_the_border_tensions
+	complete_national_focus = PRU_militarize_pastaza
+	complete_national_focus = PRU_test_the_ecuadorians
+	
 	
 	oob = "PRU_1939"
 	if = {

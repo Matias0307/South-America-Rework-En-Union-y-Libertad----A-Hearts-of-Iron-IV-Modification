@@ -498,41 +498,41 @@ on_actions = {
 	#ROOT is country declaring war
 	on_declare_war = {
 
-		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						tag = ARG
-					}
-					FROM = { tag = URG }
-				}
+		#effect = {
+		#	IF = {
+		#		limit = {
+		#			ROOT = {
+		#				tag = ARG
+		#			}
+		#			FROM = { tag = URG }
+		#		}
 
-				BRA = {
-					country_event = {
-						id = ARG_political_events.110
-						hours = 5
-					}
-				}
-			}
-		}
+		#		BRA = {
+		#			country_event = {
+		#				id = ARG_political_events.110
+		#				hours = 5
+		#			}
+		#		}
+		#	}
+		#}
 
-		effect = {
-			IF = {
-				limit = {
-					ROOT = {
-						tag = BRA
-					}
-					FROM = { tag = URG }
-				}
+		#effect = {
+		#	IF = {
+		#		limit = {
+		#			ROOT = {
+		#				tag = BRA
+		#			}
+		#			FROM = { tag = URG }
+		#		}
 
-				ARG = {
-					country_event = {
-						id = ARG_political_events.110
-						hours = 5
-					}
-				}
-			}
-		}
+		#		ARG = {
+		#			country_event = {
+		#				id = ARG_political_events.110
+		#				hours = 5
+		#			}
+		#		}
+		#	}
+		#}
 
 		effect = {
 			IF = {
@@ -732,10 +732,13 @@ on_actions = {
 				IF = {
 					limit = {
 						ROOT = {
-							has_idea = USA_monroe_doctrine_idea
+							capital_scope = { 
+								is_on_continent = south_america
+							}
 						}
 					}
 					# Do Nothing for now, may add more content here in future!
+					# EUYL | For this mod's case, it merely needs to check if both nations are in SA, rather than if they have the monroe doctrine :P
 				}
 				# Only defender is in Americas
 				ELSE = {

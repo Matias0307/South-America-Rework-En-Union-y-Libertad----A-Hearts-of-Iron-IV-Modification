@@ -282,9 +282,15 @@ characters={
 				has_civil_war = no 
 				num_of_factories > 39
 				NOT = {
-					has_country_leader = {
-						character = ARG_fanny_edelman_official
-						ruling_only = yes 
+					OR = {
+						has_country_leader = {
+							character = ARG_fanny_edelman_official
+							ruling_only = yes 
+						}
+						has_country_leader = {
+							character = EUYL_ARG_fanny_edelman
+							ruling_only = yes 
+						}
 					}
 				}
 			}
@@ -357,9 +363,15 @@ characters={
 				has_civil_war = no 
 				num_of_factories > 39
 				NOT = {
-					has_country_leader = {
-						character = EUYL_ARG_fanny_edelman
-						ruling_only = yes 
+					OR = {
+						has_country_leader = {
+							character = ARG_fanny_edelman_official
+							ruling_only = yes 
+						}
+						has_country_leader = {
+							character = EUYL_ARG_fanny_edelman
+							ruling_only = yes 
+						}
 					}
 				}
 			}
@@ -1081,10 +1093,6 @@ characters={
 		advisor = {
 			slot = political_advisor
 			idea_token = ARG_juan_bautista
-			allowed = {
-				original_tag = ARG
-				has_dlc = "La Resistance"
-			}
 			available = {
 				NOT = { has_government = communism }
 				NOT = {
@@ -1270,10 +1278,6 @@ characters={
 		advisor = {
 			slot = political_advisor
 			idea_token = ARG_juan_bautista
-			allowed = {
-				original_tag = ARG
-				has_dlc = "La Resistance"
-			}
 			available = {
 				custom_trigger_tooltip = {
 					tooltip = ARG_not_in_germany_tt
@@ -1304,10 +1308,6 @@ characters={
 		advisor = {
 			slot = political_advisor
 			idea_token = ARG_adolf_hitler_idea
-			allowed = {
-				original_tag = ARG
-				has_dlc = "La Resistance"
-			}
 			cost = 50
 			on_add = {
 				ROOT = {
@@ -1335,12 +1335,8 @@ characters={
 		}
 		advisor = {
 			slot = political_advisor
-			idea_token = ARG_victorio_codavilla_idea
-			allowed = {
-				original_tag = ARG
-				has_dlc = "La Resistance"
-			}
-
+			idea_token = EUYL_ARG_victorio_codovilla_idea
+			
 			ai_will_do = {
 				base = 25
 				modifier = {
@@ -1353,10 +1349,7 @@ characters={
 
 			available = {
 				OR = {
-					custom_trigger_tooltip = {
-						tooltip = ARG_the_revolution_is_active_tt
-						has_completed_focus = ARG_an_imminent_revolution
-					}
+					has_completed_focus = ARG_an_imminent_revolution
 					has_government = communism
 				}
 			}

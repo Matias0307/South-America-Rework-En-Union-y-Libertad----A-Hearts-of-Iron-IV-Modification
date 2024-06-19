@@ -516,7 +516,7 @@ guiTypes = {
 			textureFile = ""
 			font = "hoi_18b"
 			borderSize = {x = 0 y = 0}
-			text = "En Unión Y Libertad v1.9.15"	
+			text = "En Unión Y Libertad v2.0.4"	
 			format = centre
 			maxWidth = 250
 			maxHeight = 20	

@@ -32,16 +32,7 @@ EUYL_STOP_GARRISONING_DURING_CIVIL_WAR_FFS = { ## i tried my best :( (still no w
 	
 	ai_strategy = {
 		type = garrison
-		value = -85
-	}
-
-	ai_strategy = {
-		type = front_unit_request
-		country_trigger = {
-			original_tag = ROOT
-			has_war_with = ROOT
-		}
-		value = 100
+		value = -150
 	}
 }
 
@@ -77,5 +68,24 @@ EUYL_slightly_naval_focused_nation = {
 		type = unit_ratio
 		id = convoy
 		value = 1
+	}
+}
+
+PRU_blockade_guayaquil_AI = {
+	enable = {
+		has_war_with = ECU 
+		has_active_mission = PRU_blockade_guayaquil
+	}
+
+	abort = {
+		NOT = {
+			has_war_with = ECU
+		}
+	}
+
+	ai_strategy = {
+		type = naval_convoy_raid_region
+		id = 105
+		value = 200
 	}
 }

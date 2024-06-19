@@ -19,6 +19,10 @@ ideologies = {
 			democratic_monarchism = {
 				can_be_randomly_selected = no
 			}
+
+			anarcho_capitalism = {
+				can_be_randomly_selected = no
+			}
 		}
 		
 		dynamic_faction_names = {

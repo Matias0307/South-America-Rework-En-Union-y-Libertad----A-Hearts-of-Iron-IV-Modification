@@ -1,4 +1,72 @@
 EUYL_latin_american_political_actions = {
+	ECU_act_effects_taking_place_here = {
+		icon = eng_trade_unions_support
+
+		activation = {
+			always = no 
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				has_state_flag = ECU_act_active_here_flag
+			}
+		}
+
+		days_mission_timeout = 75
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECU_no_states_with_active_act_tt
+				NOT = {
+					any_controlled_state = {
+						has_state_flag = ECU_act_active_here_flag
+					}
+				}
+			}
+		}
+
+		is_good = yes 
+
+		timeout_effect = {
+			add_stability = 0.03
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.02
+			}
+			hidden_effect = {
+				random_owned_controlled_state = {
+					limit = {
+						has_state_flag = ECU_act_active_here_flag
+					}
+					clr_state_flag = ECU_act_active_here_flag
+					set_state_flag = ECU_act_was_present_here_flag
+					if = {
+						limit = {
+							any_neighbor_state = {
+								has_state_flag = ECU_starting_state
+								NOT = {
+									has_state_flag = ECU_act_was_present_here_flag
+								}
+							}
+						}
+						random_neighbor_state = {
+							limit = {
+								has_state_flag = ECU_starting_state
+								NOT = {
+									has_state_flag = ECU_act_was_present_here_flag
+								}
+							}
+							set_state_flag = ECU_act_active_here_flag
+							ROOT = {
+								activate_mission = ECU_act_effects_taking_place_here
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
 	EUYL_enforce_mandatory_conscription = {
 		priority = 100
 		icon = generic_military 
@@ -613,6 +681,7 @@ EUYL_latin_american_economic_policy = {
 									damage = 2
 								}
 							}
+							country_event = argentina.rework.25
 						} 
 					}
 					50 = {
@@ -634,9 +703,6 @@ EUYL_latin_american_economic_policy = {
 								}
 							}
 						}
-					}
-					FROM = {
-						country_event = argentina.rework.25
 					}
 				}
 			}
@@ -1111,6 +1177,63 @@ EUYL_latin_american_economic_policy = {
 					type = industrial_complex
 					level = 1
 					instant_build = yes 
+				}
+			}
+		}
+	}
+
+	EUYL_promote_urbanization_in_FROM = {
+		icon = generic_construction
+
+		allowed = {
+			NOT = {
+				original_tag = ECU
+			}
+		}
+
+		state_target = yes 
+
+		target_array = controlled_states
+
+		target_trigger = {
+			FROM = {
+				has_dynamic_modifier = {
+					modifier = ECU_rural_state
+				}
+			}
+		}
+
+		on_map_mode = map_and_decisions_view
+
+		visible = {
+			FROM = {
+				is_controlled_by = ROOT 
+			}
+		}
+
+		available = {
+			NOT = {
+				has_country_flag = ECU_recently_promoted_development_flag
+			}
+		}
+
+		cost = 25
+
+		fire_only_once = yes
+		
+		ai_will_do = {
+            base = 250
+        }
+
+		complete_effect = {
+			set_country_flag = {
+				flag = ECU_recently_promoted_development_flag
+				days = 90
+				value = 1
+			}
+			FROM = {
+				remove_dynamic_modifier = {
+					modifier = ECU_rural_state
 				}
 			}
 		}

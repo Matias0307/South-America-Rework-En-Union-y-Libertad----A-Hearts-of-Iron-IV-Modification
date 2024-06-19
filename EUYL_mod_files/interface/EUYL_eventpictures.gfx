@@ -81,6 +81,56 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_ECU_asamblea_hostile_pic"
+		texturefile = "gfx/event_pictures/ECU_asamblea_hostile_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_aurelio_death_pic"
+		texturefile = "gfx/event_pictures/ECU_aurelio_death_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_banana_company_event"
+		texturefile = "gfx/event_pictures/ECU_banana_company_event.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_banana_company_take_over_pic"
+		texturefile = "gfx/event_pictures/ECU_banana_company_take_over_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_edmundo_death_pic"
+		texturefile = "gfx/event_pictures/ECU_edmundo_death_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_report_event_generic_oil"
+		texturefile = "gfx/event_pictures/report_event_generic_oil.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_strange_visitor_pic"
+		texturefile = "gfx/event_pictures/ECU_strange_visitor_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_event_ECU_velascos_return"
+		texturefile = "gfx/event_pictures/event_ECU_velascos_return.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_gloriosa_event_pic"
+		texturefile = "gfx/event_pictures/ECU_gloriosa_event_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_velasco_takes_power_pic"
+		texturefile = "gfx/event_pictures/ECU_velasco_takes_power_pic.png"
+	}
+
+	spriteType = {
 		name = "GFX_VEN_golpe_probable"
 		texturefile = "gfx/event_pictures/VEN_golpe_probable.png"
 	}

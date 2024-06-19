@@ -146,6 +146,9 @@ characters={
 			civilian={
 				large="gfx/leaders/PRU/portrait_PRU_luis_a_flores.dds"
 			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
 		}
 		country_leader={
 			desc="POLITICS_LUIS_FLORES_DESC"
@@ -244,7 +247,7 @@ characters={
 			traits = { PRU_compassionate_leader }
 		}
 		corps_commander={
-			traits={ trait_PRU_urrista old_guard }
+			traits={ old_guard }
 			skill=3
 			attack_skill=2
 			defense_skill=1
@@ -304,7 +307,7 @@ characters={
 		}
 		
 		field_marshal={
-			traits={ trait_PRU_urrista offensive_doctrine }
+			traits={ offensive_doctrine }
 			skill=3
 			attack_skill=3
 			defense_skill=2
@@ -438,6 +441,9 @@ characters={
 			army={
 				large="gfx/leaders/PRU/sicca.png"
 			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
 		}
 		corps_commander={
 			skill=3
@@ -499,7 +505,7 @@ characters={
 			}
 		}
 		corps_commander={
-			traits = { trait_PRU_urrista }
+			traits = { fast_planner }
 			skill=2
 			attack_skill=1
 			defense_skill=2
@@ -533,6 +539,9 @@ characters={
 			army = {
 				large = "gfx/leaders/PRU/Maximo_Pimentel_Obregon.png"
 			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
 		}
 		corps_commander={
 			skill=2
@@ -549,6 +558,9 @@ characters={
 			army = {
 				large = "gfx/leaders/PRU/PRU_carlos_minano.png"
 			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
 		}
 		corps_commander={
 			skill=2
@@ -559,11 +571,78 @@ characters={
 			legacy_id=-1
 		}
 	}
+
+	PRU_Salustio_Fernandez_Oblitas = {
+		name = "Salustio Fernandez Oblitas"
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRU/Salustio_Fernandez_Oblitas.png"
+			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+	PRU_Praxedes_Merino_Machuca = {
+		name = "Praxedes Merino Machuca"
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRU/Praxedes_Merino_Machuca.png"
+			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+
+	PRU_Fausto_Figueroa = {
+		name = "Fausto Figueroa"
+		portraits = {
+			army = {
+				large = "gfx/leaders/PRU/Fausto_Figueroa.png"
+			}
+			army={
+				small="GFX_idea_south_america_generic_1"
+			}
+		}
+		corps_commander={
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+
+
+
+
 	PRU_victor_rodriguez_zumaran = {
 		name = "Víctor Rodríguez Zumarán"
 		portraits = {
 			army = {
 				large = "gfx/leaders/PRU/PRU_victor_rodriguez.png"
+			}
+			army={
+				small="GFX_idea_south_america_generic_1"
 			}
 		}
 		corps_commander={
@@ -605,6 +684,9 @@ characters={
 			legacy_id=-1
 		}
 	}
+
+
+
 	PRU_roque_a_saldías={
 		name="Roque A. Saldías"
 		portraits={
@@ -625,6 +707,28 @@ characters={
 			legacy_id=-1
 		}
 	}
+
+	PRU_Emilio_Barron_Sanchez={
+		name="Emilio Barron Sanchez"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_south_america_generic_navy_1.dds"
+			}
+			army={
+				large="gfx/leaders/PRU/Emilio_Barron_Sanchez.png"
+			}
+		}
+		navy_leader={
+			traits={  }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=2
+			legacy_id=-1
+		}
+	}
+
 	PRU_carlos_rotalde={
 		name="Carlos Rotalde"
 		portraits={

@@ -7479,9 +7479,7 @@ focus_tree = {
 			PAN = {
 				OR = {
 					exists = no 
-					capital_scope = {
-						controls_or_subject_of = yes 
-					}
+					has_war_with = ROOT
 				}
 			}
 		}
@@ -7906,6 +7904,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
+			every_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT 
+					}
+					OR = {
+						state = 316
+						state = 685
+						state = 317
+						state = 312
+						state = 314
+						state = 315 
+						state = 319
+						state = 318
+					}
+				}
+				add_core_of = ROOT
+			}
 			every_other_country = {
 				limit = {
 					OR = {
@@ -8362,7 +8378,7 @@ focus_tree = {
 			has_army_manpower = {
 				size > 119999
 			}
-			num_of_factories > 34
+			num_of_factories > 24
 		}
 
 		search_filters = {
@@ -9301,7 +9317,7 @@ focus_tree = {
 	focus = {
 		id = VEN_the_march_south
 		icon = GFX_focus_PRU_attack
-		x = -1
+		x = -2
 		y = 1
 		relative_position_id = VEN_development_near_the_amazonas
 		prerequisite = {
@@ -9515,10 +9531,24 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			add_state_claim = 315
-			add_state_claim = 318
-			add_state_claim = 689
-			add_state_claim = 319
+			every_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT 
+					}
+					OR = {
+						state = 316
+						state = 685
+						state = 317
+						state = 312
+						state = 314
+						state = 315 
+						state = 319
+						state = 318
+					}
+				}
+				add_core_of = ROOT
+			}
 			create_wargoal = {
 				target = CUB
 				type = annex_everything
@@ -9913,10 +9943,10 @@ focus_tree = {
 		}
 	}
 
-	## Establish the Confederation as a Dominion ##
+	## Reforming the Lost Unions ##
 	focus = {
 		id = VEN_establish_the_confederation_as_a_dominion
-		icon = GFX_col_focus_dominio
+		icon = GFX_BRA_unite_hispanoamerica
 		x = 0
 		y = 1
 		relative_position_id = VEN_secure_the_tungsten_mines
@@ -9927,28 +9957,7 @@ focus_tree = {
 		cost = 10
 
 		available = {
-			## Peru ##
-			1022 = { controls_or_subject_of = yes }
-			491 = { controls_or_subject_of = yes }
-			1000 = { controls_or_subject_of = yes }
-			1005 = { controls_or_subject_of = yes }
-			494 = { controls_or_subject_of = yes }
-			303 = { controls_or_subject_of = yes }
-			988 = { controls_or_subject_of = yes }
-			989 = { controls_or_subject_of = yes }
-			492 = { controls_or_subject_of = yes }
-			987 = { controls_or_subject_of = yes }
-			947 = { controls_or_subject_of = yes }
-			## Bolivia ##
-			302 = { controls_or_subject_of = yes }
-			1008 = { controls_or_subject_of = yes }
-			1004 = { controls_or_subject_of = yes }
-			1003 = { controls_or_subject_of = yes }
-			1006 = { controls_or_subject_of = yes }
-			1007 = { controls_or_subject_of = yes }
-			985 = { controls_or_subject_of = yes }
-			994 = { controls_or_subject_of = yes }
-			487 = { controls_or_subject_of = yes }
+			num_of_factories > 49
 		}
 
 		search_filters = {
@@ -9956,101 +9965,72 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			custom_effect_tooltip = VEN_release_pbc_as_subject_tt
-			hidden_effect = {
-				PRU = {
-					set_cosmetic_tag = PBC_UNIFIED
+			unlock_decision_category_tooltip = ECU_reforming_the_lost_unions
+
+			set_country_flag = EUYL_can_reform_lost_unions_flag
+		}
+	}
+
+	## The Union of the Americas ##
+	focus = {
+		id = VEN_the_union_of_the_americas
+		icon = GFX_ECU_american_union_icon
+		x = 0
+		y = 1
+		relative_position_id = VEN_establish_the_confederation_as_a_dominion
+		prerequisite = {
+			focus = VEN_establish_the_confederation_as_a_dominion
+		}
+
+		ai_will_do = {
+			base = 5
+		}
+
+		cost = 10
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = ECU_reformed_a_lost_union_tt
+				any_other_country = {
+					is_subject_of = ROOT 
+					has_country_flag = ECU_puppeted_flag
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+
+		completion_reward = {
+			add_political_power = 50
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = ECU_annex_all_formed_unions_and_gain_cores_tt
+			every_country = {
+				limit = {
+					is_subject_of = ROOT
+					has_country_flag = ECU_puppeted_flag
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}	
 				}
 				every_state = {
 					limit = {
-						controls_or_subject_of = yes
-						OR = {
-							is_core_of = PRU 
-							is_core_of = BOL 
-						}
+						is_core_of = PREV
 					}
-					PRU = { transfer_state = PREV }
-				}
-				PRU = {
-					set_politics = {
-						ruling_party = ROOT
-					}
-				}
-				if = {
-					limit = {
-						has_government = communism
-					}
-					PRU = {
-						create_country_leader = {
-							name = "Congreso de Tacna"
-							desc = "POLITICS_CONGRESS_TACNA_DESC"
-							picture = "gfx/leaders/PRU/PBC_portrait_congreso_de_tacna.dds"
-							expire = "1965.1.1"
-							ideology = leninism
-							traits = {
-								PRU_not_a_real_person
-							}
-						}
-					}
-				}
-				else_if = {
-					limit = {
-						has_government = neutrality
-					}
-					PRU = {
-						create_country_leader = {
-							name = "Congreso de Tacna"
-							desc = "POLITICS_CONGRESS_TACNA_DESC"
-							picture = "gfx/leaders/PRU/PBC_portrait_congreso_de_tacna.dds"
-							expire = "1965.1.1"
-							ideology = despotism
-							traits = {
-								PRU_not_a_real_person
-							}
-						}
-					}
-				}
-				else = {
-					PRU = {
-						create_country_leader = {
-							name = "Congreso de Tacna"
-							desc = "POLITICS_CONGRESS_TACNA_DESC"
-							picture = "gfx/leaders/PRU/PBC_portrait_congreso_de_tacna.dds"
-							expire = "1965.1.1"
-							ideology = gen_nazism
-							traits = {
-								PRU_not_a_real_person
-							}
-						}
-					}
-				}
-				if = {
-					limit = {
-						PRU = {
-							NOT = {
-								is_subject_of = ROOT
-							}
-						}
-					}
-					puppet = PRU
-				}
-				PRU = {
-					load_focus_tree = PBC_focus_tree
-					unlock_national_focus = PBC_choose_our_leader
-					unlock_national_focus = PBC_our_war_of_independence
-					unlock_national_focus = PBC_focus_on_our_armed_forces
-					unlock_national_focus = PBC_maneging_the_new_nation
-					unlock_national_focus = PBC_invite_foreign_advisors
-					unlock_national_focus = PBC_deal_with_the_economy
-					unlock_national_focus = PBC_unite_the_parties
-					unlock_national_focus = PBC_mobilize_the_economy
-					unlock_national_focus = PBC_unite_the_industries
-					unlock_national_focus = PBC_stabilizing_the_nation
-					unlock_national_focus = PBC_mutual_military_training
-					unlock_national_focus = PBC_fully_reform_the_army
-					unlock_national_focus = PBC_independent_at_last
+					add_core_of = ROOT
 				}
 			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			hidden_effect = { drop_cosmetic_tag = yes }
+			set_cosmetic_tag = UNION_AMERICAS
 		}
 	}
 

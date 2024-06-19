@@ -37,6 +37,30 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_pru_a_rodriguez_texticon"
+		texturefile = "gfx/texticons/pru_a_rodriguez_texticon.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_pru_montagne_texticon"
+		texturefile = "gfx/texticons/pru_montagne_texticon.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_pru_odria_texticon"
+		texturefile = "gfx/texticons/pru_odria_texticon.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
+		name = "GFX_pru_ureta_texticon"
+		texturefile = "gfx/texticons/pru_ureta_texticon.png"
+		legacy_lazy_load = no
+	}
+
+	spriteType = {
 		name = "GFX_arg_marxist_texticon"
 		texturefile = "gfx/texticons/arg_marxist_texticon.png"
 		legacy_lazy_load = no
@@ -299,7 +323,7 @@ spriteTypes = {
 		texturefile = "gfx/texticons/partido_socialista_texticon.png"
 		legacy_lazy_load = no
 	}
-
+    
 	spriteType = {
 		name = "GFX_ucr_texticon"
 		texturefile = "gfx/texticons/ucr_texticon.png"

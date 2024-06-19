@@ -3344,9 +3344,20 @@ col_mandato_unificacion = {
 			NOT = {
 				has_war_with = VEN
 			}
-			strength_ratio = {
-				tag = FROM
-				ratio > 1
+			if = {
+				limit = {
+					original_tag = ECU 
+				}
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.7
+				}
+			}
+			else = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
 			}
 		}
 
@@ -3398,9 +3409,20 @@ col_mandato_unificacion = {
 			NOT = {
 				has_war_with = COL
 			}
-			strength_ratio = {
-				tag = FROM
-				ratio > 1
+			if = {
+				limit = {
+					original_tag = ECU 
+				}
+				strength_ratio = {
+					tag = FROM
+					ratio > 0.7
+				}
+			}
+			else = {
+				strength_ratio = {
+					tag = FROM
+					ratio > 1
+				}
 			}
 		}
 
@@ -3766,6 +3788,7 @@ col_mandato_unificacion = {
 					original_tag = COL 
 					original_tag = ECU 
 					original_tag = PAN 
+					original_tag = VEN
 				}
 			}
 		}
@@ -3783,7 +3806,10 @@ col_mandato_unificacion = {
 		}
 
 		visible = {
-			has_completed_focus = VEN_ensure_total_victory
+			OR = {
+				has_completed_focus = VEN_ensure_total_victory
+				has_completed_focus = ECU_win_at_all_costs
+			}
 		}
 
 		complete_effect = {
@@ -3793,6 +3819,63 @@ col_mandato_unificacion = {
 		}
 
 		days_remove = 60
+
+		targeted_modifier = {
+			tag = FROM 
+			attack_bonus_against = 0.1
+            defense_bonus_against = 0.1
+		}
+
+		modifier = {
+			experience_gain_army_factor = -0.25
+		}
+	}
+
+	ECU_launch_operation_americas_against_FROM = {
+		icon = generic_operation
+
+		fire_only_once = yes
+
+		target_trigger = {
+			FROM = {
+				exists = yes
+				capital_scope = {
+					OR = {
+						is_on_continent = south_america
+						is_on_continent = north_america
+					}
+				}
+				is_neighbor_of = ROOT
+			}
+		}
+
+		custom_cost_trigger = {
+			command_power > 24
+		}
+
+		custom_cost_text = decision_cost_CP_25
+
+		available = {
+			FROM = {
+				has_war_with = ROOT 
+			}
+		}
+
+		visible = {
+			has_completed_focus = ECU_operation_americas
+		}
+
+		complete_effect = {
+			hidden_effect = {
+				add_command_power = -25
+			}
+		}
+
+		days_remove = 180
+
+		ai_will_do = {
+			factor = 350
+		}
 
 		targeted_modifier = {
 			tag = FROM 
@@ -3928,6 +4011,13 @@ conflictos_fronterizos_col = {
 			OR = {
 				original_tag = COL 
 				original_tag = VEN
+				original_tag = ECU
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 685
 			}
 		}
 
@@ -3937,6 +4027,10 @@ conflictos_fronterizos_col = {
 				has_completed_focus = COL_cumplir_el_sueno
 				has_completed_focus = VEN_nuestra_por_derecho
 				has_completed_focus = VEN_the_panamanian_question
+				has_completed_focus = ECU_the_revolution_to_central_america
+				has_completed_focus = ECU_the_panamanian_ultimatum
+				has_completed_focus = ECU_operation_americas
+				has_cosmetic_tag = GRC_UNIFIED
 			}
 			NOT = {
 				has_war_with = USA
@@ -4026,11 +4120,24 @@ conflictos_fronterizos_col = {
 		icon = border_war
 
 		allowed = {
-			original_tag = COL
+			OR = {
+				original_tag = COL 
+				original_tag = VEN
+				original_tag = ECU
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 974
+			}
 		}
 
 		visible = {
-			has_completed_focus = COL_el_incidente_de_japura
+			OR = {
+				has_completed_focus = COL_el_incidente_de_japura
+				has_cosmetic_tag = GRC_UNIFIED
+			}
 			NOT = {
 				has_war_with = BRA
 			}
@@ -4174,11 +4281,24 @@ conflictos_fronterizos_col = {
 		icon = border_war
 
 		allowed = {
-			original_tag = COL
+			OR = {
+				original_tag = COL 
+				original_tag = VEN
+				original_tag = ECU
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1023
+			}
 		}
 
 		visible = {
-			has_completed_focus = COL_continuar_el_avance
+			OR = {
+				has_completed_focus = COL_continuar_el_avance
+				has_cosmetic_tag = GRC_UNIFIED
+			}
 			NOT = {
 				has_war_with = BRA
 			}
@@ -5560,1003 +5680,6 @@ COL_tierra_de_colon_cat = {
 		}
 	}
 
-}
-
-COL_revivir_confederacion = {
-
-	COL_revivir_confederacion_war_mission = {
-		icon = GFX_decision_generic_ignite_civil_war
-
-		allowed = {
-			tag = COL
-		}
-
-		visible = {
-			hidden_trigger = {
-				tag = COL
-				has_country_flag = must_puppet_pbc
-			}
-		}
-
-		is_good = no
-
-		fire_only_once = yes
-
-		priority = 10
-
-		days_mission_timeout = 240
-
-		cancel_if_not_visible = yes
-
-		available = {
-			PRU = {
-				is_puppet_of = ROOT
-			}
-			hidden_trigger = {
-				PRU = {
-					has_country_flag = is_PBC
-					exists = no
-				}
-			}
-		}
-
-		activation = {
-			always = no
-		}
-
-		timeout_effect = {
-			hidden_effect = {
-				set_country_flag = conf_war_declared
-				if = {
-					limit = {
-						USA = {
-							has_guaranteed = COL
-						}
-					}
-					USA = {
-						diplomatic_relation = {
-						    country = COL
-						    relation = guarantee
-						    active = no
-						}
-					}
-				}
-			}
-
-			if = {
-				limit = {
-					COL = {
-						has_guaranteed = PRU
-					}
-				}
-				COL = {
-					diplomatic_relation = {
-					    country = PRU
-					    relation = guarantee
-					    active = no
-					}
-				}
-			}
-
-			PRU = {
-				if = {
-					limit = {
-						has_non_aggression_pact_with = COL
-					}
-					diplomatic_relation = {
-					    country = COL
-					    relation = non_aggression_pact
-					    active = no
-					}
-				}
-				if = {
-					limit = {
-						is_in_faction_with = COL
-					}
-					leave_faction = yes
-				}
-
-				create_wargoal = {
-					type = puppet_wargoal_focus
-					target = COL
-				}
-				add_ai_strategy = {
-					type = alliance
-					id = "COL"			
-					value = -200
-				}
-				add_opinion_modifier = {
-					target = COL
-					modifier = our_enemy
-				}
-				add_ai_strategy = {
-					type = prepare_for_war
-					id = COL
-					value = 200
-				}
-				add_ai_strategy = {
-					type = invade
-					id = COL
-					value = 100
-				}
-			}
-		}
-	}
-
-	COL_consolidar_dominio = {
-		icon = GFX_decision_oppression
-
-		fire_only_once = yes
-
-		cost = 100
-
-		ai_will_do = {
-			base = 200
-		}
-
-		available = {
-			has_completed_focus = COL_consolidar_el_dominio
-			custom_trigger_tooltip = {
-				tooltip = COL_consolidar_dominio_tt
-				check_variable = { COL_poder_confederacion = 100 }
-			}
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		visible = {
-			tag = COL
-			has_country_flag = must_puppet_pbc
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		complete_effect = {
-			add_political_power = 150
-			puppet = PRU
-			clr_country_flag = must_puppet_pbc
-		}
-	}
-
-	COL_repartir_propaganda = {
-		icon = GFX_decision_eng_propaganda_campaigns
-
-		cost = 25
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			has_completed_focus = COL_consolidar_el_dominio
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		visible = {
-			tag = COL
-			has_country_flag = must_puppet_pbc
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		days_remove = 15
-
-		days_re_enable = 10
-
-		remove_effect = {
-			random_list = {
-				90 = {
-					COL_poder_confederacion_low_increase_effect = yes
-				}
-				10 = {
-					add_political_power = 50
-				}
-			}
-		}
-	}
-
-	COL_manipular_politica = {
-		icon = generic_speech
-
-		cost = 40
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			has_completed_focus = COL_consolidar_el_dominio
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		days_remove = 20
-
-		days_re_enable = 10
-
-		visible = {
-			tag = COL
-			has_country_flag = must_puppet_pbc
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		remove_effect = {
-			random_list = {
-				80 = {
-					COL_poder_confederacion_medium_increase_effect = yes
-				}
-				20 = {
-					add_political_power = 65
-				}
-			}
-		}
-	}
-
-	COL_controlar_inteligencia = {
-		icon = GFX_decision_onmap_recruit_operative
-
-		cost = 50
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			has_completed_focus = COL_consolidar_el_dominio
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		days_remove = 30
-
-		days_re_enable = 10
-
-		visible = {
-			tag = COL
-			has_country_flag = must_puppet_pbc
-			NOT = {
-				has_country_flag = conf_war_declared
-			}
-		}
-
-		remove_effect = {
-			random_list = {
-				70 = {
-					COL_poder_confederacion_high_increase_effect = yes
-				}
-				30 = {
-					add_political_power = 75
-				}
-			}
-		}
-	}
-
-	COL_brindar_apoyo_produccion = {
-		icon = generic_factory
-
-		fire_only_once = yes
-
-		cost = 25
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			any_owned_state = {
-				arms_factory > 1
-			}
-		}
-
-		visible = {
-			tag = COL
-			has_completed_focus = COL_revivir_la_confederacion
-			NOT = {
-				has_country_flag = conf_war_started
-			}
-		}
-
-		complete_effect = {
-			random_owned_controlled_state = {
-				limit = { arms_factory > 1 }
-				remove_building = {
-					type = arms_factory
-					level = 2
-				}
-			}
-
-			custom_effect_tooltip = COL_brindar_apoyo_produccion_tt
-			custom_effect_tooltip = COL_start_confederation_war_discount_tt
-
-			hidden_effect = {
-				set_country_flag = COL_brindar_apoyo_produccion_flag
-				subtract_from_variable = { COL_start_confederation_war_cost = COL_start_confederation_war_cost_discount }
-				clamp_variable = {
-					var = COL_start_confederation_war_cost
-					min = 0
-					max = 300
-				}
-			}
-		}
-	}
-
-	COL_preparar_gobiernos = {
-		icon = generic_political_discourse
-
-		fire_only_once = yes
-
-		cost = 25
-
-		ai_will_do = {
-			base = 100
-		}
-
-		visible = {
-			tag = COL
-			has_completed_focus = COL_revivir_la_confederacion
-			NOT = {
-				has_country_flag = conf_war_started
-			}
-		}
-
-		days_remove = 70
-
-		remove_effect = {
-			custom_effect_tooltip = COL_preparar_gobiernos_tt
-			custom_effect_tooltip = COL_start_confederation_war_discount_tt
-
-			hidden_effect = {
-				set_country_flag = COL_preparar_gobiernos_flag
-				subtract_from_variable = { COL_start_confederation_war_cost = COL_start_confederation_war_cost_discount }
-				clamp_variable = {
-					var = COL_start_confederation_war_cost
-					min = 0
-					max = 300
-				}
-			}
-		}
-	}
-
-	COL_suplir_bodegas = {
-		icon = generic_prepare_civil_war
-
-		fire_only_once = yes
-
-		cost = 25
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			has_equipment = {
-			    infantry_equipment > 2499
-			}
-			has_equipment = {
-			    support_equipment > 249
-			}
-		}
-
-		visible = {
-			tag = COL
-			has_completed_focus = COL_revivir_la_confederacion
-			NOT = {
-				has_country_flag = conf_war_started
-			}
-		}
-
-		complete_effect = {
-			custom_effect_tooltip = COL_suplir_bodegas_tt
-			custom_effect_tooltip = COL_start_confederation_war_discount_tt
-
-			hidden_effect = {
-				set_country_flag = COL_suplir_bodegas_flag
-				subtract_from_variable = { COL_start_confederation_war_cost = COL_start_confederation_war_cost_discount }
-				clamp_variable = {
-					var = COL_start_confederation_war_cost
-					min = 0
-					max = 300
-				}
-			}
-		}
-	}
-
-	COL_asegurar_brigada_de_FROM = {
-		icon = generic_military
-
-		ai_will_do = {
-			base = 15
-		}	
-
-		state_target = yes 
-
-		target_array = PRU.controlled_states
-
-		target_array = BOL.controlled_states
-
-		target_trigger = {
-			FROM = {
-				OR = {
-					state = 1000
-					state = 839
-					state = 492
-					state = 989
-					state = 947
-					state = 987
-					state = 985
-					state = 1007
-					state = 1006
-				}
-			}
-		}
-
-		days_remove = 30
-
-		custom_cost_trigger = {
-			has_manpower > 999
-		}
-
-		custom_cost_text = CHL_manpower_1000_tt
-
-		ai_will_do = {
-			base = 100
-		}
-
-		available = {
-			PRU = {
-				exists = yes
-			}
-			BOL = {
-				exists = yes
-			}
-			hidden_trigger = {
-				has_manpower > 999
-			}
-		}
-
-		visible = {
-			tag = COL
-			has_completed_focus = COL_revivir_la_confederacion
-			PRU = {
-				exists = yes
-			}
-			BOL = {
-				exists = yes
-			}
-			FROM = {
-				NOT = {
-					has_state_flag = state_brigada_asegurada
-				}
-			}
-			NOT = {
-				has_country_flag = conf_war_started
-			}
-		}
-
-		modifier = {
-			weekly_manpower = -200
-		}
-
-		complete_effect = {
-			hidden_effect = {
-				set_country_flag = reclutando_brigada
-			}
-		}
-
-		remove_effect = {
-			clr_country_flag = reclutando_brigada
-			hidden_effect = {
-				FROM = {
-					set_state_flag = state_brigada_asegurada
-				}
-			}
-			custom_effect_tooltip = COL_asegurar_brigada_de_FROM_tt
-		}
-	}
-
-	COL_start_confederation_war_decision = {
-
-		icon = GFX_decision_generic_ignite_civil_war
-
-		fire_only_once = yes
-
-		allowed = {
-			tag = COL
-		}
-
-		visible = {
-			tag = COL
-			has_completed_focus = COL_revivir_la_confederacion
-		}
-
-		priority = 10
-
-		available = {
-			PRU = {
-				exists = yes
-				has_civil_war = no
-			}
-			BOL = {
-				exists = yes
-				has_civil_war = no
-			}
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = reclutando_brigada
-					has_decision = COL_suplir_bodegas
-					has_decision = COL_preparar_gobiernos
-					has_decision = COL_brindar_apoyo_produccion
-				}
-			}
-		}
-
-		cost = COL_start_confederation_war_cost
-
-		ai_will_do = {
-			base = 40
-			modifier = {
-				add = 20
-				has_country_flag = COL_brindar_apoyo_produccion_flag
-			}
-			modifier = {
-				add = 20
-				has_country_flag = COL_preparar_gobiernos_flag
-			}
-			modifier = {
-				add = 20
-				has_country_flag = COL_suplir_bodegas_flag
-			}
-			modifier = {
-				factor = 0
-				check_variable = { COL_start_confederation_war_cost = 300 }
-			}
-			modifier = {
-				factor = 0.5
-				check_variable = { COL_start_confederation_war_cost = 250 }
-			}
-			modifier = {
-				factor = 0.2
-				check_variable = { COL_start_confederation_war_cost = 200 }
-			}
-			modifier = {
-				factor = 1.5
-				check_variable = { COL_start_confederation_war_cost = 150 }
-			}
-		}
-
-		complete_effect = {
-			activate_mission = COL_start_confederation_war
-			every_country = {
-				limit = {
-					OR = {
-						tag = BOL
-						tag = PRU
-					}
-				}
-				country_event = {
-				    id = colombia.105
-				}
-			}
-			hidden_effect = {
-				set_country_flag = conf_war_started
-				every_country = {
-					limit = {
-						OR = {
-							tag = BOL
-							tag = PRU
-						}
-					}
-					activate_mission = COL_start_confederation_war
-				}
-			}
-		}
-	}
-	
-	COL_start_confederation_war = {
-
-		icon = GFX_decision_generic_ignite_civil_war
-
-		allowed = {
-			OR = {
-				tag = COL
-				tag = PRU
-				tag = BOL
-			}
-		}
-
-		visible = {
-			OR = {
-				tag = COL
-				tag = PRU
-				tag = BOL
-			}
-		}
-		
-		available = {
-			always = no
-		}
-
-		days_mission_timeout = 90
-		
-		is_good = no
-
-		activation = {
-			always = no
-		}
-
-		timeout_effect = {
-			if = {
-				limit = {
-					tag = COL
-				}
-				effect_tooltip = {
-					PRU = {
-						start_civil_war = {
-							ideology = fascism
-							size = 0.2
-							capital = 492
-							states = { 1000 839 492 989 947 987 }
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = BOL
-				}
-				effect_tooltip = {
-					start_civil_war = {
-						ideology = fascism
-						size = 0.2
-						capital = 492
-						states = { 1000 839 492 989 947 987 }
-					}
-					PRU = {
-						start_civil_war = {
-							ideology = fascism
-							size = 0.2
-							capital = 492
-							states = { 1000 839 492 989 947 987 }
-						}
-					}
-				}
-			}
-			if = {
-				limit = {
-					tag = PRU
-				}
-				start_civil_war = {
-					ideology = fascism
-					size = 0.2
-					capital = 492
-					states = { 1000 839 492 989 947 987 }
-				}
-				random_country = {
-					limit = {
-						original_tag = PRU
-						has_government = fascism
-						has_war_with = PRU
-					}
-
-					load_focus_tree = PBC_focus_tree
-
-					set_cosmetic_tag = PBC_UNIFYING
-					set_country_flag = PBC_unifying_flag
-					set_country_flag = is_PBC
-					set_country_flag = is_in_second_war_of_confederation
-
-					add_ideas = {
-						PBC_split_armies_1
-						PBC_divided_economy_1
-					}
-
-					add_ai_strategy = {
-						type = befriend
-						id = COL
-						value = 100
-					}
-
-					set_state_controller = 1006
-					set_state_controller = 1007
-					set_state_controller = 985
-
-					if = {
-						limit = {
-							COL = {
-								has_country_flag = COL_preparar_gobiernos_flag
-							}
-						}
-						every_state = {
-							limit = {
-								is_core_of = BOL 
-							}
-							if = {
-								limit = { is_controlled_by = PREV }
-								set_compliance = 40
-							}
-							add_core_of = PREV 
-						}
-					}
-					else = {
-						every_state = {
-							limit = {
-								is_core_of = BOL 
-							}
-							if = {
-								limit = { is_controlled_by = PREV }
-								set_compliance = 20
-							}
-							add_claim_by = PREV 
-						}
-						set_country_flag = PBC_must_integrate
-					}
-
-					BOL = {
-						add_to_war = { 
-						    targeted_alliance = PRU 
-						    enemy = PREV
-						    hostility_reason = civil_war
-						}
-					}
-					COL = {
-						add_ai_strategy = {
-							type = befriend
-							id = PREV
-							value = 100
-						}
-						add_ai_strategy = {
-						    type = send_volunteers_desire
-						    id = PREV
-						    value = 100
-						}
-					}
-
-					if = {
-						limit = {
-							COL = {
-								has_country_flag = COL_suplir_bodegas_flag
-							}
-						}
-						add_equipment_to_stockpile = {
-							type = infantry_equipment
-							amount = 2500
-							producer = COL
-						}
-            			add_equipment_to_stockpile = {
-							type = support_equipment
-							amount = 250
-							producer = COL 
-						}
-					}
-
-					if = {
-						limit = {
-							COL = {
-								has_country_flag = COL_brindar_apoyo_produccion_flag
-							}
-						}
-						add_offsite_building = {
-							type = arms_factory
-							level = 2
-						}
-					}
-
-					division_template = { 
-						name = "Brigada Confederada" 
-						division_names_group = SPAN_INF_02 
-						is_locked = yes 
-						regiments = { 
-							infantry = { x = 0 y = 0 }  
-							infantry = { x = 0 y = 1 } 
-							infantry = { x = 0 y = 2 } 
-							infantry = { x = 0 y = 3 } 
-							infantry = { x = 0 y = 4 }
-						}
-
-						support = {
-  						    artillery = { x = 0 y = 0 }
- 						}
-					}
-					hidden_effect = {
-						1000 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						839 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						492 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						989 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						947 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						987 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						985 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						1007 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-						1006 = {
-							create_unit = {
-								division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-								owner = PREV
-							}
-						}
-
-						if = {
-							limit = {
-								1000 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							1000 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								839 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							839 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								492 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							492 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								989 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							989 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								947 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							947 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								987 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							987 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								985 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							985 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								1007 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							1007 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-						if = {
-							limit = {
-								1006 = {
-									has_state_flag = state_brigada_asegurada
-								}
-							}
-							1006 = {
-								create_unit = {
-									division = "name = \"Brigada Confederada\" division_template = \"Brigada Confederada\" start_experience_factor = 0.1 start_equipment_factor = 1.0" 
-									owner = PREV
-								}
-							}
-						}
-					}
-				}	
-			}
-		}
-	}
-	
 }
 
 COL_guardia_civil_cat = {

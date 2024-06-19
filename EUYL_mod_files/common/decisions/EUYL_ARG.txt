@@ -2513,13 +2513,37 @@ ARG_political_crisis = {
 					add_core_of = RAR
 				}
 				divide_variable = { ARG_marxist_subversive_influence = 100 }
-				every_character = {
+				if = { ## So for some reason Simon Radowitzky gets transferred over, despite never being called
 					limit = {
-						NOT = { has_character_flag = ARG_anarchist }
-						has_character_flag = ARG_communist
-						is_country_leader = no ## literally this easy (istg if this dont work)
+						has_character = ARG_liborio_justo
 					}
-					set_nationality = RAR
+					ARG_liborio_justo = {
+						set_nationality = RAR
+					}
+				}
+				if = {
+					limit = {
+						has_character = EUYL_ARG_fanny_edelman
+					}
+					EUYL_ARG_fanny_edelman = {
+						set_nationality = RAR
+					}
+				}
+				if = {
+					limit = {
+						has_character = ARG_juan_posadas
+					}
+					ARG_juan_posadas = {
+						set_nationality = RAR
+					}
+				}
+				if = {
+					limit = {
+						has_character = ARG_victorio_codovilla
+					}
+					ARG_victorio_codovilla = {
+						set_nationality = RAR
+					}
 				}
 				transfer_units_fraction = {
 					target = RAR
@@ -2726,14 +2750,43 @@ ARG_political_crisis = {
 					add_core_of = AAR
 				}
 				divide_variable = { ARG_anarchist_subversive_influence = 100 }
-				every_character = {
+				if = {
 					limit = {
-						has_character_flag = ARG_anarchist
-						is_country_leader = no ## literally this easy (istg if this dont work)
+						has_character = ARG_virginia_bolten
 					}
-					set_nationality = AAR
+					ARG_virginia_bolten = {
+						set_nationality = AAR
+					}
 				}
-				transfer_units_fraction = {
+				if = {
+					limit = {
+						has_character = ARG_simon_radowitzky
+					}
+					ARG_simon_radowitzky = {
+						set_nationality = AAR
+					}
+				}
+				if = {
+					limit = {
+						has_character = ARG_anarchist_council
+					}
+					ARG_anarchist_council = {
+						set_nationality = AAR
+					}
+				}
+				if = {
+					limit = {
+						has_country_leader = {
+							character = EUYL_ARG_fanny_edelman
+							ruling_only = yes 
+						}
+					}
+					promote_character = ARG_fanny_edelman_official 
+					## actually insane that I have to do this
+					## when I NEVER transfer fanny to the Anarchists
+					## this highlights a deeper problem with the compiler of HOI4
+				}
+				transfer_units_fraction = { ## could it be this?
 					target = AAR
 					stockpile_ratio = 0.2
 					army_ratio = 0.15
@@ -4154,15 +4207,19 @@ ARG_the_great_revolution = {
 				else = {
 					if = {
 						limit = {
-							has_global_flag = ARG_fanny_was_chosen_to_lead
+							has_country_leader = {
+								character = EUYL_ARG_fanny_edelman
+								ruling_only = yes
+							}
 						}
-						promote_character = ARG_fanny_edelman_official
 						set_cosmetic_tag = FARC
 					}
-					else = {
-						promote_character = ARG_liborio_justo
-					}
 				}
+				remove_dynamic_modifier = {
+					modifier = ARG_corruption_scandal_idea
+				}
+				set_variable = { ARG_degree_of_corruption = 0 }
+				set_variable = { ARG_corruption_status = 0 }
 				add_popularity = {
 					ideology = communism
 					popularity = 0.1
@@ -4216,11 +4273,7 @@ ARG_the_great_revolution = {
 						limit = {
 							has_global_flag = ARG_fanny_was_chosen_to_lead
 						}
-						promote_character = ARG_fanny_edelman_official
 						set_cosmetic_tag = FARC
-					}
-					else = {
-						promote_character = ARG_liborio_justo
 					}
 				}
 				add_popularity = {
@@ -4298,7 +4351,7 @@ ARG_the_great_revolution = {
 										ruling_only = yes
 									}
 									has_country_leader = {
-										character = ARG_fanny_edelman_official
+										character = EUYL_ARG_fanny_edelman
 										ruling_only = yes
 									}
 								}
@@ -4330,6 +4383,11 @@ ARG_the_great_revolution = {
 
 		timeout_effect = { #If player chooses diplomacy, this will be a run against the clock
 			hidden_effect = {
+				remove_dynamic_modifier = {
+					modifier = ARG_corruption_scandal_idea
+				}
+				set_variable = { ARG_degree_of_corruption = 0 }
+				set_variable = { ARG_corruption_status = 0 }
 				if = {
 					limit = {
 						NOT = {
@@ -4468,23 +4526,11 @@ ARG_the_great_revolution = {
 								ARG_the_military_junta = {
 									set_nationality = PREV.PREV
 								}
-								every_character = {
-									limit = {
-										NOT = {
-											OR = {
-												has_character_flag = ARG_anarchist
-												has_character_flag = ARG_communist
-											}
-										}
-									}
-									random_list = {
-										45 = {
-											set_nationality = PREV.PREV
-										}
-										55 = {
-
-										}
-									}
+								EUYL_ARG_arturo_rawson = {
+									set_nationality = prev.PREV 
+								}
+								ARG_basilio_pertiné = {
+									set_nationality = prev.prev
 								}
 							}
 							promote_character = ARG_agustín_pedro_justo
@@ -4517,23 +4563,11 @@ ARG_the_great_revolution = {
 								ARG_the_military_junta = {
 									set_nationality = PREV.PREV
 								}
-								every_character = {
-									limit = {
-										NOT = {
-											OR = {
-												has_character_flag = ARG_anarchist
-												has_character_flag = ARG_communist
-											}
-										}
-									}
-									random_list = {
-										45 = {
-											set_nationality = PREV.PREV
-										}
-										55 = {
-
-										}
-									}
+								EUYL_ARG_arturo_rawson = {
+									set_nationality = prev.PREV 
+								}
+								ARG_basilio_pertiné = {
+									set_nationality = prev.prev
 								}
 							}
 							promote_character = ARG_agustín_pedro_justo
@@ -4905,23 +4939,11 @@ ARG_the_great_revolution = {
 									ARG_the_military_junta = {
 										set_nationality = PREV.PREV
 									}
-									every_character = {
-										limit = {
-											NOT = {
-												OR = {
-													has_character_flag = ARG_anarchist
-													has_character_flag = ARG_communist
-												}
-											}
-										}
-										random_list = {
-											45 = {
-												set_nationality = PREV.PREV
-											}
-											55 = {
-
-											}
-										}
+									EUYL_ARG_arturo_rawson = {
+										set_nationality = prev.PREV 
+									}
+									ARG_basilio_pertiné = {
+										set_nationality = prev.prev
 									}
 								}
 								promote_character = ARG_agustín_pedro_justo
@@ -4945,23 +4967,11 @@ ARG_the_great_revolution = {
 									ARG_the_military_junta = {
 										set_nationality = PREV.PREV
 									}
-									every_character = {
-										limit = {
-											NOT = {
-												OR = {
-													has_character_flag = ARG_anarchist
-													has_character_flag = ARG_communist
-												}
-											}
-										}
-										random_list = {
-											45 = {
-												set_nationality = PREV.PREV
-											}
-											55 = {
-
-											}
-										}
+									EUYL_ARG_arturo_rawson = {
+										set_nationality = prev.PREV 
+									}
+									ARG_basilio_pertiné = {
+										set_nationality = prev.prev
 									}
 									if = {
 										limit = {
@@ -5100,14 +5110,12 @@ ARG_the_great_revolution = {
 						else = { ##Dominant Marxists
 							if = {
 								limit = {
-									has_character = ARG_fanny_edelman_official
-									has_global_flag = ARG_fanny_was_chosen_to_lead
+									has_country_leader = {
+										character = EUYL_ARG_fanny_edelman
+										ruling_only = yes
+									}
 								}
-								promote_character = ARG_fanny_edelman_official
 								set_cosmetic_tag = FARC
-							}
-							else = {
-								promote_character = ARG_liborio_justo
 							}
 						}
 						add_equipment_to_stockpile = {
@@ -5336,14 +5344,12 @@ ARG_the_great_revolution = {
 						else = { ##Dominant Marxists
 							if = {
 								limit = {
-									has_character = ARG_fanny_edelman_official
-									has_global_flag = ARG_fanny_was_chosen_to_lead
+									has_country_leader = {
+										character = EUYL_ARG_fanny_edelman
+										ruling_only = yes
+									}
 								}
-								promote_character = ARG_fanny_edelman_official
 								set_cosmetic_tag = FARC
-							}
-							else = {
-								promote_character = ARG_liborio_justo
 							}
 						}
 						add_equipment_to_stockpile = {
@@ -6056,6 +6062,7 @@ ARG_the_great_revolution = {
 		icon = eng_trade_unions_support
 
 		visible = {
+			has_character = EUYL_ARG_fanny_edelman
 			has_country_flag = ARG_very_hostile_anarchists
 		}
 
@@ -12783,8 +12790,8 @@ ARG_internal_tensions = {
                     PREV = {
                         ARG_agustin_pedro_justo = { set_nationality = PREV.PREV }
                         ARG_marcelo_t_de_alvear = { set_nationality = PREV.PREV }
-                        ARG_fanny_edelman = { set_nationality = PREV.PREV }
-                        ARG_arturo_rawson = { set_nationality = PREV.PREV }
+                        EUYL_ARG_fanny_edelman = { set_nationality = PREV.PREV }
+                        EUYL_ARG_arturo_rawson = { set_nationality = PREV.PREV }
                     }
                     promote_character = ARG_marcelo_t_de_alvear
 				}

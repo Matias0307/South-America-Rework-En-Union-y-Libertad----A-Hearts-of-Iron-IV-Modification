@@ -1,5 +1,15 @@
 ﻿capital = 302
 
+for_each_scope_loop = {
+	array = controlled_states
+
+	set_state_flag = bolivian_starting_state
+
+	ROOT = {
+		add_to_array = { cores_at_game_start = PREV }
+	}
+}
+
 if = {
 	limit = { has_dlc = "By Blood Alone" }
 		set_air_oob = "BOL_1936_air_bba"

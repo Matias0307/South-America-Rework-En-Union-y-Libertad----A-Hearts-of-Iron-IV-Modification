@@ -51,7 +51,7 @@ characters={
 			expire="1965.1.1.1"
 			id=-1
 		}
-		corps_commander = {
+		field_marshal = {
 			traits = {
 				expert_improviser
 			}
@@ -62,11 +62,273 @@ characters={
 			logistics_skill = 3
 		}
 	}
+	ECU_jose_velasco_ibarra = {
+		name = "José María Velasco Ibarra"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_jose_velasco_ibarra.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_velasco_ibarra_icon"
+			}
+		}
+		country_leader = {
+			ideology = independent
+			traits = {
+				ECU_the_charismatic
+			}
+			expire="1965.1.1.1"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_jose_velasco_ibarra_idea
+			traits = { 
+				sharp_tongued_lawyer
+			}
+			cost = 75
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = BRA_not_living_exterior_tt
+					NOT = {
+						has_character_flag = BRA_living_in_the_exterior
+					}
+				}
+			}
+		}
+	}
+	ECU_luis_noboa_naranjo = {
+		name = "Luis Noboa Naranjo"
+		portraits = {
+			army = {
+				small = "GFX_idea_ECU_luis_noboa_naranjo_icon"
+			}
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_luis_noboa_naranjo_idea
+			traits = { 
+				ECU_entrepreneur
+			}
+			cost = 125
+			visible = {
+				has_country_leader = {
+					character = ECU_banana_company_administration
+					ruling_only = yes
+				}
+			}
+		}
+	}
+	ECU_carlos_arroyo_del_rio = {
+		name = "Carlos Arroyo del Río"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_carlos_arroyo.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_carlos_arroyo_icon"
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {
+				ECU_agroindustrialist
+			}
+			expire = "1955.1.1.12" 
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_carlos_arroyo_del_rio_idea
+			traits = { ECU_agroindustrialist_advisor_trait }
+			available = {
+				NOT = {
+					has_government = fascism 
+				}
+				NOT = {
+					ECU = {
+						has_country_leader = {
+							character = ECU_carlos_arroyo_del_rio
+							ruling_only = yes
+						}
+					}
+				}
+			}
+			on_add = {
+				if = {
+					limit = {
+						ECU = {
+							has_idea = ECU_aftermath_of_4_day_civil_war_1
+							NOT = {
+								has_country_flag = ECU_liberals_and_conservatives_mad_flag
+							}
+						}
+					}
+					ECU = { ECU_improve_liberal_opinion = yes }
+				}
+			}
+		}
+	}
+	ECU_edmundo_chiriboga = {
+		name = "César Edmundo Chiriboga González"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_edmundo_chiriboga.png"
+			}
+		}
+
+		corps_commander = {
+			traits = {
+				concealment_expert
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	ECU_francisco_urrutia_suarez = {
+		name = "Francisco Suárez Urrutia"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_Francisco_Urrutia_Suarez.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_francisco_suarez_icon"
+			}
+		}
+		corps_commander = {
+			traits = {
+				unyielding_defender
+			}
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 2
+		}
+
+		advisor = {
+			slot = army_chief
+			idea_token = ECU_francisco_urrutia_suarez_idea
+			allowed = {
+				original_tag = ECU
+			}
+			traits = {
+				army_chief_defensive_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ECU_marco_tulio_leon = {
+		name = "Marco Tulio León"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_marco_tulio_leon.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_marcos_leon_icon"
+			}
+		}
+		corps_commander = {
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+
+		advisor = {
+			slot = high_command
+			idea_token = ECU_marco_tulio_leon_idea
+			ledger = army
+			allowed = {
+				original_tag = ECU
+			}
+			traits = {
+				army_regrouping_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+		}
+	}
+	ECU_larrea_alba = {
+		name = "Larrea Alba"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_larrea_alba.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_larrea_alba_icon"
+			}
+		}
+		corps_commander = {
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+
+		advisor = {
+			cost = 150
+			
+			slot = theorist
+			idea_token = ECU_larrea_alba_idea
+			ledger = army 
+			allowed = {
+				original_tag = ECU
+			}
+			
+			traits = {
+				grand_battle_plan_expert
+			}
+		}
+	}
+	ECU_rafael_moran_v = {
+		name = "Rafael Moran V"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_rafael_moran_v.png"
+			}
+		}
+		navy_leader={
+			traits={ }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=2
+			legacy_id=-1
+		}
+	}
 	ECU_asamblea_constituyente = {
 		name = "Asamblea Constituyente"
 		portraits = {
 			civilian = {
 				large = "gfx/leaders/ECU/portrait_ECU_asamblea_constituyente.png"
+			}
+		}
+	}
+	ECU_banana_company_administration = {
+		name = "Banana Company Administration"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_banana_company.png"
+			}
+		}
+	}
+	ECU_juan_de_borbon = {
+		name = "Juan de Borbón"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_juan_de_borbon.png"
 			}
 		}
 	}
@@ -84,6 +346,108 @@ characters={
 			id=-1
 		}
 	}
+
+	ECU_cesar_d_andrade = {
+		name = "Cesar D. Andrade"
+		portraits = {
+			army = {
+				small = "GFX_idea_ECU_cesar_d_andrade_icon"
+			}
+		}
+
+		advisor={
+			slot = political_advisor
+			idea_token = ECU_cesar_d_andrade_idea
+			allowed  = {
+				original_tag  = ECU
+			}
+			available = {
+				has_completed_focus = ECU_promote_the_civilian_industry
+			}
+			cost = 75
+			ai_will_do = {
+				factor = 15
+			}
+			traits  = {
+				financial_expert 
+			}
+			ai_will_do = {
+				factor = 1
+			}
+		}
+	}
+
+	ECU_enrique_gil_gilbert = {
+		name = "Enrique Gil Gilbert"
+		portraits = {
+			army = {
+				small = "GFX_idea_ECU_enrique_gilbert_idea"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_enrique_gil_gilbert_idea
+			allowed = { original_tag = ECU }
+
+			available = {
+				has_completed_focus = ECU_leftist_agitation
+			}
+
+			cost = 100
+
+			traits = {
+				marxist_academic
+			}
+		}
+	}
+
+	ECU_vicente_haro = {
+		name = "Vicente Haro"
+		portraits = {
+			army = {
+				small = "GFX_idea_ECU_vicente_haro_icon"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_vicente_haro_idea
+			allowed = { original_tag = ECU }
+
+			available = {
+				has_completed_focus = ECU_gain_support_from_the_fascists
+			}
+
+			traits = {
+				subservient_ultranationalist
+			}
+		}
+	}
+
+	ECU_manuel_munoz_borrero = {
+		name = "Manuel A. Muñoz Borrero"
+		portraits = {
+			army = {
+				small = "GFX_idea_ECU_manuel_borrero_icon"
+			}
+		}
+
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_manuel_munoz_borrero_idea
+			allowed = { original_tag = ECU }
+
+			available = {
+				has_completed_focus = ECU_re_establish_constituent_assembly
+			}
+
+			traits = {
+				voice_of_restraint
+			}
+		}
+	}
+
 	ECU_manuel_gomez_morin = {
 		name = "Manuel Gómez Morin"
 		portraits = {
@@ -117,13 +481,53 @@ characters={
 		name = "Manuel María Borrero"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/ECU/-.png"
+				large = "gfx/leaders/ECU/portrait_ECU_manuel_maria.png"
 			}
 		}
 		country_leader = {
 			ideology = conservatism
 			expire = "1955.1.1.12" 
 			id = -1
+		}
+	}
+	ECU_aurelio_mosquera_narvaez = {
+		name = "Aurelio Mosquera Narváez"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_aurelio_mosquera.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_aurelio_mosquera_icon"
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {
+				VEN_tenured_doctor
+			}
+			expire = "1955.1.1.12" 
+			id = -1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_aurelio_mosquera_narvaez_idea
+			traits = { modernist_and_reformer }
+			available = {
+				NOT = {
+					ECU = {
+						has_country_leader = {
+							character = ECU_aurelio_mosquera_narvaez
+							ruling_only = yes
+						}
+					}
+				}
+				NOT = {
+					OR = {
+						has_government = fascism 
+						has_government = communism
+					}
+				}
+			}
 		}
 	}
 	ECU_armed_civilians = {
@@ -157,17 +561,62 @@ characters={
 			}
 		}
 	}
-	ECU_neptali_bonifaz = {
-		name = "Neptalí Bonifaz"
+	ECU_jacinto_jijon_y_caamano = {
+		name = "Jacinto Jijón y Caamaño"
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/ECU/-.png"
+				large = "gfx/leaders/ECU/portrait_ECU_jacinto_jijon.png"
 			}
 		}
 		country_leader = {
 			ideology=centrism
 			expire="1955.1.1.12"
 			id=-1
+		}
+	}
+	ECU_neptali_bonifaz = {
+		name = "Neptalí Bonifaz"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portrait_ECU_neptali_bonifaz.png"
+			}
+			army = {
+				small = "GFX_idea_ECU_neptali_icon"
+			}
+		}
+		country_leader = {
+			ideology=centrism
+			expire="1955.1.1.12"
+			id=-1
+		}
+		advisor = {
+			slot = political_advisor
+			idea_token = ECU_neptali_bonifaz_idea
+			traits = { conservative_nationalist }
+			available = {
+				custom_trigger_tooltip = {
+					tooltip = ECU_is_actively_participating_in_politics_tt
+					NOT = {
+						has_character_flag = ECU_not_actively_in_politics_flag
+					}
+				}
+				NOT = {
+					ECU = {
+						has_country_leader = {
+							character = ECU_neptali_bonifaz
+							ruling_only = yes
+						}
+					}
+				}
+			}
+		}
+	}
+	ECU_provisional_junta = {
+		name = "Junta Provisional del Ecuador"
+		portraits = {
+			civilian = {
+				large = "gfx/leaders/ECU/portait_ECU_junta_militar_ecuatoriana.png"
+			}
 		}
 	}
 	ECU_ricardo_paredes_romero = {
@@ -196,6 +645,9 @@ characters={
 		country_leader = {
 			ideology = falangism
 			expire="1955.1.1.12"
+			traits = {
+				ARG_brutal_leader_2
+			}
 			id=-1
 		}
 	}
@@ -224,19 +676,6 @@ characters={
 			ideology=centrism
 			traits={ war_industrialist fortification_engineer }
 			expire="1948.1.1.12"
-			id=-1
-		}
-	}
-	ECU_aurelio_mosquera={
-		name="Aurelio Mosquera"
-		portraits={
-			civilian={
-				large="GFX_portrait_Aurelio_Mosquera"
-			}
-		}
-		country_leader={
-			ideology=liberalism
-			expire="1965.1.1.1"
 			id=-1
 		}
 	}
@@ -702,26 +1141,26 @@ characters={
 			}
 		}
 	}
-	ECU_carlos_arroyo_del_rio={
-		advisor={
-			slot = political_advisor
-			idea_token = ECU_carlos_arroyo_del_rio
-			allowed  = {
-					original_tag  = ECU
-				}
-				traits  = {
-					backroom_backstabber 
-				}
-				ai_will_do  = {
-					factor  = 0.000
-				}
-		}
-# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
-		name="Carlos Arroyo del Río"
-		portraits={
-			army={
-				small="GFX_idea_generic_political_advisor_south_america_3"
-			}
-		}
-	}
+	#ECU_carlos_arroyo_del_rio={
+	#	advisor={
+	#		slot = political_advisor
+	#		idea_token = ECU_carlos_arroyo_del_rio
+	#		allowed  = {
+	#				original_tag  = ECU
+	#			}
+	#			traits  = {
+	#				backroom_backstabber 
+	#			}
+	#			ai_will_do  = {
+	#				factor  = 0.000
+	#			}
+	#	}
+# TO#DO[ PORTRAIT LARGE ]: Missing large portrait please check!
+	#	name="Carlos Arroyo del Río"
+	#	portraits={
+	#		army={
+	#			small="GFX_idea_generic_political_advisor_south_america_3"
+	#		}
+	#	}
+	#}
 }

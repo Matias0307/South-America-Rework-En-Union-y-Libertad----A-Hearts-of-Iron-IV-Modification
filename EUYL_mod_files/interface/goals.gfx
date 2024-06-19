@@ -13,6 +13,56 @@ spriteTypes = {
 	}
 
 	SpriteType = { 
+		name = "GFX_ECU_ejercito_icon"
+		texturefile = "gfx/interface/goals/ECU_ejercito_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_armada_ecuatoriana_icon"
+		texturefile = "gfx/interface/goals/ECU_armada_ecuatoriana_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_fuerza_aerea_icon"
+		texturefile = "gfx/interface/goals/ECU_fuerza_aerea_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_legacy_cosme_icon"
+		texturefile = "gfx/interface/goals/ECU_legacy_cosme_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_EUYL_generic_ship_repair_icon"
+		texturefile = "gfx/interface/goals/EUYL_generic_ship_repair_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_depoliticize_navy_icon"
+		texturefile = "gfx/interface/goals/ECU_depoliticize_navy_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_support_conservative_navy_icon"
+		texturefile = "gfx/interface/goals/ECU_support_conservative_navy_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_banana_company_takeover_icon"
+		texturefile = "gfx/interface/goals/ECU_banana_company_takeover_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_mobilize_free_enterprise_army_icon"
+		texturefile = "gfx/interface/goals/ECU_mobilize_free_enterprise_army_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_global_enterprise_zone_icon"
+		texturefile = "gfx/interface/goals/ECU_global_enterprise_zone_icon.png"
+	}
+
+	SpriteType = { 
 		name = "GFX_ARG_bandera_argentina"
 		texturefile = "gfx/interface/goals/ARG_bandera_argentina.png"
 	}
@@ -55,6 +105,11 @@ spriteTypes = {
 	SpriteType = { 
 		name = "GFX_ARG_fourth_reich"
 		texturefile = "gfx/interface/goals/ARG_fourth_reich.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_take_over_country_icon"
+		texturefile = "gfx/interface/goals/ECU_take_over_country_icon.png"
 	}
 
 	SpriteType = { 
@@ -175,6 +230,181 @@ spriteTypes = {
 	SpriteType = { 
 		name = "GFX_ECU_march_into_territory_icon"
 		texturefile = "gfx/interface/goals/ECU_march_into_territory_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_anti_air_defense_icon"
+		texturefile = "gfx/interface/goals/ECU_anti_air_defense_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_march_into_piura_icon"
+		texturefile = "gfx/interface/goals/ECU_march_into_piura_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_victor_of_peru_ecuador_war"
+		texturefile = "gfx/interface/goals/ECU_victor_of_peru_ecuador_war.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_loser_of_peru_ecuador_war"
+		texturefile = "gfx/interface/goals/ECU_loser_of_peru_ecuador_war.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_greater_ecuador_icon"
+		texturefile = "gfx/interface/goals/ECU_greater_ecuador_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_march_pastaza_icon"
+		texturefile = "gfx/interface/goals/PRU_march_pastaza_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_test_ecuador_icon"
+		texturefile = "gfx/interface/goals/PRU_test_ecuador_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_local_supply_icon"
+		texturefile = "gfx/interface/goals/PRU_local_supply_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_march_guayaquil_icon"
+		texturefile = "gfx/interface/goals/PRU_march_guayaquil_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_victor_of_peru_ecuador_war"
+		texturefile = "gfx/interface/goals/PRU_victor_of_peru_ecuador_war.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_PRU_loser_of_peru_ecuador_war"
+		texturefile = "gfx/interface/goals/PRU_loser_of_peru_ecuador_war.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_neptali_administration_icon"
+		texturefile = "gfx/interface/goals/ECU_neptali_administration_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_caamano_administration_icon"
+		texturefile = "gfx/interface/goals/ECU_caamano_administration_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_colombo_ecuadorian_union_icon"
+		texturefile = "gfx/interface/goals/ECU_colombo_ecuadorian_union_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_caribbean_domination_icon"
+		texturefile = "gfx/interface/goals/ECU_caribbean_domination_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_imprison_gallo_icon"
+		texturefile = "gfx/interface/goals/ECU_imprison_gallo_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_cooperate_fascists_icon"
+		texturefile = "gfx/interface/goals/ECU_cooperate_fascists_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_major_power_icon"
+		texturefile = "gfx/interface/goals/ECU_major_power_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_the_great_betrayal_icon"
+		texturefile = "gfx/interface/goals/ECU_the_great_betrayal_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_take_full_control_icon"
+		texturefile = "gfx/interface/goals/ECU_take_full_control_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_increase_statal_power_icon"
+		texturefile = "gfx/interface/goals/ECU_increase_statal_power_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_revive_idea_icon"
+		texturefile = "gfx/interface/goals/ECU_revive_idea_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_EUYL_generic_support_falange"
+		texturefile = "gfx/interface/goals/EUYL_generic_support_falange.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_arm_up_militia_icon"
+		texturefile = "gfx/interface/goals/ECU_arm_up_militia_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_look_outwards_icon"
+		texturefile = "gfx/interface/goals/ECU_look_outwards_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_claims_on_amazon_icon"
+		texturefile = "gfx/interface/goals/ECU_claims_on_amazon_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_american_union_icon"
+		texturefile = "gfx/interface/goals/ECU_american_union_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_reestablish_constitution_icon"
+		texturefile = "gfx/interface/goals/ECU_reestablish_constitution_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_support_gloriosa_icon"
+		texturefile = "gfx/interface/goals/ECU_support_gloriosa_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_prevent_gloriosa_icon"
+		texturefile = "gfx/interface/goals/ECU_prevent_gloriosa_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_conquer_peru_and_bolivia_icon"
+		texturefile = "gfx/interface/goals/ECU_conquer_peru_and_bolivia_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_a_kingdom_for_centuries_icon"
+		texturefile = "gfx/interface/goals/ECU_a_kingdom_for_centuries_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_royal_armed_forces_icon"
+		texturefile = "gfx/interface/goals/ECU_royal_armed_forces_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_spanish_empire_icon"
+		texturefile = "gfx/interface/goals/ECU_spanish_empire_icon.png"
+	}
+
+	SpriteType = { 
+		name = "GFX_ECU_oil_trade_america"
+		texturefile = "gfx/interface/goals/ECU_oil_trade_america.png"
 	}
 
 	SpriteType = { 

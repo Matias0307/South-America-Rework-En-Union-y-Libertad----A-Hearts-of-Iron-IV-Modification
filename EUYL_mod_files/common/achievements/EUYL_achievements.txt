@@ -1121,34 +1121,52 @@ EUYL_the_modern_bolivar = {
 			has_government = neutrality
 		}
 		num_of_controlled_states > 34
-		ARG = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 1021
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 1021
 			}
 		}
-		BRA = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 500
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 500
 			}
 		}
-		CHL = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 279
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 279
 			}
 		}
-		PRU = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 303
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 303
 			}
 		}
-		BOL = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 1003
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 1003
 			}
 		}
-		COL = {
-			capital_Scope = { 
-				controls_or_subject_of = yes 
+		OR = {
+			has_full_control_of_state = 306
+
+			any_other_country = {
+				is_subject_of = VEN
+				controls_state = 306
 			}
 		}
 		date < 1944.1.1
@@ -1179,4 +1197,192 @@ EUYL_not_so_strong_anymore_mr_stalin = {
 			has_cosmetic_tag = GUOSR_UNIFIED
 		}
     }
+}
+
+EUYL_ecuador_more_like_equator = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = ECU
+		custom_trigger_tooltip = {
+			tooltip = ECU_controls_every_equatorial_state_tt
+			305 = { is_fully_controlled_by = ECU }
+			972 = { is_fully_controlled_by = ECU }
+			1037 = { is_fully_controlled_by = ECU }
+			1010 = { is_fully_controlled_by = ECU }
+			1020 = { is_fully_controlled_by = ECU }
+			1014 = { is_fully_controlled_by = ECU }
+			1036 = { is_fully_controlled_by = ECU }
+			1005 = { is_fully_controlled_by = ECU }
+			490 = { is_fully_controlled_by = ECU }
+			1022 = { is_fully_controlled_by = ECU }
+			1018 = { is_fully_controlled_by = ECU }
+			1019 = { is_fully_controlled_by = ECU }
+			974 = { is_fully_controlled_by = ECU }
+			1023 = { is_fully_controlled_by = ECU }
+			495 = { is_fully_controlled_by = ECU }
+			491 = { is_fully_controlled_by = ECU }
+			1026 = { is_fully_controlled_by = ECU }
+			969 = { is_fully_controlled_by = ECU }
+			939 = { is_fully_controlled_by = ECU }
+			938 = { is_fully_controlled_by = ECU }
+			1034 = { is_fully_controlled_by = ECU }
+			941 = { is_fully_controlled_by = ECU }
+			497 = { is_fully_controlled_by = ECU }
+			937 = { is_fully_controlled_by = ECU }
+			986 = { is_fully_controlled_by = ECU }
+			936 = { is_fully_controlled_by = ECU }
+			935 = { is_fully_controlled_by = ECU }
+			498 = { is_fully_controlled_by = ECU }
+			773 = { is_fully_controlled_by = ECU }
+			297 = { is_fully_controlled_by = ECU }
+			705 = { is_fully_controlled_by = ECU }
+			539 = { is_fully_controlled_by = ECU }
+			772 = { is_fully_controlled_by = ECU }
+			660 = { is_fully_controlled_by = ECU }
+			538 = { is_fully_controlled_by = ECU }
+			718 = { is_fully_controlled_by = ECU }
+			890 = { is_fully_controlled_by = ECU }
+			548 = { is_fully_controlled_by = ECU }
+			885 = { is_fully_controlled_by = ECU }
+			884 = { is_fully_controlled_by = ECU }
+			838 = { is_fully_controlled_by = ECU }
+			837 = { is_fully_controlled_by = ECU }
+			904 = { is_fully_controlled_by = ECU }
+			547 = { is_fully_controlled_by = ECU }
+			839 = { is_fully_controlled_by = ECU }
+			271 = { is_fully_controlled_by = ECU }
+			835 = { is_fully_controlled_by = ECU }
+			836 = { is_fully_controlled_by = ECU }
+			269 = { is_fully_controlled_by = ECU }
+			559 = { is_fully_controlled_by = ECU }
+			906 = { is_fully_controlled_by = ECU }
+			281 = { is_fully_controlled_by = ECU }
+			423 = { is_fully_controlled_by = ECU }
+			422 = { is_fully_controlled_by = ECU }
+			320 = { is_fully_controlled_by = ECU }
+			672 = { is_fully_controlled_by = ECU }
+			336 = { is_fully_controlled_by = ECU }
+			334 = { is_fully_controlled_by = ECU }
+			333 = { is_fully_controlled_by = ECU }
+			335 = { is_fully_controlled_by = ECU }
+			667 = { is_fully_controlled_by = ECU }
+			673 = { is_fully_controlled_by = ECU }
+			668 = { is_fully_controlled_by = ECU }
+			721 = { is_fully_controlled_by = ECU }
+			669 = { is_fully_controlled_by = ECU }
+			523 = { is_fully_controlled_by = ECU }
+			737 = { is_fully_controlled_by = ECU }
+			634 = { is_fully_controlled_by = ECU }
+			734 = { is_fully_controlled_by = ECU }
+			725 = { is_fully_controlled_by = ECU }
+			639 = { is_fully_controlled_by = ECU }
+			643 = { is_fully_controlled_by = ECU }
+			642 = { is_fully_controlled_by = ECU }
+			727 = { is_fully_controlled_by = ECU }
+			649 = { is_fully_controlled_by = ECU }
+		}
+    }
+}
+
+EUYL_not_the_expected_result = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = ECU 
+		has_country_flag = EUYL_winner_of_peru_ecuador_war_flag
+	}
+}
+
+EUYL_guess_whos_back_back_again = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = ECU 
+		has_country_leader = {
+			character = ECU_jose_velasco_ibarra
+			ruling_only = yes
+		}
+	}
+}
+
+EUYL_human_rights_whats_that = {
+	possible = {
+        # classic triggers used in all vanilla achievements
+        difficulty > 1
+        has_start_date < 1936.01.02
+        has_any_custom_difficulty_setting = no
+        game_rules_allow_achievements = yes
+		is_ironman = yes
+		is_debug = no
+    }
+
+    happened = {
+		hidden_trigger = { 
+			is_ai = no 
+			exists = yes    
+			is_subject = no 
+			has_civil_war = no
+		}
+		original_tag = ECU 
+		has_country_leader = {
+			character = ECU_banana_company_administration
+			ruling_only = yes 
+		}
+		custom_trigger_tooltip = {
+			tooltip = ECU_every_south_and_central_american_state_has_banana_plantations_tt
+			NOT = {
+				any_state = {
+					is_on_continent = south_america 
+					NOT = {
+						has_dynamic_modifier = {
+							modifier = ECU_local_banana_production
+						}
+					}
+				}
+			}
+		}
+	}
 }

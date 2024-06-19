@@ -1632,7 +1632,7 @@ ideas = {
 
 			allowed_civil_war = { always = yes }
 
-			available = { has_civil_war = yes }
+			#available = { has_civil_war = yes }
 
 			removal_cost = -1
 

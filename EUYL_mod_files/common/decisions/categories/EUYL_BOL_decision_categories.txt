@@ -134,6 +134,7 @@ BOL_foreign_arms_purchasing = {
 		OR = {
 			original_tag = BOL 
 			original_tag = BRA
+			original_tag = ECU
 		}
 	}
 
@@ -145,6 +146,12 @@ BOL_foreign_arms_purchasing = {
 		if = {
 			limit = { original_tag = BRA }
 			has_completed_focus = BRA_purchase_foreign_arms
+		}
+		if = {
+			limit = {
+				original_tag = ECU 
+			}
+			has_completed_focus = ECU_foreign_equipment_shipments
 		}
 		NOT = {
 			has_country_flag = is_PBC

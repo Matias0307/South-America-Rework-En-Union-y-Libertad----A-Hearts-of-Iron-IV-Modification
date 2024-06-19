@@ -594,6 +594,19 @@
  RULE_OPTION_VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA:0 "Bentancourt's Democracy"
  RULE_OPTION_VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA_DESC:0 "Venezuela will go to a path of freedom and Democracy, with Rómulo Bentancourt in charge."
 
+ ECU_AI_BEHAVIOR:0 "@ECU Ecuador"
+ RULE_HISTORICAL_ECU_AI_DESC:0 "Ecuador will go through it's historical path, replicating in game what happened in real life."
+ RULE_OPTION_ECU_ARNE_FASCISM:0 "ARNE Fascism"
+ RULE_OPTION_ECU_ARNE_FASCISM_DESC:0 "Ecuador will turn into a Fascist totalitarian regime, betraying Paez and bringing to power Jorge Luna Yepes and the ARNE."
+ RULE_OPTION_ECU_PAEZ_DICTATORSHIP:0 "The Paez Dictatorship"
+ RULE_OPTION_ECU_PAEZ_DICTATORSHIP_DESC:0 "Paez will maintain his status of power, officially establishing a fascistic dictatorship with him at the center of it."
+ RULE_OPTION_ECU_CONSERVATISM:0 "Conservative"
+ RULE_OPTION_ECU_CONSERVATISM_DESC:0 "Neptali Bonifaz will return to Ecuadorian politics to lead the Conservatives of the country to victory, enacting revenge on his cancelled elections 4 years ago."
+ RULE_OPTION_ECU_COMMUNISM:0 "Communism"
+ RULE_OPTION_ECU_COMMUNISM_DESC:0 "The Communist workers of the country will take power via elections and lead the revolution!"
+ RULE_OPTION_ECU_DEMOCRATIC:0 "Democratic"
+ RULE_OPTION_ECU_DEMOCRATIC_DESC:0 "Free elections will remain in the country, and no extremist ideology will stand in the way of Ecuador!"
+
  RULE_GROUP_EUYL_AI_BEHAVIOR:0 "EUYL AI Behavior"
  RULE_GROUP_EUYL_FOCUS_TREE_SELECTION:0 "Focus Tree Selection"
  

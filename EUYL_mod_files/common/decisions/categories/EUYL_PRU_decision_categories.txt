@@ -15,6 +15,43 @@ PRU_politics = {
 	}
 }
 
+PRU_inca_nationalism_decisions = {
+	icon = GFX_PRU_politic_icon
+	priority = 70
+	visible_when_empty = no	
+	allowed = {
+		original_tag = PRU
+	}
+
+	visible = {
+		has_dlc = "Trial of Allegiance"
+	}
+}
+
+PRU_internal_factions = {
+	priority = 100
+
+	icon = power_struggle
+
+	picture = GFX_decision_PRU_part_pic
+
+	scripted_gui = pru_partidos_decision_ui
+
+	visible = {
+		has_country_flag = PRU_partidos_unlocked_flag
+		NOT = {
+			OR = {
+				has_country_flag = is_PBC
+				has_cosmetic_tag = INC_UNIFIED
+			}
+		}
+	}
+
+	allowed = {
+		original_tag = PRU
+	}
+}
+
 PRU_army_navy_rivalry = {
 	priority = 20
 	icon = GFX_PRU_decision_category_army_navy

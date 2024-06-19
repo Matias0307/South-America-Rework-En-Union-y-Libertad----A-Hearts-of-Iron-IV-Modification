@@ -802,6 +802,8 @@
  VEN_PDV_party_long:0 "Partido Democratico Venezuela"
  VEN_AD_party:0 "Acción Democrática"
  VEN_AD_party_long:0 "Acción Democrática"
+ anarcho_capitalism:0 "Anarcocapitalismo"
+ anarcho_capitalism_desc:0 "Los anarcocapitalistas se oponen al Estado y buscan privatizar cualquier servicio útil que el gobierno proporcione actualmente, como la educación, la infraestructura o la aplicación de la ley. Ven el capitalismo y el "libre mercado" como la base de una sociedad libre y sociedad próspera."
 
 
 # === [LocEditor:OrphanedKeys] Keys that do not exist in English ===

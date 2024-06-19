@@ -27,6 +27,19 @@ division_template = {
 	}
 }
 
+division_template = {
+	name = "Brigada Peruana"
+	division_names_group = SPAN_INF_02
+	template_counter = 3
+	
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 0 y = 3 }
+	}
+}
+
 units = {
 	##### Ejército del Perú #####
 	division= {	# "1era Div. de Infantería 'Bolognesi'"
@@ -75,6 +88,23 @@ units = {
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.3
 
+	}
+
+	## BRIGADAS ##
+
+	division = {
+		name = "1ra Brigada del Ejército"
+		location = 14235 ## Piura
+		division_template = "Brigada Peruana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.75
+	}
+	division = {
+		name = "2da Brigada del Ejército"
+		location = 14338 
+		division_template = "Brigada Peruana"
+		start_experience_factor = 0.1
+		start_equipment_factor = 0.55
 	}
 }
 

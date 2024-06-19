@@ -75,6 +75,46 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_ECU_form_greater_ecuador_pic"
+		texturefile = "gfx/interface/decisions/ECU_form_greater_ecuador_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_world_revolution_icon"
+		texturefile = "gfx/interface/decisions/ECU_world_revolution_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_united_kingdom_cat_icon"
+		texturefile = "gfx/interface/decisions/ECU_united_kingdom_cat_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_united_kingdom_cat_pic"
+		texturefile = "gfx/interface/decisions/ECU_united_kingdom_cat_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_fuerzas_armadas_pic"
+		texturefile = "gfx/interface/decisions/ECU_fuerzas_armadas_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_banana_company_cat_icon"
+		texturefile = "gfx/interface/decisions/ECU_banana_company_cat_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_banana_company_cat_pic"
+		texturefile = "gfx/interface/decisions/ECU_banana_company_cat_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_EUYL_banana_icon"
+		texturefile = "gfx/interface/decisions/EUYL_banana_icon.png"
+	}
+
+	spriteType = {
 		name = "GFX_ECU_conservative_icon_0"
 		texturefile = "gfx/interface/decisions/ECU_conservative_icon_0.png"
 	}
@@ -787,12 +827,31 @@ spriteTypes = {
 		name = "GFX_decision_PRU_fascist_supported"
 		texturefile = "gfx/interface/decisions/decision_PRU_fascist_supported.dds"
 	}
-
+   
 	spriteType = {
 		name = "GFX_PRU_the_peruvian_civil_war"
 		texturefile = "gfx/interface/decisions/PRU_the_peruvian_civil_war.dds"
 	}
-
+    spriteType = {
+		name = "GFX_decision_PRU_part_apra"
+		texturefile = "gfx/interface/decisions/r56_decision_partidos_apra.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_PRU_part_oli"
+		texturefile = "gfx/interface/decisions/r56_decision_partidos_oli.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_PRU_part_ur"
+		texturefile = "gfx/interface/decisions/r56_decision_partidos_ur.dds"
+	}
+	spriteType = {
+		name = "GFX_decision_PRU_part_que"
+		texturefile = "gfx/interface/decisions/r56_decision_partidos_que.dds"
+	}
+	 spriteType = {
+		name = "GFX_decision_PRU_part_pic"
+		texturefile = "gfx/interface/decisions/r56_decision_partidos.dds"
+	}
 	spriteType = {
 		name = "GFX_second_war_of_pacific_picture"
 		texturefile = "gfx/interface/decisions/second_war_of_pacific_picture.dds"

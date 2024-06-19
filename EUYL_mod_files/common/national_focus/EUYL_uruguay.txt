@@ -2238,7 +2238,9 @@ focus_tree = {
 				}
 			}
 			else = {
-				create_faction = "La Alianza Sudamericana"
+				set_rule = {
+					can_create_factions = yes 
+				}
 			}
 		}
 	}

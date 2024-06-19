@@ -829,6 +829,9 @@
  democratic_monarchism:0 "Constitutional Monarchism"
  democratic_monarchism_desc:0 "Constitutional Monarchism is a form of Monarchism where the Monarch shares power with a constitutionally organized government."
 
+ anarcho_capitalism:0 "Anarcho-Capitalism"
+ anarcho_capitalism_desc:0 "Anarcho-capitalists oppose the state and seek to privatize any useful service the government presently provides, such as education, infrastructure, or the enforcement of law. They see capitalism and the "free market" as the basis for a free and prosperous society."
+
  ## Venezuela ##
  VEN_PRP_party:0 "PRP"
  VEN_PRP_party_long:0 "Partido Republicano Progresista"

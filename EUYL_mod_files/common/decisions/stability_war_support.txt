@@ -32,6 +32,10 @@ crisis = {
 			OR = {
 				has_civil_war = yes
 				has_country_flag = crisis_in_progress
+				if = {
+					limit = { original_tag = ECU }
+					has_completed_focus = ECU_loser_of_the_peru_ecuador_war
+				}
 			}
 			NOT = {
 				has_country_flag = crisis_solution_in_progress

@@ -6548,6 +6548,27 @@ spriteTypes = {
 		name = "GFX_PRU_advanced_infantry_weapons_medium"
 		texturefile = "gfx/interface/technologies/URG_m1_carbine.dds"
 	}
+
+	### Ecuador ###
+	SpriteType = {
+		name = "GFX_ECU_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/BOL_mauser_1891.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ECU_infantry_weapons1_medium"
+		texturefile = "gfx/interface/technologies/cze_basic_equipment.dds"
+	}
+
+	SpriteType = {
+		name = "GFX_ECU_improved_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/PAR_improved_weapons1_medium.png"
+	}
+
+	SpriteType = {
+		name = "GFX_ECU_advanced_infantry_weapons_medium"
+		texturefile = "gfx/interface/technologies/URG_m1_carbine.dds"
+	}
 	
 	### Bolivia ### 
 	

@@ -146,6 +146,7 @@ BRA_is_NOT_the_empire_of_brazil = {
 			OR = {
 				has_cosmetic_tag = BRA_TEMPORARY_MONARCHIST_STATE
 				has_cosmetic_tag = BRA_SECOND_EMPIRE
+				has_cosmetic_tag = KPB_kingdom_portugal_and_brazil
 			}
 		}
 	}
@@ -157,6 +158,7 @@ BRA_is_the_empire_of_brazil = {
 		OR = {
 			has_cosmetic_tag = BRA_TEMPORARY_MONARCHIST_STATE
 			has_cosmetic_tag = BRA_SECOND_EMPIRE
+			has_cosmetic_tag = KPB_kingdom_portugal_and_brazil
 		}
 	}
 }

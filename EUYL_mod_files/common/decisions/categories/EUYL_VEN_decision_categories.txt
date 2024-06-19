@@ -221,7 +221,12 @@ VEN_political_crisis = {
 	priority = 500
     icon = GFX_decision_category_generic_crisis
 
-	allowed = { original_tag = VEN }
+	allowed = { 
+		OR = {
+			original_tag = VEN
+			original_tag = ECU
+		}
+	}
 
 	visible = { exists = yes }
 }

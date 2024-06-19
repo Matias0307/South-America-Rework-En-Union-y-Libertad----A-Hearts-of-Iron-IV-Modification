@@ -180,3 +180,29 @@ music = {
 	file = "cancion_de_boyaca.ogg"
 	volume = 0.8
 }
+
+### Ecuador ###
+
+music = {
+	name = "Marcha de Combate"
+	file = "marcha_de_combate.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Himno de la Fuerza Aérea Ecuatoriana"
+	file = "himno_de_la_fuerza_aerea_ecuatoriana.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Gloria al Nueve de Octubre"
+	file = "gloria_al_nueve_de_octubre.ogg"
+	volume = 0.8
+}
+
+music = {
+	name = "Macará en las Fronteras"
+	file = "macara_en_las_fronteras.ogg"
+	volume = 0.8
+}

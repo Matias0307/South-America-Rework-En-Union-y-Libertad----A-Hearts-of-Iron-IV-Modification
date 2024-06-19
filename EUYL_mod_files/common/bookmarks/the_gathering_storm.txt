@@ -855,6 +855,21 @@ bookmarks = {
 				VEN_la_tierra_de_bolivar
 			}
 		}
+		"ECU" = {
+			minor = yes 
+			history = "ECU_GATHERING_STORM_DESC"
+			ideology = democratic
+			ideas = {
+				ECU_aftermath_of_4_day_civil_war_1
+				ECU_the_constituent_assembly
+				ECU_pro_conservative_navy
+			}
+			focuses = {
+				ECU_march_into_piura
+				ECU_revive_a_lost_idea
+				ECU_the_great_betrayal
+			}
+		}
 		effect = {
 			randomize_weather = 22345 # <- Obligatory in every bookmark !
 			#123 = { rain_light = yes }

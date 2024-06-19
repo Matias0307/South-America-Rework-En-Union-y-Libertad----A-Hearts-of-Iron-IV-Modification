@@ -146,6 +146,7 @@ col_mandato_unificacion = {
 		OR = {
 			has_completed_focus = VEN_unification_mandate
 			has_completed_focus = COL_mandato_de_unificacion
+			has_completed_focus = ECU_recovering_what_was_forgotten
 		}
 	}
 
@@ -153,7 +154,7 @@ col_mandato_unificacion = {
 		OR = {
 			original_tag = COL 
 			original_tag = VEN 
-			#original_tag = ECU 
+			original_tag = ECU 
 		}
 	}
 }
@@ -204,6 +205,7 @@ conflictos_fronterizos_col = {
 		OR = {
 			original_tag = VEN 
 			original_tag = COL 
+			original_tag = ECU
 		}
 	}
 }
@@ -279,27 +281,6 @@ COL_tierra_de_colon_cat = {
 
 	visible = {
 		has_completed_focus = COL_tierra_de_colon
-	}
-}
-
-COL_revivir_confederacion = {
-	icon = GFX_PBC_war_independence_desc
-	priority = 200
-
-	allowed = {
-		OR = {
-			tag = COL
-			tag = PRU
-			tag = BOL
-		}
-	}
-
-	visible = {
-		OR = {
-			tag = COL
-			tag = PRU
-			tag = BOL
-		}
 	}
 }
 

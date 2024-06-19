@@ -39,24 +39,13 @@ units = {
 
 	}
 
-	division= {	# "2da División de Infantería"
-		division_name = {
-				is_name_ordered = yes
-				name_order = 2
-		}
-		location = 8252 # Guayaquil
-		division_template = "División de Infanteria"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.75
-
-	}
 	## BRIGADAS ##
 	division = {
 		name = "1ra Brigada del Ejército"
 		location = 5120 ## Loja
 		division_template = "Brigada Ecuatoriana"
 		start_experience_factor = 0.1
-		start_equipment_factor = 0.55
+		start_equipment_factor = 0.75
 	}
 	division = {
 		name = "2da Brigada del Ejército"
@@ -68,13 +57,6 @@ units = {
 	division = {
 		name = "3ra Brigada del Ejército"
 		location = 14314 
-		division_template = "Brigada Ecuatoriana"
-		start_experience_factor = 0.1
-		start_equipment_factor = 0.55
-	}
-	division = {
-		name = "4ta Brigada del Ejército"
-		location = 14344 
 		division_template = "Brigada Ecuatoriana"
 		start_experience_factor = 0.1
 		start_equipment_factor = 0.55

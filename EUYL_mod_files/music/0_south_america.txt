@@ -295,3 +295,44 @@ music = {
 		}		
 	}
 }
+
+### Ecuador ###
+music = {
+	song = "Marcha de Combate"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Himno de la Fuerza Aérea Ecuatoriana"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Gloria al Nueve de Octubre"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}
+
+music = {
+	song = "Macará en las Fronteras"
+	
+	chance = {
+		modifier = {
+			factor = 2
+		}		
+	}
+}

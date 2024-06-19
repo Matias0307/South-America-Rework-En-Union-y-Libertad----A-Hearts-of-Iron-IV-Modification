@@ -163,7 +163,7 @@ country_event = {
             }
         }
         ai_chance = {
-            base = 5
+            base = 115
             modifier = {
                 factor = 20
                 AND = {
@@ -185,10 +185,14 @@ country_event = {
     option = { ## Issue a stern warning
         name = venezuela.5.b 
         ai_chance = {
-            base = 10
+            base = 120
             modifier = {
                 factor = 10
                 has_government = VEN 
+            }
+            modifier = {
+                factor = 3
+                has_war = yes
             }
         }
         add_political_power = 25
@@ -204,7 +208,7 @@ country_event = {
     option = { # let them go
         name = venezuela.5.c
         ai_chance = {
-            base = 2
+            base = 55
             modifier = {
                 factor = 10
                 has_civil_war = yes 

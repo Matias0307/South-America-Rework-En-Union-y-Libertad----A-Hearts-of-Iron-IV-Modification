@@ -1456,6 +1456,15 @@ country_event = {
 
 		hidden_effect = {
 			add_to_variable = { ARG_anarchist_subversive_influence = 10 }
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = obsolete_focus_branches_visibility
+						option = HIDE
+					}
+				}
+				mark_focus_tree_layout_dirty = yes
+			}
 		}
 	}
 
@@ -1480,6 +1489,16 @@ country_event = {
 		custom_effect_tooltip = ARG_autocomplete_patrulla_roja_tt
 
 		set_country_flag = ARG_very_hostile_anarchists
+
+		if = {
+			limit = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+			}
+			mark_focus_tree_layout_dirty = yes
+		}
 	}
 }
 
@@ -1540,7 +1559,7 @@ country_event = {
 		set_global_flag = ARG_fanny_was_chosen_to_lead
 		custom_effect_tooltip = ARG_fanny_will_become_leader_tt
 		hidden_effect = {
-			promote_character = ARG_fanny_edelman_official
+			promote_character = EUYL_ARG_fanny_edelman
 		}
 	}
 
@@ -3815,10 +3834,23 @@ country_event = {
 
 	option = {
 		name = brazil.54.a 
-		effect_tooltip = {
-			add_equipment_to_stockpile = {
-				type = infantry_equipment
-				amount = 2000
+		if = {
+			limit = {
+				original_tag = ECU 
+			}
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 1000
+				}
+			}
+		}
+		else = {
+			effect_tooltip = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 2000
+				}
 			}
 		}
 	}
@@ -4449,7 +4481,7 @@ country_event = {
 		name = argentina.rework.47.a 
 		effect_tooltip = { add_ideas = ARG_juan_domingo_peron_country_idea }
 		hidden_effect = {
-			add_ideas = ARG_juan_domingo_peron
+			add_ideas = ARG_juan_domingo_peron_idea
 		}
 	}
 }

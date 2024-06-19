@@ -19,6 +19,56 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_idea_ECU_banana_company_idea_icon"
+		texturefile = "gfx/interface/ideas/ECU_banana_company_idea_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_the_global_enterprise_zone_idea_icon"
+		texturefile = "gfx/interface/ideas/ECU_the_global_enterprise_zone_idea_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_francisco_suarez_icon"
+		texturefile = "gfx/interface/ideas/ECU_francisco_suarez_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_larrea_alba_icon"
+		texturefile = "gfx/interface/ideas/ECU_larrea_alba_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_marcos_leon_icon"
+		texturefile = "gfx/interface/ideas/ECU_marcos_leon_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_luis_noboa_naranjo_icon"
+		texturefile = "gfx/interface/ideas/ECU_luis_noboa_naranjo_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_cesar_d_andrade_icon"
+		texturefile = "gfx/interface/ideas/ECU_cesar_d_andrade_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_enrique_gilbert_idea"
+		texturefile = "gfx/interface/ideas/ECU_enrique_gilbert_idea.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_vicente_haro_icon"
+		texturefile = "gfx/interface/ideas/ECU_vicente_haro_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_manuel_borrero_icon"
+		texturefile = "gfx/interface/ideas/ECU_manuel_borrero_icon.png"
+	}
+
+	spriteType = {
 		name = "GFX_idea_RIO_petrobras"
 		texturefile = "gfx/interface/ideas/RIO_petrobras.dds"
 	}
@@ -31,6 +81,21 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_ECU_velasquismo_icon"
 		texturefile = "gfx/interface/ideas/ECU_velasquismo_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_ejercito_icon"
+		texturefile = "gfx/interface/ideas/ECU_ejercito_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_fuerza_aerea_icon"
+		texturefile = "gfx/interface/ideas/ECU_fuerza_aerea_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_armada_icon"
+		texturefile = "gfx/interface/ideas/ECU_armada_icon.png"
 	}
 
 	spriteType = {
@@ -68,6 +133,25 @@ spriteTypes = {
 		texturefile = "gfx/interface/ideas/PRU_fame_icon.png"
 	}
 
+
+
+	spriteType = {
+		name = "GFX_idea_PRU_ejercito_icon"
+		texturefile = "gfx/interface/ideas/PRU_ejercito.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_PRU_marina_icon"
+		texturefile = "gfx/interface/ideas/PRU_marina.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_PRU_aviacion_icon"
+		texturefile = "gfx/interface/ideas/PRU_aviacion.png"
+	}
+
+
+
 	spriteType = {
 		name = "GFX_idea_ECU_1936_status_quo_icon"
 		texturefile = "gfx/interface/ideas/ECU_1936_status_quo_icon.png"
@@ -101,6 +185,56 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_idea_EUYL_blockade_icon"
 		texturefile = "gfx/interface/ideas/EUYL_blockade_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_winner_of_war_icon"
+		texturefile = "gfx/interface/ideas/ECU_winner_of_war_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_brutal_repression_icon"
+		texturefile = "gfx/interface/ideas/ECU_brutal_repression_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_velasco_ibarra_icon"
+		texturefile = "gfx/interface/ideas/ECU_velasco_ibarra_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_aurelio_mosquera_icon"
+		texturefile = "gfx/interface/ideas/ECU_aurelio_mosquera_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_carlos_arroyo_icon"
+		texturefile = "gfx/interface/ideas/ECU_carlos_arroyo_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_neptali_icon"
+		texturefile = "gfx/interface/ideas/ECU_neptali_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_juan_jose_flores_idea_icon"
+		texturefile = "gfx/interface/ideas/ECU_juan_jose_flores_idea_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_hostile_assembly_icon"
+		texturefile = "gfx/interface/ideas/ECU_hostile_assembly_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_idea_ECU_recovery_icon"
+		texturefile = "gfx/interface/ideas/ECU_recovery_icon.png"
+	}
+
+	spriteType = {
+		name = "GFX_ECU_national_mobilization_ic"
+		texturefile = "gfx/interface/ideas/ECU_national_mobilization_ic.png"
 	}
 
 	spriteType = {

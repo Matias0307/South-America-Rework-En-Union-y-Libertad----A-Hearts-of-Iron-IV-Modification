@@ -157,6 +157,16 @@ form_natural_borders = {
 
 		complete_effect = {
 			set_cosmetic_tag = GBO
+			if = {
+				limit = {
+					1035 = {
+						NOT = {
+							is_core_of = ROOT
+						}
+					}
+				}
+				1035 = { add_core_of = ROOT }
+			}
 			add_stability = 0.1
 			add_war_support = 0.15
 		}

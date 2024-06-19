@@ -24,6 +24,7 @@ if = {
 
 1010 = { add_dynamic_modifier = { modifier = EUYL_native_population } }
 
+recruit_character = ECU_jacinto_jijon_y_caamano
 recruit_character = ECU_federico_páez
 recruit_character = ECU_neptali_bonifaz
 #recruit_character = ECU_juan_toro
@@ -33,7 +34,7 @@ recruit_character = ECU_andrés_guilarte
 recruit_character = ECU_josé_la_mar
 recruit_character = ECU_cosme_renella_barbatto
 recruit_character = ECU_benigno_andrade_flores
-recruit_character = ECU_uriarte_fanquil_del_ponte
+#recruit_character = ECU_uriarte_fanquil_del_ponte
 recruit_character = ECU_julio_salem_gallegos
 recruit_character = ECU_jorge_escobedo_duarte
 recruit_character = ECU_carlos_hidalgo_garcia
@@ -50,7 +51,6 @@ recruit_character = ECU_juan_ramon_castro
 recruit_character = ECU_gilberto_enriquez_gallo
 recruit_character = ECU_davide_flores
 recruit_character = ECU_carlos_arosemena_tola
-recruit_character = ECU_carlos_arroyo_del_rio
 recruit_character = ECU_alberto_enriquez_gallo
 recruit_character = ECU_conservative_army
 recruit_character = ECU_liberal_army
@@ -58,6 +58,22 @@ recruit_character = ECU_manuel_gomez_morin
 recruit_character = ECU_asamblea_constituyente
 recruit_character = ECU_manuel_maria_borrero
 recruit_character = ECU_armed_civilians
+recruit_character = ECU_aurelio_mosquera_narvaez
+recruit_character = ECU_jose_velasco_ibarra
+recruit_character = ECU_carlos_arroyo_del_rio
+recruit_character = ECU_provisional_junta
+recruit_character = ECU_juan_de_borbon
+recruit_character = ECU_banana_company_administration
+recruit_character = ECU_edmundo_chiriboga ## historically dies in the Peru-Ecuador war
+recruit_character = ECU_francisco_urrutia_suarez
+recruit_character = ECU_marco_tulio_leon
+recruit_character = ECU_larrea_alba
+recruit_character = ECU_cesar_d_andrade
+recruit_character = ECU_enrique_gil_gilbert
+recruit_character = ECU_manuel_munoz_borrero
+recruit_character = ECU_vicente_haro
+recruit_character = ECU_rafael_moran_v
+recruit_character = ECU_luis_noboa_naranjo
 
 ECU_federico_páez = {
 	set_character_flag = ECU_liberal
@@ -73,9 +89,23 @@ ECU_conservative_army = {
 }
 ECU_neptali_bonifaz = {
 	set_character_flag = ECU_conservative
+	set_character_flag = ECU_not_actively_in_politics_flag
 }
 ECU_manuel_maria_borrero = {
 	set_character_flag = ECU_liberal
+}
+ECU_aurelio_mosquera_narvaez = {
+	set_character_flag = ECU_liberal
+}
+ECU_jacinto_jijon_y_caamano = {
+	set_character_flag = ECU_conservative
+}
+ECU_carlos_arroyo_del_rio = {
+	set_character_flag = ECU_liberal
+}
+
+ECU_jose_velasco_ibarra = {
+	set_character_flag = BRA_living_in_the_exterior
 }
 
 
@@ -116,10 +146,10 @@ for_each_scope_loop = {
 # 3 = Active Cooperation
 
 ### Conservative - Liberal Tug of War ###
-set_variable = { ECU_conservative_opinion = -2 } ## Significant Resentment
+set_variable = { ECU_conservative_opinion = -1 } ## Slight Resentment
 set_variable = { ECU_liberal_opinion = 1 } ## Slight Support
-set_variable = { ECU_cooperate_conservative_cost = 30 }
-set_variable = { ECU_cooperate_liberal_cost = 30 }
+set_variable = { ECU_cooperate_conservative_cost = 40 }
+set_variable = { ECU_cooperate_liberal_cost = 40 }
 
 activate_mission = ECU_gallos_looming_coup
 
@@ -150,11 +180,21 @@ country_event = { ## Inflation strikes!
 	random_hours = 8
 }
 
+country_event = { ## Velasco's return to Ecuador
+	id = ecu.14
+	days = 1345
+	random_days = 100
+	hours = 6
+}
+
 ### Ecuador - Peru Conflict ###
 set_variable = { EUYL_peru_ecuador_threat_level = 0 }
 set_variable = { EUYL_peru_ecuador_attack_bonus = 0 }
 set_variable = { EUYL_peru_ecuador_defense_bonus = 0 }
 activate_mission = EUYL_conflict_escalation
+
+## National Mobilization ##
+set_variable = { ECU_national_mobilization_conscription = 0.01 }
 
 add_dynamic_modifier = {
 	modifier = ECU_economic_reignition
@@ -176,17 +216,46 @@ set_convoys = 5
 
 	add_political_power = 1198
 	add_command_power = 100
+
+	set_variable = {
+		EUYL_peru_ecuador_threat_level = 3
+	}
+	remove_mission = ECU_gallos_looming_coup
+
+	country_event = { ## Velasco's return to Ecuador
+		id = ecu.14
+		days = 175
+		random_days = 100
+		hours = 6
+	}
+
 	
 	#generic focuses
-	complete_national_focus = army_effort
-	complete_national_focus = equipment_effort
-	complete_national_focus = motorization_effort
-	complete_national_focus = aviation_effort
-	complete_national_focus = naval_effort
-	complete_national_focus = flexible_navy
-	complete_national_focus = industrial_effort
-	complete_national_focus = construction_effort
-	complete_national_focus = production_effort
+	unlock_national_focus = ECU_support_gallo
+	unlock_national_focus = ECU_convince_our_liberal_supporters
+	unlock_national_focus = ECU_appease_the_conservatives_focus
+	unlock_national_focus = ECU_denounce_the_leftist_persecutions
+	unlock_national_focus = ECU_re_establish_constituent_assembly
+	unlock_national_focus = ECU_return_power_to_the_assemblists
+	unlock_national_focus = ECU_call_for_elections
+	complete_national_focus = ECU_address_the_border_tensions
+	complete_national_focus = ECU_march_into_western_pastaza
+	unlock_national_focus = ECU_adopt_an_offensive_strategy_plan
+	unlock_national_focus = ECU_commence_defensive_preperations
+	complete_national_focus = ECU_fully_abandon_the_gold_standard
+	unlock_national_focus = ECU_devalue_the_sucre
+	complete_national_focus = ECU_major_industrial_advancements
+	complete_national_focus = ECU_economic_investments
+	complete_national_focus = ECU_reform_the_organic_law_of_the_bank
+	complete_national_focus = ECU_nationwide_development
+
+	promote_character = ECU_aurelio_mosquera_narvaez
+	country_event = { ## Aurelio's Death
+		id = ecu.8 
+		days = 120
+		random_days = 90
+		hours = 12
+	}
 	
 	oob = "ECU_1939"
 	if = {
@@ -263,8 +332,8 @@ set_popularities = {
 }
 
 1939.1.1 = {
-	recruit_character = ECU_aurelio_mosquera
-	promote_character = ECU_aurelio_mosquera
+	recruit_character = ECU_aurelio_mosquera_narvaez
+	promote_character = ECU_aurelio_mosquera_narvaez
 	retire_character = ECU_federico_páez
 }
 ### VARIANTS ###

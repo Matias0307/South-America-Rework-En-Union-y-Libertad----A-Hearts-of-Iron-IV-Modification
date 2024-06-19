@@ -31,6 +31,7 @@
  FOCUS_FILTER_POLITICAL_TENSION:0 "Tensión política"
  FOCUS_FILTER_MONARCHISM:0 "Monarquismo"
  FOCUS_FILTER_PERU_ECUADOR_WAR:0 "Guerra Peruano-Ecuatoriana"
+ FOCUS_FILTER_CAUDILLISMO:0 "Caudillismo"
 
 # === [LocEditor:OrphanedKeys] Keys that do not exist in English ===
  FOCUS_FILTER_CIVIC_ADMINISTRATION:0 "Administración civil"

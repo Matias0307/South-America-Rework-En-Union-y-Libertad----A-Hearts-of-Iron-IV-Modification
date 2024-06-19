@@ -577,6 +577,7 @@
  RULE_OPTION_PAR_DEMOCRATIC_DESC:0 "Eusebio irá contra la Revolución de Febrero, y en su lugar manteniendo al Partido Liberal en el poder."
  RULE_OPTION_PAR_NATIVE:0 "Insurrección indígena"
  RULE_OPTION_PAR_NATIVE_DESC:0 "Los Nativos tomarán el control del país, siendo liderados por Juan Belaieff, y liberarán a los Nativos del continente."
+
  VEN_AI_BEHAVIOR:0 "@VEN Venezuela"
  RULE_HISTORICAL_VEN_AI_DESC:0 "Venezuela recorrerá su camino histórico, replicando en el juego lo que ocurrió en la vida real."
  RULE_OPTION_VEN_AUTHORITARIAN_FASCISM:0 "Fascismo autoritario"
@@ -587,6 +588,19 @@
  RULE_OPTION_VEN_ESCALANTES_DEMOCRATIC_VENEZUELA_DESC:0 "Venezuela irá a un camino de libertad y Democracia, con Diógenes Escalante al frente."
  RULE_OPTION_VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA:0 "La Democracia de Bentancourt"
  RULE_OPTION_VEN_BENTANCOURTS_DEMOCRATIC_VENEZUELA_DESC:0 "Venezuela irá por un camino de libertad y Democracia, con Rómulo Bentancourt al mando."
+
+ ECU_AI_BEHAVIOR:0 "@ECU Ecuador"
+ RULE_HISTORICAL_ECU_AI_DESC:0 "Ecuador recorrerá su camino histórico, replicando en el juego lo que sucedió en la vida real."
+ RULE_OPTION_ECU_ARNE_FASCISM:0 "ARNE Fascismo"
+ RULE_OPTION_ECU_ARNE_FASCISM_DESC:0 "Ecuador se convertirá en un régimen totalitario fascista, traicionando a Páez y llevando al poder a Jorge Luna Yepes y la ARNE."
+ RULE_OPTION_ECU_PAEZ_DICTATORSHIP:0 "La Dictadura Páez"
+ RULE_OPTION_ECU_PAEZ_DICTATORSHIP_DESC:0 "Páez mantendrá su estatus de poder, estableciendo oficialmente una dictadura fascista con él en el centro."
+ RULE_OPTION_ECU_CONSERVATISM:0 "Conservador"
+ RULE_OPTION_ECU_CONSERVATISM_DESC:0 "Neptali Bonifaz regresará a la política ecuatoriana para llevar a los conservadores del país a la victoria, vengando sus elecciones canceladas hace 4 años."
+ RULE_OPTION_ECU_COMMUNISM:0 "Comunismo"
+ RULE_OPTION_ECU_COMMUNISM_DESC:0 "¡Los trabajadores comunistas del país tomarán el poder mediante elecciones y liderarán la revolución!"
+ RULE_OPTION_ECU_DEMOCRATIC:0 "Democrático"
+ RULE_OPTION_ECU_DEMOCRATIC_DESC:0 "¡Las elecciones libres permanecerán en el país y ninguna ideología extremista se interpondrá en el camino de Ecuador!"
 
  EUYL_CHAOS_MODE:0 "Modo Caos"
  RULE_OPTION_NO_CHAOS_DESC:0 "La IA será relativamente normal."

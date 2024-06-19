@@ -538,6 +538,51 @@ VEN_ai_behavior = {
 	}
 }
 
+ECU_ai_behavior = {
+	name = "ECU_AI_BEHAVIOR"
+	group = "RULE_GROUP_EUYL_AI_BEHAVIOR"
+	default = {
+		name = DEFAULT
+		text = "RULE_OPTION_DEFAULT"
+		desc = "RULE_OPTION_DEFAULT_AI_DESC"
+	}
+	option = {
+		name = HISTORICAL
+		text = "RULE_OPTION_HISTORICAL"
+		desc = "RULE_HISTORICAL_ECU_AI_DESC"
+	}
+	option = {
+		name = ECU_ARNE_FASCISM
+		text = "RULE_OPTION_ECU_ARNE_FASCISM"
+		desc = "RULE_OPTION_ECU_ARNE_FASCISM_DESC"
+	}
+	option = {
+		name = ECU_PAEZ_DICTATORSHIP
+		text = "RULE_OPTION_ECU_PAEZ_DICTATORSHIP"
+		desc = "RULE_OPTION_ECU_PAEZ_DICTATORSHIP_DESC"
+	}
+	option = {
+		name = ECU_CONSERVATISM
+		text = "RULE_OPTION_ECU_CONSERVATISM"
+		desc = "RULE_OPTION_ECU_CONSERVATISM_DESC"
+	}
+	option = {
+		name = ECU_COMMUNISM
+		text = "RULE_OPTION_ECU_COMMUNISM"
+		desc = "RULE_OPTION_ECU_COMMUNISM_DESC"
+	}
+	option = {
+		name = ECU_DEMOCRATIC
+		text = "RULE_OPTION_ECU_DEMOCRATIC"
+		desc = "RULE_OPTION_ECU_DEMOCRATIC_DESC"
+	}
+	option = {
+		name = RANDOM
+		text = "RULE_OPTION_RANDOM"
+		desc = "RULE_OPTION_RANDOM_AI_DESC"
+	}
+}
+
 ### END EUYL ###
 
 allow_wargoals = {

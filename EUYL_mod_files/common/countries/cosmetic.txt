@@ -8,7 +8,72 @@ PRU_KINGDOM = {
 	color_ui = rgb { 160 51 109 }
 }
 
+ECU_GREATER = {
+	color = rgb { 240 77 4 }
+	color_ui = rgb { 240 77 9 }
+}
+
+ECU_UNITED_KINGDOM = {
+	color = rgb { 190 190 190 }
+	color_ui = rgb { 190 190 190 }
+}
+
+ECU_KINGDOM_QUITO = {
+	color = rgb { 200 95 4 }
+	color_ui = rgb { 200 95 9 }
+}
+
+ECU_BANANA_COMPANY = {
+	color = rgb { 139 128 0 }
+	color_ui = rgb { 139 130 0 }
+}
+
+ECU_GLOBAL_ENTERPRISE_ZONE = {
+	color = rgb { 174 166 0 }
+	color_ui = rgb { 170 170 0 }
+}
+
+ECU_COLOMBIA_ECUADOR = {
+	color = rgb { 156 44 12 }
+	color_ui = rgb { 156 42 11 }
+}
+
+GUA_UNIFIED = {
+	color = rgb { 144 238 144 }
+	color_ui = rgb { 140 238 140 }
+}
+
+MEX_FIRST_EMPIRE = {
+	color = rgb { 94 89 55 }
+	color_ui = rgb { 90 90 50 }
+}
+
+CUB_CARIBBEAN_FEDERATION = {
+	color = rgb { 12 12 137 }
+	color_ui = rgb { 10 10 135 }
+}
+
+UNION_AMERICAS = {
+	color = rgb { 9 14 155 }
+	color_ui = rgb { 10 10 150 }
+}
+
+RCA_UNIFIED = {
+	color = rgb { 110 190 255 }
+	color_ui = rgb { 103 204 255 }
+}
+
+USA_REORGANIZED = {
+	color = rgb { 195 175 204 }
+	color_ui = rgb { 190 170 200 }
+}
+
 PRU_SPANISH_EMPIRE = {
+	color = rgb { 209 209 209 }
+	color_ui = rgb { 209 209 209 }
+}
+
+ECU_SPANISH_EMPIRE = {
 	color = rgb { 209 209 209 }
 	color_ui = rgb { 209 209 209 }
 }
@@ -24,6 +89,11 @@ GUOSR_UNIFIED = {
 }
 
 BRA_SECOND_EMPIRE = {
+	color = rgb { 37 102 39 }
+	color_ui = rgb { 36 100 35 }
+}
+
+BRI_UNIFIED = { ## Empire of Brazil
 	color = rgb { 37 102 39 }
 	color_ui = rgb { 36 100 35 }
 }
@@ -116,11 +186,6 @@ BRA_URG = {
 BRA_LIB = {
 	color = rgb { 87  62  140 }
 	color_ui = rgb { 87  62  140 }
-}
-
-BRI_UNIFIED = {
-	color = rgb { 80  65  145 }
-	color_ui = rgb { 80  65  145 }
 }
 
 COL_gaitan_war = {

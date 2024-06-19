@@ -1243,7 +1243,7 @@ focus_tree = {
 	#Priorizar al Obrero
 	focus = {
 		id = COL_priorizar_al_obrero
-		icon = GFX_col_focus_priorizar_obrero
+		icon = GFX_ARG_help_the_poor
 		x = 12
 		y = 4
 		cost = 6
@@ -10876,10 +10876,10 @@ focus_tree = {
 		}
 	}
 
-	#Revivir la Confederación
+	#Reforming the lost Unions
 	focus = {
 		id = COL_revivir_la_confederacion
-		icon = GFX_PRU_peru_bolivia_commonwealth
+		icon = GFX_BRA_unite_hispanoamerica
 		x = 69
 		y = 11
 		cost = 10
@@ -10932,28 +10932,16 @@ focus_tree = {
 		prerequisite = { focus = COL_mandato_de_unificacion }
 
 		completion_reward = {
-			add_political_power = 100
-			unlock_decision_category_tooltip = COL_revivir_confederacion
-			every_country = {
-				limit = {
-					OR = {
-						tag = PRU
-						tag = BOL
-					}
-				}
-				country_event = {
-				    id = colombia.106
-				    days = 10
-				    random_days = 10
-				}
-			}
+			unlock_decision_category_tooltip = ECU_reforming_the_lost_unions
+
+			set_country_flag = EUYL_can_reform_lost_unions_flag
 		}
 	}
 
-	#Consolidar el Dominio
+	#The Union of the Amerias
 	focus = {
 		id = COL_consolidar_el_dominio
-		icon = GFX_col_focus_dominio
+		icon = GFX_ECU_american_union_icon
 		x = 69
 		y = 13
 		cost = 3
@@ -10981,19 +10969,51 @@ focus_tree = {
 		}
 
 		available = {
-			has_active_mission = COL_revivir_confederacion_war_mission
+			custom_trigger_tooltip = {
+				tooltip = ECU_reformed_a_lost_union_tt
+				any_other_country = {
+					is_subject_of = ROOT 
+					has_country_flag = ECU_puppeted_flag
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+
+		completion_reward = {
+			add_political_power = 50
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = ECU_annex_all_formed_unions_and_gain_cores_tt
+			every_country = {
+				limit = {
+					is_subject_of = ROOT
+					has_country_flag = ECU_puppeted_flag
+				}
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}	
+				}
+				every_state = {
+					limit = {
+						is_core_of = PREV
+					}
+					add_core_of = ROOT
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			hidden_effect = { drop_cosmetic_tag = yes }
+			set_cosmetic_tag = UNION_AMERICAS
 		}
 
 		prerequisite = { focus = COL_revivir_la_confederacion }
-
-		completion_reward = {
-			COL_poder_confederacion_high_increase_effect = yes
-			unlock_decision_tooltip = { decision = COL_consolidar_dominio }
-			unlock_decision_tooltip = { decision = COL_repartir_propaganda }
-			unlock_decision_tooltip = { decision = COL_manipular_politica }
-			unlock_decision_tooltip = { decision = COL_controlar_inteligencia }
-			custom_effect_tooltip = COL_revivir_la_confederacion_tt
-		}
 	}
 
 	#Asegurar Chile

@@ -1,6 +1,10 @@
 ﻿capital = 1011
 
-every_core_state = {
+for_each_scope_loop = {
+	array = controlled_states
+
+	set_state_flag = uruguayan_starting_state
+
 	ROOT = {
 		add_to_array = { cores_at_game_start = PREV }
 	}

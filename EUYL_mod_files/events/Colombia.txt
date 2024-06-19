@@ -6059,7 +6059,7 @@ country_event = {
 
 	option = {
 		name = colombia.104.a
-		activate_mission = COL_revivir_confederacion_war_mission
+		#activate_mission = COL_revivir_confederacion_war_mission
 		set_variable = { COL_poder_confederacion = 20 }
 		set_country_flag = must_puppet_pbc	
 	}
@@ -6077,9 +6077,6 @@ country_event = {
 
 	option = {
 		name = colombia.105.a
-		effect_tooltip = {
-			activate_mission = COL_start_confederation_war
-		}
 	}
 }
 
