@@ -3726,7 +3726,7 @@
  VEN_dependent_on_oil_extraction_desc:0 "Unlike the economies of our neighboring countries in Latin America, we were able to deal with the Great Depression quickly and efficiently. However, this costed us to be more reliant on our oil production, which hasn't allowed for other sectors of the industry to properly develop."
  VEN_underground_communist_movement:0 "Underground Communist Movement"
  VEN_underground_communist_movement_desc:0 "Under the most recent reformation of the consitution, Communist and Anarchist parties are considered to be 'against the independence of this country', and are therefore illegal. Due to this, many communist militants and supporters have begun working underground, beneath the eyes of the government. We need to be wary of their actions, and try and prevent them from trying anything that could destabilize the country."
- VEN_possibility_of_worker_strikes_occuring_tt:0 "§RWorker Srikes§! from various sectors of the §YIndustry§! may occur at random as long as this national spirit is active!"
+ VEN_possibility_of_worker_strikes_occuring_tt:0 "§RWorker Strikes§! from various sectors of the §YIndustry§! may occur at random as long as this national spirit is active!"
  VEN_german_infleunce_in_venezuela:0 "German Influence in Venezuela"
  VEN_german_infleunce_in_venezuela_desc:0 "Ever since 1933, underground Nazis have been present in Venezuela, trying to increase German influence in the country and to secure oil trade with us."
  VEN_america_and_allied_nations_will_become_concerned_tt:0 "\n§RKeeping this national spirit for too long will cause the United States and other Allied powers to grow concern over a potential Axis power threatening their oil, and could intensify to an armed intervention if not handled properly!§!"
@@ -4529,3 +4529,25 @@
  ECU_PRU_planning_small_skirmish_in_FROM:0 "[PRU.GetName] Planning Small Skirmish Here!"
  ECU_entrepreneur:0 "Entrepreneur"
  ECU_deal_with_the_draft_dodgers:0 "Deal with the Draft Dodgers"
+
+ CHL_the_dream_of_lord_cochrane:0 "The Dream of Lord Cochrane"
+ CHL_the_dream_of_lord_cochrane_desc:0 "Cochrane was a very important naval commander for Chile during the war of indepencence against Spain. Back in 1818, he proposed the idea of an extensive maritime empire, consiting of coastal cities from Santiago to Guayaquil, all the way to the Philippines. While it's considered by many to be too ambitious, the reality is, if done right, it can be possible."
+ CHL_naval_buildup_in_FROM:0 "Naval Buildup in [FROM.GetName]"
+ CHL_integrate_lima:0 "Integrate Lima"
+ CHL_integrate_guayaquil:0 "Integrate Guayaquil"
+ CHL_integrate_coastal_andean_territories:0 "Integrate Coastal Andean Territories"
+ CHL_integrate_the_pacific_islands:0 "Integrate the Pacific Islands"
+ CHL_integrating_both_guayaquil_and_lima_unlock_integrate_andes_tt:0 "If you complete the decisions §Y$CHL_integrate_lima$§! and §Y$CHL_integrate_guayaquil$§!, the decision §Y$CHL_integrate_coastal_andean_territories$§! will be §GUnlocked§!"
+ CHL_integrate_new_zealand:0 "Integrate [NZL.GetName]"
+ CHL_integrate_hawaii:0 "Integrate Hawaii"
+ CHL_any_focus_that_gives_dockyards_will_be_improved_tt:0 "Any §YNational Focus§! that adds §YDockyards§! will be §GImproved§!"
+ CHL_integrate_the_pacific_islands:0 "Integrate the Pacific Islands"
+
+ ## Balancing ##
+ ARG_an_extra_division_will_spawn_in_every_controlled_state_tt:0 "\nAn §GExtra§! §YDivision§! will spawn in §YEach Occupied Province§!"
+ ARG_looming_planned_terrorist_attack:0 "Looming Planned Terrorist Attack"
+ ARG_pro_CNU_terrorist_attacks_will_ensue_tt:0 "§GPro-CNU§! Terrorist Attacks will occur periodically throughout the country"
+ argentina.rework.49.a:0 "He will remain imprisoned!"
+
+ ## CENTRAL AMERICA ##
+ CEA_revitalize_the_ROOT_industry:0 "Revitalize the [ROOT.GetAdjective] Industry"

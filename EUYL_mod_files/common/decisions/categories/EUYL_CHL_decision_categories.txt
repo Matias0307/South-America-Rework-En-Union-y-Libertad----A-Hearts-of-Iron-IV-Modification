@@ -242,6 +242,23 @@ CHL_south_american_investmet = {
 	}
 }
 
+CHL_the_dream_of_lord_cochrane = {
+	priority = 500
+	icon = GFX_CHL_lord_cochrane_icon
+
+	picture = GFX_CHL_lord_cochrane_pic
+
+	allowed = {
+		original_tag = CHL 
+	}
+
+	visible = {
+		has_completed_focus = CHL_reach_for_cochranes_thalassocracy
+	}
+
+	visible_when_empty = yes
+}
+
 CHL_the_patagonian_integration_campaign = {
 	priority = 12
 	icon = spr_the_seeds_of_revolution

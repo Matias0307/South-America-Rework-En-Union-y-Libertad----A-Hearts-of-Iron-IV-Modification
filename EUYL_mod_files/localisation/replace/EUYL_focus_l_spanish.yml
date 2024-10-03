@@ -6845,7 +6845,7 @@
  ARG_import_british_weaponry_desc:0 "Los británicos siempre han tenido un armamento muy avanzado. Deberíamos aprovechar nuestras buenas relaciones con los británicos y solicitar parte de su armamento."
  ARG_make_an_effort_to_mobilize:0 "Comienza nuestra movilización"
  ARG_make_an_effort_to_mobilize_desc:0 "El mundo se está quemando y tenemos que estar preparados para lo peor."
- ARG_juremos_con_gloria_morir:0 "Oh Juremos con Gloria Morir"
+ ARG_juremos_con_gloria_morir:0 "O Juremos con Gloria Morir"
  ARG_juremos_con_gloria_morir_desc:0 "Los argentinos tenemos un sentido del nacionalismo como ningún otro. La Patria es sagrada, desde su concepción en 1810, y nos aseguraremos de que nunca se apague, nunca. Argentina está poblada por argentinos, no importa el trasfondo ni el estatus, todos somos uno, unidos con un solo objetivo, sacar adelante a este país y mantenerlo en su lugar, por encima de todos los demás. ¡VIVA LA PATRIA!"
  ARG_project_huemul:0 "Proyecto Huemul"
  ARG_project_huemul_desc:0 "El proyecto Huemul fue uno de los primeros esfuerzos argentinos para desarrollar bombas nucleares. Con suficientes inversiones y tiempo, es seguro que funcionará y seremos uno de los primeros países en aprovechar el poder de la energía nuclear y las bombas."
@@ -8704,3 +8704,16 @@
  ECU_heavy_ship_expansion_desc:0 "$BOL_focus_on_heavy_ships_desc$"
  ECU_cuerpo_de_marinas_del_ecuador:0 "Cuerpo de Marinas del Ecuador"
  ECU_cuerpo_de_marinas_del_ecuador_desc:0 "Ecuador no tiene una fuerza marina verdaderamente definida, sobre todo porque nunca la necesitó. Sin embargo, a medida que las tensiones globales siguen aumentando y la amenaza en el horizonte en nuestro sur, necesitamos tener la ventaja en cualquier y todas las formas posibles."
+
+ CHL_the_american_counterweight:0 "El contrapeso estadounidense"
+ CHL_the_american_counterweight_desc:0 "Como se describe en un discurso de [ROOT.GetLeader], nuestro enemigo número uno es [USA.GetName], y debemos construir y desarrollar nuestra nación para convertirnos en el contrapeso de esta entidad demoníaca. A pesar de las adversidades, las superaremos y nos convertiremos en la potencia dominante".
+ CHL_reach_for_cochranes_thalassocracy:0 "Alcanzar la talasocracia de Cochrane"
+ CHL_reach_for_cochranes_thalassocracy_desc:0 "Thomas Cochrane, décimo conde de Dundonald, fue un marino inglés, reconocido por su experiencia en navegación y sus cualidades como líder. También fue uno de los principales marinos de la armada chilena durante su guerra de independencia. En esa época, propuso la idea de que Chile se convirtiera en un imperio marítimo, con su estandarte como potencia dominante en todo el océano Pacífico. Si bien en ese momento era inconcebible, ahora puede convertirse en realidad".
+ CHL_demand_pitcairn_island:0 "Demanda [270.GetName]"
+ CHL_demand_pitcairn_island_desc:0 "Si realmente queremos desarrollar nuestro imperio marítimo, necesitaremos asegurar un punto de apoyo en las profundidades del Océano Pacífico. Si bien la Isla de Pascua sirve como una buena base, la posición más centralizada de Pitcairn resultará vital para organizar invasiones navales y asegurar nuestro lugar en el océano".
+ CHL_pushing_west_desc:0 "Nuestra expansión de influencia no puede detenerse en la Isla Pitcairn. Al igual que los Estados Unidos con su destino manifiesto, manifestaremos nuestro propio destino mayor, coronándonos con un trono de porcelana que se asienta sobre toda nuestra competencia".
+ CHL_a_setting_sun_desc:0 "A medida que la sombra amenazante del Imperio chileno sigue creciendo, también lo hace el miedo en los ojos de quienes se encuentran bajo su sombra. Japón, el Reino Unido y los Estados Unidos conocen su destino inminente y lo enfrentarán con toda la fuerza de la marina y el ejército chilenos".
+ CHL_capture_guayaquil:0 "Capturar Guayaquil"
+ CHL_capture_guayaquil_desc:0 "Guayaquil es uno de los principales puertos de Sudamérica. Tenerlo bajo nuestro control asegurará futuras victorias".
+ CHL_pushing_west:0 "Avanzando hacia el oeste"
+ CHL_a_setting_sun:0 "Un sol poniente"

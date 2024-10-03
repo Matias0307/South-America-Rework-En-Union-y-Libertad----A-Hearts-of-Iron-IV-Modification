@@ -263,6 +263,11 @@ focus_tree = {
 			add_political_power = 200
 			COL_economia_level_up = yes
 			custom_effect_tooltip = reforma_tt
+
+			add_timed_idea = {
+				idea = ARG_rebelling_oligarchs
+				days = 225
+			}
 		}
 	}
 
@@ -296,29 +301,15 @@ focus_tree = {
 			COL_economia_level_up = yes
 			custom_effect_tooltip = privilegios_tt
 
-			hidden_effect = {
-				random_list = {
-					35 = {
-						set_country_flag = {
-						    flag = sindicatos_timeout
-						    days = 10
-						    value = 1
-						}
-					}
-					35 = {
-						set_country_flag = {
-						    flag = sindicatos_timeout
-						    days = 15
-						    value = 1
-						}
-					}
-					30 = {
-						set_country_flag = {
-						    flag = sindicatos_timeout
-						    days = 20
-						    value = 1
-						}
-					}
+			random_list = {
+				50 = {
+					add_stability = -0.03
+				}
+				35 = {
+					add_stability = -0.05
+				}
+				15 = {
+					add_stability = -0.07
 				}
 			}
 		}
@@ -1834,7 +1825,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1855,7 +1846,7 @@ focus_tree = {
 				}
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 			}
@@ -1949,12 +1940,12 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 				add_resource = {
 				    type = steel
-				    amount = 10
+				    amount = 6
 				}
 			}
 			
@@ -1962,12 +1953,12 @@ focus_tree = {
 				add_extra_state_shared_building_slots = 2
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes
 				}
 				add_resource = {
 				    type = steel
-				    amount = 10
+				    amount = 4
 				}
 			}
 		}
@@ -2077,7 +2068,7 @@ focus_tree = {
 		icon = GFX_focus_generic_aluminum
 		x = 14
 		y = 7
-		cost = 9
+		cost = 7.2
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
 		}
@@ -2094,12 +2085,12 @@ focus_tree = {
 			1016 = {
 				add_resource = {
 				    type = aluminium
-				    amount = 15
+				    amount = 10
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes				
 				}
 			}
@@ -2158,12 +2149,12 @@ focus_tree = {
 			1017 = {
 				add_resource = {
 				    type = tungsten
-				    amount = 20
+				    amount = 12
 				}
-				add_extra_state_shared_building_slots = 2
+				add_extra_state_shared_building_slots = 1
 				add_building_construction = {
 					type = infrastructure
-					level = 2
+					level = 1
 					instant_build = yes				
 				}
 			}
@@ -2171,7 +2162,7 @@ focus_tree = {
 			hidden_effect = {
 				add_victory_points = {
 					province = 14383
-					value = 10
+					value = 5
 				}
 			}
 		}
@@ -9895,7 +9886,7 @@ focus_tree = {
 
 		available = {
 			has_army_manpower = {
-				size > 149999
+				size > 89999
 			}
 			num_of_factories > 29
 		}
@@ -10907,24 +10898,6 @@ focus_tree = {
 			}
 			has_government = fascism
 			is_puppet = no
-			PRU = {
-				exists = yes
-				NOT = {
-					has_government = fascism
-					has_government = communism
-					is_in_faction_with = ROOT
-					has_war_with = ROOT
-				}
-			}
-			BOL = {
-				exists = yes
-				NOT = {
-					has_government = fascism
-					is_in_faction_with = ROOT
-					has_war_with = ROOT
-					has_completed_focus = BOL_reform_the_peru_bolivian_confederation
-				}
-			}
 		}
 
 		mutually_exclusive = { focus = COL_anexion_total }
@@ -10935,6 +10908,26 @@ focus_tree = {
 			unlock_decision_category_tooltip = ECU_reforming_the_lost_unions
 
 			set_country_flag = EUYL_can_reform_lost_unions_flag
+			
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = gain_claims_on_every_south_and_northamerican_state_tt
+			every_state = {
+				limit = {
+					NOT = {
+						OR = {
+							is_core_of = ROOT 
+							is_claimed_by = ROOT 
+							is_fully_controlled_by = ROOT 
+						}
+					}
+					OR = {
+						is_on_continent = south_america
+						is_on_continent = north_america
+					}
+				}
+				add_claim_by = ROOT
+			}
 		}
 	}
 

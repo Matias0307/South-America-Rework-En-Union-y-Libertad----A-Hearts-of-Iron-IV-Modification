@@ -740,7 +740,7 @@ bookmarks = {
 			focuses = {
 				CHL_a_new_idea
 				CHL_world_oyster
-				CHL_bastion_democracy
+				CHL_reach_for_cochranes_thalassocracy
 			}
 		}
 		

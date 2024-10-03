@@ -107,7 +107,7 @@ focus_tree = {
 		prerequisite = {
 			focus = VEN_fuel_armada_bolivariana
 		}
-		cost = 7.2
+		cost = 5
 
 		ai_will_do = {
 			base = 2
@@ -649,6 +649,12 @@ focus_tree = {
 		completion_reward = {
 			VEN_improve_oil_extraction_idea = yes 
 			488 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
 				add_resource = {
 					type = aluminium
 					amount = 16
@@ -882,7 +888,7 @@ focus_tree = {
 			focus = VEN_adopt_a_protectionist_policy
 		}
 
-		cost = 7.2
+		cost = 5
 
 		available = {
 			num_of_military_factories > 4
@@ -960,7 +966,7 @@ focus_tree = {
 		relative_position_id = VEN_drill_the_miocene_tar_sands_oil
 		prerequisite = { focus = VEN_drill_the_miocene_tar_sands_oil }
 
-		cost = 6
+		cost = 5
 
 		available = { has_civil_war = no }
 
@@ -986,6 +992,8 @@ focus_tree = {
 		prerequisite = {
 			focus = VEN_invest_in_the_consumer_market
 		}
+
+		cost = 5
 
 		available = {
 			has_civil_war = no 
@@ -1056,6 +1064,8 @@ focus_tree = {
 		prerequisite = {
 			focus = VEN_banco_central_de_venezuela
 		}
+
+		cost = 10
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
@@ -1187,8 +1197,7 @@ focus_tree = {
 		}
 
 		completion_reward = {
-			EUYL_add_1_civilian = yes 
-			EUYL_add_1_military = yes
+			EUYL_add_2_civilian = yes 
 			add_ideas = VEN_el_pais_de_los_trabajadores_idea
 		}
 	}
@@ -1301,7 +1310,7 @@ focus_tree = {
 		}
 	}
 
-	#Military Investments
+	#Establish the Guardia Civil
 	focus = {
 		id = VEN_establish_the_guardia_nacional
 		icon = GFX_VEN_guardia_nacional_icon
@@ -1416,7 +1425,7 @@ focus_tree = {
 			focus = VEN_conservative_military_investments
 		}
 
-		cost = 8
+		cost = 7.2
 
 		available = {
 			OR = {
@@ -1495,7 +1504,7 @@ focus_tree = {
 			focus = VEN_heavy_military_investments
 		}
 
-		cost = 8
+		cost = 7.2
 
 		available = {
 			has_army_manpower = {
@@ -1528,7 +1537,7 @@ focus_tree = {
 			focus = VEN_national_airplane_production
 		}
 
-		cost = 10
+		cost = 8
 
 		available = {
 			custom_trigger_tooltip = {
@@ -1718,14 +1727,13 @@ focus_tree = {
 			focus = VEN_modernize_the_air_force
 		}
 
-		cost = 10
+		cost = 5
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
 		}
 
 		completion_reward = {
-			add_ideas = BRA_trained_pilots
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.5
 				uses = 2
@@ -1820,6 +1828,8 @@ focus_tree = {
 		prerequisite = {
 			focus = VEN_study_venezuelan_topography
 		}
+
+		cost = 6
 
 		available = {
 			has_army_manpower = {
@@ -1926,7 +1936,7 @@ focus_tree = {
 			focus = VEN_study_venezuelan_topography
 		}
 
-		cost = 10
+		cost = 7.2
 
 		search_filters = {
 			FOCUS_FILTER_RESEARCH
@@ -1962,7 +1972,7 @@ focus_tree = {
 			focus = VEN_venezuelan_special_forces
 		}
 
-		cost = 10
+		cost = 8
 
 		search_filters = {
 			FOCUS_FILTER_MANPOWER
@@ -1985,7 +1995,7 @@ focus_tree = {
 			focus = VEN_ejercito_venezolano_f
 		}
 		
-		cost = 8
+		cost = 6
 
 		available = {
 			NOT = {
@@ -2132,7 +2142,7 @@ focus_tree = {
 			focus = VEN_ramp_up_the_armories
 		}
 
-		cost = 10
+		cost = 7.2
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -2142,7 +2152,7 @@ focus_tree = {
 			EUYL_add_1_military = yes
 			add_timed_idea = {
 				idea = ARG_expand_air_force
-				days = 275
+				days = 200
 			}
 		}
 	}
@@ -4650,6 +4660,13 @@ focus_tree = {
 				is_historical_focus_on = yes 
 				date < 1948.1.1
 			}
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
+			}
 		}
 
 		available = {
@@ -5587,7 +5604,7 @@ focus_tree = {
 			focus = VEN_consolidate_power
 		}
 
-		cost = 8
+		cost = 7.2
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY
@@ -5619,7 +5636,7 @@ focus_tree = {
 			focus = VEN_internal_industrial_rework
 		}
 
-		cost = 10
+		cost = 8
 
 		available = {
 			custom_trigger_tooltip = {
@@ -5702,7 +5719,7 @@ focus_tree = {
 			focus = VEN_consolidate_power
 		}
 
-		cost = 8
+		cost = 7.2
 
 		search_filters = {
 			FOCUS_FILTER_INDUSTRY FOCUS_FILTER_MANPOWER FOCUS_FILTER_ARMY_XP
@@ -5871,6 +5888,13 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
+			}
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
 			}
 		}
 
@@ -8376,7 +8400,7 @@ focus_tree = {
 
 		available = {
 			has_army_manpower = {
-				size > 119999
+				size > 89999
 			}
 			num_of_factories > 24
 		}
@@ -9968,6 +9992,27 @@ focus_tree = {
 			unlock_decision_category_tooltip = ECU_reforming_the_lost_unions
 
 			set_country_flag = EUYL_can_reform_lost_unions_flag
+
+			
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = gain_claims_on_every_south_and_northamerican_state_tt
+			every_state = {
+				limit = {
+					NOT = {
+						OR = {
+							is_core_of = ROOT 
+							is_claimed_by = ROOT 
+							is_fully_controlled_by = ROOT 
+						}
+					}
+					OR = {
+						is_on_continent = south_america
+						is_on_continent = north_america
+					}
+				}
+				add_claim_by = ROOT
+			}
 		}
 	}
 
@@ -10244,7 +10289,7 @@ focus_tree = {
 			focus = VEN_the_ambition_of_a_greater_venezuela
 		}
 
-		cost = 7.2
+		cost = 5
 
 		available = {
 			any_controlled_state = {
@@ -10299,7 +10344,7 @@ focus_tree = {
 			focus = VEN_the_ambition_of_a_greater_venezuela
 		}
 
-		cost = 7.2 
+		cost = 5
 
 		available = {
 			NOT = {
@@ -10353,7 +10398,7 @@ focus_tree = {
 			focus = VEN_our_lands_in_colombia
 		}
 
-		cost = 10
+		cost = 7.2
 
 		available = {
 			custom_trigger_tooltip = {

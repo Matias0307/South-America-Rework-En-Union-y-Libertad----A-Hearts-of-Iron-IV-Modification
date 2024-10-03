@@ -3618,7 +3618,6 @@
  argentina.rework.48.a:0 "This is not good..."
  argentina.rework.49.t:0 "Peronists Gather to Protest Peron's Imprisonment"
  argentina.rework.49.d:0 "When we thought Peron would be a thing of the past after his official imprisonment, we couldn't be any further from wrong. Hundreds of thousands of peope have taken the streets to protest the encarcellation of Peron and demand his release. \n\nTheir numbers are massive, and if we don't deal with them quickly, this could turn out to be very bad!"
- argentina.rework.49.a:0 "They won't last long"
  argentina.rework.50.t:0 "Peronist Party wins by Landslide!"
  argentina.rework.50.d:0 "After Peronist support reached a critical point, the Peronists demanded elections to see who should be the leader of Argentina. With not much choice, we were forced to comply, and to no one's surprise, Peron won by a significant margin over the opposition, and will be taking office later today."
  argentina.rework.50.a:0 "Great"
@@ -6214,4 +6213,10 @@
  argentina.dlc.6.d:0 "After joining the government ranks, many people started idolizing Lugones's way of thinking and has gathered massive support recently. Due to this major public support, Lugones has come to us, offering to take power in place of us and lead Argentina. He believes that with his support, he'll be a better candidate at leading the nation to its full potential.\n\nWhat should we do?"
  argentina.dlc.6.a:0 "You know what? Sure, why not"
  argentina.dlc.6.b:0 "...are you insane? Hell NO!"
+
+ ## CHILE | NEW ##
+ chile.430.t:0 "[FROM.GetName] is Demanding [270.GetName]"
+ chile.430.d:0 "We have received a demand from [FROM.GetName] to hand over possession over [270.GetName]. Failure in doing so will result in serious consequences. \n\nHow Shall we proceed with this?"
+ chile.430.a:0 "Let them have it"
+ chile.430.b:0 "The island shall remain BRITISH"
  

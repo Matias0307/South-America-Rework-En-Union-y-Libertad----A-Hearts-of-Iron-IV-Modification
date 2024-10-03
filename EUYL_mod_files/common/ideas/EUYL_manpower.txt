@@ -99,6 +99,32 @@ ideas = {
 				conscription = 0.1
 			}
 		}
+		
+		ARG_military_conscription_5 = {
+			picture = ARG_military_conscription_icon
+			name = ARG_military_conscription
+			level = 6
+			
+			allowed = {
+				always = no 
+			}
+
+			allowed_to_remove = {
+				OR = {
+					has_civil_war = yes 
+					has_war = yes 
+					has_government = democratic
+				}
+			}
+
+			cancel_if_invalid = no 
+
+			modifier = {
+				conscription = 0.15
+				training_time_factor = 0.1
+				industrial_capacity_factory = -0.05
+			}
+		}
 
 		ARG_anarchist_conscription_1 = {
 			name = ARG_anarchist_conscription

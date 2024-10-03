@@ -254,7 +254,7 @@ ideas = {
 		ARG_rebelling_oligarchs = {
 			picture = COL_oligarquia_insatisfecha
 
-			allowed = { original_tag = ARG }
+			allowed = { always = no }
 
 			allowed_civil_war = { always = yes }
 

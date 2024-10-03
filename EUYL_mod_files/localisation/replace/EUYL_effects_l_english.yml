@@ -132,10 +132,10 @@
  PRU_upgrade_conscription:0 "Completing this focus will §Yincrease your conscription to the next level§!."
  PRU_pan_highway_tooltip:0 "Builds the §YPan-American Highway§! (3 infrastructure in Lima, 1 in Arequipa, and 1 in the rest of the highway).\nIncreases §Gtrade opinion of §YChile §Gand§Y Ecuador§G and increases their opinion of you.§!"
 
- PRU_apra_be_friend:0 "E. Montagne must be loyal to the government"
- PRU_ur_be_friend:0 "E. Ureta must be loyal to the government"
- PRU_que_be_friend:0 "A. Rodríguez must be loyal to the government"
- PRU_oli_be_friend:0 "M. Odria must be loyal to the government"
+ PRU_apra_be_friend:0 "E. Montagne §Gcan§! be loyal to the government"
+ PRU_ur_be_friend:0 "E. Ureta §Gcan§! be loyal to the government"
+ PRU_que_be_friend:0 "A. Rodríguez §Gcan§! be loyal to the government"
+ PRU_oli_be_friend:0 "M. Odria §Gcan§! be loyal to the government"
 
  PRU_apra_army_bonus_decision_one:0 "Mobilize the people to the factories"
  PRU_apra_army_bonus_decision_two:0 "Forced recruitment"
@@ -330,10 +330,10 @@
  PRU_andean_union_socialista_buff:0 "Mobilize the entire population"  
  PRU_andean_union_socialista_buff_2:0 "Not a step back"
 
- PRU_apra_exclu:0 "E. Montagne must be separated"
- PRU_ur_exclu:0 "E. Ureta must be separated"
- PRU_oli_exclu:0 "M. Odria must be separated"
- PRU_que_exclu:0 "A. Rodríguez must be separated"
+ PRU_apra_exclu:0 "E. Montagne §Gcan§! be separated"
+ PRU_ur_exclu:0 "E. Ureta §Gcan§! be separated"
+ PRU_oli_exclu:0 "M. Odria §Gcan§! be separated"
+ PRU_que_exclu:0 "A. Rodríguez §Gcan§! be separated"
 
  PRU_Liberate_the_indigenous_people_of_America:0 "Liberate the Indigenous people of America"
  PRU_Liberate_the_indigenous_people_of_America_desc:0 "It advances the liberation and autonomy of indigenous peoples in America, reclaiming their rightful place in history and ensuring their active participation in government and society." 

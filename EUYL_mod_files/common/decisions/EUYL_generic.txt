@@ -2666,102 +2666,102 @@ EUYL_territorial_ambitions = { ## For now I added a couple, tho I may expand thi
 		}
 	}
 
-	EUYL_conquer_eastern_ecuador = { ## Peru || Ecuador will have its own mission to hold out and surrender at will or when the USA demands it
-		icon = generic_operation
-
-		allowed = {
-			original_tag = PRU 
-		}
-
-		activation = {
-			always = no
-		}
-
-		days_mission_timeout = 105
-
-		available = {
-			1010 = {
-				is_controlled_by = ROOT 
-			}
-			1036 = {
-				is_controlled_by = ROOT
-			}
-		}
-
-		is_good = no
-
-		fire_only_once = yes
-
-		cancel_trigger = {
-			ECU = {
-				OR = {
-					exists = no 
-					is_subject_of = ROOT 
-					has_capitulated = yes
-					NOT = {
-						has_war_with = ROOT
-					}
-				}
-			}
-		}
-
-		complete_effect = {
-			add_stability = 0.01
-			add_war_support = 0.03
-			add_political_power = 15
-		}
-
-		timeout_effect = {
-			add_war_support = -0.03
-			country_event = EUYL.2
-		}
-	}
-
-	EUYL_conquer_uruguay = { ## Both Argentina and Brazil
-		icon = generic_operation
-
-		allowed = {
-			OR = {
-				original_tag = ARG 
-				original_tag = BRA
-			}
-		}
-
-		activation = {
-			has_offensive_war_with = URG 
-		}
-
-		days_mission_timeout = 135
-
-		available = {
-			URG = {
-				has_capitulated = yes
-			}
-		}
-
-		is_good = no
-
-		cancel_trigger = {
-			URG = {
-				OR = {
-					exists = no 
-					is_subject_of = ROOT 
-					NOT = {
-						has_war_with = ROOT
-					}
-				}
-			}
-		}
-
-		complete_effect = {
-			add_stability = 0.01
-			add_war_support = 0.03
-			add_political_power = 15
-		}
-
-		timeout_effect = {
-			add_war_support = -0.03
-			country_event = EUYL.2
-		}
-	}
+	#EUYL_conquer_eastern_ecuador = { ## Peru || Ecuador will have its own mission to hold out and surrender at will or when the USA demands it
+	#	icon = generic_operation
+#
+	#	allowed = {
+	#		original_tag = PRU 
+	#	}
+#
+	#	activation = {
+	#		always = no
+	#	}
+#
+	#	days_mission_timeout = 105
+#
+	#	available = {
+	#		1010 = {
+	#			is_controlled_by = ROOT 
+	#		}
+	#		1036 = {
+	#			is_controlled_by = ROOT
+	#		}
+	#	}
+#
+	#	is_good = no
+#
+	#	fire_only_once = yes
+#
+	#	cancel_trigger = {
+	#		ECU = {
+	#			OR = {
+	#				exists = no 
+	#				is_subject_of = ROOT 
+	#				has_capitulated = yes
+	#				NOT = {
+	#					has_war_with = ROOT
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	complete_effect = {
+	#		add_stability = 0.01
+	#		add_war_support = 0.03
+	#		add_political_power = 15
+	#	}
+#
+	#	timeout_effect = {
+	#		add_war_support = -0.03
+	#		country_event = EUYL.2
+	#	}
+	#}
+#
+	#EUYL_conquer_uruguay = { ## Both Argentina and Brazil
+	#	icon = generic_operation
+#
+	#	allowed = {
+	#		OR = {
+	#			original_tag = ARG 
+	#			original_tag = BRA
+	#		}
+	#	}
+#
+	#	activation = {
+	#		has_offensive_war_with = URG 
+	#	}
+#
+	#	days_mission_timeout = 135
+#
+	#	available = {
+	#		URG = {
+	#			has_capitulated = yes
+	#		}
+	#	}
+#
+	#	is_good = no
+#
+	#	cancel_trigger = {
+	#		URG = {
+	#			OR = {
+	#				exists = no 
+	#				is_subject_of = ROOT 
+	#				NOT = {
+	#					has_war_with = ROOT
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	complete_effect = {
+	#		add_stability = 0.01
+	#		add_war_support = 0.03
+	#		add_political_power = 15
+	#	}
+#
+	#	timeout_effect = {
+	#		add_war_support = -0.03
+	#		country_event = EUYL.2
+	#	}
+	#}
 }

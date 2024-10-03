@@ -478,7 +478,7 @@ ARG_posadist_ambitions = {
 			has_global_flag = ARG_civil_war_concluded
 		}
 
-		days_mission_timeout = 500
+		days_mission_timeout = 565
 
 		complete_effect = {
 			ARG_complete_effect_posadist_ambition = yes 
@@ -527,7 +527,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 640
+		days_mission_timeout = 720
 
 		cancel_trigger = {
 			OR = {
@@ -572,7 +572,7 @@ ARG_posadist_ambitions = {
 			NOT = { has_idea = ARG_agitated_oligarchs_idea }
 		}
 
-		days_mission_timeout = 310
+		days_mission_timeout = 435
 
 		cancel_trigger = {
 			OR = {
@@ -618,7 +618,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 435
+		days_mission_timeout = 510
 
 		cancel_trigger = {
 			OR = {
@@ -663,7 +663,7 @@ ARG_posadist_ambitions = {
 			num_of_military_factories > 14
 		}
 
-		days_mission_timeout = 480
+		days_mission_timeout = 640
 
 		cancel_trigger = {
 			OR = {
@@ -706,7 +706,7 @@ ARG_posadist_ambitions = {
 			has_completed_focus = ARG_form_the_posadist_la_plata
 		}
 
-		days_mission_timeout = 435
+		days_mission_timeout = 475
 
 		cancel_trigger = {
 			OR = {
@@ -752,7 +752,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 720
+		days_mission_timeout = 840
 
 		cancel_trigger = {
 			OR = {
@@ -815,7 +815,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 410
+		days_mission_timeout = 520
 
 		cancel_trigger = {
 			OR = {
@@ -859,7 +859,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 875
+		days_mission_timeout = 1020
 
 		cancel_trigger = {
 			OR = {
@@ -902,7 +902,7 @@ ARG_posadist_ambitions = {
 			}
 		}
 
-		days_mission_timeout = 550
+		days_mission_timeout = 640
 
 		cancel_trigger = {
 			OR = {
@@ -1556,7 +1556,7 @@ ARG_bop = {
 			}
 		}
 
-		cost = 25
+		cost = 10
 
 		ai_will_do = {
 			base = 55
@@ -2318,7 +2318,7 @@ ARG_political_crisis = {
 			}
 		}
 
-		days_mission_timeout = 90
+		days_mission_timeout = 180
 
 		timeout_effect = {
 			country_event = argentina.rework.7
@@ -2397,7 +2397,7 @@ ARG_political_crisis = {
 			}
 		}
 
-		days_mission_timeout = 155 
+		days_mission_timeout = 210 
 
 		timeout_effect = {
 			hidden_effect = { set_global_flag = ARG_military_overthrow_triggered }
@@ -3256,7 +3256,7 @@ ARG_forming_the_coalition = {
 
 		fire_only_once = yes 
 
-		days_mission_timeout = 265
+		days_mission_timeout = 280
 
 		is_good = no 
 
@@ -4037,85 +4037,125 @@ ARG_forming_the_coalition = {
 		}
 	}
 
-	ARG_incite_a_terrorist_attack_in_FROM = {
+	ARG_looming_planned_terrorist_attack = {
 		icon = SWI_consolidate_council_power
 
-		state_target = yes 
-
-		target_array = core_states
-
-		target_trigger = { 
-			FROM = {
-				is_fully_controlled_by = ROOT 
-				NOT = { has_dynamic_modifier = { modifier = ARG_active_ANL_terrorist_group } }
-			}
-		}
-
-		ai_will_do = {
-			base = 90
-			modifier = {
-				add = 120
-				check_variable = { ARG_political_tension < 80 }
-			}
-		}
-
-		on_map_mode = map_only
-		
-		visible = {
-			has_active_mission = ARG_government_crackdown
-			has_completed_focus = ARG_stage_nationwide_attacks
-			has_civil_war = no
-			FROM = {
-				NOT = { has_dynamic_modifier = { modifier = ARG_active_ANL_terrorist_group } }
-			} 
-		}
-
-		fire_only_once = yes 
-
-		custom_cost_text = ARG_10_pol_100_guns
-		custom_cost_trigger = {
-			has_political_power > 9
-			has_equipment = { infantry_equipment > 99 }
+		activation = {
+			always = no 
 		}
 
 		available = {
-			has_equipment = { infantry_equipment > 99 }
-			NOT = { has_country_flag = ARG_inciting_terrorist_attacks }
+			OR = {
+				has_civil_war = yes 
+				has_government = fascism
+				has_active_mission = ARG_federlist_takeover
+			}
 		}
 
-		complete_effect = {
-			hidden_effect = {
-				add_political_power = -10
-				add_equipment_to_stockpile = {
-					type = infantry_equipment
-					amount = -100
+		days_mission_timeout = 60
+
+		cancel_trigger = {
+			OR = {
+				NOT = { has_active_mission = ARG_government_crackdown }
+				exists = no
+			}
+		}
+
+		timeout_effect = {
+			random_owned_controlled_state = {
+				save_event_target_as = CURRENT_STATE
+				ROOT = { country_event = argentina.rework.5 }
+				add_dynamic_modifier = { 
+					modifier = ARG_active_ANL_terrorist_group 
+					days = 180
 				}
 			}
-			set_country_flag = ARG_inciting_terrorist_attacks
-		}
 
-		days_remove = 20
-
-		modifier = { 
-			political_power_factor = -0.05
-			weekly_manpower = -750 
-		}
-
-		remove_effect = {
-			clr_country_flag = ARG_inciting_terrorist_attacks
 			hidden_effect = {
-				FROM = { #to have triggered event names
-					save_event_target_as = CURRENT_STATE
-					ROOT = { country_event = argentina.rework.5 }
-					add_dynamic_modifier = { 
-						modifier = ARG_active_ANL_terrorist_group 
-						days = 180
-					}
-				}
+				activate_mission = ARG_looming_planned_terrorist_attack
 			}
-			custom_effect_tooltip = ARG_terrorist_attack_begin_in_FROM_tt
 		}
 	}
+
+	#ARG_incite_a_terrorist_attack_in_FROM = {
+	#	icon = SWI_consolidate_council_power
+#
+	#	state_target = yes 
+#
+	#	target_array = core_states
+#
+	#	target_trigger = { 
+	#		FROM = {
+	#			is_fully_controlled_by = ROOT 
+	#			NOT = { has_dynamic_modifier = { modifier = ARG_active_ANL_terrorist_group } }
+	#		}
+	#	}
+#
+	#	ai_will_do = {
+	#		base = 90
+	#		modifier = {
+	#			add = 120
+	#			check_variable = { ARG_political_tension < 80 }
+	#		}
+	#	}
+#
+	#	on_map_mode = map_only
+	#	
+	#	visible = {
+	#		has_active_mission = ARG_government_crackdown
+	#		has_completed_focus = ARG_stage_nationwide_attacks
+	#		has_civil_war = no
+	#		FROM = {
+	#			NOT = { has_dynamic_modifier = { modifier = ARG_active_ANL_terrorist_group } }
+	#		} 
+	#	}
+#
+	#	fire_only_once = yes 
+#
+	#	custom_cost_text = ARG_10_pol_100_guns
+	#	custom_cost_trigger = {
+	#		has_political_power > 9
+	#		has_equipment = { infantry_equipment > 99 }
+	#	}
+#
+	#	available = {
+	#		has_equipment = { infantry_equipment > 99 }
+	#		NOT = { has_country_flag = ARG_inciting_terrorist_attacks }
+	#	}
+#
+	#	complete_effect = {
+	#		hidden_effect = {
+	#			add_political_power = -10
+	#			add_equipment_to_stockpile = {
+	#				type = infantry_equipment
+	#				amount = -100
+	#			}
+	#		}
+	#		set_country_flag = ARG_inciting_terrorist_attacks
+	#	}
+#
+	#	days_remove = 20
+#
+	#	modifier = { 
+	#		political_power_factor = -0.05
+	#		weekly_manpower = -750 
+	#	}
+#
+	#	remove_effect = {
+	#		clr_country_flag = ARG_inciting_terrorist_attacks
+	#		hidden_effect = {
+	#			FROM = { #to have triggered event names
+	#				save_event_target_as = CURRENT_STATE
+	#				ROOT = { country_event = argentina.rework.5 }
+	#				add_dynamic_modifier = { 
+	#					modifier = ARG_active_ANL_terrorist_group 
+	#					days = 180
+	#				}
+	#			}
+	#		}
+	#		custom_effect_tooltip = ARG_terrorist_attack_begin_in_FROM_tt
+	#	}
+	#}
 }
 
 ARG_the_great_revolution = {
@@ -6251,7 +6291,7 @@ ARG_the_great_revolution = {
 
 		fire_only_once = yes 
 
-		cost = 35
+		cost = 30
 
 		days_remove = 15
 
@@ -6394,93 +6434,93 @@ ARG_the_great_revolution = {
 		}
 	}
 
-	ARG_recruit_a_proper_division_in_FROM = {
-		icon = ITA_reorganize_ascari
-
-		state_target = yes 
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				OR = {
-					has_dynamic_modifier = {
-						modifier = ARG_communist_tendencies
-					}
-					has_dynamic_modifier = {
-						modifier = ARG_anarchist_occupation
-					}
-				}
-			}
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ARG_more_than_100_stockpiled_guns_tt
-				check_variable = { ARG_stockpiled_guns > 99 }
-			}
-		}
-
-		ai_will_do = {
-			base = 105 # slightly less priority
-			modifier = { # AI should prioritize this if it got guns lol
-				add = 125
-				check_variable = { ARG_stockpiled_guns > 499 }
-			}
-		}
-
-		visible = {
-			has_active_mission = ARG_government_collapse
-			OR = {
-				has_completed_focus = ARG_build_up_militias
-				has_completed_focus = ARG_rally_the_patagonia_rebelde
-			}
-			if = {
-				limit = {
-					ROOT = { has_country_flag = ARG_chose_anarchist_route }
-				}
-				FROM = {
-					has_dynamic_modifier = {
-						modifier = ARG_anarchist_occupation
-					}
-				}
-			}
-			else = {
-				FROM = {
-					has_dynamic_modifier = {
-						modifier = ARG_communist_tendencies
-					}
-				}
-			}
-		}
-
-		on_map_mode = map_and_decisions_view
-
-		fire_only_once = yes
-
-		custom_cost_text = ARG_10_pol_100_guns
-
-		custom_cost_trigger = {
-			has_political_power > 9
-			check_variable = { ARG_stockpiled_guns > 99 }
-		}
-
-		days_remove = 10
-
-		complete_effect = {
-			hidden_effect = {
-				add_political_power = -10
-				subtract_from_variable = { ARG_stockpiled_guns = 100 }
-			}
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = ARG_proper_division_will_spawn_here_tt
-			FROM = {
-				set_state_flag = ARG_improved_conscription
-			}
-		}
-	}	
+	#ARG_recruit_a_proper_division_in_FROM = {
+	#	icon = ITA_reorganize_ascari
+#
+	#	state_target = yes 
+#
+	#	target_array = controlled_states
+#
+	#	target_trigger = {
+	#		FROM = {
+	#			OR = {
+	#				has_dynamic_modifier = {
+	#					modifier = ARG_communist_tendencies
+	#				}
+	#				has_dynamic_modifier = {
+	#					modifier = ARG_anarchist_occupation
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	available = {
+	#		custom_trigger_tooltip = {
+	#			tooltip = ARG_more_than_100_stockpiled_guns_tt
+	#			check_variable = { ARG_stockpiled_guns > 99 }
+	#		}
+	#	}
+#
+	#	ai_will_do = {
+	#		base = 105 # slightly less priority
+	#		modifier = { # AI should prioritize this if it got guns lol
+	#			add = 125
+	#			check_variable = { ARG_stockpiled_guns > 499 }
+	#		}
+	#	}
+#
+	#	visible = {
+	#		has_active_mission = ARG_government_collapse
+	#		OR = {
+	#			has_completed_focus = ARG_build_up_militias
+	#			has_completed_focus = ARG_rally_the_patagonia_rebelde
+	#		}
+	#		if = {
+	#			limit = {
+	#				ROOT = { has_country_flag = ARG_chose_anarchist_route }
+	#			}
+	#			FROM = {
+	#				has_dynamic_modifier = {
+	#					modifier = ARG_anarchist_occupation
+	#				}
+	#			}
+	#		}
+	#		else = {
+	#			FROM = {
+	#				has_dynamic_modifier = {
+	#					modifier = ARG_communist_tendencies
+	#				}
+	#			}
+	#		}
+	#	}
+#
+	#	on_map_mode = map_and_decisions_view
+#
+	#	fire_only_once = yes
+#
+	#	custom_cost_text = ARG_10_pol_100_guns
+#
+	#	custom_cost_trigger = {
+	#		has_political_power > 9
+	#		check_variable = { ARG_stockpiled_guns > 99 }
+	#	}
+#
+	#	days_remove = 10
+#
+	#	complete_effect = {
+	#		hidden_effect = {
+	#			add_political_power = -10
+	#			subtract_from_variable = { ARG_stockpiled_guns = 100 }
+	#		}
+	#	}
+#
+	#	remove_effect = {
+	#		custom_effect_tooltip = ARG_proper_division_will_spawn_here_tt
+	#		FROM = {
+	#			set_state_flag = ARG_improved_conscription
+	#		}
+	#	}
+	#}	
 }
 
 ARG_infamous_decade_cat = {
@@ -6931,7 +6971,7 @@ ARG_dealing_with_the_corruption = {
 
 		fire_only_once = no 
 
-		days_mission_timeout = 105 ## I was feeling nice, this used to be 60
+		days_mission_timeout = 210 ## I was feeling nice, this used to be 60
 
 		cancel_trigger = {
 			hidden_trigger = {
@@ -7005,92 +7045,92 @@ ARG_dealing_with_the_corruption = {
 		}
 	}
 	
-	ARG_ongoing_government_investigation = {
-		priority = 200
-		icon = generic_political_discourse
+	#ARG_ongoing_government_investigation = {
+	#	priority = 200
+	#	icon = generic_political_discourse
+#
+	#	activation = {
+	#		always = no 
+	#	}
+#
+	#	available = {
+	#		custom_trigger_tooltip = {
+	#			tooltip = ARG_convinced_not_to_continue_investigation_tt
+	#			has_country_flag = ARG_convinced_not_have_investigation
+	#		}
+	#	}
+#
+	#	fire_only_once = no 
+#
+	#	is_good = no 
+#
+	#	days_mission_timeout = 180
+#
+	#	cancel_trigger = {
+	#		OR = {
+	#			check_variable = { ARG_corruption_status = 0 }
+	#			NOT = { has_dynamic_modifier = { modifier = ARG_corruption_scandal_idea } }
+	#		}
+	#	}
+#
+	#	complete_effect = { ## way to increase degree of corruption if you are corrupt
+	#		random_list = {
+	#			35 = {
+	#				ARG_increase_corruption_by_1 = yes
+	#			}
+	#			50 = { }
+	#		}
+	#	}
+#
+	#	timeout_effect = { 
+	#		#random_list = {
+	#		#	50 = {
+	#		#		custom_effect_tooltip = ARG_corruption_will_go_against_us_tt
+	#		#		hidden_effect = {
+	#		#			set_variable = { ARG_corruption_status = 0 }
+	#		#		}
+	#		#	}
+	#		#	50 = {
+#
+	#		#	}
+	#		#}
+	#		ARG_decrease_corruption_by_1 = yes
+	#	}
+	#}
 
-		activation = {
-			always = no 
-		}
-
-		available = {
-			custom_trigger_tooltip = {
-				tooltip = ARG_convinced_not_to_continue_investigation_tt
-				has_country_flag = ARG_convinced_not_have_investigation
-			}
-		}
-
-		fire_only_once = no 
-
-		is_good = no 
-
-		days_mission_timeout = 180
-
-		cancel_trigger = {
-			OR = {
-				check_variable = { ARG_corruption_status = 0 }
-				NOT = { has_dynamic_modifier = { modifier = ARG_corruption_scandal_idea } }
-			}
-		}
-
-		complete_effect = { ## way to increase degree of corruption if you are corrupt
-			random_list = {
-				35 = {
-					ARG_increase_corruption_by_1 = yes
-				}
-				50 = { }
-			}
-		}
-
-		timeout_effect = { 
-			#random_list = {
-			#	50 = {
-			#		custom_effect_tooltip = ARG_corruption_will_go_against_us_tt
-			#		hidden_effect = {
-			#			set_variable = { ARG_corruption_status = 0 }
-			#		}
-			#	}
-			#	50 = {
-
-			#	}
-			#}
-			ARG_decrease_corruption_by_1 = yes
-		}
-	}
-
-	ARG_convince_officials_cancel_the_investigation = {
-		priority = 190
-		icon = eng_propaganda_campaigns
-
-		visible = {
-			has_active_mission = ARG_ongoing_government_investigation
-		}
-
-		available = {
-			has_civil_war = no 
-		}
-
-		ai_will_do = { 
-			base = 125 
-			modifier = {
-				factor = 1.5
-				check_variable = { ARG_degree_of_corruption < 6 }
-			}
-		}
-
-		cost = 30
-
-		complete_effect = {
-			custom_effect_tooltip = ARG_officials_will_be_convinced_to_cancel_investigation_tt
-			hidden_effect = {
-				set_country_flag = {
-					flag = ARG_convinced_not_have_investigation
-					days = 5
-					value = 1
-				}
-			}
-		}
-	}	
+	#ARG_convince_officials_cancel_the_investigation = {
+	#	priority = 190
+	#	icon = eng_propaganda_campaigns
+#
+	#	visible = {
+	#		has_active_mission = ARG_ongoing_government_investigation
+	#	}
+#
+	#	available = {
+	#		has_civil_war = no 
+	#	}
+#
+	#	ai_will_do = { 
+	#		base = 125 
+	#		modifier = {
+	#			factor = 1.5
+	#			check_variable = { ARG_degree_of_corruption < 6 }
+	#		}
+	#	}
+#
+	#	cost = 30
+#
+	#	complete_effect = {
+	#		custom_effect_tooltip = ARG_officials_will_be_convinced_to_cancel_investigation_tt
+	#		hidden_effect = {
+	#			set_country_flag = {
+	#				flag = ARG_convinced_not_have_investigation
+	#				days = 5
+	#				value = 1
+	#			}
+	#		}
+	#	}
+	#}	
 	
 	ARG_impending_corrupt_demand = {
 		priority = 150
@@ -7138,7 +7178,7 @@ ARG_dealing_with_the_corruption = {
 					20 = {
 						country_event = argentina.rework.16
 					}
-					20 = {
+					50 = {
 
 					}
 				}
@@ -9356,6 +9396,13 @@ ARG_spread_of_peronism = {
 				factor = 10
 				check_variable = { ARG_peronist_support > 100 }
 			}
+			modifier = {
+				factor = 15
+				OR = {
+					has_completed_focus = ARG_union_civica_radical
+					has_completed_focus = ARG_partido_socialista
+				}
+			}
 		}
 
 		available = { 
@@ -9389,69 +9436,85 @@ ARG_spread_of_peronism = {
 				}
 				country_event = {
 					id = argentina.rework.49
-					days = 4
-					random_days = 4 
+					days = 12
+					random_days = 8 
 				}
 			}
 		}
 	}
 
-	ARG_deal_with_the_peronists_in_FROM = {
-		icon = oppression
-
-		state_target = yes 
-
-		target_array = controlled_states
-
-		target_trigger = {
-			FROM = {
-				is_fully_controlled_by = ROOT 
-				has_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
-		}
-
-		visible = { 
-			has_country_flag = ARG_peronist_mechanic_active_flag
-			NOT = {
-				has_country_leader = {
-					character = ARG_juan_domingo_peron
-					ruling_only = yes 
-				}
-			}
-			NOT = {
-				OR = {
-					has_completed_focus = ARG_support_the_peronists
-					has_completed_focus = ARG_kill_off_roberto
-				}
-			}
-		}
-
-		available = {
-			has_civil_war = no 
-			has_manpower > 9999
-		}
-
-		cost = 10
-
-		days_remove = 35
-
-		modifier = {
-			political_power_factor = -0.05
-			weekly_manpower = -750
-			stability_weekly = -0.0025
-		}
-
-		remove_effect = {
-			custom_effect_tooltip = ARG_peronist_march_will_be_dealt_with_tt
-			hidden_effect = {
-				FROM = {
-					remove_dynamic_modifier = {
-						modifier = ARG_peronist_march
-					}
-				}
-			}
-		}
-	}
+	#ARG_deal_with_the_peronists_in_FROM = {
+	#	icon = oppression
+#
+	#	state_target = yes 
+#
+	#	target_array = controlled_states
+#
+	#	target_trigger = {
+	#		FROM = {
+	#			is_fully_controlled_by = ROOT 
+	#			has_dynamic_modifier = { modifier = ARG_peronist_march }
+	#		}
+	#	}
+#
+	#	visible = { 
+	#		has_country_flag = ARG_peronist_mechanic_active_flag
+	#		NOT = {
+	#			has_country_leader = {
+	#				character = ARG_juan_domingo_peron
+	#				ruling_only = yes 
+	#			}
+	#		}
+	#		NOT = {
+	#			OR = {
+	#				has_completed_focus = ARG_support_the_peronists
+	#				has_completed_focus = ARG_kill_off_roberto
+	#			}
+	#		}
+	#	}
+#
+	#	ai_will_do = {
+	#		base = 20
+	#		modifier = {
+	#			factor = 0
+	#			OR = {
+	#				is_historical_focus_on = yes 
+	#				has_completed_focus = ARG_formalize_the_GOU
+	#				has_completed_focus = ARG_kill_off_roberto
+	#			}
+	#		}
+	#		modifier = {
+	#			factor = 15
+	#			OR = {
+	#				has_completed_focus = ARG_union_civica_radical
+	#				has_completed_focus = ARG_partido_socialista
+	#			}
+	#		}
+	#	}
+#
+	#	available = {
+	#		has_civil_war = no 
+	#		has_manpower > 9999
+	#	}
+#
+	#	cost = 10
+#
+	#	days_remove = 35
+#
+	#	modifier = {
+	#		political_power_factor = -0.05
+	#		weekly_manpower = -750
+	#		stability_weekly = -0.0025
+	#	}
+#
+	#	remove_effect = {
+	#		FROM = {
+	#			remove_dynamic_modifier = {
+	#				modifier = ARG_peronist_march
+	#			}
+	#		}
+	#	}
+	#}
 
 	ARG_exile_peron = { ## will stop peronist mechanic, requires peron imprisoned, no marches, and less than 20 peronist support 
 		icon = generic_air
@@ -9459,6 +9522,7 @@ ARG_spread_of_peronism = {
 		visible = { 
 			has_country_flag = ARG_peronist_mechanic_active_flag
 			has_character = ARG_juan_domingo_peron
+			has_country_flag = ARG_can_exile_peron_flag
 			NOT = {
 				has_country_leader = {
 					character = ARG_juan_domingo_peron
@@ -9486,14 +9550,25 @@ ARG_spread_of_peronism = {
 					has_character_flag = BRA_imprisoned
 				}
 			}
-			custom_trigger_tooltip = {
-				tooltip = ARG_no_states_with_peronist_marches_tt
-				all_controlled_state = {
-					NOT = {
-						has_dynamic_modifier = {
-							modifier = ARG_peronist_march
-						}
-					}
+			#custom_trigger_tooltip = {
+			#	tooltip = ARG_no_states_with_peronist_marches_tt
+			#	all_controlled_state = {
+			#		NOT = {
+			#			has_dynamic_modifier = {
+			#				modifier = ARG_peronist_march
+			#			}
+			#		}
+			#	}
+			#}
+		}
+
+		ai_will_do = {
+			base = 15
+			modifier = {
+				factor = 25
+				OR = {
+					has_completed_focus = ARG_union_civica_radical
+					has_completed_focus = ARG_partido_socialista
 				}
 			}
 		}
@@ -9505,6 +9580,7 @@ ARG_spread_of_peronism = {
 		complete_effect = {
 			custom_effect_tooltip = ARG_peron_will_be_exiled_tt
 			clr_country_flag = ARG_peronist_mechanic_active_flag
+			clr_country_flag = ARG_can_exile_peron_flag
 			hidden_effect = {
 				retire_character = ARG_juan_domingo_peron
 			}
@@ -9526,6 +9602,23 @@ ARG_spread_of_peronism = {
 				OR = {
 					has_completed_focus = ARG_support_the_peronists
 					has_completed_focus = ARG_kill_off_roberto
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 75
+			modifier = {
+				factor = 15
+				OR = {
+					has_completed_focus = ARG_union_civica_radical
+					has_completed_focus = ARG_partido_socialista
+				}
+			}
+			modifier = {
+				factor = 5
+				check_variable = {
+					ARG_peronist_support > 21 #tweny wan
 				}
 			}
 		}
@@ -9578,18 +9671,23 @@ ARG_spread_of_peronism = {
 
 		visible = { 
 			has_country_flag = ARG_peronist_mechanic_active_flag
-			OR = {
-				has_completed_focus = ARG_demand_liberation
-				has_completed_focus = ARG_commence_plans_for_the_coup 
-			}
-			OR = {
-				has_completed_focus = ARG_commence_plans_for_the_coup
-				has_country_flag = ARG_peron_imprisoned_flag
-			}
+			has_country_flag = ARG_peron_imprisoned_flag
 			NOT = {
+				has_completed_focus = ARG_demand_liberation
+				has_completed_focus = ARG_go_against_the_peronists
 				has_country_leader = {
 					character = ARG_juan_domingo_peron
 					ruling_only = yes 
+				}
+			}
+		}
+
+		ai_will_do = {
+			base = 350
+			modifier = {
+				factor = 0.4 
+				check_variable = {
+					ARG_peronist_support > 129
 				}
 			}
 		}
@@ -10348,6 +10446,7 @@ ARG_managing_the_army = {
 				has_idea = ARG_military_conscription_1
 				has_idea = ARG_military_conscription_2
 				has_idea = ARG_military_conscription_3
+				has_idea = ARG_military_conscription_4
 			}
 		}
 
@@ -10364,6 +10463,7 @@ ARG_managing_the_army = {
 						has_idea = ARG_military_conscription_2
 						has_idea = ARG_military_conscription_3
 						has_idea = ARG_military_conscription_4
+						has_idea = ARG_military_conscription_5
 					}
 				}
 			}
@@ -10389,8 +10489,8 @@ ARG_managing_the_army = {
 		}
 
 		remove_effect = {
-			add_to_variable = { ARG_cost_to_improve_mob = 25 }
-			add_to_variable = { ARG_days_to_improve_mob = 35 }
+			add_to_variable = { ARG_cost_to_improve_mob = 20 }
+			add_to_variable = { ARG_days_to_improve_mob = 30 }
 			if = {
 				limit = {
 					has_idea = ARG_military_conscription_1
@@ -10409,10 +10509,17 @@ ARG_managing_the_army = {
 					add_idea = ARG_military_conscription_3
 				}
 			}
-			else = { 
+			else_if = { 
+				limit = { has_idea = ARG_military_conscription_3 }
 				swap_ideas = {
 					remove_idea = ARG_military_conscription_3
 					add_idea = ARG_military_conscription_4
+				}
+			}
+			else = {
+				swap_ideas = {
+					remove_idea = ARG_military_conscription_4
+					add_idea = ARG_military_conscription_5
 				}
 			}
 		}

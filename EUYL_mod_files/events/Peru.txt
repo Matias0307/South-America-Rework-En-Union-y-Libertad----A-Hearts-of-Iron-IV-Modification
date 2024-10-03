@@ -101,6 +101,7 @@ country_event = {
 						is_historical_focus_on = yes 
 					}
 				}
+				add_political_power = 1
 			}
 			else = {
 				set_temp_variable = { PRU_chance_of_coup_attempt = 0 }
@@ -896,7 +897,7 @@ country_event = {
 						}
 					}
 				}
-				country_event = { id = peru.2 days = 4 random = 14 }
+				country_event = { id = peru.2 days = 4 random_hours = 14 }
 			}
 			every_owned_state = {
 				limit = {
@@ -904,7 +905,7 @@ country_event = {
 				}
 				remove_dynamic_modifier = { modifier = BOL_controlled_by_toro }
 			}
-			news_event = { days = 8 random = 10 id = news.342 }
+			news_event = { days = 8 random_hours = 10 id = news.342 }
 		}
 	}
 }
@@ -1085,7 +1086,7 @@ country_event = {
 					}
 				}
 			}
-			country_event = { id = peru.2 days = 1 random = 8 }
+			country_event = { id = peru.2 days = 1 random_hours = 8 }
 		}
 		news_event = { days = 4 id = news.342 }
 	}
@@ -1203,8 +1204,8 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = FROM_not_honor_pact}
+				clr_country_flag = FROM_not_honor_pact
 			}
-			clr_country_flag = FROM_not_honor_pact
 		}
 	}
 
@@ -1217,8 +1218,8 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = { has_country_flag = FROM_not_honor_pact}
+				clr_country_flag = FROM_not_honor_pact
 			}
-			clr_country_flag = FROM_not_honor_pact
 		}
 	}
 }
@@ -2266,18 +2267,18 @@ country_event = {
 							has_template = "Voluntarios"
 						}
 					}
-				}
-				division_template = { 
-					name = "Voluntarios" 
-					division_names_group = SPAN_INF_02 
-					is_locked = yes 
-					regiments = { 
-						infantry = { x = 0 y = 0 }  
-						infantry = { x = 0 y = 1 } 
-						infantry = { x = 0 y = 2 } 
-						infantry = { x = 0 y = 3 } 
-						infantry = { x = 1 y = 0 }
-						infantry = { x = 1 y = 1 }
+					division_template = { 
+						name = "Voluntarios" 
+						division_names_group = SPAN_INF_02 
+						is_locked = yes 
+						regiments = { 
+							infantry = { x = 0 y = 0 }  
+							infantry = { x = 0 y = 1 } 
+							infantry = { x = 0 y = 2 } 
+							infantry = { x = 0 y = 3 } 
+							infantry = { x = 1 y = 0 }
+							infantry = { x = 1 y = 1 }
+						}
 					}
 				}
 			}
@@ -2638,7 +2639,7 @@ country_event = {
 				has_country_flag = PRU_has_civil_war_fascism
 			}
 		}
-		remove_unit_leader = 44512
+		retire_character = PRU_Oscar_benavides
 		add_stability = 0.05
 		add_war_support = -0.03
 	}
@@ -2652,7 +2653,7 @@ country_event = {
 				has_country_flag = PRU_has_civil_war_fascism
 			}
 		}
-		remove_unit_leader = 44512
+		retire_character = PRU_Oscar_benavides
 		add_stability = 0.03
 	}
 

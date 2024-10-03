@@ -871,7 +871,6 @@ focus_tree = {
 
 		completion_reward = {
 			add_war_support = 0.05
-			add_stability = 0.05
 		}
 	}
 
@@ -1656,7 +1655,7 @@ focus_tree = {
 				}
 			}
 			modifier = {
-				factor = 100
+				factor = 200
 				has_game_rule = {
 					rule = EUYL_chaos_mode
 					option = YES
@@ -4568,7 +4567,7 @@ focus_tree = {
 				factor = 0
 			}
 			modifier = {
-				factor = 100
+				factor = 200
 				has_game_rule = {
 					rule = EUYL_chaos_mode
 					option = YES
@@ -5662,6 +5661,17 @@ focus_tree = {
 		y = 1
 		cost = 10
 
+		allow_branch = {
+			has_dlc = "Trial of Allegiance"
+			NOT = {
+				OR = {
+					has_completed_focus = PRU_the_people_serve_the_state
+					has_completed_focus = PRU_the_state_serves_the_people
+					has_completed_focus = PRU_communist_peru
+				}
+			}
+		}
+
 		prerequisite = {
 			focus = PRU_Liberate_the_indigenous_people_of_America
 		}
@@ -5754,6 +5764,17 @@ focus_tree = {
 		x = -1
 		y = 1
 		cost = 10
+
+		allow_branch = {
+			has_dlc = "Trial of Allegiance"
+			NOT = {
+				OR = {
+					has_completed_focus = PRU_the_people_serve_the_state
+					has_completed_focus = PRU_the_state_serves_the_people
+					has_completed_focus = PRU_communist_peru
+				}
+			}
+		}
 
 		prerequisite = {
 			focus = PRU_Liberate_the_indigenous_people_of_America
@@ -6908,6 +6929,13 @@ focus_tree = {
 			modifier = {
 				factor = 50
 				BOL = { has_completed_focus = BOL_placate_to_the_experienced_officers }
+			}
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
 			}
 		}
 		

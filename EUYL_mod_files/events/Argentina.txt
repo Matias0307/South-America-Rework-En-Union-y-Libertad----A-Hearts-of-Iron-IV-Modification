@@ -2738,35 +2738,35 @@ country_event = {
 }
 
 #Government initiates a check on the government (if corruption is favoring you)
-country_event = {
-	id = argentina.rework.12
-	title = argentina.rework.12.t 
-	desc = argentina.rework.12.d 
-	#picture = GFX_ #might find a pic later, but i might just be lazy lolololasoaosallas
-
-	trigger = {
-		original_tag = ARG 
-		has_dynamic_modifier = { modifier = ARG_corruption_scandal_idea }
-		check_variable = { ARG_corruption_status = 1 }
-		has_civil_war = no #i dont think the government would care about corruption in a state of near anarchy 
-		NOT = { has_active_mission = ARG_ongoing_government_investigation }
-	}
-
-	fire_only_once = no 
-
-	mean_time_to_happen = { 
-		days = 365 
-		modifier = {
-			factor = 0.8
-			check_variable = { ARG_degree_of_corruption > 5 }
-		}
-	}
-
-	option = {
-		name = argentina.rework.12.a 
-		activate_mission = ARG_ongoing_government_investigation
-	}
-}
+#country_event = {
+#	id = argentina.rework.12
+#	title = argentina.rework.12.t 
+#	desc = argentina.rework.12.d 
+#	#picture = GFX_ #might find a pic later, but i might just be lazy lolololasoaosallas
+#
+#	trigger = {
+#		original_tag = ARG 
+#		has_dynamic_modifier = { modifier = ARG_corruption_scandal_idea }
+#		check_variable = { ARG_corruption_status = 1 }
+#		has_civil_war = no #i dont think the government would care about corruption in a state of near anarchy 
+#		NOT = { has_active_mission = ARG_ongoing_government_investigation }
+#	}
+#
+#	fire_only_once = no 
+#
+#	mean_time_to_happen = { 
+#		days = 365 
+#		modifier = {
+#			factor = 0.8
+#			check_variable = { ARG_degree_of_corruption > 5 }
+#		}
+#	}
+#
+#	option = {
+#		name = argentina.rework.12.a 
+#		activate_mission = ARG_ongoing_government_investigation
+#	}
+#}
 
 #1st Corrupt Demand: Military demands increased funding 
 country_event = {
@@ -4516,63 +4516,18 @@ country_event = {
 
 	is_triggered_only = yes 
 
-	option = {
-		name = argentina.rework.49.a 
-		custom_effect_tooltip = ARG_add_25_peronist_support_tt
-		custom_effect_tooltip = ARG_protests_will_begin_in_5_random_states_tt
-		hidden_effect = {
-			add_to_variable = { ARG_peronist_support = 25 }
-			clamp_variable = {
-				var = ARG_peronist_support
-				min = 0
-				max = 200
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROOT 
-					NOT = {
-						has_dynamic_modifier = { modifier = ARG_peronist_march }
-					}
-				}
-				add_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROOT 
-					NOT = {
-						has_dynamic_modifier = { modifier = ARG_peronist_march }
-					}
-				}
-				add_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROOT 
-					NOT = {
-						has_dynamic_modifier = { modifier = ARG_peronist_march }
-					}
-				}
-				add_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROOT 
-					NOT = {
-						has_dynamic_modifier = { modifier = ARG_peronist_march }
-					}
-				}
-				add_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
-			random_owned_controlled_state = {
-				limit = { 
-					is_core_of = ROOT 
-					NOT = {
-						has_dynamic_modifier = { modifier = ARG_peronist_march }
-					}
-				}
-				add_dynamic_modifier = { modifier = ARG_peronist_march }
-			}
+	option = { ##He will remain imprisoned!
+		name = argentina.rework.49.a
+		add_stability = -0.03
+
+		custom_effect_tooltip = CHL_skip_one_line_tt
+
+		unlock_decision_tooltip = {
+			decision = ARG_exile_peron
+			show_effect_tooltip = yes
 		}
+
+		set_country_flag = ARG_can_exile_peron_flag
 	}
 }
 
@@ -6981,6 +6936,9 @@ country_event = {
 		}
 		set_rule = { can_create_factions = yes }
 		create_faction = "Anti Peru-Bolivia Pact"
+		
+		set_global_flag = EUYL_formed_peru_bolivia_pact_flag
+		
 		every_other_country = {
 			limit = {
 				has_country_flag = is_in_second_war_of_confederation

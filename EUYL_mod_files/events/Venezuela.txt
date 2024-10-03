@@ -1930,8 +1930,8 @@ country_event = {
                 limit = {
                     has_idea = strikes_2
                 }
-            }
-            VEN_worsen_strikes = yes 
+                VEN_worsen_strikes = yes
+            } 
             else = {
                 add_ideas = strikes_2
             }

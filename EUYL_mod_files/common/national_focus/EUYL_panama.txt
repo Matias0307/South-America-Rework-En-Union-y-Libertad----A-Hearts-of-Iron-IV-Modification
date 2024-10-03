@@ -1,0 +1,31 @@
+### search_filters = {FOCUS_FILTER_POLITICAL}
+### search_filters = {FOCUS_FILTER_RESEARCH}
+### search_filters = {FOCUS_FILTER_INDUSTRY}
+### search_filters = {FOCUS_FILTER_STABILITY}
+### search_filters = {FOCUS_FILTER_WAR_SUPPORT}
+### search_filters = {FOCUS_FILTER_MANPOWER}
+### search_filters = {FOCUS_FILTER_ANNEXATION}
+### search_filters = {FOCUS_FILTER_CORRUPTION}
+### search_filters = {FOCUS_FILTER_POLITICAL_TENSION}
+### search_filters = {FOCUS_FILTER_CHI_INFLATION}
+
+focus_tree = {
+	id = honduran_focus
+	
+	country = {
+		factor = 0
+		
+		#modifier = {
+		#	add = 10
+		#	tag = PAN
+		#}
+	}
+	
+	initial_show_position = {
+		x = 0
+	}
+	
+	default = no
+
+	shared_focus = CEA_the_economy
+}

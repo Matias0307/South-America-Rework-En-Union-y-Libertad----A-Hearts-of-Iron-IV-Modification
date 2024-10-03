@@ -225,6 +225,7 @@ VEN_political_crisis = {
 		OR = {
 			original_tag = VEN
 			original_tag = ECU
+			original_tag = PRU
 		}
 	}
 

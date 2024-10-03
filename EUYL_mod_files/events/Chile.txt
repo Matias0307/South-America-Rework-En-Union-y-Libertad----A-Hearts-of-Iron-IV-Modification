@@ -15,7 +15,7 @@ country_event = {
 	option = { # Ok
 		name = chile.1.a
 		ai_chance = {
-			factor = 10
+			base = 10
 		}
 		add_opinion_modifier = {
 			target = FROM
@@ -36,7 +36,7 @@ country_event = {
 	option = { # No
 		name = chile.1.b
 		ai_chance = {
-			factor = 2
+			base = 2
 		}
 		FROM = {
 			country_event = {
@@ -2115,6 +2115,89 @@ country_event = {
 		name = chile.43.b 
 		ai_chance = {
 			base = 2
+		}
+	}
+}
+
+#ROOT gets event of FROM demanding Pitcairn Island
+country_event = {
+	id = chile.430
+	title = chile.430.t
+	desc = chile.430.d
+	picture = GFX_report_event_generic_army
+
+	is_triggered_only = yes 
+
+	option = { ## Let them have it
+		name = chile.430.a 
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 2.5
+				has_war_with_major = yes 
+			}
+			modifier = {
+				factor = 5
+				surrender_progress > 0.01
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					has_army_manpower = {
+						size > 149999
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				FROM = {
+					has_navy_size = {
+						size > 39
+					}
+				}
+			}
+			modifier = {
+				factor = 3
+				has_opinion = {
+					target = FROM
+					value > 49
+				}
+			}
+		}
+		FROM = {
+			transfer_state = 270
+			country_event = {
+				id = peru.16 
+				hours = 8
+			}
+		}
+	}
+
+	option = { ## The islands shall remain British
+		name = chile.430.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 3
+				has_opinion = {
+					target = FROM 
+					value < 0
+				}
+			}
+			modifier = {
+				factor = 2
+				has_war = no 
+			}
+			modifier = {
+				factor = 0
+				has_civil_war = yes 
+			}
+		}
+		FROM = {
+			country_event = {
+				id = peru.17 
+				hours = 6
+			}
 		}
 	}
 }

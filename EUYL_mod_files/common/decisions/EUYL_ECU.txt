@@ -357,6 +357,12 @@ ECU_liberal_conservative_conflict = {
 					has_government = fascism
 				}
 			}
+			NOT = {
+				is_ai = yes 
+				any_other_country = {
+					is_ai = no # a player is controlling another country
+				}
+			}
 		}
 
 		available = {
@@ -2774,11 +2780,6 @@ ECU_the_revolution_lives_on_cat = {
 		}
 
 		available = {
-			hidden_trigger = {
-				NOT = {
-					has_country_flag = ECU_spreading_revolution_flag
-				}
-			}
 			FROM = {
 				NOT = {
 					has_war_with = ROOT
@@ -2786,8 +2787,8 @@ ECU_the_revolution_lives_on_cat = {
 			}
 		}
 
-		complete_effect = {
-			set_country_flag = ECU_spreading_revolution_flag
+		modifier = {
+			political_power_factor = -0.15
 		}
 
 		remove_effect = {
@@ -2873,7 +2874,7 @@ ECU_the_revolution_lives_on_cat = {
 		}
 
 		visible = {
-			has_completed_focus = PRU_our_unique_revolution
+			has_completed_focus = ECU_united_under_one_banner
 			is_faction_leader = yes 
 		}
 

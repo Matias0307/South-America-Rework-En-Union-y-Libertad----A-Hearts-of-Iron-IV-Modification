@@ -1,0 +1,78 @@
+shared_focus = {
+	id = CEA_the_economy
+
+	dynamic = yes
+
+	icon = {
+		trigger = {
+			original_tag = HON
+		}
+		value = GFX_CEA_honduran_economy_icon
+	}
+	icon = {
+		trigger = {
+			original_tag = ELS
+		}
+		value = GFX_CEA_salvadorian_economy_icon
+	}
+	icon = {
+		trigger = {
+			original_tag = NIC
+		}
+		value = GFX_CEA_nicaraguan_economy_icon
+	}
+	icon = {
+		trigger = {
+			original_tag = PAN
+		}
+		value = GFX_CEA_panamanian_economy
+	}
+	icon = {
+		trigger = {
+			original_tag = GUA
+		}
+		value = GFX_CEA_guatemalan_economy_icon
+	}
+	icon = {
+		trigger = {
+			original_tag = COS
+		}
+		value = GFX_CEA_costa_rican_economy_icon
+	}
+
+	icon = {
+		trigger = {
+			NOT = {
+				OR = {
+					original_tag = ELS
+					original_tag = GUA
+					original_tag = NIC
+					original_tag = HON 
+					original_tag = COS 
+					original_tag = PAN
+				}
+			}
+		}
+		value = GFX_focus_generic_industry_3
+	}
+
+	x = 8
+	y = 0
+
+	ai_will_do = {
+		factor = 5
+	}
+
+	available = {
+		has_civil_war = no 
+	}
+
+	cost = 5
+
+	completion_reward = {
+		add_timed_idea = {
+			idea = CEA_revitalize_the_ROOT_industry
+			days = 240
+		}
+	}
+}

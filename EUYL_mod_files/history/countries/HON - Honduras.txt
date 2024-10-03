@@ -7,9 +7,13 @@ set_technology = {
 }
 
 recruit_character = HON_tiburcio_carías_andino
-recruit_character = HON_lorenzo_ferrera
+recruit_character = HON_abraham_williams_calderon
+recruit_character = HON_manuel_calix_herrera
 recruit_character = HON_pedro_figueroa
-recruit_character = HON_lisandro_machado
+
+recruit_character = HON_abel_villanueva_villacorta
+recruit_character = HON_jose_leon_castro
+
 recruit_character = HON_oswaldo_lopez_arellano
 recruit_character = HON_carlos_vaupel_comeza
 recruit_character = HON_neto_britto
@@ -24,11 +28,14 @@ recruit_character = HON_juan_b_valladares
 recruit_character = HON_francisco_s_tapio_toro
 recruit_character = HON_enrique_doll_rojas
 recruit_character = HON_gustavo_schmidt
+
 recruit_character = HON_carlos_alberto_ucles
-recruit_character = HON_roberto_michelleti_bain
+recruit_character = HON_humberto_michelleti_brown
 recruit_character = HON_orlando_rodriguez_jimino
-recruit_character = HON_abraham_williams_calderon
-recruit_character = HON_hernan_fernandez_silva
+recruit_character = HON_felix_canales_salazar
+recruit_character = HON_rafael_medina_raudales
+recruit_character = HON_lucas_paredes_murillo
+recruit_character = HON_alfonso_guillen_zelaya
 
 
 set_country_flag = monroe_doctrine

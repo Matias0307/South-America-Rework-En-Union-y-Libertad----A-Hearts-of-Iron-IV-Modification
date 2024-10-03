@@ -64,6 +64,10 @@
  greater_paraguay_DEF:0 "Grande Paraguai"
  greater_paraguay_ADJ:0 "Paraguaio"
 
+ CHL_MARITIME_EMPIRE:0 "Império Marítimo do Chile"
+ CHL_MARITIME_EMPIRE_DEF:0 "o Império Marítimo do Chile"
+ CHL_MARITIME_EMPIRE_ADJ:0 "Chileno"
+
  PAR_NATIVE:0 "Paraguái Tavakuairetã"
  PAR_NATIVE_DEF:0 "a Paraguái Tavakuairetã"
  PAR_NATIVE_ADJ:0 "Paraguáire"

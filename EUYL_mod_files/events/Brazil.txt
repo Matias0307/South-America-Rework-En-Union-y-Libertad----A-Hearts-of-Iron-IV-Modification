@@ -1572,39 +1572,7 @@ country_event = {
 	desc = brazil.37.d 
 	picture = GFX_BRA_brazil_15
 
-	fire_only_once = no 
-
-	trigger = {
-		original_tag = BRA 
-		NOT = { check_variable = { BRA_playing_as_vargas = 1 } }
-		NOT = { has_completed_focus = BRA_political_cooperation_with_plinio }
-		NOT = { has_completed_focus = BRA_interfere_with_vargas_plans }
-		NOT = {
-			has_completed_focus = BRA_empower_the_patrianovistas
-		}
-		has_civil_war = no 
-		has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
-		is_power_balance_in_range = {
-			id = BRA_progress_to_dictatorship_bop
-			range < BRA_total_control
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 265
-		modifier = {
-			factor = 0.9
-			check_variable = { BRA_vargas_influence > 39 }
-		}
-		modifier = {
-			factor = 0.7
-			check_variable = { BRA_vargas_influence > 54 }
-		}
-	}
-
-	immediate = {
-		BRA_increment_progress_to_dictatorship = yes 
-	}
+	is_triggered_only = yes
 
 	option = {
 		name = brazil.37.a 
@@ -1628,6 +1596,7 @@ country_event = {
 					subtract_from_variable = { BRA_integralist_influence = 5 }
 				}
 				BRA_set_up_political_crisis = yes
+				BRA_increment_progress_to_dictatorship = yes 
 			}
 		}
 		else = {
@@ -3335,7 +3304,10 @@ country_event = {
 		}
 		every_other_country = {
 			limit = {
-				original_tag = BRA 
+				OR = {
+					original_tag = BRA
+					original_tag = SAO
+				} 
 				NOT = {
 					tag = BZE 
 				}

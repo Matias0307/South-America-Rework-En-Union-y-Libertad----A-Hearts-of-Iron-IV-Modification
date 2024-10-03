@@ -942,7 +942,7 @@ PAR_poltical_actions = {
 				15 = {
 					custom_effect_tooltip = PAR_failed_search_tt
 					add_political_power = 15
-					hidden_effect = { country_event = parauay.23 }
+					hidden_effect = { country_event = paraguay.23 }
 				}
 			}
 		}
@@ -1893,9 +1893,9 @@ PAR_epua_arma_pe = {
 	PAR_arm_up_the_natives_in_FROM = {
 		icon = generic_prepare_civil_war
 
-		cost = 40
+		cost = 25
 
-		days_remove = 40
+		days_remove = 30
 
 		modifier = { political_power_factor = -0.15 }
 
@@ -1925,6 +1925,10 @@ PAR_epua_arma_pe = {
 			}
 		}
 
+		cancel_effect = {
+			clr_country_flag = PAR_arming_up_natives_flag
+		}
+
 		complete_effect = { set_country_flag = PAR_arming_up_natives_flag }
 
 		remove_effect = {
@@ -1949,9 +1953,9 @@ PAR_epua_arma_pe = {
 	PAR_steal_national_stockpiles_from_FROM = {
 		icon = generic_industry
 
-		cost = 50
+		cost = 35
 
-		days_remove = 55
+		days_remove = 35
 
 		modifier = { political_power_factor = -0.15 }
 

@@ -6943,7 +6943,7 @@
  ARG_import_british_weaponry_desc:0 "The British have always had very advanced weaponry. We should use our good terms with the British to our advantage and request some of their armaments."
  ARG_make_an_effort_to_mobilize:0 "Begin our Mobilization"
  ARG_make_an_effort_to_mobilize_desc:0 "The world is burning up, and we need to be prepared for the worse."
- ARG_juremos_con_gloria_morir:0 "Oh Juremos con Gloria Morir"
+ ARG_juremos_con_gloria_morir:0 "O Juremos con Gloria Morir"
  ARG_juremos_con_gloria_morir_desc:0 "We Argentines have a sense of nationalism unlike any other. La Patria is sacred, ever since its conception in 1810, and we will make sure that it never dies out, ever. Argentina is populated by Argentines; doesn't matter the background nor the status, we are all one, united with one goal, to bring this country forward and keep it standing in its place, above everyone else. VIVA LA PATRIA!"
  ARG_project_huemul:0 "Project Huemul"
  ARG_project_huemul_desc:0 "The Huemul project was an early Argentine effort to develop nuclear bombs. With enough investments and time, it is sure to work and we'll be one of the first countries to harness the power of nuclear energy and bombs."
@@ -7944,7 +7944,7 @@
  VEN_the_great_south_american_revolution:0 "The Great South American Revolution"
  VEN_the_great_south_american_revolution_desc:0 "It is time we begin spreading the revolution and liberating the opressed people of Latin America!"
  VEN_ley_lara:0 "Ley Lara"
- VEN_ley_lara_desc:0 "The Lara Law or Law on Public Order was a legal instrument approved in the Venezuelan parliament Venezuelaby the government of Eleazar López Contreras in June 1936, in order to control the political demonstrations of the opposition and suppress them if necessary. We'll need to maintain a tighter grip on our opposition if we want this country to heal."
+ VEN_ley_lara_desc:0 "The Lara Law or Law on Public Order was a legal instrument approved in the Venezuelan parliament by the government of Eleazar López Contreras in June 1936, in order to control the political demonstrations of the opposition and suppress them if necessary. We'll need to maintain a tighter grip on our opposition if we want this country to heal."
  VEN_sign_the_frontline_treaty:0 "Sign the Frontline Treaty"
  VEN_sign_the_frontline_treaty_desc:0 "The López de Mesa-Gil Borges Treaty was a treaty signed in April of 1941 to properaly establish the borders between Venezuela and Colombia once and for all, and end once and for all any and all tensions between the two due to border disputes. Having good relations with Colombia will be benefitial for the both of us."
  VEN_museum_of_fine_arts_of_caracas:0 "Museum of Fine Arts of Caracas"
@@ -8803,4 +8803,21 @@
  ECU_heavy_ship_expansion_desc:0 "$BOL_focus_on_heavy_ships_desc$"
  ECU_cuerpo_de_marinas_del_ecuador:0 "Cuerpo de Marinas del Ecuador"
  ECU_cuerpo_de_marinas_del_ecuador_desc:0 "Ecuador doesn't have a truly defined marine force, most notably because it never truly needed one. However, as global tensions keep rising and the threat across the horizon on our south, we need to have the upperhand in any and every way possible."
+
+ ## CHILE MARITIME EMPIRE PATH ##
+ CHL_the_american_counterweight:0 "The American Counterweight"
+ CHL_the_american_counterweight_desc:0 "As described by a speech from [ROOT.GetLeader], our number 1 enemy is the [USA.GetName], and we need to build and develop our nation to become the counterweight of this demonic entity. Despite the odds, we shall overcome them and become the dominant power!"
+ CHL_reach_for_cochranes_thalassocracy:0 "Reach for Cochrane's Thalassocracy"
+ CHL_reach_for_cochranes_thalassocracy_desc:0 "Thomas Cochrane, 10th Earl of Dundonald, was an English sailor, renowned for his sailing expertise and qualities as a leader. He also served as one of the main sailors of the Chilean navy during her war of independence. At this time, he proposed the idea of Chile becoming a maritime empire, with her banner being the dominant power across the entire Pacific Ocean. While at that time it was inconceivable, now it can become a reality."
+ CHL_demand_pitcairn_island:0 "Demand [270.GetName]"
+ CHL_demand_pitcairn_island_desc:0 "If we want to truly develop our maritime empire, we will need to secure a foothold deep within the Pacific Ocean. While Easter Island serves as a good base, Pitcairn's more centralized position will prove vital for staging naval invasions and securing our spot in the ocean."
+ CHL_pushing_west_desc:0 "Our spread of influence can't just stop at Pitcairn Island. Like the United States with her manifest destiny, we shall manifest our own, greater destiny, crowning ourselves with a porcelain throne sitting well atop all our competition."
+ CHL_a_setting_sun_desc:0 "As the looming shadow of the Chilean Empire continues to grow, so too does the fear in the eyes of those cast under her shadow. Japan, United Kingdom, and the United States know their impending fate, and they will face it with the full force of the Chilean navy and army."
+ CHL_capture_guayaquil:0 "Capture Guayaquil"
+ CHL_capture_guayaquil_desc:0 "Guayaquil is one of the main ports of South America. Having it under our grasp will ensure future victories."
+ CHL_pushing_west:0 "Pushing West"
+ CHL_a_setting_sun:0 "A Setting Sun"
+
+ ## CENTRAL AMERICA ##
+ CEA_the_economy:0 "The [ROOT.GetAdjective] Economy"
  

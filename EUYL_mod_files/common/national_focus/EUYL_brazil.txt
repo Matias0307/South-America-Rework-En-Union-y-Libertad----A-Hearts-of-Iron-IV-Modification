@@ -218,7 +218,7 @@ focus_tree = {
 		}
 
 		search_filters = {
-			FOCUS_FILTER_BRAZILIAN_CIVIL_WAR FOCUS_FILTER_POLITICAL FOCUS_FITLER_MONARCHISM
+			FOCUS_FILTER_BRAZILIAN_CIVIL_WAR FOCUS_FILTER_POLITICAL FOCUS_FILTER_MONARCHISM
 		}
 
 		select_effect = {
@@ -236,11 +236,20 @@ focus_tree = {
 		completion_reward = {
 			custom_effect_tooltip = CHL_pathcivilwar
 			custom_effect_tooltip = BRA_limit_to_50_support_and_8_states_tt
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			unlock_decision_tooltip = {
 				decision = BRA_sway_officer_loyalty
 				show_effect_tooltip = yes
 			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			BRA_add_3_monarchist_support = yes
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			add_political_power = 50
 			add_command_power = 25
 			BRA_limit_monarchist_support = yes
@@ -900,6 +909,9 @@ focus_tree = {
 				custom_effect_tooltip = BRA_spacer_tt
 			}
 			BRA_add_15_monarchist_support = yes
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+			
 			custom_effect_tooltip = BRA_failure_to_maintain_authoritarianism_result_in_integralist_uprising_tt
 			set_global_flag = BRA_absorbed_integralists_flag
 			hidden_effect = {
@@ -9048,10 +9060,7 @@ focus_tree = {
 				tooltip = BRA_congress_influence_less_than_5_tt
 				check_variable = { BRA_congress_influence < 15 }
 			}
-			democratic < 0.2
-			has_country_flag = BRA_people_convinced
-			has_country_flag = BRA_army_convinced
-			has_country_flag = BRA_parliament_convinced
+			democratic < 0.3
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL FOCUS_FILTER_BALANCE_OF_POWER }
@@ -9322,7 +9331,7 @@ focus_tree = {
 				ideology = democratic
 				popularity = -0.05
 			}
-			custom_effect_tooltip = BRA_set_of_decisions_unlock_convice_tt
+			#custom_effect_tooltip = BRA_set_of_decisions_unlock_convice_tt
 			add_days_mission_timeout = {
 				mission = BRA_the_1938_elections
 				days = 25
@@ -14327,9 +14336,15 @@ focus_tree = {
 		}
 
 		bypass = {
-			OR = {
-				has_completed_focus = BRA_create_our_own_faction
-				has_completed_focus = BRA_join_the_axis
+			PAR = {
+				OR = {
+					has_war_with = ROOT 
+					exists = no 
+					is_subject_of = ROOT 
+					capital_scope = {
+						controls_or_subject_of = yes
+					}
+				}
 			}
 		}
 
@@ -15370,7 +15385,20 @@ focus_tree = {
 		completion_reward = {
 			add_political_power = 25
 			BRA_move_5_democracy = yes 
-			unlock_decision_tooltip = BRA_secret_conscription_in_FROM
+			#unlock_decision_tooltip = BRA_secret_conscription_in_FROM
+
+			custom_effect_tooltip = ARG_an_extra_division_will_spawn_in_every_controlled_state_tt
+
+			hidden_effect = {
+				every_controlled_state = {
+					limit = {
+						has_dynamic_modifier = {
+							modifier = BRA_subversive_communist_activity_in_state
+						}
+					}
+					set_state_flag = BRC_secret_conscription_flag
+				}
+			}
 		}
 		 
 	}
@@ -17054,12 +17082,24 @@ focus_tree = {
 			has_active_mission = BRA_impending_integralist_uprising
 		}
 
+		offset = {
+			x = -16
+			y = 0
+			trigger = {
+				has_game_rule = {
+					rule = obsolete_focus_branches_visibility
+					option = HIDE
+				}
+				has_completed_focus = BRA_empower_the_patrianovistas
+			}
+		}
+
 		ai_will_do = {
 			factor = 10
 		}
 
 		available = {
-			BRA_is_the_commune_of_brazil = yes 
+			#BRA_is_the_commune_of_brazil = yes 
 			has_global_flag = BRA_civil_war_in_progress
 		}
 
@@ -17091,7 +17131,7 @@ focus_tree = {
 		}
 
 		available = {
-			BRA_is_the_commune_of_brazil = yes 
+			#BRA_is_the_commune_of_brazil = yes 
 			has_global_flag = BRA_civil_war_in_progress 
 			has_active_mission = BRA_integralists_seeking_to_strengthen_their_uprising
 		}
@@ -17099,7 +17139,15 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_BRAZILIAN_CIVIL_WAR FOCUS_FILTER_POLITICAL }
 		completion_reward = {
 			custom_effect_tooltip = BRA_integralist_strengthen_mission_cancelled_tt
-			unlock_decision_tooltip = BRA_crush_the_integralists
+			if = {
+				limit = {
+					BRA_is_the_commune_of_brazil = yes 
+				}
+				unlock_decision_tooltip = BRA_crush_the_integralists
+			}
+			else = {
+				add_political_power = 50
+			}
 		}
 	}
 
@@ -17118,8 +17166,7 @@ focus_tree = {
 			BRA_is_the_commune_of_brazil = yes 
 			has_global_flag = BRA_civil_war_in_progress
 			has_global_flag = paulistas_revolted
-			NOT = { has_active_mission = BRA_impending_paulista_revolt }
-			controls_state = 501
+			has_full_control_of_state = 501
 		}
 
 		cost = 5

@@ -335,7 +335,7 @@ CHL_internal_political_split = {
 				subtract_from_temp_variable = { CHL_temp_power = CHL_power_subtraction }
 				set_variable = { CHL_control_over_nation = CHL_temp_power }
 				random_list = {
-					75 = {
+					90 = {
 
 					}
 					25 = {
@@ -417,7 +417,7 @@ CHL_internal_political_split = {
 				subtract_from_temp_variable = { CHL_temp_power = CHL_power_subtraction }
 				set_variable = { CHL_control_over_nation = CHL_temp_power }
 				random_list = {
-					75 = {
+					90 = {
 
 					}
 					25 = {
@@ -1752,7 +1752,14 @@ CHL_the_1938_chilean_elections = {
 		}
 
 		cancel_trigger = {
-			is_subject = yes 
+			OR = {
+				has_civil_war = yes 
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = CHL_political_instability
+					}
+				}
+			}
 		}
 
 		timeout_effect = {
@@ -5943,6 +5950,372 @@ CHL_purchasing_foreign_planes = {
 					amount = 50
 					producer = FROM
 				}
+			}
+		}
+	}
+}
+
+CHL_the_dream_of_lord_cochrane = {
+	CHL_naval_buildup_in_FROM = {
+		icon = generic_merge_plant_ship
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 948
+					state = 270
+					state = 303
+					state = 1037
+					state = 629
+				}
+			}
+		}
+
+		state_target = yes 
+
+		targets = { 270 948 303 1037 629 }
+
+		fire_only_once = yes 
+
+		cost = 25
+
+		visible = {
+			FROM = {
+				OR = {
+					is_controlled_by = ROOT 
+					OWNER = {
+						OR = {
+							has_war_with = ROOT 
+							is_subject_of = ROOT
+						}
+					}
+				}
+			}
+		}
+
+		available = {
+			has_full_control_of_state = FROM
+		}
+
+		complete_effect = {
+			FROM = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				add_building_construction = {
+					type = naval_base 
+					level = 1
+					instant_build = yes 
+				}
+			}
+		}
+	}
+
+	CHL_integrate_lima = {
+		icon = generic_nationalism
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 303
+			}
+		}
+
+		cost = 25
+
+		available = {
+			303 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		fire_only_once = yes 
+
+		complete_effect = {
+			303 = { add_core_of = ROOT }
+			
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_stability = 0.02
+			add_war_support = 0.03
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = CHL_integrating_both_guayaquil_and_lima_unlock_integrate_andes_tt
+		}
+	}
+
+	CHL_integrate_guayaquil = {
+		icon = generic_nationalism
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 1037
+			}
+		}
+
+		cost = 25
+
+		available = {
+			1037 = {
+				is_fully_controlled_by = ROOT
+			}
+		}
+
+		fire_only_once = yes 
+
+		complete_effect = {
+			1037 = { add_core_of = ROOT }
+			
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_stability = 0.02
+			add_war_support = 0.03
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = CHL_integrating_both_guayaquil_and_lima_unlock_integrate_andes_tt
+		}
+	}
+
+	CHL_integrate_coastal_andean_territories = {
+		icon = generic_nationalism 
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 492
+					state = 303 
+					state = 947 
+					state = 1000
+					state = 1005
+					state = 1037
+					state = 972
+					state = 305
+				}
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			303 = { is_core_of = ROOT }
+			1037 = { is_core_of = ROOT }
+		}
+
+		cost = 75
+
+		available = {
+			492 = { is_fully_controlled_by = ROOT }
+			303 = { is_fully_controlled_by = ROOT }
+			947 = { is_fully_controlled_by = ROOT }
+			1000 = { is_fully_controlled_by = ROOT }
+			1005 = { is_fully_controlled_by = ROOT }
+			972 = { is_fully_controlled_by = ROOT }
+		}
+
+		complete_effect = {
+			492 = { add_core_of = ROOT }
+			303 = { add_core_of = ROOT }
+			947 = { add_core_of = ROOT }
+			1000 = { add_core_of = ROOT }
+			1005 = { add_core_of = ROOT }
+			972 = { add_core_of = ROOT }
+		}
+	}
+
+	CHL_integrate_new_zealand = {
+		icon = generic_nationalism 
+
+		target_trigger = {
+			FROM = {
+				original_tag = NZL
+			}
+		}
+
+		highlight_states = {
+			highlight_states_trigger = {
+				is_core_of = NZL
+			}
+		}
+
+		fire_only_once = yes
+
+		visible = {
+			has_completed_focus = CHL_pushing_west
+		}
+
+		cost = 40
+
+		available = {
+			284 = { is_fully_controlled_by = ROOT }
+			723 = { is_fully_controlled_by = ROOT }
+		}
+
+		complete_effect = {
+			284 = { add_core_of = ROOT }
+			723 = { add_core_of = ROOT }
+		}
+	}
+
+	CHL_integrate_hawaii = {
+		icon = generic_nationalism
+
+		highlight_states = {
+			highlight_states_trigger = {
+				state = 629
+			}
+		}
+
+		visible = {
+			has_completed_focus = CHL_pushing_west
+		}
+
+		fire_only_once = yes
+
+		cost = 40
+
+		available = {
+			629 = { is_fully_controlled_by = ROOT }
+		}
+
+		complete_effect = {
+			every_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT 
+					}
+					is_core_of = HAW
+				}
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	CHL_integrate_the_pacific_islands = {
+		icon = generic_nationalism 
+
+		highlight_states = {
+			highlight_states_trigger = {
+				OR = {
+					state = 641
+					state = 726
+					state = 636
+					state = 734
+					state = 635
+					state = 639
+					state = 633
+					state = 632
+					state = 648
+					state = 645
+					state = 646
+					state = 638
+					state = 643
+					state = 684
+					state = 634
+					state = 737
+					state = 647
+					state = 524
+					state = 526
+				}
+			}
+		}
+
+		visible = {
+			has_completed_focus = CHL_a_setting_sun
+		}
+
+		fire_only_once = yes
+
+		cost = 75
+
+		available = {
+			641 = { is_fully_controlled_by = ROOT }
+			726 = { is_fully_controlled_by = ROOT }
+			636 = { is_fully_controlled_by = ROOT }
+			734 = { is_fully_controlled_by = ROOT }
+			635 = { is_fully_controlled_by = ROOT }
+			639 = { is_fully_controlled_by = ROOT }
+			633 = { is_fully_controlled_by = ROOT }
+			632 = { is_fully_controlled_by = ROOT }
+			648 = { is_fully_controlled_by = ROOT }
+			645 = { is_fully_controlled_by = ROOT }
+			646 = { is_fully_controlled_by = ROOT }
+			638 = { is_fully_controlled_by = ROOT }
+			643 = { is_fully_controlled_by = ROOT }
+			684 = { is_fully_controlled_by = ROOT }
+			634 = { is_fully_controlled_by = ROOT }
+			737 = { is_fully_controlled_by = ROOT }
+			647 = { is_fully_controlled_by = ROOT }
+			524 = { is_fully_controlled_by = ROOT }
+			526 = { is_fully_controlled_by = ROOT }
+		}
+
+		complete_effect = {
+			641 = { add_core_of = ROOT }
+			726 = { add_core_of = ROOT }
+			636 = { add_core_of = ROOT }
+			734 = { add_core_of = ROOT }
+			635 = { add_core_of = ROOT }
+			639 = { add_core_of = ROOT }
+			633 = { add_core_of = ROOT }
+			632 = { add_core_of = ROOT }
+			648 = { add_core_of = ROOT }
+			645 = { add_core_of = ROOT }
+			646 = { add_core_of = ROOT }
+			638 = { add_core_of = ROOT }
+			643 = { add_core_of = ROOT }
+			684 = { add_core_of = ROOT }
+			634 = { add_core_of = ROOT }
+			737 = { add_core_of = ROOT }
+			647 = { add_core_of = ROOT }
+			524 = { add_core_of = ROOT }
+			526 = { add_core_of = ROOT }
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			if = {
+				limit = {
+					536 = { is_fully_controlled_by = ROOT }
+				}
+				536 = { add_core_of = ROOT }
+			}
+
+			if = {
+				limit = {
+					650 = { is_fully_controlled_by = ROOT }
+				}
+				650 = { add_core_of = ROOT }
+			}
+
+			if = {
+				limit = {
+					537 = { is_fully_controlled_by = ROOT }
+				}
+				537 = { add_core_of = ROOT }
+			}
+
+			if = {
+				limit = {
+					555 = { is_fully_controlled_by = ROOT }
+				}
+				555 = { add_core_of = ROOT }
+			}
+
+			if = {
+				limit = {
+					637 = { is_fully_controlled_by = ROOT }
+				}
+				637 = { add_core_of = ROOT }
+			}
+
+			if = {
+				limit = {
+					655 = { is_fully_controlled_by = ROOT }
+				}
+				655 = { add_core_of = ROOT }
 			}
 		}
 	}

@@ -13,13 +13,13 @@ focus_tree = {
 	country = {
 		factor = 0
 		
-		modifier = {
-			add = 1
-            OR = {
-			    original_tag = BOL
-                original_tag = PRU 
-            }
-		}
+		#modifier = {
+		#	add = 1
+        #    OR = {
+		#	    original_tag = BOL
+        #        original_tag = PRU 
+        #    }
+		#}
 	}
 	
 	initial_show_position = {

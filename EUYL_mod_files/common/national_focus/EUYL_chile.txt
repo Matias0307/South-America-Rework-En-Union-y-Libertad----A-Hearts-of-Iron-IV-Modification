@@ -1876,7 +1876,7 @@ focus_tree = {
 				is_historical_focus_on = yes 
 			}
 			modifier = {
-				factor = 100
+				factor = 200
 				has_game_rule = {
 					rule = EUYL_chaos_mode
 					option = YES
@@ -2169,7 +2169,7 @@ focus_tree = {
 
 		available = {
 			has_active_mission = CHL_possible_coup_attempt
-			has_country_flag = CHL_election_preperations
+			#has_country_flag = CHL_election_preperations
 			has_civil_war = no 
 		}
 
@@ -4622,6 +4622,10 @@ focus_tree = {
 			custom_effect_tooltip = CHL_nacista_friendly_tt
 			custom_effect_tooltip = CHL_communists_hostile_tt
 			custom_effect_tooltip = CHL_government_hostile_tt
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+
 			custom_effect_tooltip = CHL_increase_nacista_by_2_good
 			remove_ideas = democratic_influence
 			hidden_effect = {
@@ -5330,6 +5334,13 @@ focus_tree = {
 		cost = 5
 		ai_will_do = {
 			factor = 5
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
+			}
 		}
 
 		available = {
@@ -5777,8 +5788,21 @@ focus_tree = {
 			add_stability = 0.1
 			add_war_support = 0.05
 			add_political_power = 35
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_research_slot = 1
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			unlock_decision_category_tooltip = CHL_nacista_management
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			custom_effect_tooltip = CHL_people_will_get_mad_tt
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			953 = { add_claim_by = ROOT }
 			954 = { add_claim_by = ROOT }
 			955 = { add_claim_by = ROOT }
@@ -5835,11 +5859,16 @@ focus_tree = {
 	focus = {
 		id = CHL_world_oyster
 		# The World is our Oyster
-		prerequisite = { focus = CHL_build_up_the_military }
-		prerequisite = { focus = CHL_begin_mass_mobilization}
-		mutually_exclusive = { focus = CHL_strenghthen_our_ties_with_peru }
+		prerequisite = { 
+			focus = CHL_build_up_the_military 
+			focus = CHL_begin_mass_mobilization
+		}
+		mutually_exclusive = { 
+			focus = CHL_strenghthen_our_ties_with_peru 
+			focus = CHL_the_american_counterweight
+		}
 		icon = GFX_focus_r56_goal_GER_european_reich
-		x = -2
+		x = 3
 		y = 1
 		
 		available = {
@@ -5852,6 +5881,126 @@ focus_tree = {
 		relative_position_id = CHL_build_up_the_military
 		cost = 10	
 		search_filters = {FOCUS_FILTER_POLITICAL}		
+	}
+
+	## The American Couterweight || New Fascist Path
+	focus = {
+		id = CHL_the_american_counterweight
+		icon = GFX_CHL_american_counterweight_icon
+		x = -2
+		y = 1
+		relative_position_id = CHL_build_up_the_military
+		prerequisite = {
+			focus = CHL_build_up_the_military
+			focus = CHL_begin_mass_mobilization
+		}
+		mutually_exclusive = {
+			focus = CHL_world_oyster
+			focus = CHL_strenghthen_our_ties_with_peru
+		}
+
+		cost = 10
+
+		search_filters = {
+			FOCUS_FILTER_NAVY_XP FOCUS_FILTER_INDUSTRY FOCUS_FILTER_RESEARCH
+		}
+
+		completion_reward = {
+			navy_experience = 50
+			EUYL_add_2_dockyard = yes
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = CHL_any_focus_that_gives_dockyards_will_be_improved_tt
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_tech_bonus = {
+				name = CHL_the_american_counterweight
+				bonus = 1.0
+				uses = 2
+				category = cl_tech	
+				category = ca_tech	
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_ideas = CHL_the_american_counterweight_idea_1
+		}
+	}
+
+	## Reach for Cochrane's Thalassocracy
+	focus = {
+		id = CHL_reach_for_cochranes_thalassocracy
+		icon = GFX_CHL_cochranes_empire
+		x = 0
+		y = 1
+		relative_position_id = CHL_the_american_counterweight
+		prerequisite = {
+			focus = CHL_the_american_counterweight
+		}
+
+		cost = 5
+
+		available = {
+			has_navy_size = {
+				size > 24
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION FOCUS_FILTER_STABILITY FOCUS_FILTER_WAR_SUPPORT
+		}
+
+		completion_reward = {
+			hidden_effect = {
+				drop_cosmetic_tag = yes
+			}
+
+			add_stability = 0.05
+			add_war_support = 0.05
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			set_cosmetic_tag = CHL_MARITIME_EMPIRE
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			unlock_decision_category_tooltip = CHL_the_dream_of_lord_cochrane
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			every_state = {
+				limit = {
+					NOT = {
+						is_core_of = ROOT 
+						is_claimed_by = ROOT 
+						is_fully_controlled_by = ROOT 
+					}
+					OR = {
+						state = 492
+						state = 303 
+						state = 947 
+						state = 1000
+						state = 1005
+						state = 1037
+						state = 972
+						state = 305
+						state = 1037
+						state = 303
+						state = 270
+					}
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			if = {
+				limit = { has_dynamic_modifier = { modifier = CHL_political_instability } }
+				remove_dynamic_modifier = { modifier = CHL_political_instability }
+			}
+		}
 	}
 	
 	focus = {
@@ -5877,11 +6026,14 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_WAR_SUPPORT FOCUS_FILTER_RESEARCH }
 		completion_reward = {
 			add_war_support = 0.15
-			add_research_slot = 1
+			
 			if = {
 				limit = { has_dynamic_modifier = { modifier = CHL_political_instability } }
 				remove_dynamic_modifier = { modifier = CHL_political_instability }
 			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
 			custom_effect_tooltip = ARG_unlock_integrate_territory
 			if = {
 				limit = {
@@ -6035,10 +6187,13 @@ focus_tree = {
 	focus = {
 		id = CHL_prepare_for_one_final_invasion
 		icon = GFX_goal_generic_amphibious_assault 
-		x = 0
+		x = -3
 		y = 5
 		relative_position_id = CHL_attack_from_both_sides
-		prerequisite = { focus = CHL_tackle_the_giant }
+		prerequisite = {
+			focus = CHL_push_past_the_darien_gap_euyl
+			focus = CHL_tackle_the_giant
+		}
 		
 		cost = 10
 		
@@ -6050,22 +6205,56 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 30
 			EUYL_add_2_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 
 	focus = {
 		id = CHL_prepare_the_navy
 		icon = GFX_goal_generic_navy_battleship
-		x = -2
+		x = -3
 		y = 1
 		relative_position_id = CHL_fuego_demand
-		prerequisite = { focus = CHL_fuego_demand }
+		prerequisite = { 
+			focus = CHL_fuego_demand 
+			focus = CHL_reach_for_cochranes_thalassocracy
+		}
 
-		cost = 6
+		cost = 5
 
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			EUYL_add_1_dockyard = yes 
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			add_doctrine_cost_reduction = {
+				name = naval_doc_bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+
+			if = {
+				limit = {
+					has_idea = CHL_the_american_counterweight_idea_1
+				}
+				custom_effect_tooltip = CHL_skip_one_line_tt
+				swap_ideas = {
+					remove_idea = CHL_the_american_counterweight_idea_1
+					add_idea = CHL_the_american_counterweight_idea_2
+				}
+
+				custom_effect_tooltip = CHL_skip_one_line_tt
+
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 
@@ -6341,7 +6530,7 @@ focus_tree = {
 	focus = {
 		id = CHL_alliance_with_the_argentines
 		icon = GFX_focus_ARG_inv 
-		x = 5
+		x = 10
 		y = 3
 		relative_position_id = CHL_build_up_the_military
 		prerequisite = { focus = CHL_take_out_the_bolvians }
@@ -6458,15 +6647,16 @@ focus_tree = {
 	focus = {
 		id = CHL_calm_the_people 
 		icon = GFX_ARG_help_the_poor
-		x = -1
+		x = -2
 		y = 1
-		relative_position_id = CHL_joint_military_build_up
+		relative_position_id = CHL_world_oyster
 		prerequisite = {
-			focus = CHL_joint_military_build_up
-			focus = CHL_attack_from_both_sides
+			focus = CHL_world_oyster
+			focus = CHL_the_american_counterweight
+			focus = CHL_strenghthen_our_ties_with_peru
 		}
 
-		cost = 10
+		cost = 5
 
 		available = {
 			OR = {
@@ -6493,8 +6683,6 @@ focus_tree = {
 		y = 3
 		relative_position_id = CHL_fuego_demand
 		prerequisite = { focus = CHL_fuego_demand }
-		prerequisite = { focus = CHL_stab_peru_in_the_back }
-		prerequisite = { focus = CHL_make_use_of_bolivias_tungsten}
 		will_lead_to_war_with = ARG
 		
 		cost = 10
@@ -6574,12 +6762,17 @@ focus_tree = {
 	focus = {
 		id = CHL_strenghthen_our_ties_with_peru #create a a faction with peru
 		icon = GFX_ARG_invite_peru
-		x = 2
+		x = 7
 		y = 1
 		relative_position_id = CHL_begin_mass_mobilization
-		prerequisite = { focus = CHL_begin_mass_mobilization }
-		prerequisite = { focus = CHL_build_up_the_military }
-		mutually_exclusive = { focus = CHL_world_oyster}
+		prerequisite = { 
+			focus = CHL_build_up_the_military 
+			focus = CHL_begin_mass_mobilization
+		}
+		mutually_exclusive = { 
+			focus = CHL_world_oyster 
+			focus = CHL_the_american_counterweight
+		}
 		
 		cost = 10
 		
@@ -6722,7 +6915,7 @@ focus_tree = {
 	focus = {
 		id = CHL_invite_the_venezuelans
 		icon = GFX_ARG_invite_venezuela
-		x = -1
+		x = -2
 		y = 2
 		relative_position_id = CHL_strenghthen_our_ties_with_peru
 		prerequisite = { focus = CHL_take_out_the_bolvians }
@@ -6758,7 +6951,7 @@ focus_tree = {
 	focus = {
 		id = CHL_stab_peru_in_the_back #go after peru 
 		icon = GFX_focus_PRU_attack
-		x = 0
+		x = 1
 		y = 1
 		relative_position_id = CHL_prepare_the_navy
 		prerequisite = { focus = CHL_prepare_the_navy }
@@ -6821,14 +7014,255 @@ focus_tree = {
 			}
 		}
 	}
+
+	## Capture Guayaquil
+	focus = {
+		id = CHL_capture_guayaquil
+		icon = GFX_focus_northernlands
+		x = -1
+		y = 1
+		relative_position_id = CHL_prepare_the_navy
+		prerequisite = {
+			focus = CHL_prepare_the_navy
+		}
+
+		cost = 6
+
+		available = {
+			NOT = {
+				is_in_faction_with = ECU
+			}
+		}
+
+		bypass = {
+			has_completed_focus = CHL_prepare_the_navy
+			ECU = {
+				OR = {
+					has_war_with = ROOT 
+					is_subject_of = ROOT 
+					capital_scope = {
+						is_fully_controlled_by = ROOT
+					}
+				}
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+
+		completion_reward = {
+			EUYL_wargoal_against_ECU = yes
+		}
+	}
+
+	### Demand Pitcairn Island
+	focus = {
+		id = CHL_demand_pitcairn_island
+		icon = GFX_focus_generic_little_entente
+		x = -1
+		y = 1
+		relative_position_id = CHL_reach_for_cochranes_thalassocracy
+		prerequisite = {
+			focus = CHL_reach_for_cochranes_thalassocracy
+		}
+
+		cost = 7.2
+
+		available = {
+			has_navy_size = {
+				size > 34
+			}
+			has_army_manpower = {
+				size > 99999
+			}
+		}
+
+		bypass = {
+			controls_state = 270
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+
+		completion_reward = {
+			270 = { add_core_of = ROOT }
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			random_other_country = {
+				limit = {
+					has_full_control_of_state = 270
+				}
+				country_event = {
+					id = chile.430 
+					hours = 4
+				}
+			}
+
+			custom_effect_tooltip = ARG_iftheyaccept
+			effect_tooltip = {
+				transfer_state = 270
+			}
+		}
+	}
+
+	## Pushing West ##
+	focus = {
+		id = CHL_pushing_west
+		icon = GFX_ARG_attack_new_zealand
+		x = 0
+		y = 1
+		relative_position_id = CHL_demand_pitcairn_island
+		prerequisite = {
+			focus = CHL_demand_pitcairn_island
+		}
+
+		available = {
+			has_full_control_of_state = 270
+			has_navy_size = {
+				size > 49
+			}
+		}
+
+		cost = 7.2
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION
+		}
+
+		completion_reward = {
+			custom_effect_tooltip = URG_gain_wargoals_on_every_neighbor_tt
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = AST 
+						original_tag = NZL
+						original_tag = PHI
+					}
+					NOT = {
+						OR = {
+							has_war_with = ROOT 
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				hidden_effect = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV 
+							type = annex_everything
+						}
+					}
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			unlock_decision_tooltip = CHL_integrate_new_zealand
+			unlock_decision_tooltip = CHL_integrate_hawaii
+		}
+	}
+
+	### A Setting Sun ###
+	focus = {
+		id = CHL_a_setting_sun
+		icon = GFX_CHL_a_setting_sun_icon
+		x = 1
+		y = 1
+		relative_position_id = CHL_pushing_west
+		prerequisite = {
+			focus = CHL_pushing_west
+		}
+		prerequisite = {
+			focus = CHL_capture_guayaquil
+		}
+		prerequisite = {
+			focus = CHL_stab_peru_in_the_back
+		}
+
+		cost = 10
+
+		available = {
+			has_army_manpower = {
+				size > 349999
+			}
+			has_navy_size = {
+				size > 74
+			}
+			OR = {
+				284 = { is_fully_controlled_by = ROOT }
+				723 = { is_fully_controlled_by = ROOT }
+				629 = { is_fully_controlled_by = ROOT }
+			}
+		}
+
+		search_filters = {
+			FOCUS_FILTER_ANNEXATION FOCUS_FILTER_INDUSTRY
+		}
+
+		completion_reward = {
+			EUYL_add_2_dockyard = yes 
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = ARG_gain_claim_on_every_coastal_asian_state_tt
+			every_state = {
+				limit = {
+					NOT = { is_controlled_by = ROOT }
+					NOT = { is_claimed_by = ROOT }
+					is_on_continent = asia 
+					is_coastal = yes 
+				}
+				add_claim_by = ROOT
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			custom_effect_tooltip = URG_gain_wargoals_on_every_neighbor_tt
+			every_other_country = {
+				limit = {
+					OR = {
+						original_tag = USA 
+						original_tag = ENG
+						original_tag = JAP
+					}
+					NOT = {
+						OR = {
+							has_war_with = ROOT 
+							is_in_faction_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				hidden_effect = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV 
+							type = annex_everything
+						}
+					}
+				}
+			}
+
+			custom_effect_tooltip = CHL_skip_one_line_tt
+
+			unlock_decision_tooltip = CHL_integrate_the_pacific_islands
+		}
+	}
 	
 	focus = {
 		id = CHL_secure_the_oil_fields
 		icon = GFX_ARG_attack_venezuela
-		x = 0
+		x = -3
 		y = 1
 		relative_position_id = CHL_ARG_ultimatum
-		prerequisite = { focus = CHL_ARG_ultimatum }
+		prerequisite = { 
+			focus = CHL_ARG_ultimatum 
+			focus = CHL_a_setting_sun
+		}
 		will_lead_to_war_with = VEN
 		
 		cost = 10
@@ -7109,10 +7543,13 @@ focus_tree = {
 	focus = {
 		id = CHL_prepare_the_army
 		icon = GFX_focus_generic_manpower
-		x = 0
+		x = -3
 		y = 1
 		relative_position_id = CHL_tackle_the_giant
-		prerequisite = { focus = CHL_tackle_the_giant }
+		prerequisite = {
+			focus = CHL_push_past_the_darien_gap_euyl
+			focus = CHL_tackle_the_giant
+		}
 
 		cost = 10
 
@@ -7176,11 +7613,13 @@ focus_tree = {
 	focus = {
 		id = CHL_conquer_central_america
 		icon = GFX_ARG_conquer_america_central
-		x = -2
+		x = -5
 		y = 1
 		relative_position_id = CHL_tackle_the_giant
-		prerequisite = { focus = CHL_tackle_the_giant }
-		prerequisite = { focus = CHL_push_past_the_darien_gap_euyl }
+		prerequisite = {
+			focus = CHL_push_past_the_darien_gap_euyl
+			focus = CHL_tackle_the_giant
+		}
 		will_lead_to_war_with = HON 
 		will_lead_to_war_with = NIC 
 		will_lead_to_war_with = GUA
@@ -7316,13 +7755,6 @@ focus_tree = {
 
 		ai_will_do = {
 			base = 250
-			modifier = {
-				factor = 0
-				has_game_rule = {
-					rule = EUYL_chaos_mode
-					option = YES
-				}
-			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL FOCUS_FILTER_HISTORICAL }
@@ -8008,6 +8440,13 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 75
 			EUYL_add_2_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 
@@ -8547,6 +8986,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			EUYL_add_1_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 	
@@ -10115,6 +10561,13 @@ focus_tree = {
 				factor = 0
 				is_historical_focus_on = yes 
 			}
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
+			}
 		}
 
 		search_filters = { FOCUS_FILTER_POLITICAL }
@@ -10557,7 +11010,7 @@ focus_tree = {
 				has_government = democratic
 				has_government = communism
 			}
-			has_country_flag = CHL_election_preperations
+			#has_country_flag = CHL_election_preperations
 			has_civil_war = no 
 		}
 
@@ -10912,6 +11365,13 @@ focus_tree = {
 		completion_reward = {
 			unlock_decision_category_tooltip = CHL_purchasing_british_ships
 			EUYL_add_1_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 
@@ -11167,7 +11627,7 @@ focus_tree = {
 	focus = {
 		id = CHL_invite_the_ecuadorians
 		icon = GFX_ARG_invite_ecuador
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = CHL_our_path
 		prerequisite = { focus = CHL_our_path }
@@ -11220,10 +11680,10 @@ focus_tree = {
 	focus = {
 		id = CHL_look_for_allies_in_the_south
 		icon = GFX_goal_generic_national_unity
-		x = 0
+		x = -1
 		y = 1
 		relative_position_id = CHL_invite_the_ecuadorians
-		prerequisite = { focus = CHL_invite_the_ecuadorians }
+		prerequisite = { focus = CHL_our_path }
 
 		cost = 6
 
@@ -12229,7 +12689,7 @@ focus_tree = {
 	focus = {
 		id = CHL_integrate_the_patagonia
 		icon = GFX_focus_generic_support_the_left_right
-		x = 2
+		x = 3
 		y = 1
 		relative_position_id = CHL_the_march_to_buenos_aires
 		prerequisite = { 
@@ -12657,6 +13117,13 @@ focus_tree = {
 		completion_reward = {
 			navy_experience = 25
 			EUYL_add_2_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 	
@@ -12769,6 +13236,13 @@ focus_tree = {
 		search_filters = { FOCUS_FILTER_INDUSTRY }
 		completion_reward = {
 			EUYL_add_2_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 	
@@ -12956,6 +13430,13 @@ focus_tree = {
 		completion_reward = {
 			EUYL_add_2_dockyard = yes 
 			EUYL_add_1_dockyard = yes 
+
+			if = {
+				limit = {
+					has_completed_focus = CHL_the_american_counterweight
+				}
+				EUYL_add_1_dockyard = yes
+			}
 		}
 	}
 

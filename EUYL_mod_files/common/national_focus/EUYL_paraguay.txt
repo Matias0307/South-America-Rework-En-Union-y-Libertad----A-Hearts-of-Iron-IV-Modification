@@ -1981,9 +1981,9 @@ focus_tree = {
 			has_global_flag = PAR_chose_native_path_flag
 		}
 
-		cost = 2.2
+		cost = 2
 
-		ai_will_do = { factor = 10 }
+		ai_will_do = { factor = 20 }
 
 		available = { has_active_mission = PAR_impending_native_uprising }
 
@@ -2011,7 +2011,7 @@ focus_tree = {
 		relative_position_id = PAR_rally_the_native_people
 		prerequisite = { focus = PAR_rally_the_native_people }
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = { factor = 10 }
 
@@ -2037,7 +2037,7 @@ focus_tree = {
 			focus = PAR_seize_national_stockpiles
 		}
 
-		cost = 10
+		cost = 7.2
 
 		ai_will_do = { factor = 10 }
 
@@ -2070,7 +2070,7 @@ focus_tree = {
 		relative_position_id = PAR_rally_the_native_people
 		prerequisite = { focus = PAR_rally_the_native_people }
 
-		cost = 5
+		cost = 2.9
 
 		ai_will_do = { factor = 10 }
 
@@ -2099,7 +2099,7 @@ focus_tree = {
 			focus = PAR_take_up_arms
 		}
 
-		cost = 8
+		cost = 7.2
 
 		ai_will_do = { factor = 10 }
 
@@ -3042,7 +3042,16 @@ focus_tree = {
 			}
 		}
 
-		ai_will_do = { factor = 50 }
+		ai_will_do = { 
+			factor = 50 
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
+			}
+		}
 
 		cost = 2
 

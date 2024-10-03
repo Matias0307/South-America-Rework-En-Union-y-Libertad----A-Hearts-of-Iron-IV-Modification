@@ -543,15 +543,7 @@ BRA_BoP_decision_category = {
         }
 
         activation = {
-            OR = {
-                has_active_mission = BRA_the_1938_elections
-                power_balance_value = {
-                    id = BRA_progress_to_dictatorship_bop
-                    value < 0.9
-                }
-            }
-            exists = yes 
-            NOT = { has_country_flag = BRA_vargas_is_dead } #will be a chance event in the civil war route
+           always = no
         }
 
         cancel_trigger = {
@@ -560,6 +552,10 @@ BRA_BoP_decision_category = {
                     has_civil_war = yes 
                     exists = no
                 }
+                NOT = {
+                    has_active_mission = BRA_the_1938_elections ## shouldnt trigger if there no election :P
+                }
+                has_any_power_balance = no
                 NOT = { has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis } }
                 has_country_flag = BRA_congress_drafted_reforms
             }
@@ -727,140 +723,140 @@ BRA_political_manegement = {
         }
     }
 
-    BRA_convince_the_parliament_about_the_cohen_plan = {
-        icon = generic_political_discourse
-
-        visible = {
-            has_completed_focus = BRA_enact_the_cohen_plan
-            has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
-            has_civil_war = no
-        }
-
-        available = {
-            custom_trigger_tooltip = {
-                tooltip = BRA_not_currently_convincing_tt
-                NOT = { has_country_flag = BRA_convincing_cohen }
-            }
-        }
-
-        cost = 15
-
-        days_remove = 25
-
-        ai_will_do = {
-			factor = 235
-		}
-
-        fire_only_once = yes 
-
-        complete_effect = {
-            set_country_flag = BRA_convincing_cohen
-        }
-
-        remove_effect = {
-            clr_country_flag = BRA_convincing_cohen
-            custom_effect_tooltip = BRA_parliament_will_be_convinced_tt
-            set_country_flag = BRA_parliament_convinced
-            if = {
-                limit = {
-                    has_country_flag = BRA_people_convinced
-                    has_country_flag = BRA_parliament_convinced
-                    has_country_flag = BRA_army_convinced
-                }
-                country_event = brazil.80
-            }
-        }
-    }
-
-    BRA_convince_the_people_about_the_cohen_plan = {
-        icon = GFX_EUYL_attract_refugees
-
-        visible = {
-            has_completed_focus = BRA_enact_the_cohen_plan
-            has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
-            has_civil_war = no
-        }
-
-        available = {
-            custom_trigger_tooltip = {
-                tooltip = BRA_not_currently_convincing_tt
-                NOT = { has_country_flag = BRA_convincing_cohen }
-            }
-        }
-
-        cost = 15
-
-        days_remove = 25
-
-        ai_will_do = {
-			factor = 235
-		}
-
-        fire_only_once = yes 
-
-        complete_effect = {
-            set_country_flag = BRA_convincing_cohen         
-        }
-
-        remove_effect = {
-            clr_country_flag = BRA_convincing_cohen
-            custom_effect_tooltip = BRA_people_will_be_convinced_tt
-            set_country_flag = BRA_people_convinced
-            if = {
-                limit = {
-                    has_country_flag = BRA_people_convinced
-                    has_country_flag = BRA_parliament_convinced
-                    has_country_flag = BRA_army_convinced
-                }
-                country_event = brazil.80
-            }
-        }
-    }
-
-    BRA_convince_the_army_about_the_cohen_plan = {
-        icon = generic_military
-
-        visible = {
-            has_completed_focus = BRA_enact_the_cohen_plan
-            has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
-            has_civil_war = no
-        }
-
-        available = {
-            custom_trigger_tooltip = {
-                tooltip = BRA_not_currently_convincing_tt
-                NOT = { has_country_flag = BRA_convincing_cohen }
-            }
-        }
-
-        cost = 15
-
-        days_remove = 25
-
-        ai_will_do = {
-			factor = 235
-		}
-
-        fire_only_once = yes 
-
-        complete_effect = {
-            set_country_flag = BRA_convincing_cohen         
-        }
-
-        remove_effect = {
-            clr_country_flag = BRA_convincing_cohen
-            custom_effect_tooltip = BRA_army_will_be_convinced_tt
-            set_country_flag = BRA_army_convinced
-            if = {
-                limit = {
-                    has_country_flag = BRA_people_convinced
-                    has_country_flag = BRA_parliament_convinced
-                    has_country_flag = BRA_army_convinced
-                }
-                country_event = brazil.80
-            }
-        }
-    }
+    #BRA_convince_the_parliament_about_the_cohen_plan = {
+    #    icon = generic_political_discourse
+#
+    #    visible = {
+    #        has_completed_focus = BRA_enact_the_cohen_plan
+    #        has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
+    #        has_civil_war = no
+    #    }
+#
+    #    available = {
+    #        custom_trigger_tooltip = {
+    #            tooltip = BRA_not_currently_convincing_tt
+    #            NOT = { has_country_flag = BRA_convincing_cohen }
+    #        }
+    #    }
+#
+    #    cost = 15
+#
+    #    days_remove = 25
+#
+    #    ai_will_do = {
+	#		factor = 235
+	#	}
+#
+    #    fire_only_once = yes 
+#
+    #    complete_effect = {
+    #        set_country_flag = BRA_convincing_cohen
+    #    }
+#
+    #    remove_effect = {
+    #        clr_country_flag = BRA_convincing_cohen
+    #        custom_effect_tooltip = BRA_parliament_will_be_convinced_tt
+    #        set_country_flag = BRA_parliament_convinced
+    #        if = {
+    #            limit = {
+    #                has_country_flag = BRA_people_convinced
+    #                has_country_flag = BRA_parliament_convinced
+    #                has_country_flag = BRA_army_convinced
+    #            }
+    #            country_event = brazil.80
+    #        }
+    #    }
+    #}
+#
+    #BRA_convince_the_people_about_the_cohen_plan = {
+    #    icon = GFX_EUYL_attract_refugees
+#
+    #    visible = {
+    #        has_completed_focus = BRA_enact_the_cohen_plan
+    #        has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
+    #        has_civil_war = no
+    #    }
+#
+    #    available = {
+    #        custom_trigger_tooltip = {
+    #            tooltip = BRA_not_currently_convincing_tt
+    #            NOT = { has_country_flag = BRA_convincing_cohen }
+    #        }
+    #    }
+#
+    #    cost = 15
+#
+    #    days_remove = 25
+#
+    #    ai_will_do = {
+	#		factor = 235
+	#	}
+#
+    #    fire_only_once = yes 
+#
+    #    complete_effect = {
+    #        set_country_flag = BRA_convincing_cohen         
+    #    }
+#
+    #    remove_effect = {
+    #        clr_country_flag = BRA_convincing_cohen
+    #        custom_effect_tooltip = BRA_people_will_be_convinced_tt
+    #        set_country_flag = BRA_people_convinced
+    #        if = {
+    #            limit = {
+    #                has_country_flag = BRA_people_convinced
+    #                has_country_flag = BRA_parliament_convinced
+    #                has_country_flag = BRA_army_convinced
+    #            }
+    #            country_event = brazil.80
+    #        }
+    #    }
+    #}
+#
+    #BRA_convince_the_army_about_the_cohen_plan = {
+    #    icon = generic_military
+#
+    #    visible = {
+    #        has_completed_focus = BRA_enact_the_cohen_plan
+    #        has_dynamic_modifier = { modifier = BRA_brazilian_political_crisis }
+    #        has_civil_war = no
+    #    }
+#
+    #    available = {
+    #        custom_trigger_tooltip = {
+    #            tooltip = BRA_not_currently_convincing_tt
+    #            NOT = { has_country_flag = BRA_convincing_cohen }
+    #        }
+    #    }
+#
+    #    cost = 15
+#
+    #    days_remove = 25
+#
+    #    ai_will_do = {
+	#		factor = 235
+	#	}
+#
+    #    fire_only_once = yes 
+#
+    #    complete_effect = {
+    #        set_country_flag = BRA_convincing_cohen         
+    #    }
+#
+    #    remove_effect = {
+    #        clr_country_flag = BRA_convincing_cohen
+    #        custom_effect_tooltip = BRA_army_will_be_convinced_tt
+    #        set_country_flag = BRA_army_convinced
+    #        if = {
+    #            limit = {
+    #                has_country_flag = BRA_people_convinced
+    #                has_country_flag = BRA_parliament_convinced
+    #                has_country_flag = BRA_army_convinced
+    #            }
+    #            country_event = brazil.80
+    #        }
+    #    }
+    #}
 
     BRA_spread_our_movement_in_FROM = {
         icon = eng_propaganda_campaigns
@@ -5471,12 +5467,15 @@ BRA_the_brazilian_civil_war = {
             has_manpower > 1999
         }
 
-        days_remove = 35
+        days_remove = 10
+
+        days_re_enable = 90
 
         complete_effect = {
             FROM = {
-                set_state_flag =BRA_conscripted_in_state
+                set_state_flag = BRA_conscripted_in_state
             }
+            custom_effect_tooltip = EUYL_decision_will_reappear_in_90_days_tt
         }
 
         remove_effect = {
@@ -6518,77 +6517,77 @@ BRA_peasant_revolt = {
         }
     }
 
-    BRA_secret_conscription_in_FROM = {
-        icon = generic_military
-
-        on_map_mode = map_only
-
-        state_target = yes 
-
-        target_array = controlled_states
-
-        target_trigger = {
-            FROM = {
-                is_core_of = BRA 
-                is_fully_controlled_by = BRA 
-                has_dynamic_modifier = { modifier = BRA_subversive_communist_activity_in_state }
-            }
-        }
-
-        available = {
-            has_civil_war = no 
-            has_active_mission = BRA_communist_peasant_revolt
-        }
-
-        visible = {
-            has_completed_focus = BRA_secret_conscription
-            FROM = {
-                NOT = {
-                    has_state_flag = BRA_conscripted_in_FROM
-                }
-            }
-        }
-
-        cost = 20
-
-        days_remove = 25
-
-        ai_will_do = {
-			factor = 175
-		}
-
-        complete_effect = {
-            BRA_get_chance_of_vargas_interfering = yes 
-            random_list = {
-                BRA_chance_fail = {
-                    country_event = brazil.42
-                }
-                BRA_chance_succeed = {
-                    
-                }
-            }
-            hidden_effect = {
-                FROM = {
-                    set_state_flag = BRA_conscripted_in_FROM
-                }
-            }
-        }
-
-        remove_effect = {
-            custom_effect_tooltip = BRA_extra_militia_will_spawn_in_state_tt
-            hidden_effect = {
-                FROM = { set_state_flag = BRA_secret_conscription_in_state }
-            }
-        }
-
-        cancel_trigger = {
-            OR = {
-                has_civil_war = yes 
-                NOT = { has_active_mission = BRA_communist_peasant_revolt }
-                has_country_flag = BRA_vargas_interfered_with_activity
-            }
-        }
-    }
+    #BRA_secret_conscription_in_FROM = {
+    #    icon = generic_military
+#
+    #    on_map_mode = map_only
+#
+    #    state_target = yes 
+#
+    #    target_array = controlled_states
+#
+    #    target_trigger = {
+    #        FROM = {
+    #            is_core_of = BRA 
+    #            is_fully_controlled_by = BRA 
+    #            has_dynamic_modifier = { modifier = BRA_subversive_communist_activity_in_state }
+    #        }
+    #    }
+#
+    #    available = {
+    #        has_civil_war = no 
+    #        has_active_mission = BRA_communist_peasant_revolt
+    #    }
+#
+    #    visible = {
+    #        has_completed_focus = BRA_secret_conscription
+    #        FROM = {
+    #            NOT = {
+    #                has_state_flag = BRA_conscripted_in_FROM
+    #            }
+    #        }
+    #    }
+#
+    #    cost = 20
+#
+    #    days_remove = 25
+#
+    #    ai_will_do = {
+	#		factor = 175
+	#	}
+#
+    #    complete_effect = {
+    #        BRA_get_chance_of_vargas_interfering = yes 
+    #        random_list = {
+    #            BRA_chance_fail = {
+    #                country_event = brazil.42
+    #            }
+    #            BRA_chance_succeed = {
+    #                
+    #            }
+    #        }
+    #        hidden_effect = {
+    #            FROM = {
+    #                set_state_flag = BRA_conscripted_in_FROM
+    #            }
+    #        }
+    #    }
+#
+    #    remove_effect = {
+    #        custom_effect_tooltip = BRA_extra_militia_will_spawn_in_state_tt
+    #        hidden_effect = {
+    #            FROM = { set_state_flag = BRA_secret_conscription_in_state }
+    #        }
+    #    }
+#
+    #    cancel_trigger = {
+    #        OR = {
+    #            has_civil_war = yes 
+    #            NOT = { has_active_mission = BRA_communist_peasant_revolt }
+    #            has_country_flag = BRA_vargas_interfered_with_activity
+    #        }
+    #    }
+    #}
 
     BRA_spread_movement_in_FROM = {
         icon = eng_propaganda_campaigns
@@ -6638,7 +6637,7 @@ BRA_peasant_revolt = {
 		}
 
         complete_effect = {
-            BRA_get_chance_of_vargas_interfering = yes 
+            #BRA_get_chance_of_vargas_interfering = yes 
             random_list = {
                 BRA_chance_fail = {
                     country_event = brazil.42
@@ -6730,7 +6729,7 @@ BRA_peasant_revolt = {
 		}
 
         complete_effect = {
-            BRA_get_chance_of_vargas_interfering = yes 
+            #BRA_get_chance_of_vargas_interfering = yes 
             random_list = {
                 BRA_chance_fail = {
                     country_event = brazil.42

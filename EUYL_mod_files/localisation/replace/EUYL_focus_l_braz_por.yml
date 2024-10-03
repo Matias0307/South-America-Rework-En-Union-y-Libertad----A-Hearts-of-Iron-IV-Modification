@@ -6870,7 +6870,7 @@
  ARG_import_british_weaponry_desc:0 "Os britânicos sempre tiveram armamento muito avançado. Devemos usar nossos bons termos com os britânicos a nosso favor e solicitar alguns de seus armamentos."
  ARG_make_an_effort_to_mobilize:0 "Iniciar nossa mobilização"
  ARG_make_an_effort_to_mobilize_desc:0 "O mundo está queimando, e precisamos estar preparados para o pior."
- ARG_swear_to_glory_die:0 "Oh Jure a Glória para Morrer"
+ ARG_swear_to_glory_die:0 "O Juremos con Gloria Morir"
  ARG_juremos_con_gloria_morir_desc:0 "Nós, argentinos, temos um sentimento de nacionalismo diferente de qualquer outro. La Patria é sagrada, desde sua concepção em 1810, e nos certificaremos de que nunca se extinga, nunca. A Argentina é povoada por argentinos, não importa a história nem o status, somos todos um, unidos com um objetivo, levar este país para frente e mantê-lo em seu lugar, acima de todos os outros. VIVA LA PATRIA!"
  ARG_project_huemul:0 "Projeto Huemul"
  ARG_project_huemul_desc:0 "O projeto Huemul foi um dos primeiros esforços argentinos para desenvolver bombas nucleares. Com investimentos e tempo suficientes, com certeza funcionará e seremos um dos primeiros países a aproveitar o poder da energia nuclear e das bombas."
@@ -8729,6 +8729,19 @@
  ECU_heavy_ship_expansion_desc:0 "$BOL_focus_on_heavy_ships_desc$"
  ECU_cuerpo_de_marinas_del_ecuador:0 "Cuerpo de Marinas del Equador"
  ECU_cuerpo_de_marinas_del_ecuador_desc:0 "O Equador não tem uma força marítima verdadeiramente definida, principalmente porque nunca precisou verdadeiramente de uma. No entanto, à medida que as tensões globais continuam a aumentar e a ameaça no horizonte do nosso sul, precisamos de ter vantagem em qualquer e de todas as maneiras possíveis."
+
+ CHL_the_american_counterweight:0 "O Contrapeso Americano"
+ CHL_the_american_counterweight_desc:0 "Conforme descrito em um discurso de [ROOT.GetLeader], nosso inimigo número 1 é o [USA.GetName], e precisamos construir e desenvolver nossa nação para nos tornarmos o contrapeso dessa entidade demoníaca. Apesar das probabilidades, nós as superaremos e nos tornaremos o poder dominante!"
+ CHL_reach_for_cochranes_thalassocracy:0 "Alcance a Talassocracia de Cochrane"
+ CHL_reach_for_cochranes_thalassocracy_desc:0 "Thomas Cochrane, 10º Conde de Dundonald, foi um marinheiro inglês, renomado por sua perícia em navegação e qualidades como líder. Ele também serviu como um dos principais marinheiros da marinha chilena durante sua guerra de independência. Nessa época, ele propôs a ideia do Chile se tornar um império marítimo, com sua bandeira sendo a potência dominante em todo o Oceano Pacífico. Embora naquela época fosse inconcebível, agora pode se tornar realidade."
+ CHL_demand_pitcairn_island:0 "Demanda [270.GetName]"
+ CHL_demand_pitcairn_island_desc:0 "Se quisermos realmente desenvolver nosso império marítimo, precisaremos garantir uma posição nas profundezas do Oceano Pacífico. Enquanto a Ilha de Páscoa serve como uma boa base, a posição mais centralizada de Pitcairn será vital para organizar invasões navais e garantir nosso lugar no oceano."
+ CHL_pushing_west_desc:0 "Nossa expansão de influência não pode parar na Ilha Pitcairn. Assim como os Estados Unidos com seu destino manifesto, manifestaremos nosso próprio destino maior, coroando-nos com um trono de porcelana bem acima de todos os nossos concorrentes."
+ CHL_a_setting_sun_desc:0 "À medida que a sombra iminente do Império Chileno continua a crescer, também cresce o medo nos olhos daqueles que estão sob sua sombra. O Japão, o Reino Unido e os Estados Unidos conhecem seu destino iminente e o enfrentarão com toda a força da marinha e do exército chilenos."
+ CHL_capture_guayaquil:0 "Capture Guayaquil"
+ CHL_capture_guayaquil_desc:0 "Guayaquil é um dos principais portos da América do Sul. Tê-lo sob nosso controle garantirá vitórias futuras."
+ CHL_pushing_west:0 "Empurrando para o Oeste"
+ CHL_a_setting_sun:0 "Um Sol Poente"
 
 # === [LocEditor:OrphanedKeys] Keys that do not exist in English ===
  SOV_finish_five_year_plan:0 "Terminar o plano de cinco anos"

@@ -119,10 +119,10 @@
 
  navy_capital_ship_attack_factor_tt:0 " $MODIFIER_NAVY_CAPITAL_SHIP_ATTACK_FACTOR$: $RIGHT|+=%1$"
 
- PRU_apra_be_friend:0 "E. Montagne debe ser leal al gobierno"
- PRU_ur_be_friend:0 "E. Ureta debe ser leal al gobierno"
- PRU_que_be_friend:0 "A. Rodríguez debe ser leal al gobierno"
- PRU_oli_be_friend:0 "M. Odria debe ser leal al gobierno"
+ PRU_apra_be_friend:0 "E. Montagne §GPuede§! ser leal al gobierno"
+ PRU_ur_be_friend:0 "E. Ureta §GPuede§! ser leal al gobierno"
+ PRU_que_be_friend:0 "A. Rodríguez §GPuede§! ser leal al gobierno"
+ PRU_oli_be_friend:0 "M. Odria §GPuede§! ser leal al gobierno"
  
  PRU_apra_army_bonus_decision_one:0 "Movilizar al pueblo a las fábricas"
  PRU_apra_army_bonus_decision_two:0 "Reclutamiento forzado"
@@ -314,10 +314,10 @@
  PRU_andean_union_socialista_buff:0 "Movilizar a toda la población"
  PRU_andean_union_socialista_buff_2:0 "Sin retroceder"
  
- PRU_apra_exclu:0 "E. Montagne debe ser separado"
- PRU_ur_exclu:0 "E. Ureta debe ser separado"
- PRU_oli_exclu:0 "M. Odria debe ser separado"
- PRU_que_exclu:0 "A. Rodríguez debe ser separado"
+ PRU_apra_exclu:0 "E. Montagne §GPuede§! ser separado"
+ PRU_ur_exclu:0 "E. Ureta §GPuede§! ser separado"
+ PRU_oli_exclu:0 "M. Odria §GPuede§! ser separado"
+ PRU_que_exclu:0 "A. Rodríguez §GPuede§! ser separado"
  
  PRU_Liberate_the_indigenous_people_of_America:0 "Liberar a los pueblos indígenas de América"
  PRU_Liberate_the_indigenous_people_of_America_desc:0 "Avanza en la liberación y autonomía de los pueblos indígenas en América, reclamando su lugar legítimo en la historia y asegurando su participación activa en el gobierno y la sociedad."

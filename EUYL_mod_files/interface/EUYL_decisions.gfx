@@ -50,6 +50,16 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_CHL_lord_cochrane_pic"
+		texturefile = "gfx/interface/decisions/CHL_lord_cochrane_pic.png"
+	}
+
+	spriteType = {
+		name = "GFX_CHL_lord_cochrane_icon"
+		texturefile = "gfx/interface/decisions/CHL_lord_cochrane_icon.png"
+	}
+
+	spriteType = {
 		name = "GFX_ECU_liberal_conservative_war_pic"
 		texturefile = "gfx/interface/decisions/ECU_liberal_conservative_war_pic.png"
 	}

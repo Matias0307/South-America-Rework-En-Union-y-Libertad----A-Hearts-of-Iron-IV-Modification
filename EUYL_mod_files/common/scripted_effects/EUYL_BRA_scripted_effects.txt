@@ -746,79 +746,6 @@ BRA_get_chances_of_spies_countering_communists = {
 	}
 }
 
-BRA_get_chance_of_vargas_interfering = {
-	set_temp_variable = { BRA_chance_succeed = 0 }
-	set_temp_variable = { BRA_chance_fail = 20 }
-	if = {
-		limit = {
-			has_stability < 0.3
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 15 }
-		subtract_from_temp_variable = { BRA_chance_fail = 15 }
-	}
-	if = {
-		limit = {
-			has_completed_focus = BRA_interfere_with_vargas_plans 
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 75 }
-		subtract_from_temp_variable = { BRA_chance_fail = 75 }
-	}
-	if = {
-		limit = { check_variable = { BRA_farmers_agreement_to_uprising > 35 } }
-		add_to_temp_variable = { BRA_chance_succeed = 10 }
-		subtract_from_temp_variable = { BRA_chance_fail = 10 }
-	}
-	if = {
-		limit = {
-			has_stability < 0.5
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 10 }
-		subtract_from_temp_variable = { BRA_chance_fail = 10 }
-	}
-	if = {
-		limit = {
-			communism > 0.1
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 5 }
-		subtract_from_temp_variable = { BRA_chance_fail = 5 }
-	}
-	if = {
-		limit = {
-			communism > 0.24
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 10 }
-	}
-	if = {
-		limit = {
-			check_variable = { BRA_vargas_influence < 35 }
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 5 }
-	}
-	if = {
-		limit = {
-			check_variable = { BRA_coffee_companies_opinion > 0 }
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 5 }
-		subtract_from_temp_variable = { BRA_chance_fail = 5 }
-	}
-	if = {
-		limit = {
-			has_completed_focus = BRA_destabilize_the_government
-		}
-		add_to_temp_variable = { BRA_chance_succeed = 15 }
-	}
-	clamp_variable = {
-		var = BRA_chance_succeed
-        min = 0
-        max = 100
-	}
-	clamp_variable = {
-		var = BRA_chance_fail
-        min = 0
-        max = 100
-	}
-}
-
 BRA_neutral_character = {
 	set_character_flag = BRA_vargas_supporter
 	set_character_flag = BRA_communist
@@ -1608,7 +1535,7 @@ BRA_start_communist_civil_war = {
 		every_controlled_state = {
 			create_unit = {
 				division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
-				owner = ROOT
+				owner = PREV
 			}
 			if = {
 				limit = {
@@ -1622,17 +1549,16 @@ BRA_start_communist_civil_war = {
 					owner = PREV
 				}
 			}
-		}
-		if = {
-			limit = { check_variable = { BRA_vargas_influence > 40 } }
-			random_owned_controlled_state = {
-				create_unit = {
-					division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
-					owner = ROOT
+			if = {
+				limit = {
+					AND = {
+						industrial_complex > 0
+						arms_factory > 0
+					}
 				}
 				create_unit = {
-					division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
-					owner = ROOT
+					division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+					owner = PREV
 				}
 			}
 		}
@@ -1859,31 +1785,26 @@ BRA_start_communist_civil_war = {
 			if = {
 				limit = { BRC = { check_variable = { BRA_farmers_agreement_to_uprising > 34 } } }
 				create_unit = {
-					division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
-					owner = PREV
-				}
-			}
-			if = {
-				limit = { BRC = { check_variable = { BRA_farmers_agreement_to_uprising > 54 } } }
-				create_unit = {
-					division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.85" 
-					owner = PREV
-				}
-			}
-			if = {
-				limit = { BRC = { check_variable = { BRA_farmers_agreement_to_uprising > 74 } } }
-				create_unit = {
-					division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.75" 
-					owner = PREV
-				}
-			}
-			if = {
-				limit = { has_state_flag = BRA_conscripted_in_FROM }
-				create_unit = {
 					division = "name = \"Milícias Comunistas\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
 					owner = PREV
 				}
-				clr_state_flag = BRA_conscripted_in_FROM
+			}
+			if = {
+				limit = { BRC = { check_variable = { BRA_farmers_agreement_to_uprising > 64 } } }
+				create_unit = {
+					division = "name = \"Milícias Comunistas\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.85" 
+					owner = PREV
+				}
+			}
+			if = {
+				limit = {
+					has_state_flag = BRC_secret_conscription_flag
+				}
+				create_unit = {
+					division = "name = \"Milícias Comunistas\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.85" 
+					owner = PREV
+				}
+				clr_state_flag = BRC_secret_conscription_flag
 			}
 		}
 		if = {
@@ -1902,9 +1823,9 @@ BRA_start_communist_civil_war = {
 				}
 				random_owned_controlled_state = {
 					create_unit = {
-						division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+						division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.8" 
 						owner = PREV
-						count = 4
+						count = 2
 					}
 				}
 			}
@@ -1919,15 +1840,25 @@ BRA_start_communist_civil_war = {
 					create_unit = {
 						division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
 						owner = PREV
-						count = 3
+						count = 2
 					}
 				}
 			}
 		}
-		country_event = { ## Integralist Uprising
-			id = brazil.46
-			days = 40
-			random_days = 40
+		if = {
+			limit = {
+				NOT = {
+					any_country_with_original_tag = {
+						original_tag_to_check = BRA 
+						has_government = fascism 
+					}
+				}
+			}
+			country_event = { ## Integralist Uprising
+				id = brazil.46
+				days = 40
+				random_days = 40
+			}
 		}
 		if = {
 			limit = { 
@@ -3181,6 +3112,34 @@ BRA_start_new_imperialist_civil_war = {
 			}
 		}
 		if = {
+			limit = {
+				POR = {
+					is_ai = no 
+					has_completed_focus = POR_monarchist_uprising_in_brazil
+				}
+			}
+			every_controlled_state = {
+				create_unit = {
+					division = "name = \"Milícias Imperialistas\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+					owner = BRA
+					count = 3
+				}
+
+				if = {
+					limit = {
+						AND = {
+							industrial_complex > 0
+							arms_factory > 0
+						}
+					}
+					create_unit = {
+						division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
+						owner = BRA
+					}
+				}
+			}
+		}
+		if = {
 			limit = { is_ai = yes }
 			add_ideas = EUYL_chaos_civil_war_help
 			every_controlled_state = {
@@ -3321,6 +3280,18 @@ BRA_start_new_imperialist_civil_war = {
 					}
 					create_unit = {
 						division = "name = \"Milícias Leais\" division_template = \"Milícia\" start_experience_factor = 0.05 start_equipment_factor = 0.7" 
+						owner = PREV
+					}
+				}
+				if = {
+					limit = {
+						AND = {
+							industrial_complex > 0
+							arms_factory > 0
+						}
+					}
+					create_unit = {
+						division = "name = \"Divisão de Infantaria\" division_template = \"Divisão de Infantaria\" start_experience_factor = 0.05 start_equipment_factor = 0.95" 
 						owner = PREV
 					}
 				}

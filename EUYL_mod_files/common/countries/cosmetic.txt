@@ -3,6 +3,11 @@ GBO = {
 	color_ui = rgb { 19 65 45 }
 }
 
+CHL_MARITIME_EMPIRE = {
+	color = rgb { 21 24 144 }
+	color_ui = rgb { 19 20 142 }
+}
+
 PRU_KINGDOM = {
 	color = rgb { 170 51 106 }
 	color_ui = rgb { 160 51 109 }

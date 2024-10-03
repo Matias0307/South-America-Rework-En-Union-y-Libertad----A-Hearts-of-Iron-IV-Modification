@@ -119,7 +119,7 @@ country_event = {
 				capital = 989
 				states = { 989 492 987 947 988 }
 				PREV = {
-					ECU_armed_civilians = {
+					PRU_manuel_prado_ugarteche = {
 						set_nationality = prev.PREV
 					}
 				}
@@ -129,7 +129,7 @@ country_event = {
 					original_tag = PRU 
 					has_civil_war = yes
 				}
-				promote_character = ECU_armed_civilians
+				promote_character = PRU_manuel_prado_ugarteche
 				if = {
 					limit = {
 						NOT = {
@@ -1026,8 +1026,7 @@ country_event = {
 			}
 			complete_national_focus = PRU_victor_of_the_peru_ecuador_war
 			effect_tooltip = {
-				add_stability = -0.1 
-				add_war_support = -0.15
+				add_war_support = 0.05
 			}
 		}
 		if = {
@@ -1061,8 +1060,8 @@ country_event = {
 			}
 			complete_national_focus = PRU_loser_of_the_peru_ecuador_war
 			effect_tooltip = {
-				add_war_support = 0.05 
-				add_stability = 0.05
+				add_stability = -0.1
+				add_war_support = -0.15
 			}
 		}
 		if = {

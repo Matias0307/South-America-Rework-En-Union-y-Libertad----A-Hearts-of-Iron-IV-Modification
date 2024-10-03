@@ -41,6 +41,19 @@ CHL_organized_nacista_rebellion = {
 	state_production_speed_buildings_factor = -0.3
 	local_building_slots_factor = -0.5
 
+	remove_trigger = {
+		OWNER = {
+			OR = {
+				has_government = fascism
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = CHL_political_instability
+					}
+				}
+			}
+		}
+	}
+
 }
 
 CHL_organized_communist_rebellion = {
@@ -51,6 +64,19 @@ CHL_organized_communist_rebellion = {
 	recruitable_population_factor = -0.3
 	state_production_speed_buildings_factor = -0.3
 	local_building_slots_factor = -0.5
+
+	remove_trigger = {
+		OWNER = {
+			OR = {
+				has_government = communism
+				NOT = {
+					has_dynamic_modifier = {
+						modifier = CHL_political_instability
+					}
+				}
+			}
+		}
+	}
 
 }
 
@@ -224,6 +250,17 @@ BRA_small_coffee_plantations = {
 
 	icon = GFX_BRA_small_coffee
 
+	remove_trigger = {
+		OWNER = {
+			OR = {
+				has_completed_focus = BRA_switch_to_a_war_economy
+				has_completed_focus = BRA_mobilize_the_economy
+				has_completed_focus = BRA_the_imperial_war_machine
+				has_idea = BRA_rebellious_coffee_plantations_idea
+			}
+		}
+	}
+
 	state_production_speed_buildings_factor = -0.03
 	local_building_slots_factor = 0.05
 	industry_air_damage_factor = -0.05
@@ -234,6 +271,17 @@ BRA_widespread_coffee_plantations = {
 	enable = { always = yes }
 
 	icon = GFX_BRA_large_coffee
+
+	remove_trigger = {
+		OWNER = {
+			OR = {
+				has_completed_focus = BRA_switch_to_a_war_economy
+				has_completed_focus = BRA_mobilize_the_economy
+				has_completed_focus = BRA_the_imperial_war_machine
+				has_idea = BRA_rebellious_coffee_plantations_idea
+			}
+		}
+	}
 
 	state_production_speed_buildings_factor = -0.05
 	local_building_slots_factor = 0.1
@@ -295,6 +343,12 @@ BRA_subversive_communist_activity_in_state = {
 
 	icon = GFX_idea_BRA_subversive_communist
 
+	remove_trigger = {
+		OWNER = {
+			has_government = communism
+		}
+	}
+
 	state_production_speed_rail_way_factor = -0.2
 	state_production_speed_infrastructure_factor = -0.2
 	state_production_speed_buildings_factor = -0.05
@@ -304,6 +358,16 @@ BRA_integralists_occupation = { #Will be used for both regular protesting and ci
 	enable = { always = yes }
 
 	icon = GFX_BRA_integralist_occupation
+
+	remove_trigger = {
+		OWNER = {
+			has_government = fascism 
+			OR = {
+				has_completed_focus = BRA_cooperate_with_plinio
+				has_completed_focus = BRA_reject_the_estado_navo
+			}
+		}
+	}
 
 	recruitable_population_factor = -0.25
 	state_production_speed_buildings_factor = -0.2
@@ -323,6 +387,13 @@ BRA_sao_paulo_seperatist_movement = {
 	enable = { always = yes }
 
 	icon = GFX_BRA_sao_seperatist_movement
+
+	remove_trigger = {
+		OWNER = {
+			original_tag = SAO 
+			exists = yes
+		}
+	}
 
 	recruitable_population_factor = -0.05
 	state_production_speed_buildings_factor = -0.05

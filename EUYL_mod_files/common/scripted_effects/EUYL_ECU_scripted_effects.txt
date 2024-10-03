@@ -464,14 +464,7 @@ EUYL_step_up_tension = {
 ECU_call_up_juan_de_borbon = {
 	if = {
 		limit = {
-			date < 1940.1.1
-			SPB = {
-				OR = {
-					exists = no 
-					surrender_progress > 0.4
-				}
-			}
-			SPR_scw_in_progress = yes
+			date < 1939.2.1
 			has_civil_war = no 
 		}
 		country_event = {

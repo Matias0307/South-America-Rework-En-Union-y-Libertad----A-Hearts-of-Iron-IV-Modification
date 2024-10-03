@@ -224,7 +224,7 @@ characters={
 		}
 		corps_commander={
 			visible = {
-				date < 1944.1.2
+				date < 1944.1.1
 			}
 			skill=3
 			attack_skill=2
@@ -259,17 +259,6 @@ characters={
 				NOT = {
 					has_government = communism
 				}
-				hidden_trigger = {
-					date < 1944.1.1
-				}
-			}
-			on_remove = {
-				if = {
-					limit = {
-						date > 1943.12.31
-					}
-					ROOT = { add_ideas = VEN_marcos_perez_jimenez_old_idea }
-				}
 			}
 			traits = {
 				war_industrialist
@@ -292,7 +281,7 @@ characters={
 		}
 		corps_commander={
 			visible = {
-				date > 1944.1.1
+				date > 1943.12.31
 			}
 			skill=4
 			attack_skill=4

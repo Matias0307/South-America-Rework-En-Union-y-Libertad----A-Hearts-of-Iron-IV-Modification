@@ -3620,7 +3620,6 @@
  argentina.rework.48.a:0 "Esto no es bueno..."
  argentina.rework.49.t:0 "Peornistas se reúnen para protestar contra el encarcelamiento de Perón"
  argentina.rework.49.d:0 "Cuando pensábamos que Perón sería cosa del pasado después de su encarcelamiento oficial, no podíamos estar mas errado...  Cientos de miles de personas han salido a las calles para protestar por el encarcelamiento de Perón y exigir su liberación. \n\nSus números son enormes, y si no los abordamos rápidamente, ¡esto podría terminar siendo muy malo!"
- argentina.rework.49.a:0 "No durarán mucho"
  argentina.rework.50.t:0 "¡El Partido Peronista gana por abrumadora mayoría!"
  argentina.rework.50.d:0 "Después de que el apoyo peronista alcanzó un punto crítico, los peronistas exigieron elecciones para ver quién debería ser el líder de Argentina. Sin muchas opciones, nos vimos obligados a cumplir y, para sorpresa de nadie, Perón ganó por un margen significativo sobre la oposición y asumirá el cargo hoy más tarde".
  argentina.rework.50.a:0 "Genial"
@@ -5947,3 +5946,8 @@
  peruecuador.20.a:0 "Supongo... ¿está bien?"
  peruecuador.21.t:0 "[PRU.GetName] ha iniciado una Guerra Fronteriza en [1036.GetName]"
  peruecuador.21.d:0 "El aumento de la actividad de las tropas no fue sólo para mostrar, ya que [PRU.GetAdjective] ha iniciado un conflicto fronterizo a gran escala en la provincia de [1036.GetName]. ¡Debemos reforzar y acelerar!"
+
+ chile.430.t:0 "[FROM.GetName] está exigiendo a [270.GetName]"
+ chile.430.d:0 "Hemos recibido una demanda de [FROM.GetName] para que entreguemos la posesión de [270.GetName]. Si no lo hacemos, tendremos graves consecuencias. \n\n¿Cómo procederemos con esto?"
+ chile.430.a:0 "Que se la queden"
+ chile.430.b:0 "La isla seguirá siendo BRITÁNICA"

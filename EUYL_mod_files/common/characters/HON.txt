@@ -1,0 +1,607 @@
+characters={
+	HON_tiburcio_carías_andino={
+		name="Tiburcio Carías Andino"
+		portraits={
+			civilian={
+				large="GFX_portrait_honduras_portrait_tiburcio_carias_andino"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1965.1.1.1"
+			id=-1
+		}
+		field_marshal={
+			traits = { old_guard politically_connected }
+			skill = 1
+    		attack_skill = 1
+    		defense_skill = 1
+    		planning_skill = 1
+    		logistics_skill = 1
+			visible = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}			
+	}
+	HON_manuel_calix_herrera={
+		name="Manuel Calix Herrera"
+		portraits={
+			civilian={
+				large="gfx/leaders/HON/portrait_HON_Manuel_Calix_Herrera.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={ armaments_organizer quartermaster_general }
+			expire="1965.1.1.12"
+			id=-1
+		}
+	}
+	HON_pedro_figueroa={
+		name="Pedro Figueroa"
+		portraits={
+			civilian={
+				large=GFX_portrait_Pedro_Figueroa
+			}
+		}
+		country_leader={
+			ideology=fascism_ideology
+			traits={ financial_expert }
+			expire="1953.1.1.12"
+			id=-1
+		}
+	}
+
+	HON_abel_villanueva_villacorta={
+		name="Abel Villanueva Villacorta"
+		portraits={
+			army = {
+				large="gfx/leaders/HON/portrait_hon_Abel_Villanueva_Villacorta.dds"
+				small="GFX_idea_HON_Abel_Villanueva_Villacorta"
+			}
+		}
+		corps_commander={
+			traits = { trait_cautious infantry_officer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+
+	HON_jose_leon_castro = {
+		name ="José Leon Castro"
+		portraits = {
+			army = {
+				small = "gfx/interface/ideas/HON/HON_jose_leon_castro.dds"
+				large = "gfx/leaders/HON/Portrait_HON_Jose_Leon_Castro.dds"
+			}
+		}
+		corps_commander = {
+			traits = { jungle_rat adaptable }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 1
+		}
+	}	
+	
+	HON_abraham_williams_calderon={
+		name="Abraham Williams Calderon"	
+		portraits={
+			army = {
+				large="gfx/leaders/HON/portrait_HON_Abraham_Williams_Calderon.dds"
+				small="GFX_idea_HON_Williams_Calderon"
+			}
+		}		
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}			
+		advisor={
+			slot = political_advisor
+			idea_token = HON_abraham_williams_calderon
+			allowed  = {
+				original_tag  = HON
+			}
+			traits  = {
+				prince_of_terror 
+			}
+		}
+		corps_commander={
+			traits = { infantry_officer }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+
+	HON_oswaldo_lopez_arellano={
+		name="Oswaldo López Arellano"
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_3"
+			}
+		}		
+		advisor={
+			slot = high_command
+			idea_token = HON_oswaldo_lopez_arellano
+			ledger = navy
+				allowed = {
+				original_tag = HON
+			}
+			traits = {
+				navy_anti_submarine_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.000
+			}
+			visible = {
+				date > 1940.1.1
+			}			
+		}
+	}
+
+	HON_carlos_vaupel_comeza={
+		advisor={
+			
+			
+			slot = navy_chief
+			idea_token = HON_carlos_vaupel_comeza
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					navy_chief_naval_aviation_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Carlos Vaupel Comeza"
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_2"
+			}
+		}
+	}
+	HON_neto_britto={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = HON_neto_britto
+			ledger = army
+				allowed = {
+					original_tag = HON
+				}
+				traits = {
+					army_cavalry_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Neto Britto"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_4"
+			}
+		}
+	}
+	HON_jose_zuniga_huete={
+		advisor={
+			
+			
+			slot = army_chief
+			idea_token = HON_jose_zuniga_huete
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					army_chief_drill_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="José Zuñiga Huete"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_1"
+			}
+		}
+	}
+	HON_teodore_alberto={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = HON_teodore_alberto
+			ledger = navy
+				allowed = {
+					original_tag = HON
+				}
+				traits = {
+					navy_naval_air_defense_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Teodore Alberto"
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_1"
+			}
+		}
+	}
+	HON_rufio_villegas={
+		advisor={
+			cost = 100
+			
+			slot = theorist
+			idea_token = HON_rufio_villegas
+			ledger = navy
+				allowed = {
+					original_tag = HON
+				}
+				
+				traits = {
+					naval_theorist
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Rufio Villegas"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_2"
+			}
+		}
+	}
+	HON_carlos_molina_dejonje={
+		advisor={
+			cost = 100
+			
+			slot = theorist
+			idea_token = HON_carlos_molina_dejonje
+			ledger = air
+				allowed = {
+					original_tag = HON
+				}
+				
+				traits = {
+					air_warfare_theorist
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Carlos Molina Dejonje"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_1"
+			}
+		}
+	}
+	HON_didier_masson={
+		advisor={
+			
+			
+			slot = air_chief
+			idea_token = HON_didier_masson
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					air_chief_ground_support_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Didier Masson"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_3"
+			}
+		}
+	}
+	HON_miguel_angel_sevilla={
+		advisor={
+			
+			
+			slot = air_chief
+			idea_token = HON_miguel_angel_sevilla
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					air_chief_all_weather_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Miguel Ángel Sevilla"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_2"
+			}
+		}
+	}
+	HON_raimundo_stochler_garcia={
+		advisor={
+			
+			
+			slot = army_chief
+			idea_token = HON_raimundo_stochler_garcia
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					army_chief_defensive_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Raimundo Stochler Garcia"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_2"
+			}
+		}
+	}
+	HON_juan_b_valladares={
+		advisor={
+			cost = 100
+			
+			slot = theorist
+			idea_token = HON_juan_b_valladares
+			ledger = army
+				allowed = {
+					original_tag = HON
+				}
+				
+				traits = {
+					military_theorist
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Juan B. Valladares"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_3"
+			}
+		}
+	}
+	HON_francisco_s_tapio_toro={
+		advisor={
+			
+			
+			slot = navy_chief
+			idea_token = HON_francisco_s_tapio_toro
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					navy_chief_commerce_raiding_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Francisco S. Tapio Toro"
+		portraits={
+			army={
+				small="GFX_idea_generic_navy_south_america_3"
+			}
+		}
+	}
+	HON_enrique_doll_rojas={
+		advisor={
+			
+			
+			slot = army_chief
+			idea_token = HON_enrique_doll_rojas
+			allowed = {
+					original_tag = HON
+				}
+				traits = {
+					army_chief_morale_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Enrique Doll Rojas"
+		portraits={
+			army={
+				small="GFX_idea_generic_army_south_america_3"
+			}
+		}
+	}
+	HON_gustavo_schmidt={
+		advisor={
+			
+			
+			slot = high_command
+			idea_token = HON_gustavo_schmidt
+			ledger = air
+				allowed = {
+					original_tag = HON
+				}
+				traits = {
+					air_air_superiority_2
+				}
+				cost = 100
+				ai_will_do = {
+					factor = 1.000
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Gustavo Schmidt"
+		portraits={
+			army={
+				small="GFX_idea_generic_air_south_america_2"
+			}
+		}
+	}
+	HON_carlos_alberto_ucles={
+		name="Carlos Alberto Ucles"
+		portraits={
+			army={
+				small="gfx/interface/ideas/HON_carlos_alberto_ulces.dds"
+			}
+		}		
+		advisor={
+			slot = political_advisor
+			idea_token = HON_carlos_alberto_ucles
+			allowed  = {
+					original_tag  = HON
+				}
+			traits  = {
+				war_industrialist 
+			}
+		}
+	}
+
+	HON_humberto_michelleti_brown={
+		name="Humberto Michelleti Brown"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_2"
+			}
+		}		
+		advisor={
+			slot = political_advisor
+			idea_token = HON_humberto_michelleti_brown
+			allowed  = {
+					original_tag  = HON
+				}
+			traits  = {
+				quartermaster_general 
+			}
+		}
+	}
+
+	HON_orlando_rodriguez_jimino={
+		advisor={
+			slot = political_advisor
+			idea_token = HON_orlando_rodriguez_jimino
+			allowed  = {
+					original_tag  = HON
+				}
+				traits  = {
+					ideological_crusader 
+				}
+		}
+# TODO[ PORTRAIT LARGE ]: Missing large portrait please check!
+		name="Orlando Rodriguez Jimino"
+		portraits={
+			army={
+				small="GFX_idea_generic_political_advisor_south_america_3"
+			}
+		}
+	}
+
+	HON_felix_canales_salazar={
+		name="Felix Canales Salazar"
+		portraits={
+			army={
+				small="gfx/interface/ideas/HON_felix_canales_salazar.dds"
+			}
+		}		
+		advisor={
+			slot = political_advisor
+			idea_token = HON_felix_canales_salazar
+			allowed  = {
+				original_tag  = HON
+			}
+			traits  = {
+				silent_workhorse 
+			}
+		}
+	}
+
+	HON_rafael_medina_raudales={
+		name="Rafael Medina Raudales"
+		portraits={
+			army={
+				small="gfx/interface/ideas/HON_rafael_medina_raudales.dds"
+			}
+		}		
+		advisor={
+			slot = political_advisor
+			idea_token = HON_rafael_medina_raudales
+			allowed  = {
+				original_tag  = HON
+			}
+			traits  = {
+				sharp_tongued_lawyer SWI_pragmatic_democrat 
+			}
+		}
+	}	
+
+	HON_lucas_paredes_murillo={
+		name="Lucas Paredes Murillo"
+		portraits={
+			army={
+				small="gfx/interface/ideas/HON_lucas_paredes_murillo.dds"
+			}
+		}		
+		advisor={
+			slot = political_advisor
+			idea_token = HON_lucas_paredes_murillo
+			allowed  = {
+				original_tag  = HON
+			}
+			traits  = {
+				liberal_journalist
+			}
+		}
+	}	
+	
+	HON_alfonso_guillen_zelaya = {
+		name ="Alfonso Guillen Zelaya"
+		portraits = {
+			civilian = {
+				small = "gfx/interface/ideas/HON_alfonso_guillen_zelaya.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = HON_alfonso_guillen_zelaya
+			allowed  = {
+				original_tag  = HON
+			}
+			traits  = {
+				socialist_writer
+			}
+		}
+	}	
+}

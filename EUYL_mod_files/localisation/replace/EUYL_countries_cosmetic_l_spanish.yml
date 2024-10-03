@@ -207,6 +207,10 @@
  VEN_GREATER:0 "Gran Venezuela"
  VEN_GREATER_DEF:0 "Gran Venezuela"
  VEN_GREATER_ADJ:0 "venezolanos"
+ 
+ CHL_MARITIME_EMPIRE:0 "Imperio Maritimo de Chile"
+ CHL_MARITIME_EMPIRE_DEF:0 "el Imperio Maritimo de Chile"
+ CHL_MARITIME_EMPIRE_ADJ:0 "Chileno"
 
  VRP_UNIFIED:0 "Virreinato del Río de la Plata"
  VRP_UNIFIED_DEF:0 "el Virreinato del Río de la Plata"

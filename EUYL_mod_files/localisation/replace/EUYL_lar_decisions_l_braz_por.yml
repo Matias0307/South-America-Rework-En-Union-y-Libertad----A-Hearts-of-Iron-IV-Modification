@@ -4442,7 +4442,26 @@
  EUYL_promote_urbanization_in_FROM:0 "$ECU_promote_development_in_FROM$"
  ECU_PRU_planning_small_skirmish_in_FROM:0 "[PRU.GetName] Planejando uma pequena batalha aqui!"
  ECU_entrepreneur:0 "Empreendedor"
- ECU_deal_with_the_draft_dodgers:0 “Lidiar com os Insumisos”
+ ECU_deal_with_the_draft_dodgers:0 "Lidiar com os Insumisos"
+
+ CHL_the_dream_of_lord_cochrane:0 "O Sonho de Lord Cochrane"
+ CHL_the_dream_of_lord_cochrane_desc:0 "Cochrane foi um comandante naval muito importante para o Chile durante a guerra de independência contra a Espanha. Em 1818, ele propôs a ideia de um extenso império marítimo, consistindo de cidades costeiras de Santiago a Guayaquil, até as Filipinas. Embora seja considerado por muitos como muito ambicioso, a realidade é que, se feito corretamente, pode ser possível."
+ CHL_naval_buildup_in_FROM:0 "Acúmulo naval em [FROM.GetName]"
+ CHL_integrate_lima:0 "Integrar Lima"
+ CHL_integrate_guayaquil:0 "Integrar Guayaquil"
+ CHL_integrate_coastal_andean_territories:0 "Integrar Territórios Costeiros Andinos"
+ CHL_integrate_the_pacific_islands:0 "Integrar as Ilhas do Pacífico"
+ CHL_integrating_both_guayaquil_and_lima_unlock_integrate_andes_tt:0 "Se você completar as decisões §Y$CHL_integrate_lima$§! e §Y$CHL_integrate_guayaquil$§!, a decisão §Y$CHL_integrate_coastal_andean_territories$§! será §GDesbloqueada§!"
+ CHL_integrate_new_zealand:0 "Integrar [NZL.GetName]"
+ CHL_integrate_hawaii:0 "Integrar o Havaí"
+ CHL_any_focus_that_gives_dockyards_will_be_improved_tt:0 "Qualquer §YFoco Nacional§! que adicione §YEstaleiros§! será §GMelhorado§!"
+ CHL_integrate_the_pacific_islands:0 "Integrar as Ilhas do Pacífico"
+
+ ## Balanceamento ##
+ ARG_an_extra_division_will_spawn_in_every_controlled_state_tt:0 "\nUma §GExtra§! §YDivision§! irá aparecer em §YCada Província Ocupada§!"
+ ARG_looming_planned_terrorist_attack:0 "Ataque terrorista planejado iminente"
+ ARG_pro_CNU_terrorist_attacks_will_ensue_tt:0 "Ataques terroristas §GPro-CNU§! ocorrerão periodicamente em todo o país"
+ argentina.rework.49.a:0 "Ele permanecerá preso!"
 
 # === [LocEditor:OrphanedKeys] Keys that do not exist in English ===
  SPA_carlist_cell:0 "Célula Carlista estabelecida"

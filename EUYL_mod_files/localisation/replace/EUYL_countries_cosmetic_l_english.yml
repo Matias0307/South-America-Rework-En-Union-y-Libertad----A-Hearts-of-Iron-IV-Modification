@@ -176,6 +176,10 @@
  VEN_JUNTA_DEF:0 "the Venezuelan Military Junta"
  VEN_JUNTA_ADJ:0 "Venezuelan"
 
+ CHL_MARITIME_EMPIRE:0 "Maritime Empire of Chile"
+ CHL_MARITIME_EMPIRE_DEF:0 "the Maritime Empire of Chile"
+ CHL_MARITIME_EMPIRE_ADJ:0 "Chilean"
+
  VRP_UNIFIED:0 "Viceroyalty of Rio de la Plata"
  VRP_UNIFIED_DEF:0 "the Viceroyalty of Rio de la Plata"
  VRP_UNIFIED_ADJ:0 "Rioplatense"

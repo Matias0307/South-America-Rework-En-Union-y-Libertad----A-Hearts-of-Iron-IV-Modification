@@ -703,12 +703,11 @@ EUYL_we_can_also_do_that = {
     happened = {
 		hidden_trigger = {
 			is_ai = no 
-			tag = BZE 
 			exists = yes    
 			is_subject = no 
 			has_civil_war = no
 		}
-		original_tag = BRA
+		BRA_is_the_empire_of_brazil = yes
 		OR = {
 			LIB = {
 				is_subject_of = ROOT

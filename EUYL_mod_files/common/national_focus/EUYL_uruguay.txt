@@ -78,6 +78,12 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
+				NOT = {
+					has_game_rule = {
+						rule = EUYL_chaos_mode
+						option = YES
+					}
+				}
 			}
 		}
 		
@@ -236,6 +242,19 @@ focus_tree = {
 			modifier = {
 				factor = 0
 				is_historical_focus_on = yes
+				NOT = {
+					has_game_rule = {
+						rule = EUYL_chaos_mode
+						option = YES
+					}
+				}
+			}
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
 			}
 		}
 		
@@ -2006,6 +2025,17 @@ focus_tree = {
 		
 		available = {
 			always = no 
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 200
+				has_game_rule = {
+					rule = EUYL_chaos_mode
+					option = YES
+				}
+			}
 		}
 		
 		cost = 5
